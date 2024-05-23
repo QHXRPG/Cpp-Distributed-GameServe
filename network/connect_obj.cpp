@@ -7,7 +7,8 @@
 
 #include "packet.h"
 
-ConnectObj::ConnectObj(Network* pNetWork, int socket) :_pNetWork(pNetWork), _socket(socket)
+ConnectObj::ConnectObj(Network* pNetWork, int socket) 
+:_pNetWork(pNetWork), _socket(socket)
 {
 	_recvBuffer = new RecvNetworkBuffer(DEFAULT_RECV_BUFFER_SIZE);
 	_sendBuffer = new SendNetworkBuffer(DEFAULT_SEND_BUFFER_SIZE);
@@ -74,6 +75,7 @@ bool ConnectObj::Recv() const
 	}
 }
 
+// 判断发送缓冲区是否有数据要发送
 bool ConnectObj::HasSendData() const
 {
 	return _sendBuffer->HasData();

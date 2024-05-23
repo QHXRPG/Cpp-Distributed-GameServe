@@ -18,6 +18,7 @@
 #include <sys/types.h>  // Unix 系统数据类型定义
 #include <sys/socket.h>
 #include <netinet/tcp.h>
+#include "connect_obj.h"
 
 
 #define INVALID_SOCKET -1
