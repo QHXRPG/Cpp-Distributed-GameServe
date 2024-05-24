@@ -53,9 +53,6 @@ protected:
     fd_set readfds, writefds, exceptfds;
 
 public:
-    Network();
-    ~Network();
-
     void Dispose() override;
     bool Select();
 };

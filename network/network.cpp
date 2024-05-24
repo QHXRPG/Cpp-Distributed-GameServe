@@ -47,16 +47,19 @@ int Network::CreateSocket()
     return 0;
 }
 
-Network::Network()
-{
-}
-
-Network::~Network()
-{
-}
-
+// Network派生类的析构函数
 void Network::Dispose()
 {
+    for(auto iter = _connects.begin(); iter!=_connects.end(); iter++)
+    {
+        iter->second->Dispose();
+        delete iter->second;
+    }
+
+    // 清空_connects，并关闭监听/连接socket
+    _connects.clear();
+    _sock_close(_masterSocket);
+    _masterSocket = -1;
 }
 
 bool Network::Select()
