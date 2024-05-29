@@ -1,1 +1,0 @@
-/usr/local/bin/g++  -Wall -std=c++14 -D_DEBUG -O0 -g -ggdb  -rdynamic CMakeFiles/test.dir/main.cpp.o  -o test 

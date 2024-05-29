@@ -1,1 +1,0 @@
-/usr/local/bin/g++  -Wall -std=c++14 -pthread -D_DEBUG -O0 -g -ggdb  -rdynamic CMakeFiles/serverd.dir/main.cpp.o CMakeFiles/serverd.dir/server.cpp.o  -o /home/qhx/reactor/bin/serverd   -L/home/qhx/reactor/src/apps/server/../../../libs  -Wl,-rpath,/home/qhx/reactor/src/apps/server/../../../libs -Wl,-Bstatic -lnetworkd -Wl,-Bdynamic 

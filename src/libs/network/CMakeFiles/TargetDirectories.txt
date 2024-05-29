@@ -1,3 +1,0 @@
-/home/qhx/reactor/src/libs/network/CMakeFiles/rebuild_cache.dir
-/home/qhx/reactor/src/libs/network/CMakeFiles/edit_cache.dir
-/home/qhx/reactor/src/libs/network/CMakeFiles/networkd.dir
