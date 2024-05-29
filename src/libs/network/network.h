@@ -79,8 +79,8 @@ protected:
 #ifdef EPOLL
 #define MAX_CLIENT  5120
 #define MAX_EVENT   5120
-	struct epoll_event _events[MAX_EVENT];
-	int _epfd;
+	struct epoll_event _events[MAX_EVENT]; // 设置事件数组
+	int _epfd;         // 生成的Epoll文件描述符
 	int _mainSocketEventIndex{ -1 };
 #else
 	fd_set readfds, writefds, exceptfds;

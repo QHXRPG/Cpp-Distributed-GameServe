@@ -1,11 +1,12 @@
 #include <thread>
 #include <iostream>
-
-#include "client.h"
-
-#include "network/packet.h"
 #include <sstream>
 #include <random>
+
+#include "client.h"
+#include "network/common.h"
+#include "network/packet.h"
+
 
 Client::Client(int msgCount, std::thread::id threadId)
 {
@@ -46,13 +47,15 @@ void Client::DataHandler()
 		if (_lastMsg.empty())
 		{
 			_lastMsg = GenRandom();
+			Proto::TestMsg protoMsg;
+			protoMsg.set_index(_index);
+			protoMsg.set_msg(_lastMsg.c_str());
+			Packet packet(Proto::MsgId::SendData);
+			packet.SerializeToBuffer(protoMsg);
 			//std::cout << "send msg.  << std::endl;
 			//std::cout << "send msg. size:" << _lastMsg.length() << ". " << _lastMsg.c_str() << std::endl;
 
-			Packet* pPacket = new Packet(1);
-			pPacket->AddBuffer(_lastMsg.c_str(), _lastMsg.length());
-			SendPacket(pPacket);
-			delete pPacket;
+			SendPacket(&packet);
 		}
 		else
 		{
@@ -61,11 +64,8 @@ void Client::DataHandler()
 				Packet* pPacket = GetRecvPacket();
 				if (pPacket != nullptr)
 				{
-					//const std::string msg(pPacket->GetBuffer(), pPacket->GetDataLength());
-					//std::cout << "recv msg. size:" << pPacket->GetDataLength() << std::endl;
-
-					//if (msg != _lastMsg)
-					//	std::cout << " !!!!!!!!!!!!!!!!! error." << std::endl;
+					Proto::TestMsg protoMsg = pPacket->ParseToProto<Proto::TestMsg>();
+					std::cout << "recv msg. size:" << protoMsg.msg().c_str() << std::endl;
 
 					_lastMsg = "";
 					++_index;

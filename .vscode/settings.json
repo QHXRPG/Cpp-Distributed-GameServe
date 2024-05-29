@@ -61,6 +61,11 @@
         "socket": "cpp",
         "string": "cpp",
         "string_view": "cpp",
-        "timer": "cpp"
+        "timer": "cpp",
+        "*.inc": "cpp",
+        "csignal": "cpp",
+        "unordered_set": "cpp",
+        "cinttypes": "cpp",
+        "set": "cpp"
     }
 }
