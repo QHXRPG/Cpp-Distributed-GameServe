@@ -4,8 +4,11 @@
 
 class Robot : public NetworkConnector {
 public:
-	bool Init( ) override;
-	void RegisterMsgFunction( ) override;
-	void Update( ) override;
+    bool Init() override;
+    void RegisterMsgFunction() override;
+    void Update() override;
+
+private:
+    bool _isSendMsg{ false };
 };
 

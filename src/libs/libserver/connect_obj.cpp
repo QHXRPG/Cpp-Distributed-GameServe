@@ -6,11 +6,12 @@
 #include "network_buffer.h"
 
 #include "packet.h"
+#include "thread_mgr.h"
 
 ConnectObj::ConnectObj(Network* pNetWork, int socket) :_pNetWork(pNetWork), _socket(socket)
 {
-	_recvBuffer = new RecvNetworkBuffer(DEFAULT_RECV_BUFFER_SIZE);
-	_sendBuffer = new SendNetworkBuffer(DEFAULT_SEND_BUFFER_SIZE);
+	_recvBuffer = new RecvNetworkBuffer(DEFAULT_RECV_BUFFER_SIZE, this);
+	_sendBuffer = new SendNetworkBuffer(DEFAULT_SEND_BUFFER_SIZE, this);
 }
 
 ConnectObj::~ConnectObj()
@@ -44,6 +45,9 @@ Packet* ConnectObj::GetRecvPacket() const
 bool ConnectObj::Recv() const
 {
 	char *pBuffer = nullptr;
+	bool isRs = false;
+
+	// 从系统网络缓存中取出数据 到本地缓存
 	while (true)
 	{
 		// 总空间数据不足一个头的大小，扩容
@@ -56,30 +60,35 @@ bool ConnectObj::Recv() const
 		const int dataSize = ::recv(_socket, pBuffer, emptySize, 0);
 		if (dataSize > 0)
 		{
-			//std::cout << "recv size:" << size << std::endl;
 			_recvBuffer->FillDate(dataSize);
 		}
 		else if (dataSize == 0)
 		{
-			//std::cout << "recv size:" << dataSize << " error:" << _sock_err() << std::endl;
-			return false;
+			break;
 		}
 		else
 		{
 			const auto socketError = _sock_err();
-#ifndef WIN32
-			if (socketError == EINTR || socketError == EWOULDBLOCK || socketError == EAGAIN)
-				return true;
-
-#else
-			if (socketError == WSAEINTR || socketError == WSAEWOULDBLOCK)
-				return true;
-#endif
-			
-			//std::cout << "recv size:" << dataSize << " error:" << socketError << std::endl;
-			return false;
+			if (socketError == EINTR 
+				|| socketError == EWOULDBLOCK
+				|| socketError == EAGAIN)
+				isRs = true;
+			break;
 		}
 	}
+
+	if(isRs)
+	{
+		// 从本地缓存中取出数据并转成packet
+		while(true)
+		{
+			const auto pPacket = _recvBuffer->GetPacket();
+			if(pPacket == nullptr)
+				break;
+			ThreadMgr::GetInstance()->AddPacket(pPacket);
+		}
+	}
+	return isRs;
 }
 
 bool ConnectObj::HasSendData() const

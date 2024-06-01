@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
+set(CMAKE_C_COMPILER "/usr/local/bin/gcc")
+set(CMAKE_CXX_COMPILER "/usr/local/bin/g++")
 
 if (CMAKE_BUILD_TYPE STREQUAL Release) 
 	set(MyProjectName login)
@@ -25,6 +27,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../../../bin")
 set(CMAKE_CXX_FLAGS "-Wall -std=c++14 -pthread -lprotobuf -DEPOLL")
 set(CMAKE_CXX_FLAGS_DEBUG "-D_DEBUG -O0 -g -ggdb")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
+
 
 link_directories(${CMAKE_BINARY_DIR}/../../../libs)
 

@@ -7,6 +7,10 @@
 #include "singleton.h"
 #include <map>
 
+
+class Packet;
+class ThreadObject;
+
 class ThreadMgr : public Singleton<ThreadMgr>
 {
 private:
@@ -20,5 +24,7 @@ public:
     bool IsGameLoop();
     void NewThread();
     void AddObjToThread(ThreadObject* obj);
+
+    void AddPacket(Packet* pPacket);
     void Dispose();
 };

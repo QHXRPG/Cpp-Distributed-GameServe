@@ -1,5 +1,6 @@
 #include "thread.h"
 #include "global.h"
+#include "packet.h"
 
 #include <iterator>
 
@@ -52,6 +53,20 @@ void Thread::Dispose( )
     }
 
     _objlist.clear();
+}
+
+// 将ThreadMgr传来的 Packet 广播给线程下所有的 Actor
+void Thread::AddPacket(Packet *pPacket)
+{
+	std::lock_guard<std::mutex> guard(_thread_lock);
+	for(auto iter = _objlist.begin(); iter!=_objlist.end(); ++iter)
+	{
+		ThreadObject* pObj = *iter;
+		if(pObj->IsRegisteredMsg(pPacket->GetMsgId()))
+		{
+			pObj->AddPacket(pPacket);
+		}
+	}
 }
 
 // 更新该线程当中的对象

@@ -1,9 +1,10 @@
 #pragma once
 
 #include "disposable.h"
+#include "message_list.h"
 
 // 每个线程包裹类都是一个Actor
-class ThreadObject : public IDisposable
+class ThreadObject : public IDisposable, public MessageList
 {
 public:
     virtual ~ThreadObject () {}
@@ -18,6 +19,8 @@ public:
     virtual void Update() = 0;
 
     bool IsActive() const;
+
+    virtual void Dispose() override;
 
 protected:
     bool _active {true};

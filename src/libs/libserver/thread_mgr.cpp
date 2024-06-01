@@ -78,6 +78,17 @@ void ThreadMgr::AddObjToThread(ThreadObject *obj)
     
 }
 
+// 向自己管理下的所有线程发送从connection对象发送来的Packet数据
+void ThreadMgr::AddPacket(Packet *pPacket)
+{
+    std::lock_guard<std::mutex> guard(_thread_lock);
+    for(auto iter = _threads.begin(); iter!=_threads.end(); ++iter)
+    {
+        Thread* pThread = iter->second;
+        pThread->AddPacket(pPacket);
+    }
+}
+
 void ThreadMgr::Dispose()
 {
     auto iter = _threads.begin();

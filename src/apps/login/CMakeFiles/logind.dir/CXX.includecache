@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/qhx/reactor/src/libs/libserver/disposable.h
+
+/home/qhx/reactor/src/libs/libserver/message_list.h
+mutex
+-
+map
+-
+list
+-
+functional
+-
+
+/home/qhx/reactor/src/libs/libserver/thread_obj.cpp
+thread_obj.h
+/home/qhx/reactor/src/libs/libserver/thread_obj.h
+
+/home/qhx/reactor/src/libs/libserver/thread_obj.h
+disposable.h
+/home/qhx/reactor/src/libs/libserver/disposable.h
+message_list.h
+/home/qhx/reactor/src/libs/libserver/message_list.h
+

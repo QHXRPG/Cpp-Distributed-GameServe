@@ -2,26 +2,16 @@
 #include <iostream>
 #include <cstring>
 
-Packet::Packet()
+Packet::Packet(const int msgId, SOCKET socket)
 {
-	_msgId = 0;
-	CleanBuffer();
+    _socket = socket;
+    _msgId = msgId;
+    CleanBuffer();
 
-	_bufferSize = DEFAULT_PACKET_BUFFER_SIZE;
-	_beginIndex = 0;
-	_endIndex = 0;
-	_buffer = new char[_bufferSize];
-}
-
-Packet::Packet(const int msgId)
-{
-	_msgId = msgId;
-	CleanBuffer();
-
-	_bufferSize = DEFAULT_PACKET_BUFFER_SIZE;
-	_beginIndex = 0;
-	_endIndex = 0;
-	_buffer = new char[_bufferSize];
+    _bufferSize = DEFAULT_PACKET_BUFFER_SIZE;
+    _beginIndex = 0;
+    _endIndex = 0;
+    _buffer = new char[_bufferSize];
 }
 
 Packet::~Packet()
@@ -80,4 +70,9 @@ void Packet::FillData(const unsigned int size)
 void Packet::ReAllocBuffer()
 {
 	Buffer::ReAllocBuffer(_endIndex - _beginIndex);
+}
+
+SOCKET Packet::GetSocket() const
+{
+    return _socket;
 }
