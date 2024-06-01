@@ -7,17 +7,11 @@
 #include "singleton.h"
 #include <map>
 
-
 class Packet;
 class ThreadObject;
 
-class ThreadMgr : public Singleton<ThreadMgr>
+class ThreadMgr :public Singleton<ThreadMgr>
 {
-private:
-    uint64 _lastThraedSn {0};  // 实现线程对象均分，实现线程负载均衡
-    std::mutex _thread_lock;
-    std::map<uint64, Thread*> _threads; //线程池
-
 public:
     ThreadMgr();
     void StartAllThread();
@@ -25,6 +19,15 @@ public:
     void NewThread();
     void AddObjToThread(ThreadObject* obj);
 
+    // message
     void AddPacket(Packet* pPacket);
+
     void Dispose();
+
+private:
+    uint64 _lastThreadSn{ 0 }; // 实现线程对象均分
+
+    std::mutex _thread_lock;
+    std::map<uint64, Thread*> _threads;
 };
+

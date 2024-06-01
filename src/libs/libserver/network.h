@@ -1,9 +1,9 @@
 #pragma once
 
 #include <map>
-
 #include "common.h"
 #include "thread_obj.h"
+#include "socket_object.h"
 
 #if ENGINE_PLATFORM != PLATFORM_WIN32
 #include <errno.h>
@@ -32,11 +32,6 @@
 
 #else
 
-#define FD_SETSIZE      1024
-
-#include <Ws2tcpip.h>
-#include <windows.h>
-
 #define _sock_init( )	{ WSADATA wsaData; WSAStartup( MAKEWORD(2, 2), &wsaData ); }
 #define _sock_nonblock( sockfd )	{ unsigned long param = 1; ioctlsocket(sockfd, FIONBIO, (unsigned long *)&param); }
 #define _sock_exit( )	{ WSACleanup(); }
@@ -48,11 +43,11 @@
 
 class ConnectObj;
 
-class Network : public ThreadObject
+class Network : public ThreadObject, public ISocketObject
 {
 public:
 	void Dispose() override;
-	SOCKET GetSocket() const { return _masterSocket; }
+	SOCKET GetSocket() override { return _masterSocket; }
 
 protected:
 

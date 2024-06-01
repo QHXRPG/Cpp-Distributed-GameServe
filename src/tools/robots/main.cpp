@@ -4,5 +4,6 @@
 
 int main(int argc, char *argv[])
 {
+	std::cout << "asdas"<<std::endl;
 	return MainTemplate<RobotsApp>();
 }

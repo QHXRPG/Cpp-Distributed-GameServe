@@ -8,26 +8,26 @@
 
 class Packet;
 
-class Thread : public SnObject, IDisposable
-{
-
+class Thread : public SnObject, IDisposable {
 public:
-	Thread();
-	void AddThreadObj(ThreadObject* _obj);
-	void Start();
-	void Stop();
-	void Update();
-	bool IsRun() const;
-	void Dispose() override;
-	void AddPacket(Packet *pPacket);
+    Thread( );
+    void AddThreadObj( ThreadObject* _obj );
+
+    void Start( );
+    void Stop( );
+    void Update( );
+    bool IsRun( ) const;
+    void Dispose( ) override;
+    
+    void AddPacket(Packet* pPacket);
 
 private:
-	// 本线程的所有对象
-	std::list<ThreadObject*> _objlist;
-	std::list<ThreadObject*> _tmpObjs;
-	std::mutex _thread_lock;
-	bool _isRun;
+    // 本线程的所有对象    
+    std::list<ThreadObject*> _objlist;
+    std::list<ThreadObject*> _tmpObjs;
+    std::mutex _thread_lock;
 
-	
-	std::thread _thread;
+    bool _isRun;
+    std::thread _thread;
 };
+

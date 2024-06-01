@@ -3,7 +3,6 @@
 #include <limits>
 #include "protobuf/msg.pb.h"
 #include "protobuf/proto_id.pb.h"
-
 #define PLATFORM_WIN32			0
 #define PLATFORM_UNIX			1
 
@@ -23,12 +22,17 @@ typedef uint64_t	uint64;
 typedef uint32_t	uint32;
 
 #else
+
+#define FD_SETSIZE      1024
+
+#include <Ws2tcpip.h>
+#include <windows.h>
+
 typedef unsigned __int64	uint64;
 typedef unsigned __int32	uint32;
 
 #endif 
 
-// 用二进制表示各种服务（登录服务、地图服务、game服务等）
 enum APP_TYPE
 {
 	// APP_Global 和 APP_None 值相同， APP_Global 只用于读取配置
@@ -48,6 +52,7 @@ enum APP_TYPE
 
 	APP_ALL = APP_DB_MGR | APP_GAME_MGR | APP_SPACE_MGR | APP_LOGIN | APP_GAME | APP_SPACE,
 };
+
 
 #define BindFunP4(_self, _f) std::bind ( _f, _self, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4 )
 #define BindFunP3(_self, _f) std::bind ( _f, _self, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3 )

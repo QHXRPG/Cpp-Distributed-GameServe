@@ -1,0 +1,3 @@
+/home/qhx/reactor/src/apps/login/CMakeFiles/rebuild_cache.dir
+/home/qhx/reactor/src/apps/login/CMakeFiles/edit_cache.dir
+/home/qhx/reactor/src/apps/login/CMakeFiles/logind.dir

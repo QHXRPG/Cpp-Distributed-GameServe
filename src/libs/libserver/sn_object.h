@@ -3,9 +3,7 @@
 #include "common.h"
 #include "global.h"
 
-// 给每个线程分配一个唯一标识符
-class SnObject 
-{
+class SnObject {
 public:
     virtual ~SnObject() {}
 

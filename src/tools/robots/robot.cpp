@@ -27,6 +27,7 @@ void Robot::Update()
         msg.set_msg("robot msg");
 
         auto pPacket = new Packet((int)Proto::MsgId::MI_TestMsg, _masterSocket);
+        std::cout << pPacket<<std::endl;
         pPacket->SerializeToBuffer(msg);
         SendPacket(pPacket);
         _isSendMsg = true;

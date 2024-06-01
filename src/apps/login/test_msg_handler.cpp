@@ -11,7 +11,7 @@ bool TestMsgHandler::Init()
 
 void TestMsgHandler::RegisterMsgFunction()
 {
-    RegisterFunction(Proto::MsgId::MI_TestMsg, BindFunP1(this, &TestMsgHandler::HandleMsg));
+    RegisterFunction((int)Proto::MsgId::MI_TestMsg, BindFunP1(this, &TestMsgHandler::HandleMsg));
 }
 
 void TestMsgHandler::Update()
