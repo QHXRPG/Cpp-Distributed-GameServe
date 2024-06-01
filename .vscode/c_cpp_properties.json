@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}",
-                "${workspaceFolder}/src/libs"
+                "${workspaceFolder}/src/libs",
+                "/home/qhx/reactor/src/tools/robots"
             ],
             "defines": [],
             "compilerPath": "/usr/local/bin/gcc",

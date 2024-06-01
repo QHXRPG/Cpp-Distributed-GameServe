@@ -1,10 +1,11 @@
 #pragma once
 
-#include "disposable.h"
-
 #include <map>
 
-#ifndef WIN32 
+#include "common.h"
+#include "thread_obj.h"
+
+#if ENGINE_PLATFORM != PLATFORM_WIN32
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -17,9 +18,6 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/tcp.h>
-
-#define SOCKET int
-#define INVALID_SOCKET -1
 
 #ifdef EPOLL
 #include <sys/epoll.h>
@@ -50,7 +48,7 @@
 
 class ConnectObj;
 
-class Network : public IDisposable
+class Network : public ThreadObject
 {
 public:
 	void Dispose() override;
@@ -79,8 +77,8 @@ protected:
 #ifdef EPOLL
 #define MAX_CLIENT  5120
 #define MAX_EVENT   5120
-	struct epoll_event _events[MAX_EVENT]; // 设置事件数组
-	int _epfd;         // 生成的Epoll文件描述符
+	struct epoll_event _events[MAX_EVENT];
+	int _epfd;
 	int _mainSocketEventIndex{ -1 };
 #else
 	fd_set readfds, writefds, exceptfds;

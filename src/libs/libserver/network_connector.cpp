@@ -5,6 +5,15 @@
 #include "network_connector.h"
 #include "packet.h"
 
+
+bool NetworkConnector::Init( ) {
+	return true;
+}
+
+void NetworkConnector::RegisterMsgFunction( ) { 
+
+}
+
 bool NetworkConnector::IsConnected() const
 {
 	return _connects.size() > 0;
@@ -143,7 +152,7 @@ void NetworkConnector::Update()
 
 bool NetworkConnector::HasRecvData()
 {
-	int size = _connects.size();
+	auto size = _connects.size();
 	if (size <= 0)
 		return false;
 

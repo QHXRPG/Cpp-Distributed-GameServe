@@ -7,8 +7,11 @@ class Packet;
 class NetworkConnector : public Network
 {
 public:
+	bool Init( ) override;
+	void RegisterMsgFunction( ) override;
+	
 	virtual bool Connect(std::string ip, int port);
-	void Update();
+	void Update( ) override;
 
 	bool HasRecvData();
 	Packet* GetRecvPacket();
@@ -16,11 +19,11 @@ public:
 
 	bool IsConnected() const;
 
-private:
+private:	
 	ConnectObj* GetConnectObj();
 	void TryCreateConnectObj();
 
-private:
+protected:
 	std::string _ip{ "" };
 	int _port{ 0 };
 };

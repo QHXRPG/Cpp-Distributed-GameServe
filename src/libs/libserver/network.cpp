@@ -29,7 +29,6 @@ void Network::Dispose()
 #define SetsockOptType const char *
 #endif
 
-// 设置socket结构
 void Network::SetSocketOpt(SOCKET socket)
 {
 	// 1.端口关闭后马上重新启用
@@ -91,7 +90,7 @@ void Network::CreateConnectObj(SOCKET socket)
 	_connects.insert(std::make_pair(socket, pConnectObj));
 
 #ifdef EPOLL
-	AddEvent(_epfd, socket, EPOLLIN | EPOLLRDHUP | EPOLLET);
+	AddEvent(_epfd, socket, EPOLLIN | EPOLLRDHUP);
 #endif
 }
 
@@ -122,11 +121,8 @@ void Network::DeleteEvent(int epollfd, int fd)
 
 void Network::InitEpoll()
 {
-	// 创建一个 epoll 实例，最大监听的客户端数量为 MAX_CLIENT
 	_epfd = epoll_create(MAX_CLIENT);
-
-	// 绑定主监听套接字，同时监听可读事件、可写事件和对端关闭连接事件
-	AddEvent(_epfd, _masterSocket, EPOLLIN | EPOLLOUT | EPOLLRDHUP | EPOLLET);
+	AddEvent(_epfd, _masterSocket, EPOLLIN | EPOLLOUT | EPOLLRDHUP);
 }
 
 void Network::Epoll()
@@ -137,7 +133,7 @@ void Network::Epoll()
 		ConnectObj* pObj = iter->second;
 		if (pObj->HasSendData())
 		{
-			ModifyEvent(_epfd, iter->first, EPOLLIN | EPOLLOUT | EPOLLRDHUP | EPOLLET);
+			ModifyEvent(_epfd, iter->first, EPOLLIN | EPOLLOUT | EPOLLRDHUP);
 		}
 	}
 
@@ -157,10 +153,7 @@ void Network::Epoll()
 			continue;
 		}
 
-		// 如果文件描述符：在对端被断开、发生错误、被挂断
-		if (_events[index].events & EPOLLRDHUP 
-			|| _events[index].events & EPOLLERR 
-			|| _events[index].events & EPOLLHUP)
+		if (_events[index].events & EPOLLRDHUP || _events[index].events & EPOLLERR || _events[index].events & EPOLLHUP)
 		{
 			iter->second->Dispose();
 			delete iter->second;
@@ -169,7 +162,6 @@ void Network::Epoll()
 			continue;
 		}
 
-		// 有读事件
 		if (_events[index].events & EPOLLIN)
 		{
 			if (!iter->second->Recv())
@@ -182,7 +174,6 @@ void Network::Epoll()
 			}
 		}
 
-		// 有写事件
 		if (_events[index].events & EPOLLOUT)
 		{
 			iter->second->Send();
