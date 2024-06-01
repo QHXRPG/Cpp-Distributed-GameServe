@@ -1,3 +1,0 @@
-/home/qhx/reactor/src/libs/libserver/CMakeFiles/rebuild_cache.dir
-/home/qhx/reactor/src/libs/libserver/CMakeFiles/edit_cache.dir
-/home/qhx/reactor/src/libs/libserver/CMakeFiles/serverd.dir
