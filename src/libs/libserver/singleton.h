@@ -16,7 +16,8 @@ public:
 
     static T* GetInstance( ) {
         if ( m_pInstance == nullptr )
-            throw std::logic_error( "the instance is not init, please initialize the instance first" );
+            throw std::logic_error( "the instance is not init, \
+                                    please initialize the instance first" );
 
         return m_pInstance;
     }

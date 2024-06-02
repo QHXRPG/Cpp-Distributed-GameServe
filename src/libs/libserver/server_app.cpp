@@ -11,7 +11,7 @@ ServerApp::ServerApp(APP_TYPE  appType)
     _pThreadMgr = ThreadMgr::GetInstance();
     UpdateTime();
 
-    // 创建线程
+    // 为每个服务创建线程
     for (int i = 0; i < 3; i++)
     {
         _pThreadMgr->NewThread();
@@ -44,6 +44,7 @@ void ServerApp::Run() const
     }
 }
 
+// 更新程序的全局时间
 void ServerApp::UpdateTime() const
 {
     auto timeValue = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::system_clock::now());

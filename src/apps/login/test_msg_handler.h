@@ -10,6 +10,5 @@ public:
 
 private:
     void HandleMsg(Packet* pPacket);
-
 };
 

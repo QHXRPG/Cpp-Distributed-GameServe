@@ -9,13 +9,16 @@ bool TestMsgHandler::Init()
     return true;
 }
 
+// 继承自ThreadObject类的RegisterMsgFunction方法
 void TestMsgHandler::RegisterMsgFunction()
 {
+    // 绑定一个由MI_TestMsg信号触发的函数HandleMsg()
     RegisterFunction((int)Proto::MsgId::MI_TestMsg, BindFunP1(this, &TestMsgHandler::HandleMsg));
 }
 
 void TestMsgHandler::Update()
 {
+    
 }
 
 void TestMsgHandler::HandleMsg(Packet* pPacket)

@@ -33,6 +33,7 @@ typedef unsigned __int32	uint32;
 
 #endif 
 
+// 枚举
 enum APP_TYPE
 {
 	// APP_Global 和 APP_None 值相同， APP_Global 只用于读取配置
