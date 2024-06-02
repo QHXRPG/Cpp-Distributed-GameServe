@@ -2,6 +2,7 @@
 
 ## 项目简介
 对之前大型多人在线游戏的服务器框架进行改进与升级。
+![image](https://github.com/QHXRPG/Cpp-Distributed-GameServe/blob/main/%E4%B8%BB%E4%BB%8E%E6%9C%8D%E5%8A%A1.png)
 ### 环境
 1. Centos 7;
 2. gcc 9.1.0;
@@ -17,7 +18,7 @@
 7. 利用Nginx处理账号的登录与验证；
 8. 使用相关分布式技术实现分布式地图跳转等功能；
 9. 实现用户断线、超时重连等功能。
-
+![image](https://github.com/QHXRPG/Cpp-Distributed-GameServe/blob/main/%E6%B6%88%E6%81%AF%E4%BC%A0%E8%BE%93.png)
 ## 版本历史
 - v1.0:
 - v1.1: 
