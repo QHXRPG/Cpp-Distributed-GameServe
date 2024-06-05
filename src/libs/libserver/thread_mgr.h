@@ -9,25 +9,35 @@
 
 class Packet;
 class ThreadObject;
+class Network;
 
-class ThreadMgr :public Singleton<ThreadMgr>
+class ThreadMgr :public Singleton<ThreadMgr>, public ThreadObjectList
 {
 public:
     ThreadMgr();
     void StartAllThread();
     bool IsGameLoop();
     void NewThread();
-    void AddObjToThread(ThreadObject* obj);
+    bool AddObjToThread(ThreadObject* obj);
+    void AddNetworkToThread(APP_TYPE appType, Network* pNetwork);
 
     // message
-    void AddPacket(Packet* pPacket);
+    void DispatchPacket(Packet* pPacket);
+    void SendPacket(Packet* pPacket);
 
-    void Dispose();
+    void Dispose() override;
+
+private:
+    Network* GetNetwork(APP_TYPE appType);
 
 private:
     uint64 _lastThreadSn{ 0 }; // 实现线程对象均分
 
     std::mutex _thread_lock;
     std::map<uint64, Thread*> _threads;
+
+    // NetworkLocator
+    std::mutex _locator_lock;
+    std::map<APP_TYPE, Network*> _networkLocator;
 };
 

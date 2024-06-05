@@ -66,6 +66,7 @@
         "csignal": "cpp",
         "unordered_set": "cpp",
         "cinttypes": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "iomanip": "cpp"
     }
 }

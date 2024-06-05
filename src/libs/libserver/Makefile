@@ -197,6 +197,33 @@ connect_obj.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/connect_obj.cpp.s
 .PHONY : connect_obj.cpp.s
 
+console.o: console.cpp.o
+
+.PHONY : console.o
+
+# target to build an object file
+console.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console.cpp.o
+.PHONY : console.cpp.o
+
+console.i: console.cpp.i
+
+.PHONY : console.i
+
+# target to preprocess a source file
+console.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console.cpp.i
+.PHONY : console.cpp.i
+
+console.s: console.cpp.s
+
+.PHONY : console.s
+
+# target to generate assembly for a file
+console.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console.cpp.s
+.PHONY : console.cpp.s
+
 global.o: global.cpp.o
 
 .PHONY : global.o
@@ -386,6 +413,33 @@ packet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/packet.cpp.s
 .PHONY : packet.cpp.s
 
+robot_test.o: robot_test.cpp.o
+
+.PHONY : robot_test.o
+
+# target to build an object file
+robot_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/robot_test.cpp.o
+.PHONY : robot_test.cpp.o
+
+robot_test.i: robot_test.cpp.i
+
+.PHONY : robot_test.i
+
+# target to preprocess a source file
+robot_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/robot_test.cpp.i
+.PHONY : robot_test.cpp.i
+
+robot_test.s: robot_test.cpp.s
+
+.PHONY : robot_test.s
+
+# target to generate assembly for a file
+robot_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/robot_test.cpp.s
+.PHONY : robot_test.cpp.s
+
 server_app.o: server_app.cpp.o
 
 .PHONY : server_app.o
@@ -509,6 +563,9 @@ help:
 	@echo "... connect_obj.o"
 	@echo "... connect_obj.i"
 	@echo "... connect_obj.s"
+	@echo "... console.o"
+	@echo "... console.i"
+	@echo "... console.s"
 	@echo "... global.o"
 	@echo "... global.i"
 	@echo "... global.s"
@@ -530,6 +587,9 @@ help:
 	@echo "... packet.o"
 	@echo "... packet.i"
 	@echo "... packet.s"
+	@echo "... robot_test.o"
+	@echo "... robot_test.i"
+	@echo "... robot_test.s"
 	@echo "... server_app.o"
 	@echo "... server_app.i"
 	@echo "... server_app.s"

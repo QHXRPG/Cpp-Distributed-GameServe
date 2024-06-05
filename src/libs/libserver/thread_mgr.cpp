@@ -1,8 +1,9 @@
 #include "thread_mgr.h"
 #include "common.h"
-#include "packet.h"
-
 #include <iostream>
+
+#include "network.h"
+#include "network_listen.h"
 
 ThreadMgr::ThreadMgr()
 {
@@ -37,16 +38,9 @@ void ThreadMgr::NewThread()
 }
 
 // 平均加入各线程中
-void ThreadMgr::AddObjToThread(ThreadObject* obj)
+bool ThreadMgr::AddObjToThread(ThreadObject* obj)
 {
     std::lock_guard<std::mutex> guard(_thread_lock);
-
-    // 在加入之前初始化一下
-    if (!obj->Init())
-    {
-        std::cout << "AddThreadObj Failed. ThreadObject init failed." << std::endl;
-        return;
-    }
 
     // 找到上一次的线程	
     auto iter = _threads.begin();
@@ -59,7 +53,7 @@ void ThreadMgr::AddObjToThread(ThreadObject* obj)
     {
         // 没有找到，可能没有配线程
         std::cout << "AddThreadObj Failed. no thead." << std::endl;
-        return;
+        return false;
     }
 
     // 取到它的下一个活动线程
@@ -71,9 +65,31 @@ void ThreadMgr::AddObjToThread(ThreadObject* obj)
     } while (!(iter->second->IsRun()));
 
     auto pThread = iter->second;
-    pThread->AddThreadObj(obj);
+    pThread->AddObject(obj);
     _lastThreadSn = pThread->GetSN();
     //std::cout << "add obj to thread.id:" << pThread->GetSN() << std::endl;
+
+    return true;
+}
+
+void ThreadMgr::AddNetworkToThread(APP_TYPE appType, Network* pNetwork)
+{
+    if (!AddObjToThread(pNetwork))
+        return;
+
+    std::lock_guard<std::mutex> guard(_locator_lock);
+    _networkLocator[appType] = pNetwork;
+}
+
+Network* ThreadMgr::GetNetwork(APP_TYPE appType)
+{
+    std::lock_guard<std::mutex> guard(_locator_lock);
+
+    auto iter = _networkLocator.find(appType);
+    if (iter == _networkLocator.end())
+        return nullptr;
+
+    return iter->second;
 }
 
 void ThreadMgr::Dispose()
@@ -86,14 +102,26 @@ void ThreadMgr::Dispose()
         delete pThread;
         ++iter;
     }
+
+    ThreadObjectList::Dispose();
 }
 
-void ThreadMgr::AddPacket(Packet* pPacket)
+void ThreadMgr::DispatchPacket(Packet* pPacket)
 {
+    // 主线程
+    AddPacketToList(pPacket);
+
+    // 子线程
     std::lock_guard<std::mutex> guard(_thread_lock);
     for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
     {
         Thread* pThread = iter->second;
-        pThread->AddPacket(pPacket);
+        pThread->AddPacketToList(pPacket);
     }
+}
+
+void ThreadMgr::SendPacket(Packet* pPacket)
+{
+    NetworkListen* pLocator = static_cast<NetworkListen*>(GetNetwork(APP_Listen));
+    pLocator->SendPacket(pPacket);
 }

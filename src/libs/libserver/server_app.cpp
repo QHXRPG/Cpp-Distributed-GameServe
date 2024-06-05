@@ -11,7 +11,7 @@ ServerApp::ServerApp(APP_TYPE  appType)
     _pThreadMgr = ThreadMgr::GetInstance();
     UpdateTime();
 
-    // 为每个服务创建线程
+    // 创建线程
     for (int i = 0; i < 3; i++)
     {
         _pThreadMgr->NewThread();
@@ -38,13 +38,12 @@ void ServerApp::Run() const
     bool isRun = true;
     while (isRun)
     {
-        UpdateTime();
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        UpdateTime();        
+        _pThreadMgr->Update();
         isRun = _pThreadMgr->IsGameLoop();
     }
 }
 
-// 更新程序的全局时间
 void ServerApp::UpdateTime() const
 {
     auto timeValue = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::system_clock::now());
@@ -62,7 +61,7 @@ void ServerApp::UpdateTime() const
 #endif
 }
 
-bool ServerApp::AddListenerToThread(const std::string ip, const int port) const
+bool ServerApp::AddListenerToThread(std::string ip, int port) const
 {
     NetworkListen* pListener = new NetworkListen();
     if (!pListener->Listen(ip, port))
@@ -71,6 +70,6 @@ bool ServerApp::AddListenerToThread(const std::string ip, const int port) const
         return false;
     }
 
-    _pThreadMgr->AddObjToThread(pListener);
+    _pThreadMgr->AddNetworkToThread(APP_Listen, pListener);
     return true;
 }

@@ -21,8 +21,7 @@ struct PacketHead {
 
 class Packet : public Buffer {
 public:
-    //Packet();
-    Packet(const int msgId, SOCKET socket);
+    Packet(const Proto::MsgId msgId, SOCKET socket);
     ~Packet();
 
     template<class ProtoClass>
@@ -57,6 +56,6 @@ public:
     SOCKET GetSocket() const;
 
 private:
-    int _msgId;
+    Proto::MsgId _msgId;
     SOCKET _socket;
 };

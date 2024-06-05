@@ -1,8 +1,9 @@
 #pragma once
 
-#include <limits>
-#include "protobuf/msg.pb.h"
+#include <climits>
 #include "protobuf/proto_id.pb.h"
+#include "protobuf/msg.pb.h"
+
 #define PLATFORM_WIN32			0
 #define PLATFORM_UNIX			1
 
@@ -10,6 +11,16 @@
 #  define ENGINE_PLATFORM PLATFORM_WIN32
 #else
 #  define ENGINE_PLATFORM PLATFORM_UNIX
+#endif
+
+#if ENGINE_PLATFORM != PLATFORM_WIN32
+#include <string.h>
+#include <stdint.h>
+#define engine_stricmp strcasecmp
+#define engine_access access
+#else
+#define engine_stricmp _stricmp
+#define engine_access _access
 #endif
 
 #if ENGINE_PLATFORM != PLATFORM_WIN32
@@ -26,32 +37,28 @@ typedef uint32_t	uint32;
 #define FD_SETSIZE      1024
 
 #include <Ws2tcpip.h>
-#include <windows.h>
 
 typedef unsigned __int64	uint64;
 typedef unsigned __int32	uint32;
 
 #endif 
 
-// 枚举
 enum APP_TYPE
 {
-	// APP_Global 和 APP_None 值相同， APP_Global 只用于读取配置
-	APP_None = 0,
-	APP_Global = 0,
+    APP_Listen = 0,
 
-	APP_DB_MGR = 1,
-	APP_GAME_MGR = 1 << 1,
-	APP_SPACE_MGR = 1 << 2,
+    APP_DB_MGR = 1,
+    APP_GAME_MGR = 1 << 1,
+    APP_SPACE_MGR = 1 << 2,
 
-	APP_LOGIN = 1 << 3,
-	APP_GAME = 1 << 4,
-	APP_SPACE = 1 << 5,
-	APP_ROBOT = 1 << 6,
+    APP_LOGIN = 1 << 3,
+    APP_GAME = 1 << 4,
+    APP_SPACE = 1 << 5,
+    APP_ROBOT = 1 << 6,
 
-	APP_APPMGR = APP_GAME_MGR | APP_SPACE_MGR,
+    APP_APPMGR = APP_GAME_MGR | APP_SPACE_MGR,
 
-	APP_ALL = APP_DB_MGR | APP_GAME_MGR | APP_SPACE_MGR | APP_LOGIN | APP_GAME | APP_SPACE,
+    APP_ALL = APP_DB_MGR | APP_GAME_MGR | APP_SPACE_MGR | APP_LOGIN | APP_GAME | APP_SPACE,
 };
 
 

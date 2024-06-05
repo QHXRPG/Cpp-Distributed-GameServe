@@ -143,6 +143,33 @@ logind/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/build
 .PHONY : logind/fast
 
+account.o: account.cpp.o
+
+.PHONY : account.o
+
+# target to build an object file
+account.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/account.cpp.o
+.PHONY : account.cpp.o
+
+account.i: account.cpp.i
+
+.PHONY : account.i
+
+# target to preprocess a source file
+account.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/account.cpp.i
+.PHONY : account.cpp.i
+
+account.s: account.cpp.s
+
+.PHONY : account.s
+
+# target to generate assembly for a file
+account.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/account.cpp.s
+.PHONY : account.cpp.s
+
 home/qhx/reactor/src/libs/libserver/base_buffer.o: home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o
 
 .PHONY : home/qhx/reactor/src/libs/libserver/base_buffer.o
@@ -196,6 +223,33 @@ home/qhx/reactor/src/libs/libserver/connect_obj.s: home/qhx/reactor/src/libs/lib
 home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s
 .PHONY : home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s
+
+home/qhx/reactor/src/libs/libserver/console.o: home/qhx/reactor/src/libs/libserver/console.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/console.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/console.cpp.o
+
+home/qhx/reactor/src/libs/libserver/console.i: home/qhx/reactor/src/libs/libserver/console.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/console.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/console.cpp.i
+
+home/qhx/reactor/src/libs/libserver/console.s: home/qhx/reactor/src/libs/libserver/console.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/console.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/console.cpp.s
 
 home/qhx/reactor/src/libs/libserver/global.o: home/qhx/reactor/src/libs/libserver/global.cpp.o
 
@@ -440,6 +494,33 @@ home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.s
 .PHONY : home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.s
 
+home/qhx/reactor/src/libs/libserver/robot_test.o: home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/robot_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
+
+home/qhx/reactor/src/libs/libserver/robot_test.i: home/qhx/reactor/src/libs/libserver/robot_test.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/robot_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.cpp.i
+
+home/qhx/reactor/src/libs/libserver/robot_test.s: home/qhx/reactor/src/libs/libserver/robot_test.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/robot_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.cpp.s
+
 home/qhx/reactor/src/libs/libserver/server_app.o: home/qhx/reactor/src/libs/libserver/server_app.cpp.o
 
 .PHONY : home/qhx/reactor/src/libs/libserver/server_app.o
@@ -548,6 +629,60 @@ home/qhx/reactor/src/libs/libserver/thread_obj.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.s
 .PHONY : home/qhx/reactor/src/libs/libserver/thread_obj.cpp.s
 
+http_request.o: http_request.cpp.o
+
+.PHONY : http_request.o
+
+# target to build an object file
+http_request.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/http_request.cpp.o
+.PHONY : http_request.cpp.o
+
+http_request.i: http_request.cpp.i
+
+.PHONY : http_request.i
+
+# target to preprocess a source file
+http_request.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/http_request.cpp.i
+.PHONY : http_request.cpp.i
+
+http_request.s: http_request.cpp.s
+
+.PHONY : http_request.s
+
+# target to generate assembly for a file
+http_request.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/http_request.cpp.s
+.PHONY : http_request.cpp.s
+
+http_request_account.o: http_request_account.cpp.o
+
+.PHONY : http_request_account.o
+
+# target to build an object file
+http_request_account.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/http_request_account.cpp.o
+.PHONY : http_request_account.cpp.o
+
+http_request_account.i: http_request_account.cpp.i
+
+.PHONY : http_request_account.i
+
+# target to preprocess a source file
+http_request_account.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/http_request_account.cpp.i
+.PHONY : http_request_account.cpp.i
+
+http_request_account.s: http_request_account.cpp.s
+
+.PHONY : http_request_account.s
+
+# target to generate assembly for a file
+http_request_account.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/http_request_account.cpp.s
+.PHONY : http_request_account.cpp.s
+
 login_app.o: login_app.cpp.o
 
 .PHONY : login_app.o
@@ -574,6 +709,60 @@ login_app.s: login_app.cpp.s
 login_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/login_app.cpp.s
 .PHONY : login_app.cpp.s
+
+login_obj.o: login_obj.cpp.o
+
+.PHONY : login_obj.o
+
+# target to build an object file
+login_obj.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/login_obj.cpp.o
+.PHONY : login_obj.cpp.o
+
+login_obj.i: login_obj.cpp.i
+
+.PHONY : login_obj.i
+
+# target to preprocess a source file
+login_obj.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/login_obj.cpp.i
+.PHONY : login_obj.cpp.i
+
+login_obj.s: login_obj.cpp.s
+
+.PHONY : login_obj.s
+
+# target to generate assembly for a file
+login_obj.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/login_obj.cpp.s
+.PHONY : login_obj.cpp.s
+
+login_obj_mgr.o: login_obj_mgr.cpp.o
+
+.PHONY : login_obj_mgr.o
+
+# target to build an object file
+login_obj_mgr.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/login_obj_mgr.cpp.o
+.PHONY : login_obj_mgr.cpp.o
+
+login_obj_mgr.i: login_obj_mgr.cpp.i
+
+.PHONY : login_obj_mgr.i
+
+# target to preprocess a source file
+login_obj_mgr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/login_obj_mgr.cpp.i
+.PHONY : login_obj_mgr.cpp.i
+
+login_obj_mgr.s: login_obj_mgr.cpp.s
+
+.PHONY : login_obj_mgr.s
+
+# target to generate assembly for a file
+login_obj_mgr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/login_obj_mgr.cpp.s
+.PHONY : login_obj_mgr.cpp.s
 
 main.o: main.cpp.o
 
@@ -602,33 +791,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-test_msg_handler.o: test_msg_handler.cpp.o
-
-.PHONY : test_msg_handler.o
-
-# target to build an object file
-test_msg_handler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/test_msg_handler.cpp.o
-.PHONY : test_msg_handler.cpp.o
-
-test_msg_handler.i: test_msg_handler.cpp.i
-
-.PHONY : test_msg_handler.i
-
-# target to preprocess a source file
-test_msg_handler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/test_msg_handler.cpp.i
-.PHONY : test_msg_handler.cpp.i
-
-test_msg_handler.s: test_msg_handler.cpp.s
-
-.PHONY : test_msg_handler.s
-
-# target to generate assembly for a file
-test_msg_handler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/test_msg_handler.cpp.s
-.PHONY : test_msg_handler.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -638,12 +800,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... logind"
+	@echo "... account.o"
+	@echo "... account.i"
+	@echo "... account.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/base_buffer.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/base_buffer.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/base_buffer.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/connect_obj.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/connect_obj.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/connect_obj.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/console.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/console.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/console.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/global.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/global.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/global.s"
@@ -671,6 +839,9 @@ help:
 	@echo "... home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/robot_test.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/robot_test.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/robot_test.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/server_app.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/server_app.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/server_app.s"
@@ -683,15 +854,24 @@ help:
 	@echo "... home/qhx/reactor/src/libs/libserver/thread_obj.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/thread_obj.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/thread_obj.s"
+	@echo "... http_request.o"
+	@echo "... http_request.i"
+	@echo "... http_request.s"
+	@echo "... http_request_account.o"
+	@echo "... http_request_account.i"
+	@echo "... http_request_account.s"
 	@echo "... login_app.o"
 	@echo "... login_app.i"
 	@echo "... login_app.s"
+	@echo "... login_obj.o"
+	@echo "... login_obj.i"
+	@echo "... login_obj.s"
+	@echo "... login_obj_mgr.o"
+	@echo "... login_obj_mgr.i"
+	@echo "... login_obj_mgr.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... test_msg_handler.o"
-	@echo "... test_msg_handler.i"
-	@echo "... test_msg_handler.s"
 .PHONY : help
 
 

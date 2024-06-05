@@ -1,5 +1,7 @@
 #include "network.h"
 #include "connect_obj.h"
+#include "packet.h"
+#include "common.h"
 
 #include <iostream>
 
@@ -19,9 +21,18 @@ void Network::Dispose()
 
     //std::cout << "network dispose. close socket:" << _socket << std::endl;
     _sock_close(_masterSocket);
-    _masterSocket = -1;
+    _masterSocket = INVALID_SOCKET;
+
+    ThreadObject::Dispose();
 }
 
+
+void Network::RegisterMsgFunction()
+{
+    auto pMsgCallBack = new MessageCallBackFunction();
+    AttachCallBackHandler(pMsgCallBack);
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkDisconnectToNet, BindFunP1(this, &Network::HandleDisconnect));
+}
 
 #ifndef WIN32
 #define SetsockOptType void *
@@ -87,14 +98,26 @@ SOCKET Network::CreateSocket()
 void Network::CreateConnectObj(SOCKET socket)
 {
     ConnectObj* pConnectObj = new ConnectObj(this, socket);
-    _connects.insert(std::make_pair(socket, pConnectObj));
+
+    if (_connects.find(socket) != _connects.end())
+    {
+        std::cout << "Network::CreateConnectObj. socket is exist. socket:" << socket << std::endl;
+    }
+
+    _connects[socket] = pConnectObj;
 
 #ifdef EPOLL
-    AddEvent(_epfd, socket, EPOLLIN | EPOLLRDHUP);
+    AddEvent(_epfd, socket, EPOLLIN | EPOLLET | EPOLLRDHUP);
 #endif
 }
 
 #ifdef EPOLL
+
+#define RemoveConnectObj(iter) \
+    iter->second->Dispose( ); \
+    DeleteEvent(_epfd, iter->first); \
+    delete iter->second; \
+    iter = _connects.erase( iter ); 
 
 void Network::AddEvent(int epollfd, int fd, int flag)
 {
@@ -131,13 +154,21 @@ void Network::Epoll()
     for (auto iter = _connects.begin(); iter != _connects.end(); ++iter)
     {
         ConnectObj* pObj = iter->second;
+
+        if (pObj->IsClose())
+        {
+            std::cout << "logical layer requires shutdown. socket:" << iter->first << std::endl;
+            RemoveConnectObj(iter);
+            continue;
+        }
+
         if (pObj->HasSendData())
         {
             ModifyEvent(_epfd, iter->first, EPOLLIN | EPOLLOUT | EPOLLRDHUP);
         }
     }
 
-    int nfds = epoll_wait(_epfd, _events, MAX_EVENT, 50);
+    const int nfds = epoll_wait(_epfd, _events, MAX_EVENT, 50);
     for (int index = 0; index < nfds; index++)
     {
         int fd = _events[index].data.fd;
@@ -155,10 +186,7 @@ void Network::Epoll()
 
         if (_events[index].events & EPOLLRDHUP || _events[index].events & EPOLLERR || _events[index].events & EPOLLHUP)
         {
-            iter->second->Dispose();
-            delete iter->second;
-            iter = _connects.erase(iter);
-            DeleteEvent(_epfd, fd);
+            RemoveConnectObj(iter);
             continue;
         }
 
@@ -166,23 +194,30 @@ void Network::Epoll()
         {
             if (!iter->second->Recv())
             {
-                iter->second->Dispose();
-                delete iter->second;
-                iter = _connects.erase(iter);
-                DeleteEvent(_epfd, fd);
+                RemoveConnectObj(iter);
                 continue;
             }
         }
 
         if (_events[index].events & EPOLLOUT)
         {
-            iter->second->Send();
+            if (!iter->second->Send())
+            {
+                RemoveConnectObj(iter);
+                continue;
+            }
+
             ModifyEvent(_epfd, iter->first, EPOLLIN | EPOLLRDHUP);
         }
     }
 
 }
 #else
+
+#define RemoveConnectObj(iter) \
+    iter->second->Dispose( ); \
+    delete iter->second; \
+    iter = _connects.erase( iter ); 
 
 void Network::Select()
 {
@@ -195,28 +230,30 @@ void Network::Select()
     FD_SET(_masterSocket, &exceptfds);
 
     SOCKET fdmax = _masterSocket;
-    ;
+
     for (auto iter = _connects.begin(); iter != _connects.end(); ++iter)
     {
+        ConnectObj* pObj = iter->second;
+        if (pObj->IsClose())
+        {
+            std::cout << "logical layer requires shutdown. socket:" << iter->first << std::endl;
+            RemoveConnectObj(iter);
+            continue;
+        }
+
         if (iter->first > fdmax)
             fdmax = iter->first;
 
         FD_SET(iter->first, &readfds);
         FD_SET(iter->first, &exceptfds);
 
-        if (iter->second->HasSendData()) {
+        if (iter->second->HasSendData())
             FD_SET(iter->first, &writefds);
-        }
-        else
-        {
-            if (_masterSocket == iter->first)
-                FD_CLR(_masterSocket, &writefds);
-        }
     }
 
     struct timeval timeout;
     timeout.tv_sec = 0;
-    timeout.tv_usec = 50 * 1000;
+    timeout.tv_usec = 50* 1000;
     const int nfds = ::select(fdmax + 1, &readfds, &writefds, &exceptfds, &timeout);
     if (nfds <= 0)
         return;
@@ -227,10 +264,7 @@ void Network::Select()
         if (FD_ISSET(iter->first, &exceptfds))
         {
             std::cout << "socket except!! socket:" << iter->first << std::endl;
-
-            iter->second->Dispose();
-            delete iter->second;
-            iter = _connects.erase(iter);
+            RemoveConnectObj(iter);
             continue;
         }
 
@@ -238,9 +272,7 @@ void Network::Select()
         {
             if (!iter->second->Recv())
             {
-                iter->second->Dispose();
-                delete iter->second;
-                iter = _connects.erase(iter);
+                RemoveConnectObj(iter);
                 continue;
             }
         }
@@ -249,9 +281,7 @@ void Network::Select()
         {
             if (!iter->second->Send())
             {
-                iter->second->Dispose();
-                delete iter->second;
-                iter = _connects.erase(iter);
+                RemoveConnectObj(iter);
                 continue;
             }
         }
@@ -261,3 +291,44 @@ void Network::Select()
 }
 
 #endif
+
+void Network::Update()
+{
+    std::list<Packet*> _tmpSendMsgList;
+    _sendMsgMutex.lock();
+    std::copy(_sendMsgList.begin(), _sendMsgList.end(), std::back_inserter(_tmpSendMsgList));
+    _sendMsgList.clear();
+    _sendMsgMutex.unlock();
+
+    for (auto pPacket : _tmpSendMsgList)
+    {
+        auto iter = _connects.find(pPacket->GetSocket());
+        if (iter == _connects.end())
+        {
+            std::cout << "UpdateSendPacket. can't find socket." << std::endl;
+            continue;
+        }
+
+        iter->second->SendPacket(pPacket);
+    }
+
+    _tmpSendMsgList.clear();
+}
+
+void Network::HandleDisconnect(Packet* pPacket)
+{
+    auto iter = _connects.find(pPacket->GetSocket());
+    if (iter == _connects.end())
+    {
+        std::cout << "dis connect failed. socket not find. socket:" << pPacket->GetSocket() << std::endl;
+        return;
+    }
+
+    iter->second->Close();
+}
+
+void Network::SendPacket(Packet* pPacket)
+{
+    std::lock_guard<std::mutex> guard(_sendMsgMutex);
+    _sendMsgList.push_back(pPacket);
+}

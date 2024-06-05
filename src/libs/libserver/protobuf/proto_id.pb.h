@@ -58,14 +58,27 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace Proto {
 
 enum MsgId : int {
-  MI_None = 0,
-  MI_TestMsg = 1,
+  None = 0,
+  MI_NetworkConnect = 1,
+  MI_NetworkListen = 2,
+  MI_NetworkDisconnect = 3,
+  MI_NetworkDisconnectEx = 4,
+  MI_NetworkDisconnectToNet = 5,
+  MI_Ping = 101,
+  C2L_AccountCheck = 1001,
+  C2L_AccountCheckRs = 1002,
+  MI_AccountQueryOnlineToRedis = 1003,
+  MI_AccountQueryOnlineToRedisRs = 1004,
+  MI_AccountCheckToHttpRs = 1005,
+  MI_RobotSyncState = 5001,
+  MI_RobotTestBegin = 5100,
+  MI_RobotTestEnd = 5101,
   MsgId_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   MsgId_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool MsgId_IsValid(int value);
-constexpr MsgId MsgId_MIN = MI_None;
-constexpr MsgId MsgId_MAX = MI_TestMsg;
+constexpr MsgId MsgId_MIN = None;
+constexpr MsgId MsgId_MAX = MI_RobotTestEnd;
 constexpr int MsgId_ARRAYSIZE = MsgId_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MsgId_descriptor();

@@ -103,9 +103,22 @@ CMakeFiles/serverd.dir/connect_obj.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/connect_obj.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/connect_obj.cpp -o CMakeFiles/serverd.dir/connect_obj.cpp.s
 
+CMakeFiles/serverd.dir/console.cpp.o: CMakeFiles/serverd.dir/flags.make
+CMakeFiles/serverd.dir/console.cpp.o: console.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/serverd.dir/console.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/console.cpp.o -c /home/qhx/reactor/src/libs/libserver/console.cpp
+
+CMakeFiles/serverd.dir/console.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/console.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/console.cpp > CMakeFiles/serverd.dir/console.cpp.i
+
+CMakeFiles/serverd.dir/console.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/console.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/console.cpp -o CMakeFiles/serverd.dir/console.cpp.s
+
 CMakeFiles/serverd.dir/global.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/global.cpp.o: global.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/serverd.dir/global.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/serverd.dir/global.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/global.cpp.o -c /home/qhx/reactor/src/libs/libserver/global.cpp
 
 CMakeFiles/serverd.dir/global.cpp.i: cmake_force
@@ -118,7 +131,7 @@ CMakeFiles/serverd.dir/global.cpp.s: cmake_force
 
 CMakeFiles/serverd.dir/message_list.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/message_list.cpp.o: message_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/serverd.dir/message_list.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/serverd.dir/message_list.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/message_list.cpp.o -c /home/qhx/reactor/src/libs/libserver/message_list.cpp
 
 CMakeFiles/serverd.dir/message_list.cpp.i: cmake_force
@@ -131,7 +144,7 @@ CMakeFiles/serverd.dir/message_list.cpp.s: cmake_force
 
 CMakeFiles/serverd.dir/network.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/network.cpp.o: network.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/serverd.dir/network.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/serverd.dir/network.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/network.cpp.o -c /home/qhx/reactor/src/libs/libserver/network.cpp
 
 CMakeFiles/serverd.dir/network.cpp.i: cmake_force
@@ -144,7 +157,7 @@ CMakeFiles/serverd.dir/network.cpp.s: cmake_force
 
 CMakeFiles/serverd.dir/network_buffer.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/network_buffer.cpp.o: network_buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/serverd.dir/network_buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/serverd.dir/network_buffer.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/network_buffer.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_buffer.cpp
 
 CMakeFiles/serverd.dir/network_buffer.cpp.i: cmake_force
@@ -157,7 +170,7 @@ CMakeFiles/serverd.dir/network_buffer.cpp.s: cmake_force
 
 CMakeFiles/serverd.dir/network_connector.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/network_connector.cpp.o: network_connector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/serverd.dir/network_connector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/serverd.dir/network_connector.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/network_connector.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_connector.cpp
 
 CMakeFiles/serverd.dir/network_connector.cpp.i: cmake_force
@@ -170,7 +183,7 @@ CMakeFiles/serverd.dir/network_connector.cpp.s: cmake_force
 
 CMakeFiles/serverd.dir/network_listen.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/network_listen.cpp.o: network_listen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/serverd.dir/network_listen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/serverd.dir/network_listen.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/network_listen.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_listen.cpp
 
 CMakeFiles/serverd.dir/network_listen.cpp.i: cmake_force
@@ -183,7 +196,7 @@ CMakeFiles/serverd.dir/network_listen.cpp.s: cmake_force
 
 CMakeFiles/serverd.dir/packet.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/packet.cpp.o: packet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/serverd.dir/packet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/serverd.dir/packet.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/packet.cpp.o -c /home/qhx/reactor/src/libs/libserver/packet.cpp
 
 CMakeFiles/serverd.dir/packet.cpp.i: cmake_force
@@ -194,9 +207,22 @@ CMakeFiles/serverd.dir/packet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/packet.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/packet.cpp -o CMakeFiles/serverd.dir/packet.cpp.s
 
+CMakeFiles/serverd.dir/robot_test.cpp.o: CMakeFiles/serverd.dir/flags.make
+CMakeFiles/serverd.dir/robot_test.cpp.o: robot_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/serverd.dir/robot_test.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/robot_test.cpp.o -c /home/qhx/reactor/src/libs/libserver/robot_test.cpp
+
+CMakeFiles/serverd.dir/robot_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serverd.dir/robot_test.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/robot_test.cpp > CMakeFiles/serverd.dir/robot_test.cpp.i
+
+CMakeFiles/serverd.dir/robot_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serverd.dir/robot_test.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/robot_test.cpp -o CMakeFiles/serverd.dir/robot_test.cpp.s
+
 CMakeFiles/serverd.dir/server_app.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/server_app.cpp.o: server_app.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/serverd.dir/server_app.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/serverd.dir/server_app.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/server_app.cpp.o -c /home/qhx/reactor/src/libs/libserver/server_app.cpp
 
 CMakeFiles/serverd.dir/server_app.cpp.i: cmake_force
@@ -209,7 +235,7 @@ CMakeFiles/serverd.dir/server_app.cpp.s: cmake_force
 
 CMakeFiles/serverd.dir/thread.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/thread.cpp.o: thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/serverd.dir/thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/serverd.dir/thread.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/thread.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread.cpp
 
 CMakeFiles/serverd.dir/thread.cpp.i: cmake_force
@@ -222,7 +248,7 @@ CMakeFiles/serverd.dir/thread.cpp.s: cmake_force
 
 CMakeFiles/serverd.dir/thread_mgr.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/thread_mgr.cpp.o: thread_mgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/serverd.dir/thread_mgr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/serverd.dir/thread_mgr.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/thread_mgr.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread_mgr.cpp
 
 CMakeFiles/serverd.dir/thread_mgr.cpp.i: cmake_force
@@ -235,7 +261,7 @@ CMakeFiles/serverd.dir/thread_mgr.cpp.s: cmake_force
 
 CMakeFiles/serverd.dir/thread_obj.cpp.o: CMakeFiles/serverd.dir/flags.make
 CMakeFiles/serverd.dir/thread_obj.cpp.o: thread_obj.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/serverd.dir/thread_obj.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/serverd.dir/thread_obj.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/serverd.dir/thread_obj.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread_obj.cpp
 
 CMakeFiles/serverd.dir/thread_obj.cpp.i: cmake_force
@@ -250,6 +276,7 @@ CMakeFiles/serverd.dir/thread_obj.cpp.s: cmake_force
 serverd_OBJECTS = \
 "CMakeFiles/serverd.dir/base_buffer.cpp.o" \
 "CMakeFiles/serverd.dir/connect_obj.cpp.o" \
+"CMakeFiles/serverd.dir/console.cpp.o" \
 "CMakeFiles/serverd.dir/global.cpp.o" \
 "CMakeFiles/serverd.dir/message_list.cpp.o" \
 "CMakeFiles/serverd.dir/network.cpp.o" \
@@ -257,6 +284,7 @@ serverd_OBJECTS = \
 "CMakeFiles/serverd.dir/network_connector.cpp.o" \
 "CMakeFiles/serverd.dir/network_listen.cpp.o" \
 "CMakeFiles/serverd.dir/packet.cpp.o" \
+"CMakeFiles/serverd.dir/robot_test.cpp.o" \
 "CMakeFiles/serverd.dir/server_app.cpp.o" \
 "CMakeFiles/serverd.dir/thread.cpp.o" \
 "CMakeFiles/serverd.dir/thread_mgr.cpp.o" \
@@ -267,6 +295,7 @@ serverd_EXTERNAL_OBJECTS =
 
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/base_buffer.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/connect_obj.cpp.o
+/home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/console.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/global.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/message_list.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/network.cpp.o
@@ -274,13 +303,14 @@ serverd_EXTERNAL_OBJECTS =
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/network_connector.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/network_listen.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/packet.cpp.o
+/home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/robot_test.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/server_app.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/thread.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/thread_mgr.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/thread_obj.cpp.o
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/build.make
 /home/qhx/reactor/libs/libserverd.a: CMakeFiles/serverd.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library /home/qhx/reactor/libs/libserverd.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/qhx/reactor/src/libs/libserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX static library /home/qhx/reactor/libs/libserverd.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/serverd.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/serverd.dir/link.txt --verbose=$(VERBOSE)
 

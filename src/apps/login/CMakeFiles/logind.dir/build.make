@@ -77,9 +77,48 @@ include CMakeFiles/logind.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/logind.dir/flags.make
 
+CMakeFiles/logind.dir/account.cpp.o: CMakeFiles/logind.dir/flags.make
+CMakeFiles/logind.dir/account.cpp.o: account.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/logind.dir/account.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/account.cpp.o -c /home/qhx/reactor/src/apps/login/account.cpp
+
+CMakeFiles/logind.dir/account.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logind.dir/account.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/apps/login/account.cpp > CMakeFiles/logind.dir/account.cpp.i
+
+CMakeFiles/logind.dir/account.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/account.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/apps/login/account.cpp -o CMakeFiles/logind.dir/account.cpp.s
+
+CMakeFiles/logind.dir/http_request.cpp.o: CMakeFiles/logind.dir/flags.make
+CMakeFiles/logind.dir/http_request.cpp.o: http_request.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/logind.dir/http_request.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/http_request.cpp.o -c /home/qhx/reactor/src/apps/login/http_request.cpp
+
+CMakeFiles/logind.dir/http_request.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logind.dir/http_request.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/apps/login/http_request.cpp > CMakeFiles/logind.dir/http_request.cpp.i
+
+CMakeFiles/logind.dir/http_request.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/http_request.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/apps/login/http_request.cpp -o CMakeFiles/logind.dir/http_request.cpp.s
+
+CMakeFiles/logind.dir/http_request_account.cpp.o: CMakeFiles/logind.dir/flags.make
+CMakeFiles/logind.dir/http_request_account.cpp.o: http_request_account.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/logind.dir/http_request_account.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/http_request_account.cpp.o -c /home/qhx/reactor/src/apps/login/http_request_account.cpp
+
+CMakeFiles/logind.dir/http_request_account.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logind.dir/http_request_account.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/apps/login/http_request_account.cpp > CMakeFiles/logind.dir/http_request_account.cpp.i
+
+CMakeFiles/logind.dir/http_request_account.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/http_request_account.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/apps/login/http_request_account.cpp -o CMakeFiles/logind.dir/http_request_account.cpp.s
+
 CMakeFiles/logind.dir/login_app.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/login_app.cpp.o: login_app.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/logind.dir/login_app.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/logind.dir/login_app.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/login_app.cpp.o -c /home/qhx/reactor/src/apps/login/login_app.cpp
 
 CMakeFiles/logind.dir/login_app.cpp.i: cmake_force
@@ -90,9 +129,35 @@ CMakeFiles/logind.dir/login_app.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/login_app.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/apps/login/login_app.cpp -o CMakeFiles/logind.dir/login_app.cpp.s
 
+CMakeFiles/logind.dir/login_obj.cpp.o: CMakeFiles/logind.dir/flags.make
+CMakeFiles/logind.dir/login_obj.cpp.o: login_obj.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/logind.dir/login_obj.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/login_obj.cpp.o -c /home/qhx/reactor/src/apps/login/login_obj.cpp
+
+CMakeFiles/logind.dir/login_obj.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logind.dir/login_obj.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/apps/login/login_obj.cpp > CMakeFiles/logind.dir/login_obj.cpp.i
+
+CMakeFiles/logind.dir/login_obj.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/login_obj.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/apps/login/login_obj.cpp -o CMakeFiles/logind.dir/login_obj.cpp.s
+
+CMakeFiles/logind.dir/login_obj_mgr.cpp.o: CMakeFiles/logind.dir/flags.make
+CMakeFiles/logind.dir/login_obj_mgr.cpp.o: login_obj_mgr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/logind.dir/login_obj_mgr.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/login_obj_mgr.cpp.o -c /home/qhx/reactor/src/apps/login/login_obj_mgr.cpp
+
+CMakeFiles/logind.dir/login_obj_mgr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logind.dir/login_obj_mgr.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/apps/login/login_obj_mgr.cpp > CMakeFiles/logind.dir/login_obj_mgr.cpp.i
+
+CMakeFiles/logind.dir/login_obj_mgr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/login_obj_mgr.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/apps/login/login_obj_mgr.cpp -o CMakeFiles/logind.dir/login_obj_mgr.cpp.s
+
 CMakeFiles/logind.dir/main.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/logind.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/logind.dir/main.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/main.cpp.o -c /home/qhx/reactor/src/apps/login/main.cpp
 
 CMakeFiles/logind.dir/main.cpp.i: cmake_force
@@ -103,22 +168,9 @@ CMakeFiles/logind.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/main.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/apps/login/main.cpp -o CMakeFiles/logind.dir/main.cpp.s
 
-CMakeFiles/logind.dir/test_msg_handler.cpp.o: CMakeFiles/logind.dir/flags.make
-CMakeFiles/logind.dir/test_msg_handler.cpp.o: test_msg_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/logind.dir/test_msg_handler.cpp.o"
-	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/test_msg_handler.cpp.o -c /home/qhx/reactor/src/apps/login/test_msg_handler.cpp
-
-CMakeFiles/logind.dir/test_msg_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logind.dir/test_msg_handler.cpp.i"
-	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/apps/login/test_msg_handler.cpp > CMakeFiles/logind.dir/test_msg_handler.cpp.i
-
-CMakeFiles/logind.dir/test_msg_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/test_msg_handler.cpp.s"
-	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/apps/login/test_msg_handler.cpp -o CMakeFiles/logind.dir/test_msg_handler.cpp.s
-
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o -c /home/qhx/reactor/src/libs/libserver/base_buffer.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.i: cmake_force
@@ -131,7 +183,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.s: cma
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/connect_obj.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o -c /home/qhx/reactor/src/libs/libserver/connect_obj.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.i: cmake_force
@@ -142,9 +194,22 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s: cma
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/connect_obj.cpp -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s
 
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: CMakeFiles/logind.dir/flags.make
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: /home/qhx/reactor/src/libs/libserver/console.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o -c /home/qhx/reactor/src/libs/libserver/console.cpp
+
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/console.cpp > CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.i
+
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/console.cpp -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.s
+
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o: /home/qhx/reactor/src/libs/libserver/global.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o -c /home/qhx/reactor/src/libs/libserver/global.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.i: cmake_force
@@ -157,7 +222,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.s: cmake_fo
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/message_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o -c /home/qhx/reactor/src/libs/libserver/message_list.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.i: cmake_force
@@ -170,7 +235,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.s: cm
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/network.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o -c /home/qhx/reactor/src/libs/libserver/network.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.i: cmake_force
@@ -183,7 +248,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.s: cmake_f
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/network_buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_buffer.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.i: cmake_force
@@ -196,7 +261,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.s: 
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/network_connector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_connector.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.i: cmake_force
@@ -209,7 +274,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/network_listen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_listen.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.i: cmake_force
@@ -222,7 +287,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.s: 
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o: /home/qhx/reactor/src/libs/libserver/packet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o -c /home/qhx/reactor/src/libs/libserver/packet.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.i: cmake_force
@@ -233,9 +298,22 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/packet.cpp -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.s
 
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: CMakeFiles/logind.dir/flags.make
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/robot_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o -c /home/qhx/reactor/src/libs/libserver/robot_test.cpp
+
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/robot_test.cpp > CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.i
+
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/robot_test.cpp -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.s
+
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/server_app.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o -c /home/qhx/reactor/src/libs/libserver/server_app.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.i: cmake_force
@@ -248,7 +326,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.s: cmak
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.i: cmake_force
@@ -261,7 +339,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.s: cmake_fo
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_mgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread_mgr.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.i: cmake_force
@@ -274,7 +352,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.s: cmak
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_obj.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread_obj.cpp
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.i: cmake_force
@@ -287,7 +365,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.s: cmak
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o: /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o -c /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.i: cmake_force
@@ -300,7 +378,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.s: 
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o: CMakeFiles/logind.dir/flags.make
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o: /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o -c /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc
 
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.i: cmake_force
@@ -313,11 +391,16 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.c
 
 # Object files for target logind
 logind_OBJECTS = \
+"CMakeFiles/logind.dir/account.cpp.o" \
+"CMakeFiles/logind.dir/http_request.cpp.o" \
+"CMakeFiles/logind.dir/http_request_account.cpp.o" \
 "CMakeFiles/logind.dir/login_app.cpp.o" \
+"CMakeFiles/logind.dir/login_obj.cpp.o" \
+"CMakeFiles/logind.dir/login_obj_mgr.cpp.o" \
 "CMakeFiles/logind.dir/main.cpp.o" \
-"CMakeFiles/logind.dir/test_msg_handler.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o" \
+"CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o" \
@@ -325,6 +408,7 @@ logind_OBJECTS = \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o" \
+"CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o" \
 "CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o" \
@@ -335,11 +419,16 @@ logind_OBJECTS = \
 # External object files for target logind
 logind_EXTERNAL_OBJECTS =
 
+/home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/account.cpp.o
+/home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/http_request.cpp.o
+/home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/http_request_account.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/login_app.cpp.o
+/home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/login_obj.cpp.o
+/home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/login_obj_mgr.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/main.cpp.o
-/home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/test_msg_handler.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o
+/home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o
@@ -347,6 +436,7 @@ logind_EXTERNAL_OBJECTS =
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o
+/home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o
@@ -355,7 +445,7 @@ logind_EXTERNAL_OBJECTS =
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/build.make
 /home/qhx/reactor/bin/logind: CMakeFiles/logind.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable /home/qhx/reactor/bin/logind"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/qhx/reactor/src/apps/login/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable /home/qhx/reactor/bin/logind"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/logind.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

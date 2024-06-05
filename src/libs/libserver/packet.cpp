@@ -1,18 +1,6 @@
 #include "packet.h"
 
-//Packet::Packet()
-//{
-//    _socket = INVALID_SOCKET;
-//    _msgId = 0;
-//    CleanBuffer();
-//
-//    _bufferSize = DEFAULT_PACKET_BUFFER_SIZE;
-//    _beginIndex = 0;
-//    _endIndex = 0;
-//    _buffer = new char[_bufferSize];
-//}
-
-Packet::Packet(const int msgId, SOCKET socket)
+Packet::Packet(const Proto::MsgId msgId, SOCKET socket)
 {
     _socket = socket;
     _msgId = msgId;
@@ -31,7 +19,7 @@ Packet::~Packet()
 
 void Packet::Dispose()
 {
-    _msgId = 0;
+    _msgId = Proto::MsgId::None;
     _beginIndex = 0;
     _endIndex = 0;
 }

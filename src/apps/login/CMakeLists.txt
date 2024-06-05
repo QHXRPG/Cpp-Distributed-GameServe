@@ -21,14 +21,17 @@ aux_source_directory(../../libs/libserver/protobuf SRCS)
 
 include_directories(../../libs)
 include_directories(/usr/local/include)
+include_directories(/usr/local/include/common)
+include_directories(/usr/local/include/common/json)
+
+
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../../../bin")
 
-set(CMAKE_CXX_FLAGS "-Wall -std=c++14 -pthread -lprotobuf -DEPOLL")
+set(CMAKE_CXX_FLAGS "-Wall -std=c++14 -pthread -lprotobuf -lcurl -ljsoncpp -DEPOLL")
 set(CMAKE_CXX_FLAGS_DEBUG "-D_DEBUG -O0 -g -ggdb")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 
-
-link_directories(${CMAKE_BINARY_DIR}/../../../libs)
+link_directories(${CMAKE_BINARY_DIR}/../../../../libs/linux)
 
 add_executable(${MyProjectName} ${SRCS})

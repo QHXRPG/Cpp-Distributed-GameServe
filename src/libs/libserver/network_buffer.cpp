@@ -140,8 +140,18 @@ Packet* RecvNetworkBuffer::GetPacket()
     RemoveDate(sizeof(PacketHead));
 
     // 3.读出 协议
+    // 检查一下id
+    const google::protobuf::EnumDescriptor *descriptor = Proto::MsgId_descriptor();
+    if (descriptor->FindValueByNumber(head.MsgId) == nullptr)
+    {
+        // 关闭网络
+        _pConnectObj->Close();
+        std::cout << "recv invalid msg." << std::endl;
+        return nullptr;
+    }
+
     const auto socket = _pConnectObj->GetSocket();
-    Packet* pPacket = new Packet(head.MsgId, socket);
+    Packet* pPacket = new Packet((Proto::MsgId)head.MsgId, socket);
     const auto dataLength = totalSize - sizeof(PacketHead) - sizeof(TotalSizeType);
     while (pPacket->GetTotalSize() < dataLength)
     {

@@ -1,12 +1,13 @@
 #include "robots_app.h"
-#include "robot.h"
+#include "robot_mgr.h"
+#include "robot_console.h"
 
 void RobotsApp::InitApp()
 {
-	for (int i = 0; i < 10; i++)
-	{
-		Robot* pRobot = new Robot();
-		_pThreadMgr->AddObjToThread(pRobot);
-	}
+    RobotMgr* mgr = new RobotMgr();
+    _pThreadMgr->AddObject(mgr);
+
+    RobotConsole* pConsole = new RobotConsole();
+    _pThreadMgr->AddObjToThread(pConsole);
 }
 

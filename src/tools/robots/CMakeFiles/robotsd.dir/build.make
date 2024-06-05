@@ -77,9 +77,22 @@ include CMakeFiles/robotsd.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/robotsd.dir/flags.make
 
+CMakeFiles/robotsd.dir/global_robots.cpp.o: CMakeFiles/robotsd.dir/flags.make
+CMakeFiles/robotsd.dir/global_robots.cpp.o: global_robots.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/robotsd.dir/global_robots.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/global_robots.cpp.o -c /home/qhx/reactor/src/tools/robots/global_robots.cpp
+
+CMakeFiles/robotsd.dir/global_robots.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotsd.dir/global_robots.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/tools/robots/global_robots.cpp > CMakeFiles/robotsd.dir/global_robots.cpp.i
+
+CMakeFiles/robotsd.dir/global_robots.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/global_robots.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/tools/robots/global_robots.cpp -o CMakeFiles/robotsd.dir/global_robots.cpp.s
+
 CMakeFiles/robotsd.dir/main.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/robotsd.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/robotsd.dir/main.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/main.cpp.o -c /home/qhx/reactor/src/tools/robots/main.cpp
 
 CMakeFiles/robotsd.dir/main.cpp.i: cmake_force
@@ -92,7 +105,7 @@ CMakeFiles/robotsd.dir/main.cpp.s: cmake_force
 
 CMakeFiles/robotsd.dir/robot.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/robot.cpp.o: robot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/robotsd.dir/robot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/robotsd.dir/robot.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/robot.cpp.o -c /home/qhx/reactor/src/tools/robots/robot.cpp
 
 CMakeFiles/robotsd.dir/robot.cpp.i: cmake_force
@@ -103,9 +116,61 @@ CMakeFiles/robotsd.dir/robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/robot.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/tools/robots/robot.cpp -o CMakeFiles/robotsd.dir/robot.cpp.s
 
+CMakeFiles/robotsd.dir/robot_console.cpp.o: CMakeFiles/robotsd.dir/flags.make
+CMakeFiles/robotsd.dir/robot_console.cpp.o: robot_console.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/robotsd.dir/robot_console.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/robot_console.cpp.o -c /home/qhx/reactor/src/tools/robots/robot_console.cpp
+
+CMakeFiles/robotsd.dir/robot_console.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotsd.dir/robot_console.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/tools/robots/robot_console.cpp > CMakeFiles/robotsd.dir/robot_console.cpp.i
+
+CMakeFiles/robotsd.dir/robot_console.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/robot_console.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/tools/robots/robot_console.cpp -o CMakeFiles/robotsd.dir/robot_console.cpp.s
+
+CMakeFiles/robotsd.dir/robot_mgr.cpp.o: CMakeFiles/robotsd.dir/flags.make
+CMakeFiles/robotsd.dir/robot_mgr.cpp.o: robot_mgr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/robotsd.dir/robot_mgr.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/robot_mgr.cpp.o -c /home/qhx/reactor/src/tools/robots/robot_mgr.cpp
+
+CMakeFiles/robotsd.dir/robot_mgr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotsd.dir/robot_mgr.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/tools/robots/robot_mgr.cpp > CMakeFiles/robotsd.dir/robot_mgr.cpp.i
+
+CMakeFiles/robotsd.dir/robot_mgr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/robot_mgr.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/tools/robots/robot_mgr.cpp -o CMakeFiles/robotsd.dir/robot_mgr.cpp.s
+
+CMakeFiles/robotsd.dir/robot_state.cpp.o: CMakeFiles/robotsd.dir/flags.make
+CMakeFiles/robotsd.dir/robot_state.cpp.o: robot_state.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/robotsd.dir/robot_state.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/robot_state.cpp.o -c /home/qhx/reactor/src/tools/robots/robot_state.cpp
+
+CMakeFiles/robotsd.dir/robot_state.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotsd.dir/robot_state.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/tools/robots/robot_state.cpp > CMakeFiles/robotsd.dir/robot_state.cpp.i
+
+CMakeFiles/robotsd.dir/robot_state.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/robot_state.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/tools/robots/robot_state.cpp -o CMakeFiles/robotsd.dir/robot_state.cpp.s
+
+CMakeFiles/robotsd.dir/robot_state_login.cpp.o: CMakeFiles/robotsd.dir/flags.make
+CMakeFiles/robotsd.dir/robot_state_login.cpp.o: robot_state_login.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/robotsd.dir/robot_state_login.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/robot_state_login.cpp.o -c /home/qhx/reactor/src/tools/robots/robot_state_login.cpp
+
+CMakeFiles/robotsd.dir/robot_state_login.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotsd.dir/robot_state_login.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/tools/robots/robot_state_login.cpp > CMakeFiles/robotsd.dir/robot_state_login.cpp.i
+
+CMakeFiles/robotsd.dir/robot_state_login.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/robot_state_login.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/tools/robots/robot_state_login.cpp -o CMakeFiles/robotsd.dir/robot_state_login.cpp.s
+
 CMakeFiles/robotsd.dir/robots_app.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/robots_app.cpp.o: robots_app.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/robotsd.dir/robots_app.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/robotsd.dir/robots_app.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/robots_app.cpp.o -c /home/qhx/reactor/src/tools/robots/robots_app.cpp
 
 CMakeFiles/robotsd.dir/robots_app.cpp.i: cmake_force
@@ -118,7 +183,7 @@ CMakeFiles/robotsd.dir/robots_app.cpp.s: cmake_force
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o -c /home/qhx/reactor/src/libs/libserver/base_buffer.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.i: cmake_force
@@ -131,7 +196,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.s: cm
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/connect_obj.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o -c /home/qhx/reactor/src/libs/libserver/connect_obj.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.i: cmake_force
@@ -142,9 +207,22 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s: cm
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/connect_obj.cpp -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s
 
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: CMakeFiles/robotsd.dir/flags.make
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: /home/qhx/reactor/src/libs/libserver/console.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o -c /home/qhx/reactor/src/libs/libserver/console.cpp
+
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/console.cpp > CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.i
+
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/console.cpp -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.s
+
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o: /home/qhx/reactor/src/libs/libserver/global.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o -c /home/qhx/reactor/src/libs/libserver/global.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.i: cmake_force
@@ -157,7 +235,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.s: cmake_f
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/message_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o -c /home/qhx/reactor/src/libs/libserver/message_list.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.i: cmake_force
@@ -170,7 +248,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.s: c
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/network.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o -c /home/qhx/reactor/src/libs/libserver/network.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.i: cmake_force
@@ -183,7 +261,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.s: cmake_
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/network_buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_buffer.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.i: cmake_force
@@ -196,7 +274,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.s:
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/network_connector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_connector.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.i: cmake_force
@@ -209,7 +287,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/network_listen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_listen.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.i: cmake_force
@@ -222,7 +300,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.s:
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o: /home/qhx/reactor/src/libs/libserver/packet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o -c /home/qhx/reactor/src/libs/libserver/packet.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.i: cmake_force
@@ -233,9 +311,22 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/packet.cpp -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.s
 
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: CMakeFiles/robotsd.dir/flags.make
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/robot_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o -c /home/qhx/reactor/src/libs/libserver/robot_test.cpp
+
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/robot_test.cpp > CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.i
+
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/robot_test.cpp -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.s
+
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/server_app.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o -c /home/qhx/reactor/src/libs/libserver/server_app.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.i: cmake_force
@@ -248,7 +339,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.s: cma
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.i: cmake_force
@@ -261,7 +352,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.s: cmake_f
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_mgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread_mgr.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.i: cmake_force
@@ -274,7 +365,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.s: cma
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_obj.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread_obj.cpp
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.i: cmake_force
@@ -287,7 +378,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.s: cma
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o: /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o -c /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.i: cmake_force
@@ -300,7 +391,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.s:
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o: CMakeFiles/robotsd.dir/flags.make
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o: /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o -c /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.i: cmake_force
@@ -313,11 +404,17 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.
 
 # Object files for target robotsd
 robotsd_OBJECTS = \
+"CMakeFiles/robotsd.dir/global_robots.cpp.o" \
 "CMakeFiles/robotsd.dir/main.cpp.o" \
 "CMakeFiles/robotsd.dir/robot.cpp.o" \
+"CMakeFiles/robotsd.dir/robot_console.cpp.o" \
+"CMakeFiles/robotsd.dir/robot_mgr.cpp.o" \
+"CMakeFiles/robotsd.dir/robot_state.cpp.o" \
+"CMakeFiles/robotsd.dir/robot_state_login.cpp.o" \
 "CMakeFiles/robotsd.dir/robots_app.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o" \
+"CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o" \
@@ -325,6 +422,7 @@ robotsd_OBJECTS = \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o" \
+"CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o" \
 "CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o" \
@@ -335,11 +433,17 @@ robotsd_OBJECTS = \
 # External object files for target robotsd
 robotsd_EXTERNAL_OBJECTS =
 
+/home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/global_robots.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/main.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/robot.cpp.o
+/home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/robot_console.cpp.o
+/home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/robot_mgr.cpp.o
+/home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/robot_state.cpp.o
+/home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/robot_state_login.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/robots_app.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o
+/home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o
@@ -347,6 +451,7 @@ robotsd_EXTERNAL_OBJECTS =
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o
+/home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o
@@ -355,7 +460,7 @@ robotsd_EXTERNAL_OBJECTS =
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/build.make
 /home/qhx/reactor/bin/robotsd: CMakeFiles/robotsd.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable /home/qhx/reactor/bin/robotsd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/qhx/reactor/src/tools/robots/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable /home/qhx/reactor/bin/robotsd"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/robotsd.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

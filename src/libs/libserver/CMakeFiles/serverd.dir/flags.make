@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -std=c++14 -pthread -lprotobuf -DEPOLL -D_DEBUG -O0 -g -ggdb
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/usr/local/include/common -I/usr/local/include/common/json 
 

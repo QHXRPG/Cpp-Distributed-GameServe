@@ -143,6 +143,33 @@ robotsd/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/build
 .PHONY : robotsd/fast
 
+global_robots.o: global_robots.cpp.o
+
+.PHONY : global_robots.o
+
+# target to build an object file
+global_robots.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/global_robots.cpp.o
+.PHONY : global_robots.cpp.o
+
+global_robots.i: global_robots.cpp.i
+
+.PHONY : global_robots.i
+
+# target to preprocess a source file
+global_robots.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/global_robots.cpp.i
+.PHONY : global_robots.cpp.i
+
+global_robots.s: global_robots.cpp.s
+
+.PHONY : global_robots.s
+
+# target to generate assembly for a file
+global_robots.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/global_robots.cpp.s
+.PHONY : global_robots.cpp.s
+
 home/qhx/reactor/src/libs/libserver/base_buffer.o: home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o
 
 .PHONY : home/qhx/reactor/src/libs/libserver/base_buffer.o
@@ -196,6 +223,33 @@ home/qhx/reactor/src/libs/libserver/connect_obj.s: home/qhx/reactor/src/libs/lib
 home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s
 .PHONY : home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s
+
+home/qhx/reactor/src/libs/libserver/console.o: home/qhx/reactor/src/libs/libserver/console.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/console.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/console.cpp.o
+
+home/qhx/reactor/src/libs/libserver/console.i: home/qhx/reactor/src/libs/libserver/console.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/console.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/console.cpp.i
+
+home/qhx/reactor/src/libs/libserver/console.s: home/qhx/reactor/src/libs/libserver/console.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/console.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/console.cpp.s
 
 home/qhx/reactor/src/libs/libserver/global.o: home/qhx/reactor/src/libs/libserver/global.cpp.o
 
@@ -440,6 +494,33 @@ home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.s
 .PHONY : home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.s
 
+home/qhx/reactor/src/libs/libserver/robot_test.o: home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/robot_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
+
+home/qhx/reactor/src/libs/libserver/robot_test.i: home/qhx/reactor/src/libs/libserver/robot_test.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/robot_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.cpp.i
+
+home/qhx/reactor/src/libs/libserver/robot_test.s: home/qhx/reactor/src/libs/libserver/robot_test.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/robot_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/robot_test.cpp.s
+
 home/qhx/reactor/src/libs/libserver/server_app.o: home/qhx/reactor/src/libs/libserver/server_app.cpp.o
 
 .PHONY : home/qhx/reactor/src/libs/libserver/server_app.o
@@ -602,6 +683,114 @@ robot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot.cpp.s
 .PHONY : robot.cpp.s
 
+robot_console.o: robot_console.cpp.o
+
+.PHONY : robot_console.o
+
+# target to build an object file
+robot_console.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_console.cpp.o
+.PHONY : robot_console.cpp.o
+
+robot_console.i: robot_console.cpp.i
+
+.PHONY : robot_console.i
+
+# target to preprocess a source file
+robot_console.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_console.cpp.i
+.PHONY : robot_console.cpp.i
+
+robot_console.s: robot_console.cpp.s
+
+.PHONY : robot_console.s
+
+# target to generate assembly for a file
+robot_console.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_console.cpp.s
+.PHONY : robot_console.cpp.s
+
+robot_mgr.o: robot_mgr.cpp.o
+
+.PHONY : robot_mgr.o
+
+# target to build an object file
+robot_mgr.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_mgr.cpp.o
+.PHONY : robot_mgr.cpp.o
+
+robot_mgr.i: robot_mgr.cpp.i
+
+.PHONY : robot_mgr.i
+
+# target to preprocess a source file
+robot_mgr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_mgr.cpp.i
+.PHONY : robot_mgr.cpp.i
+
+robot_mgr.s: robot_mgr.cpp.s
+
+.PHONY : robot_mgr.s
+
+# target to generate assembly for a file
+robot_mgr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_mgr.cpp.s
+.PHONY : robot_mgr.cpp.s
+
+robot_state.o: robot_state.cpp.o
+
+.PHONY : robot_state.o
+
+# target to build an object file
+robot_state.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_state.cpp.o
+.PHONY : robot_state.cpp.o
+
+robot_state.i: robot_state.cpp.i
+
+.PHONY : robot_state.i
+
+# target to preprocess a source file
+robot_state.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_state.cpp.i
+.PHONY : robot_state.cpp.i
+
+robot_state.s: robot_state.cpp.s
+
+.PHONY : robot_state.s
+
+# target to generate assembly for a file
+robot_state.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_state.cpp.s
+.PHONY : robot_state.cpp.s
+
+robot_state_login.o: robot_state_login.cpp.o
+
+.PHONY : robot_state_login.o
+
+# target to build an object file
+robot_state_login.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_state_login.cpp.o
+.PHONY : robot_state_login.cpp.o
+
+robot_state_login.i: robot_state_login.cpp.i
+
+.PHONY : robot_state_login.i
+
+# target to preprocess a source file
+robot_state_login.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_state_login.cpp.i
+.PHONY : robot_state_login.cpp.i
+
+robot_state_login.s: robot_state_login.cpp.s
+
+.PHONY : robot_state_login.s
+
+# target to generate assembly for a file
+robot_state_login.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robotsd.dir/build.make CMakeFiles/robotsd.dir/robot_state_login.cpp.s
+.PHONY : robot_state_login.cpp.s
+
 robots_app.o: robots_app.cpp.o
 
 .PHONY : robots_app.o
@@ -638,12 +827,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... robotsd"
+	@echo "... global_robots.o"
+	@echo "... global_robots.i"
+	@echo "... global_robots.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/base_buffer.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/base_buffer.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/base_buffer.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/connect_obj.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/connect_obj.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/connect_obj.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/console.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/console.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/console.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/global.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/global.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/global.s"
@@ -671,6 +866,9 @@ help:
 	@echo "... home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/robot_test.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/robot_test.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/robot_test.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/server_app.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/server_app.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/server_app.s"
@@ -689,6 +887,18 @@ help:
 	@echo "... robot.o"
 	@echo "... robot.i"
 	@echo "... robot.s"
+	@echo "... robot_console.o"
+	@echo "... robot_console.i"
+	@echo "... robot_console.s"
+	@echo "... robot_mgr.o"
+	@echo "... robot_mgr.i"
+	@echo "... robot_mgr.s"
+	@echo "... robot_state.o"
+	@echo "... robot_state.i"
+	@echo "... robot_state.s"
+	@echo "... robot_state_login.o"
+	@echo "... robot_state_login.i"
+	@echo "... robot_state_login.s"
 	@echo "... robots_app.o"
 	@echo "... robots_app.i"
 	@echo "... robots_app.s"

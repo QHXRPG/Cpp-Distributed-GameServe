@@ -3,30 +3,34 @@
 #include <thread>
 #include <list>
 
-#include "thread_obj.h"
 #include "sn_object.h"
+#include "disposable.h"
 
 class Packet;
+class ThreadObject;
 
-class Thread : public SnObject, IDisposable {
+class ThreadObjectList: public IDisposable
+{
 public:
-    Thread( );
-    void AddThreadObj( ThreadObject* _obj );
+    void AddObject(ThreadObject* _obj);
+    void Update();
+    void AddPacketToList(Packet* pPacket);
+    void Dispose() override;
 
-    void Start( );
-    void Stop( );
-    void Update( );
-    bool IsRun( ) const;
-    void Dispose( ) override;
-    
-    void AddPacket(Packet* pPacket);
-
-private:
+protected:
     // 本线程的所有对象    
     std::list<ThreadObject*> _objlist;
-    std::list<ThreadObject*> _tmpObjs;
-    std::mutex _thread_lock;
+    std::mutex _obj_lock;
+};
 
+class Thread : public ThreadObjectList, public SnObject {
+public:
+    Thread();
+    void Start();
+    void Stop();
+    bool IsRun() const;
+   
+private:
     bool _isRun;
     std::thread _thread;
 };

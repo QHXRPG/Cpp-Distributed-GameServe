@@ -1,4 +1,5 @@
 #include "thread_obj.h"
+#include "thread.h"
 
 bool ThreadObject::IsActive() const
 {
@@ -7,5 +8,16 @@ bool ThreadObject::IsActive() const
 
 void ThreadObject::Dispose()
 {
+    _active = false;
+    MessageList::Dispose();
+}
 
+void ThreadObject::SetThread(Thread* pThread)
+{
+    _pThread = pThread;
+}
+
+Thread* ThreadObject::GetThread() const
+{
+    return _pThread;
 }

@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "connect_obj.h"
 
 #include "network.h"
@@ -30,6 +28,16 @@ void ConnectObj::Dispose()
 
     _recvBuffer->Dispose();
     _sendBuffer->Dispose();
+}
+
+void ConnectObj::Close()
+{
+    _isClose = true;
+}
+
+bool ConnectObj::IsClose() const
+{
+    return _isClose;
 }
 
 bool ConnectObj::HasRecvData() const
@@ -88,12 +96,31 @@ bool ConnectObj::Recv() const
 
     if (isRs)
     {
-        while (true) {
+        while (true)
+        {
             const auto pPacket = _recvBuffer->GetPacket();
             if (pPacket == nullptr)
                 break;
 
-            ThreadMgr::GetInstance()->AddPacket(pPacket);
+            //const google::protobuf::EnumDescriptor *descriptor = Proto::MsgId_descriptor();
+            //auto name = descriptor->FindValueByNumber(pPacket->GetMsgId())->name();
+            //std::cout << "recv msg:" << name.c_str() << std::endl;
+
+            if (pPacket->GetMsgId() == Proto::MsgId::MI_Ping)
+            {
+                //RecvPing();
+            }
+            else
+            {
+                if (_pNetWork->IsBroadcast() && _pNetWork->GetThread() != nullptr)
+                {
+                    ThreadMgr::GetInstance()->DispatchPacket(pPacket);
+                }
+                else
+                {
+                    _pNetWork->GetThread()->AddPacketToList(pPacket);
+                }
+            }
         }
     }
 
@@ -107,6 +134,10 @@ bool ConnectObj::HasSendData() const
 
 void ConnectObj::SendPacket(Packet* pPacket) const
 {
+    //const google::protobuf::EnumDescriptor *descriptor = Proto::MsgId_descriptor();
+    //auto name = descriptor->FindValueByNumber(pPacket->GetMsgId())->name();
+    //std::cout << "send msg:" << name.c_str() << std::endl;
+
     _sendBuffer->AddPacket(pPacket);
 }
 
@@ -125,7 +156,6 @@ bool ConnectObj::Send() const
         const int size = ::send(_socket, pBuffer, needSendSize, 0);
         if (size > 0)
         {
-            //std::cout << "send size:" << size << std::endl;
             _sendBuffer->RemoveDate(size);
 
             // 下一帧再发送
@@ -135,7 +165,7 @@ bool ConnectObj::Send() const
             }
         }
 
-        if (size == -1)
+        if (size <= 0)
         {
             const auto socketError = _sock_err();
             std::cout << "needSendSize:" << needSendSize << " error:" << socketError << std::endl;
@@ -143,4 +173,3 @@ bool ConnectObj::Send() const
         }
     }
 }
-

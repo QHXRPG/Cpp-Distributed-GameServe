@@ -6,7 +6,10 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}",
                 "${workspaceFolder}/src/libs",
-                "/home/qhx/reactor/src/tools/robots"
+                "/home/qhx/reactor/src/tools/robots",
+                "/usr/include/",
+                "/usr/include/common",
+                "/usr/include/windows"
             ],
             "defines": [],
             "compilerPath": "/usr/local/bin/gcc",

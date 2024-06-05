@@ -1,16 +1,12 @@
 #include <iostream>
 
+#include "common.h"
 #include "network_listen.h"
 #include "connect_obj.h"
 
 bool NetworkListen::Init()
 {
     return true;
-}
-
-void NetworkListen::RegisterMsgFunction()
-{
-
 }
 
 bool NetworkListen::Listen(std::string ip, int port)
@@ -59,8 +55,7 @@ int NetworkListen::Accept()
         if (socket == INVALID_SOCKET)
             return rs;
 
-        std::cout << "accept socket:" << socket << std::endl;
-
+        //std::cout << "accept socket:" << socket << std::endl;
         SetSocketOpt(socket);
         CreateConnectObj(socket);
 
@@ -78,6 +73,8 @@ void NetworkListen::Update()
     {
         Accept();
     }
+
+    Network::Update();
 }
 
 #else
@@ -90,6 +87,8 @@ void NetworkListen::Update()
     {
         Accept();
     }
+
+    Network::Update();
 }
 
 #endif

@@ -2,20 +2,27 @@
 #include <iterator>
 
 #include "packet.h"
+#include "thread_mgr.h"
 
-void MessageList::RegisterFunction(int msgId, HandleFunction function)
+void MessageCallBackFunctionInfo::AddPacket(Packet* pPacket)
+{
+    std::lock_guard<std::mutex> guard(_msgMutex);
+    _msgList.push_back(pPacket);
+}
+
+void MessageCallBackFunction::RegisterFunction(int msgId, HandleFunction function)
 {
     std::lock_guard<std::mutex> guard(_msgMutex);
     _callbackHandle[msgId] = function;
 }
 
-bool MessageList::IsFollowMsgId(int msgId)
+bool MessageCallBackFunction::IsFollowMsgId(Packet* packet)
 {
     std::lock_guard<std::mutex> guard(_msgMutex);
-    return _callbackHandle.find(msgId) != _callbackHandle.end();
+    return _callbackHandle.find(packet->GetMsgId()) != _callbackHandle.end();
 }
 
-void MessageList::ProcessPacket()
+void MessageCallBackFunction::ProcessPacket()
 {
     std::list<Packet*> tmpList;
     _msgMutex.lock();
@@ -39,8 +46,53 @@ void MessageList::ProcessPacket()
     tmpList.clear();
 }
 
-void MessageList::AddPacket(Packet* pPacket)
+void MessageList::Dispose()
 {
-    std::lock_guard<std::mutex> guard(_msgMutex);
-    _msgList.push_back(pPacket);
+    if (_pCallBackFuns != nullptr)
+    {
+        delete _pCallBackFuns;
+        _pCallBackFuns = nullptr;
+    }
+}
+
+void MessageList::AttachCallBackHandler(MessageCallBackFunctionInfo* pCallback)
+{
+    _pCallBackFuns = pCallback;
+}
+
+bool MessageList::IsFollowMsgId(Packet* packet) const
+{
+    if (_pCallBackFuns == nullptr)
+        return false;
+
+    return _pCallBackFuns->IsFollowMsgId(packet);
+}
+
+void MessageList::ProcessPacket() const
+{
+    if (_pCallBackFuns == nullptr)
+        return;
+
+    _pCallBackFuns->ProcessPacket();
+}
+
+void MessageList::AddPacket(Packet* pPacket) const
+{
+    if (_pCallBackFuns == nullptr)
+    {
+        std::cout << "add packet failed. _pCallBackFuns == nullptr";
+        return;
+    }
+
+    _pCallBackFuns->AddPacket(pPacket);
+}
+
+void MessageList::DispatchPacket(Packet* pPacket)
+{
+    ThreadMgr::GetInstance()->DispatchPacket(pPacket);
+}
+
+void MessageList::SendPacket(Packet* pPacket)
+{
+    ThreadMgr::GetInstance()->SendPacket(pPacket);
 }

@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/qhx/reactor/src/tools/robots/global_robots.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/global_robots.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/base_buffer.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/connect_obj.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o"
+  "/home/qhx/reactor/src/libs/libserver/console.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/global.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/message_list.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/network.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o"
@@ -15,12 +17,17 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/qhx/reactor/src/libs/libserver/packet.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o"
   "/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o"
+  "/home/qhx/reactor/src/libs/libserver/robot_test.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/server_app.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/thread.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o"
   "/home/qhx/reactor/src/libs/libserver/thread_obj.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o"
   "/home/qhx/reactor/src/tools/robots/main.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/main.cpp.o"
   "/home/qhx/reactor/src/tools/robots/robot.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/robot.cpp.o"
+  "/home/qhx/reactor/src/tools/robots/robot_console.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/robot_console.cpp.o"
+  "/home/qhx/reactor/src/tools/robots/robot_mgr.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/robot_mgr.cpp.o"
+  "/home/qhx/reactor/src/tools/robots/robot_state.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/robot_state.cpp.o"
+  "/home/qhx/reactor/src/tools/robots/robot_state_login.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/robot_state_login.cpp.o"
   "/home/qhx/reactor/src/tools/robots/robots_app.cpp" "/home/qhx/reactor/src/tools/robots/CMakeFiles/robotsd.dir/robots_app.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
