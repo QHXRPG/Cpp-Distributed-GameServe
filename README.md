@@ -8,6 +8,9 @@
 2. gcc 9.1.0;
 3. protobuf(cpp) 3.9.1;
 4. protobuf(C#) 3.9.1;
+5. PHP 5.4.16 (fpm-fcgi)
+6. nginx 1.20.1
+7. jsoncpp 1.9.1
 ## 改进计划
 1. 将大型多人在线服务器框架从Windows移植到Linux；
 2. 采用C++11重构整个服务器框架；
