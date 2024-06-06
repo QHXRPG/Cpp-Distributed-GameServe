@@ -23,7 +23,7 @@
 9. 实现用户断线、超时重连等功能。
 ![image](https://github.com/QHXRPG/Cpp-Distributed-GameServe/blob/main/%E6%B6%88%E6%81%AF%E4%BC%A0%E8%BE%93.png)
 ## 版本历史
-- v1.0:
+- v1.0: 添加了消息队列过滤器机制，根据指定的socket和packet给到对应的线程包裹类，可以取消消息出队入队的互斥锁，将方法设置为noexpect防止空指针异常退出
 - v1.1: 
 - v1.2:
 - v1.3: 
