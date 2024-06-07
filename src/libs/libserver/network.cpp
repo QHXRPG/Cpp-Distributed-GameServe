@@ -7,6 +7,12 @@
 
 void Network::Dispose()
 {
+    Clean();
+    ThreadObject::Dispose();
+}
+
+void Network::Clean()
+{
     for (auto iter = _connects.begin(); iter != _connects.end(); ++iter)
     {
         auto pObj = iter->second;
@@ -22,15 +28,13 @@ void Network::Dispose()
     //std::cout << "network dispose. close socket:" << _socket << std::endl;
     _sock_close(_masterSocket);
     _masterSocket = INVALID_SOCKET;
-
-    ThreadObject::Dispose();
 }
 
 
 void Network::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHandler(pMsgCallBack);
+    AttachCallBackHander(pMsgCallBack);
     pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkDisconnectToNet, BindFunP1(this, &Network::HandleDisconnect));
 }
 
@@ -44,12 +48,12 @@ void Network::SetSocketOpt(SOCKET socket)
 {
     // 1.端口关闭后马上重新启用
     bool isReuseaddr = true;
-    setsockopt(socket, SOL_SOCKET, SO_REUSEADDR, (SetsockOptType)&isReuseaddr, sizeof(isReuseaddr));
+    setsockopt(socket, SOL_SOCKET, SO_REUSEADDR, (SetsockOptType)& isReuseaddr, sizeof(isReuseaddr));
 
     // 2.发送、接收timeout
     int netTimeout = 3000; // 1000 = 1秒
-    setsockopt(socket, SOL_SOCKET, SO_SNDTIMEO, (SetsockOptType)&netTimeout, sizeof(netTimeout));
-    setsockopt(socket, SOL_SOCKET, SO_RCVTIMEO, (SetsockOptType)&netTimeout, sizeof(netTimeout));
+    setsockopt(socket, SOL_SOCKET, SO_SNDTIMEO, (SetsockOptType)& netTimeout, sizeof(netTimeout));
+    setsockopt(socket, SOL_SOCKET, SO_RCVTIMEO, (SetsockOptType)& netTimeout, sizeof(netTimeout));
 
 #ifndef WIN32
 
@@ -60,20 +64,20 @@ void Network::SetSocketOpt(SOCKET socket)
     int keepInterval = 10;	// 多次发送侦测包之间的间隔
     int keepCount = 5;		// 侦测包个数
 
-    setsockopt(socket, SOL_SOCKET, SO_KEEPALIVE, (SetsockOptType)&keepAlive, optlen);
+    setsockopt(socket, SOL_SOCKET, SO_KEEPALIVE, (SetsockOptType)& keepAlive, optlen);
     if (getsockopt(socket, SOL_SOCKET, SO_KEEPALIVE, &keepAlive, &optlen) < 0)
     {
         std::cout << "getsockopt SO_KEEPALIVE failed." << std::endl;
     }
 
-    setsockopt(socket, SOL_TCP, TCP_KEEPIDLE, (void *)&keepIdle, optlen);
+    setsockopt(socket, SOL_TCP, TCP_KEEPIDLE, (void*)& keepIdle, optlen);
     if (getsockopt(socket, SOL_TCP, TCP_KEEPIDLE, &keepIdle, &optlen) < 0)
     {
         std::cout << "getsockopt TCP_KEEPIDLE failed." << std::endl;
     }
 
-    setsockopt(socket, SOL_TCP, TCP_KEEPINTVL, (void *)&keepInterval, optlen);
-    setsockopt(socket, SOL_TCP, TCP_KEEPCNT, (void *)&keepCount, optlen);
+    setsockopt(socket, SOL_TCP, TCP_KEEPINTVL, (void*)& keepInterval, optlen);
+    setsockopt(socket, SOL_TCP, TCP_KEEPCNT, (void*)& keepCount, optlen);
 
 #endif
 
@@ -151,24 +155,7 @@ void Network::InitEpoll()
 void Network::Epoll()
 {
     _mainSocketEventIndex = -1;
-    for (auto iter = _connects.begin(); iter != _connects.end(); ++iter)
-    {
-        ConnectObj* pObj = iter->second;
-
-        if (pObj->IsClose())
-        {
-            std::cout << "logical layer requires shutdown. socket:" << iter->first << std::endl;
-            RemoveConnectObj(iter);
-            continue;
-        }
-
-        if (pObj->HasSendData())
-        {
-            ModifyEvent(_epfd, iter->first, EPOLLIN | EPOLLOUT | EPOLLRDHUP);
-        }
-    }
-
-    const int nfds = epoll_wait(_epfd, _events, MAX_EVENT, 50);
+    const int nfds = epoll_wait(_epfd, _events, MAX_EVENT, 0);
     for (int index = 0; index < nfds; index++)
     {
         int fd = _events[index].data.fd;
@@ -234,26 +221,19 @@ void Network::Select()
     for (auto iter = _connects.begin(); iter != _connects.end(); ++iter)
     {
         ConnectObj* pObj = iter->second;
-        if (pObj->IsClose())
-        {
-            std::cout << "logical layer requires shutdown. socket:" << iter->first << std::endl;
-            RemoveConnectObj(iter);
-            continue;
-        }
-
         if (iter->first > fdmax)
             fdmax = iter->first;
 
         FD_SET(iter->first, &readfds);
         FD_SET(iter->first, &exceptfds);
 
-        if (iter->second->HasSendData())
+        if (pObj->HasSendData())
             FD_SET(iter->first, &writefds);
     }
 
     struct timeval timeout;
     timeout.tv_sec = 0;
-    timeout.tv_usec = 50* 1000;
+    timeout.tv_usec = 0;
     const int nfds = ::select(fdmax + 1, &readfds, &writefds, &exceptfds, &timeout);
     if (nfds <= 0)
         return;
@@ -294,41 +274,52 @@ void Network::Select()
 
 void Network::Update()
 {
-    std::list<Packet*> _tmpSendMsgList;
     _sendMsgMutex.lock();
-    std::copy(_sendMsgList.begin(), _sendMsgList.end(), std::back_inserter(_tmpSendMsgList));
-    _sendMsgList.clear();
+    if (_sendMsgList.CanSwap())
+    {
+        _sendMsgList.Swap();
+    }
     _sendMsgMutex.unlock();
 
-    for (auto pPacket : _tmpSendMsgList)
+    auto pList = _sendMsgList.GetReaderCache();
+    for (auto iter = pList->begin(); iter != pList->end(); ++iter)
     {
-        auto iter = _connects.find(pPacket->GetSocket());
-        if (iter == _connects.end())
+        Packet* pPacket = (*iter);
+        auto socket = pPacket->GetSocket();
+        auto itConnectObj = _connects.find(socket);
+        if (itConnectObj == _connects.end())
         {
-            std::cout << "UpdateSendPacket. can't find socket." << std::endl;
+            std::cout << "send packet. can't find socket:" << socket << " msgId:" << pPacket->GetMsgId() << std::endl;
             continue;
         }
 
-        iter->second->SendPacket(pPacket);
-    }
+        itConnectObj->second->SendPacket(pPacket);
 
-    _tmpSendMsgList.clear();
+#ifdef  EPOLL
+        ModifyEvent(_epfd, socket, EPOLLIN | EPOLLOUT | EPOLLRDHUP);
+#endif
+    }
+    pList->clear();
 }
 
 void Network::HandleDisconnect(Packet* pPacket)
 {
-    auto iter = _connects.find(pPacket->GetSocket());
+    auto socket = pPacket->GetSocket();
+    auto iter = _connects.find(socket);
     if (iter == _connects.end())
     {
-        std::cout << "dis connect failed. socket not find. socket:" << pPacket->GetSocket() << std::endl;
+        std::cout << "dis connect failed. socket not find. socket:" << socket << std::endl;
         return;
     }
 
-    iter->second->Close();
+    RemoveConnectObj(iter);
+    std::cout << "logical layer requires shutdown. socket:" << socket << std::endl;
 }
 
 void Network::SendPacket(Packet* pPacket)
 {
     std::lock_guard<std::mutex> guard(_sendMsgMutex);
-    _sendMsgList.push_back(pPacket);
+    _sendMsgList.GetWriterCache()->emplace_back(pPacket);
 }
+
+

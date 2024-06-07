@@ -13,7 +13,7 @@ bool Account::Init()
 void Account::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHandler(pMsgCallBack);
+    AttachCallBackHander(pMsgCallBack);
 
     pMsgCallBack->RegisterFunction(Proto::MsgId::C2L_AccountCheck, BindFunP1(this, &Account::HandleAccountCheck));
     pMsgCallBack->RegisterFunction(Proto::MsgId::MI_AccountCheckToHttpRs, BindFunP1(this, &Account::HandleAccountCheckToHttpRs));
@@ -42,6 +42,8 @@ void Account::HandleAccountCheck(Packet* pPacket)
         pResultPacket->SerializeToBuffer(protoResult);
 
         SendPacket(pResultPacket);
+
+        std::cout << "account check failed. same account:" << protoCheck.account() << " socket:" << socket << std::endl;
 
         // ¹Ø±ÕÍøÂç
         const auto pPacketDis = new Packet(Proto::MsgId::MI_NetworkDisconnectToNet, socket);

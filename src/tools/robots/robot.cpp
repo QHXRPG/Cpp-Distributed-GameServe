@@ -25,7 +25,7 @@ bool Robot::Init()
 void Robot::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunctionFilterObj<Robot>();
-    pMsgCallBack->GetPacketObject = [this](SOCKET socket)->Robot*
+    pMsgCallBack->GetPacketObject = [this](SOCKET socket)->Robot *
     {
         if (this->GetSocket() == socket)
             return this;
@@ -33,7 +33,7 @@ void Robot::RegisterMsgFunction()
         return nullptr;
     };
 
-    AttachCallBackHandler(pMsgCallBack);
+    AttachCallBackHander(pMsgCallBack);
 
     pMsgCallBack->RegisterFunctionWithObj(Proto::MsgId::C2L_AccountCheckRs, BindFunP2(this, &Robot::HandleAccountCheckRs));
 }
@@ -59,10 +59,16 @@ void Robot::RegisterState()
 void Robot::HandleAccountCheckRs(Robot* pRobot, Packet* pPacket)
 {
     Proto::AccountCheckRs proto = pPacket->ParseToProto<Proto::AccountCheckRs>();
-    std::cout << "account check result account:" << _account << " code:" << proto.return_code() << std::endl;
+    //std::cout << "account check result account:" << _account << " code:" << proto.return_code() << std::endl;
 
-    if (proto.return_code() == Proto::AccountCheckRs::ARC_OK)
+    if (proto.return_code() == Proto::AccountCheckRs::ARC_OK) 
+    {
         ChangeState(RobotStateType::RobotState_Login_Logined);
+    }
+    else
+    {
+        std::cout << "account check failed. account:" << _account << " code:" << proto.return_code() << std::endl;
+    }
 }
 
 void Robot::SendMsgAccountCheck()

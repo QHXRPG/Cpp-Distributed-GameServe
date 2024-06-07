@@ -61,7 +61,7 @@ void NetworkConnector::TryCreateConnectObj()
     else
     {
         std::cout << "connect failed. socket:" << _masterSocket << std::endl;
-        Dispose();
+        Clean();
     }
 }
 
@@ -123,7 +123,7 @@ void NetworkConnector::Update()
             std::cout << "connect except. socket:" << _masterSocket << " re connect." << std::endl;
 
             // 关闭当前socket，重新connect
-            Dispose();
+            Clean();
             return;
         }
 

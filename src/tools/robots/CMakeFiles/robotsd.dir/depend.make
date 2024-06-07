@@ -10,6 +10,8 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o: /h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/connect_obj.cpp
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/connect_obj.h
@@ -31,6 +33,8 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: /home/qhx/reactor/src/libs/libserver/console.cpp
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: /home/qhx/reactor/src/libs/libserver/console.h
@@ -57,6 +61,8 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o: /home/q
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
@@ -69,26 +75,35 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/thread.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_mgr.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_obj.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/util_string.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/connect_obj.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/message_list.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/network.cpp
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/network.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/packet.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/singleton.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/socket_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_obj.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/util_string.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/connect_obj.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/message_list.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/network.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/network_buffer.cpp
@@ -96,12 +111,18 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o:
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/packet.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/singleton.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/socket_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_obj.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/util_string.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/message_list.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/network.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/network_connector.cpp
@@ -109,13 +130,19 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/packet.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/singleton.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/socket_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_obj.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/util_string.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/connect_obj.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/message_list.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/network.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/network_listen.cpp
@@ -123,8 +150,12 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o:
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/packet.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/singleton.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/socket_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_obj.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/util_string.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
@@ -143,6 +174,7 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/message_list.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/packet.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
@@ -150,9 +182,15 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /ho
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/robot_state_type.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/robot_test.cpp
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/robot_test.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/singleton.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_obj.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/util_string.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
@@ -174,6 +212,8 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /ho
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
@@ -190,6 +230,8 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/q
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
@@ -210,6 +252,8 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /ho
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/common.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/disposable.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/global.h
@@ -225,9 +269,14 @@ CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /ho
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/util_string.h
 CMakeFiles/robotsd.dir/home/qhx/reactor/src/libs/libserver/thread_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/util_time.h
 
+CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/common.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/disposable.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/global.h
+CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/message_list.h
+CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/packet.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/protobuf/msg.pb.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/protobuf/proto_id.pb.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/server_app.h
@@ -235,6 +284,7 @@ CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/singleton.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/thread.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/thread_mgr.h
+CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/thread_obj.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/util_string.h
 CMakeFiles/robotsd.dir/main.cpp.o: ../../libs/libserver/util_time.h
 CMakeFiles/robotsd.dir/main.cpp.o: global_robots.h
@@ -242,8 +292,10 @@ CMakeFiles/robotsd.dir/main.cpp.o: main.cpp
 CMakeFiles/robotsd.dir/main.cpp.o: robots_app.h
 
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/common.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/disposable.h
+CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/global.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/message_list.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/network.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/network_connector.h
@@ -251,15 +303,21 @@ CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/packet.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/protobuf/msg.pb.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/protobuf/proto_id.pb.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/robot_state_type.h
+CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/singleton.h
+CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/socket_object.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/state_template.h
 CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/thread_obj.h
+CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/util_string.h
+CMakeFiles/robotsd.dir/robot.cpp.o: ../../libs/libserver/util_time.h
 CMakeFiles/robotsd.dir/robot.cpp.o: robot.cpp
 CMakeFiles/robotsd.dir/robot.cpp.o: robot.h
 CMakeFiles/robotsd.dir/robot.cpp.o: robot_state.h
 CMakeFiles/robotsd.dir/robot.cpp.o: robot_state_login.h
 
 CMakeFiles/robotsd.dir/robot_console.cpp.o: ../../libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/robot_console.cpp.o: ../../libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/robot_console.cpp.o: ../../libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/robot_console.cpp.o: ../../libs/libserver/common.h
 CMakeFiles/robotsd.dir/robot_console.cpp.o: ../../libs/libserver/console.h
 CMakeFiles/robotsd.dir/robot_console.cpp.o: ../../libs/libserver/disposable.h
@@ -287,6 +345,7 @@ CMakeFiles/robotsd.dir/robot_console.cpp.o: robot_console.h
 CMakeFiles/robotsd.dir/robot_console.cpp.o: robot_state.h
 
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/common.h
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/disposable.h
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/global.h
@@ -298,6 +357,7 @@ CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/protobuf/msg.pb.h
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/protobuf/proto_id.pb.h
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/robot_state_type.h
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/singleton.h
+CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/socket_object.h
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/thread_obj.h
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: ../../libs/libserver/util_string.h
@@ -307,6 +367,8 @@ CMakeFiles/robotsd.dir/robot_mgr.cpp.o: robot_mgr.cpp
 CMakeFiles/robotsd.dir/robot_mgr.cpp.o: robot_mgr.h
 
 CMakeFiles/robotsd.dir/robot_state.cpp.o: ../../libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/robot_state.cpp.o: ../../libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/robot_state.cpp.o: ../../libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/robot_state.cpp.o: ../../libs/libserver/common.h
 CMakeFiles/robotsd.dir/robot_state.cpp.o: ../../libs/libserver/disposable.h
 CMakeFiles/robotsd.dir/robot_state.cpp.o: ../../libs/libserver/global.h
@@ -331,8 +393,10 @@ CMakeFiles/robotsd.dir/robot_state.cpp.o: robot_state.cpp
 CMakeFiles/robotsd.dir/robot_state.cpp.o: robot_state.h
 
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/common.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/disposable.h
+CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/global.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/message_list.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/network.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/network_connector.h
@@ -340,15 +404,21 @@ CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/packet.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/protobuf/msg.pb.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/protobuf/proto_id.pb.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/robot_state_type.h
+CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/singleton.h
+CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/sn_object.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/socket_object.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/state_template.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/thread_obj.h
+CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/util_string.h
+CMakeFiles/robotsd.dir/robot_state_login.cpp.o: ../../libs/libserver/util_time.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: robot.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: robot_state.h
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: robot_state_login.cpp
 CMakeFiles/robotsd.dir/robot_state_login.cpp.o: robot_state_login.h
 
 CMakeFiles/robotsd.dir/robots_app.cpp.o: ../../libs/libserver/base_buffer.h
+CMakeFiles/robotsd.dir/robots_app.cpp.o: ../../libs/libserver/cache_refresh.h
+CMakeFiles/robotsd.dir/robots_app.cpp.o: ../../libs/libserver/cache_swap.h
 CMakeFiles/robotsd.dir/robots_app.cpp.o: ../../libs/libserver/common.h
 CMakeFiles/robotsd.dir/robots_app.cpp.o: ../../libs/libserver/console.h
 CMakeFiles/robotsd.dir/robots_app.cpp.o: ../../libs/libserver/disposable.h

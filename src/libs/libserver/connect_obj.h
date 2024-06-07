@@ -19,8 +19,6 @@ public:
     ~ConnectObj() override;
 
     void Dispose() override;
-    void Close();	// 逻辑层发起的关闭
-    bool IsClose() const;
 
     SOCKET GetSocket() const { return _socket; }
     bool HasRecvData() const;
@@ -30,12 +28,12 @@ public:
     bool HasSendData() const;
     void SendPacket(Packet* pPacket) const;
     bool Send() const;
+    void Close();
 
 protected:
     Network* _pNetWork{ nullptr };
     const SOCKET _socket;
     RecvNetworkBuffer* _recvBuffer{ nullptr };
     SendNetworkBuffer* _sendBuffer{ nullptr };
-    bool _isClose{ false };
 };
 

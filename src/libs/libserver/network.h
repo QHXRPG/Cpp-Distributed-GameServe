@@ -4,6 +4,7 @@
 #include "common.h"
 #include "thread_obj.h"
 #include "socket_object.h"
+#include "cache_swap.h"
 
 #if ENGINE_PLATFORM != PLATFORM_WIN32
 #include <errno.h>
@@ -52,11 +53,12 @@ public:
     SOCKET GetSocket() override { return _masterSocket; }
     void SendPacket(Packet*);
     bool IsBroadcast() { return _isBroadcast; }
-protected:
 
+protected:
     static void SetSocketOpt(SOCKET socket);
     static SOCKET CreateSocket();
     void CreateConnectObj(SOCKET socket);
+    void Clean();
 
 #ifdef EPOLL
     void InitEpoll();
@@ -89,7 +91,7 @@ protected:
 
     // 发送协议
     std::mutex _sendMsgMutex;
-    std::list<Packet*> _sendMsgList;
+    CacheSwap<Packet> _sendMsgList;
 
     // 收到的协议是否需要广播到全线程
     bool _isBroadcast{ true };

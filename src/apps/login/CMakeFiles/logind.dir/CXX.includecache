@@ -10,6 +10,24 @@
 disposable.h
 ../../libs/libserver/disposable.h
 
+../../libs/libserver/cache_refresh.h
+vector
+-
+algorithm
+-
+list
+-
+disposable.h
+../../libs/libserver/disposable.h
+
+../../libs/libserver/cache_swap.h
+list
+-
+mutex
+-
+disposable.h
+../../libs/libserver/disposable.h
+
 ../../libs/libserver/common.h
 climits
 -
@@ -157,6 +175,14 @@ sn_object.h
 ../../libs/libserver/sn_object.h
 disposable.h
 ../../libs/libserver/disposable.h
+cache_swap.h
+../../libs/libserver/cache_swap.h
+cache_refresh.h
+../../libs/libserver/cache_refresh.h
+thread_obj.h
+../../libs/libserver/thread_obj.h
+packet.h
+../../libs/libserver/packet.h
 
 ../../libs/libserver/thread_mgr.h
 mutex
@@ -173,6 +199,8 @@ map
 ../../libs/libserver/thread_obj.h
 message_list.h
 ../../libs/libserver/message_list.h
+sn_object.h
+../../libs/libserver/sn_object.h
 
 ../../libs/libserver/util_string.h
 string

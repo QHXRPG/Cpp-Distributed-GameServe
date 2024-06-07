@@ -30,16 +30,6 @@ void ConnectObj::Dispose()
     _sendBuffer->Dispose();
 }
 
-void ConnectObj::Close()
-{
-    _isClose = true;
-}
-
-bool ConnectObj::IsClose() const
-{
-    return _isClose;
-}
-
 bool ConnectObj::HasRecvData() const
 {
     return _recvBuffer->HasData();
@@ -172,4 +162,10 @@ bool ConnectObj::Send() const
             return false;
         }
     }
+}
+
+void ConnectObj::Close()
+{
+    const auto pPacketDis = new Packet(Proto::MsgId::MI_NetworkDisconnectToNet, GetSocket());
+    _pNetWork->GetThread()->AddPacketToList(pPacketDis);
 }

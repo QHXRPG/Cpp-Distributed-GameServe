@@ -1,7 +1,5 @@
 #include "thread.h"
 #include "global.h"
-#include "packet.h"
-#include "thread_obj.h"
 
 #include <iterator>
 
@@ -17,7 +15,7 @@ void ThreadObjectList::AddObject(ThreadObject* obj)
     else
     {
         obj->RegisterMsgFunction();
-        _objlist.push_back(obj);
+        _objlist.GetAddCache()->emplace_back(obj);
 
         const auto pThread = dynamic_cast<Thread*>(this);
         if (pThread != nullptr)
@@ -27,55 +25,63 @@ void ThreadObjectList::AddObject(ThreadObject* obj)
 
 void ThreadObjectList::Update()
 {
-    std::list<ThreadObject*> _tmpObjs;
     _obj_lock.lock();
-    std::copy(_objlist.begin(), _objlist.end(), std::back_inserter(_tmpObjs));
+    
+    // 释放需要删除的对象
+    if (_objlist.CanSwap())
+    {
+        auto pDelList = _objlist.Swap();
+        for (auto pOne : pDelList)
+        {
+            pOne->Dispose();
+            delete pOne;
+        }
+    }
     _obj_lock.unlock();
 
-    for (ThreadObject* pTObj : _tmpObjs)
+    _packet_lock.lock();
+    if (_cachePackets.CanSwap())
     {
-        pTObj->ProcessPacket();
-        pTObj->Update();
+        _cachePackets.Swap();
+    }
+    _packet_lock.unlock();
+
+    auto pList = _objlist.GetReaderCache();   // 得到读对象缓冲区的指针, 
+    auto pMsgList = _cachePackets.GetReaderCache();   // 得到读数据缓冲区的指针
+
+    for (auto iter = pList->begin(); iter != pList->end(); ++iter)
+    {
+        auto pObj = (*iter);
+        for (auto itMsg = pMsgList->begin(); itMsg != pMsgList->end(); ++itMsg)
+        {
+            auto pPacket = (*itMsg);
+            if (pObj->IsFollowMsgId(pPacket))
+                pObj->ProcessPacket(pPacket);
+        }
+
+        pObj->Update();
 
         // 非激活状态，删除
-        if (!pTObj->IsActive())
+        if (!pObj->IsActive())
         {
-            _obj_lock.lock();
-            _objlist.remove(pTObj);
-            _obj_lock.unlock();
-
-            pTObj->Dispose();
-            delete pTObj;
+            _objlist.GetRemoveCache()->emplace_back(pObj);
         }
     }
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    pMsgList->clear();
+    
 }
 
 void ThreadObjectList::AddPacketToList(Packet* pPacket)
 {
-    std::lock_guard<std::mutex> guard(_obj_lock);
-    for (auto iter = _objlist.begin(); iter != _objlist.end(); ++iter)
-    {
-        ThreadObject* pObj = *iter;
-        if (pObj->IsFollowMsgId(pPacket))
-        {
-            pObj->AddPacket(pPacket);
-        }
-    }
+    std::lock_guard<std::mutex> guard(_packet_lock);
+    _cachePackets.GetWriterCache()->emplace_back(pPacket);
 }
 
 void ThreadObjectList::Dispose()
 {
-    std::list<ThreadObject*>::iterator iter = _objlist.begin();
-    while (iter != _objlist.end())
-    {
-        (*iter)->Dispose();
-        delete (*iter);
-        iter = _objlist.erase(iter);
-    }
-
-    _objlist.clear();
+    _objlist.Dispose();
+    _cachePackets.Dispose();
 }
 
 Thread::Thread()
@@ -96,12 +102,13 @@ void Thread::Start()
 {
     _isRun = true;
     _thread = std::thread([this]()
-    {
-        while (_isRun)
         {
-            Update();
-        }
-    });
+            while (_isRun)
+            {
+                Update();
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            }
+        });
 }
 
 bool Thread::IsRun() const

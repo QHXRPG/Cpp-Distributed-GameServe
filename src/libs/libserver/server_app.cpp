@@ -41,6 +41,7 @@ void ServerApp::Run() const
         UpdateTime();        
         _pThreadMgr->Update();
         isRun = _pThreadMgr->IsGameLoop();
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
 }
 

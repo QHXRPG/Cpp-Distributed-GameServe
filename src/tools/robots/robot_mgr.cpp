@@ -9,7 +9,7 @@
 void RobotMgr::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHandler(pMsgCallBack);
+    AttachCallBackHander(pMsgCallBack);
 
     pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
 }
