@@ -365,6 +365,7 @@ CMakeFiles/logind.dir/login_app.cpp.o: ../../libs/libserver/base_buffer.h
 CMakeFiles/logind.dir/login_app.cpp.o: ../../libs/libserver/cache_refresh.h
 CMakeFiles/logind.dir/login_app.cpp.o: ../../libs/libserver/cache_swap.h
 CMakeFiles/logind.dir/login_app.cpp.o: ../../libs/libserver/common.h
+CMakeFiles/logind.dir/login_app.cpp.o: ../../libs/libserver/console.h
 CMakeFiles/logind.dir/login_app.cpp.o: ../../libs/libserver/disposable.h
 CMakeFiles/logind.dir/login_app.cpp.o: ../../libs/libserver/global.h
 CMakeFiles/logind.dir/login_app.cpp.o: ../../libs/libserver/message_list.h

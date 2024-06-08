@@ -13,6 +13,8 @@ public:
 	int YearDay;
 	timeutil::Time TimeTick;
 
+    bool IsStop{ false };
+
 private:
 	std::mutex _mtx;
 	unsigned int _snTicket{ 1 };

@@ -51,8 +51,8 @@ std::string Robot::GetAccount() const
 
 void Robot::RegisterState()
 {
-    RegisterStateClass(RobotStateType::RobotState_Login_Connecting, DynamicStateBind(RobotStateLoginConnecting));
-    RegisterStateClass(RobotStateType::RobotState_Login_Connected, DynamicStateBind(RobotStateLoginConnected));
+    RegisterStateClass(RobotStateType::RobotState_Login_Connecting, DynamicStateBind(RobotStateLoginConnectting));
+    RegisterStateClass(RobotStateType::RobotState_Login_Connected, DynamicStateBind(RobotStateLoginConnectted));
     RegisterStateClass(RobotStateType::RobotState_Login_Logined, DynamicStateBind(RobotStateLoginLogined));
 }
 
@@ -75,7 +75,7 @@ void Robot::SendMsgAccountCheck()
 {
     Proto::AccountCheck accountCheck;
     accountCheck.set_account(GetAccount());
-    accountCheck.set_password("e10adc3949ba59abbe56e057f20f883e");
+    accountCheck.set_password("123456");
 
     auto pPacket = new Packet(Proto::MsgId::C2L_AccountCheck, GetSocket());
     pPacket->SerializeToBuffer(accountCheck);

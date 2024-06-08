@@ -3,8 +3,6 @@
 #include <mutex>
 #include "disposable.h"
 
-
-// 用于数据的交换
 template<class T>
 class CacheSwap :public IDisposable
 {
@@ -58,18 +56,7 @@ inline bool CacheSwap<T>::CanSwap()
 template<class T>
 inline void CacheSwap<T>::Dispose()
 {
-    for (auto iter = _caches1.begin(); iter != _caches1.end(); ++iter)
-    {
-        (*iter)->Dispose();
-        delete (*iter);
-    }
     _caches1.clear();
-
-    for (auto iter = _caches2.begin(); iter != _caches2.end(); ++iter)
-    {
-        (*iter)->Dispose();
-        delete (*iter);
-    }
     _caches2.clear();
 
     _readerCache = nullptr;

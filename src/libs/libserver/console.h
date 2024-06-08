@@ -43,6 +43,7 @@ protected:
 	std::mutex _lock;
 	std::thread _thread;
 	std::queue<std::string> _commands;
+    bool _isRun{ true };
 };
 
 template<class T>

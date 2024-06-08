@@ -19,17 +19,6 @@ void ThreadMgr::StartAllThread()
     }
 }
 
-bool ThreadMgr::IsGameLoop()
-{
-    for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
-    {
-        if (iter->second->IsRun())
-            return true;
-    }
-
-    return false;
-}
-
 void ThreadMgr::NewThread()
 {
     std::lock_guard<std::mutex> guard(_thread_lock);
@@ -92,8 +81,36 @@ Network* ThreadMgr::GetNetwork(APP_TYPE appType)
     return iter->second;
 }
 
+bool ThreadMgr::IsStopAll()
+{
+    std::lock_guard<std::mutex> guard(_thread_lock);
+    for (auto iter = _threads.begin(); iter != _threads.end(); ++iter) 
+    {
+        if (!iter->second->IsStop())
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool ThreadMgr::IsDisposeAll()
+{
+    std::lock_guard<std::mutex> guard(_thread_lock);
+    for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
+    {
+        if (!iter->second->IsDispose())
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 void ThreadMgr::Dispose()
 {
+    std::lock_guard<std::mutex> guard(_thread_lock);
+
     auto iter = _threads.begin();
     while (iter != _threads.end())
     {
@@ -102,6 +119,7 @@ void ThreadMgr::Dispose()
         delete pThread;
         ++iter;
     }
+    _threads.clear();
 
     ThreadObjectList::Dispose();
 }

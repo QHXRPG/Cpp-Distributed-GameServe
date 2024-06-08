@@ -58,7 +58,16 @@ bool Console::Init()
             _lock.lock();
             _commands.push(std::string(_buffer));
             _lock.unlock();
-        } while (true);
+
+            std::string cmdMsg = _buffer;
+            auto iter = cmdMsg.find("exit");
+            if (iter != std::string::npos)
+            {                
+                _isRun = false;
+                Global::GetInstance()->IsStop = true;
+            }
+
+        } while (_isRun);
     });
 
     return true;
@@ -106,6 +115,11 @@ void Console::Dispose()
     }
 
     _handles.clear();
+
+    if (_isRun)
+        _thread.detach();
+    else
+        _thread.join();
 
     ThreadObject::Dispose();
 }

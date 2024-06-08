@@ -16,7 +16,11 @@ class ThreadMgr :public Singleton<ThreadMgr>, public ThreadObjectList
 public:
     ThreadMgr();
     void StartAllThread();
-    bool IsGameLoop();
+
+    bool IsStopAll();
+    bool IsDisposeAll();
+    void Dispose() override;    
+
     void NewThread();
     bool AddObjToThread(ThreadObject* obj);
     void AddNetworkToThread(APP_TYPE appType, Network* pNetwork);
@@ -24,8 +28,6 @@ public:
     // message
     void DispatchPacket(Packet* pPacket);
     void SendPacket(Packet* pPacket);
-
-    void Dispose() override;
 
 private:
     Network* GetNetwork(APP_TYPE appType);

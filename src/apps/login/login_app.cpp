@@ -1,6 +1,7 @@
 #include "login_app.h"
 #include "account.h"
 #include "libserver/robot_test.h"
+#include "libserver/console.h"
 
 void LoginApp::InitApp()
 {
@@ -11,4 +12,7 @@ void LoginApp::InitApp()
 
     Account* pAccount = new Account();
     _pThreadMgr->AddObjToThread(pAccount);
+
+    Console* pConsole = new Console();
+    _pThreadMgr->AddObjToThread(pConsole);
 }

@@ -4,8 +4,6 @@
 #include <list>
 #include "disposable.h"
 
-
-// 用于对象的增加\删除
 template<class T>
 class CacheRefresh :public IDisposable
 {
@@ -43,24 +41,18 @@ inline std::vector<T*>* CacheRefresh<T>::GetReaderCache()
 	return &_reader;
 }
 
-// 将删除与增加的数据应用到读队列中、
-// 返回需要删除的对象，在线程中统一删释放
 template <class T>
 inline std::list<T*> CacheRefresh<T>::Swap()
 {
 	std::list<T*> rs;
-
-	// 根据_add增加读队列元素
 	for (auto one : _add)
 	{
 		_reader.push_back(one);
 	}
 	_add.clear();
 
-	// 根据_remove删除读队列元素
 	for (auto one : _remove)
 	{
-		//遍历 _reader 容器，查找第一个等于 one 的元素，并返回一个指向该元素的迭代器
 		auto iterReader = std::find_if(_reader.begin(), _reader.end(), [one](auto x)
 		{
 			return x == one;
@@ -68,8 +60,7 @@ inline std::list<T*> CacheRefresh<T>::Swap()
 
 		if (iterReader == _reader.end())
 		{
-            std::cout << "CacheRefresh Swap error. not find obj to remove. sn:" 
-						<< one->GetSN() << std::endl;
+            std::cout << "CacheRefresh Swap error. not find obj to remove. sn:" << one->GetSN() << std::endl;
 		}
 		else
 		{

@@ -26,8 +26,6 @@ void ThreadObjectList::AddObject(ThreadObject* obj)
 void ThreadObjectList::Update()
 {
     _obj_lock.lock();
-    
-    // 释放需要删除的对象
     if (_objlist.CanSwap())
     {
         auto pDelList = _objlist.Swap();
@@ -46,8 +44,8 @@ void ThreadObjectList::Update()
     }
     _packet_lock.unlock();
 
-    auto pList = _objlist.GetReaderCache();   // 得到读对象缓冲区的指针, 
-    auto pMsgList = _cachePackets.GetReaderCache();   // 得到读数据缓冲区的指针
+    auto pList = _objlist.GetReaderCache();
+    auto pMsgList = _cachePackets.GetReaderCache();
 
     for (auto iter = pList->begin(); iter != pList->end(); ++iter)
     {
@@ -86,33 +84,46 @@ void ThreadObjectList::Dispose()
 
 Thread::Thread()
 {
-    this->_isRun = true;
-}
-
-void Thread::Stop()
-{
-    if (!_isRun)
-    {
-        _isRun = false;
-        if (_thread.joinable()) _thread.join();
-    }
+    _state = ThreadState_Init;
 }
 
 void Thread::Start()
 {
-    _isRun = true;
     _thread = std::thread([this]()
         {
-            while (_isRun)
+            _state = ThreadState_Run;
+            while (!Global::GetInstance()->IsStop)
             {
                 Update();
                 std::this_thread::sleep_for(std::chrono::milliseconds(1));
             }
+
+            const auto theadId = _thread.get_id();
+            std::cout << "close thread [1/2]. thread sn:" << this->GetSN() << " thread id:" << theadId << std::endl;
+            _state = ThreadState_Stoped;
         });
 }
 
 bool Thread::IsRun() const
 {
-    return _isRun;
+    return _state == ThreadState_Run;
+}
+
+bool Thread::IsStop() const
+{
+    return _state == ThreadState_Stoped;
+}
+
+bool Thread::IsDispose()
+{
+    if (_thread.joinable())
+    {
+        const auto theadId = _thread.get_id();
+        _thread.join();
+        std::cout << "close thread [2/2]. thread sn:" << this->GetSN() << " thread id:" << theadId << std::endl;
+        return true;
+    }
+
+    return false;
 }
 

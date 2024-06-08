@@ -366,6 +366,7 @@ CMakeFiles/logind.dir/login_app.cpp.o
  ../../libs/libserver/cache_refresh.h
  ../../libs/libserver/cache_swap.h
  ../../libs/libserver/common.h
+ ../../libs/libserver/console.h
  ../../libs/libserver/disposable.h
  ../../libs/libserver/global.h
  ../../libs/libserver/message_list.h

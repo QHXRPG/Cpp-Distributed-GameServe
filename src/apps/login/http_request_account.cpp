@@ -11,7 +11,7 @@ HttpRequestAccount::HttpRequestAccount(std::string account, std::string password
     _curlRs = CRS_None;
     _method = HttpResquestMethod::HRM_Post;
 
-    _url = "192.168.0.120/member_login_t.php";
+    _url = "192.168.71.135/member_login_t.php";
     _params.append("account=").append(_account).append("&password=").append(_password);
 
     //std::cout << "account check url:" << _url.c_str() << "?" << _params.c_str() << std::endl;

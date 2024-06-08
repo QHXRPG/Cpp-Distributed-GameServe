@@ -10,6 +10,13 @@
 #include "thread_obj.h"
 #include "packet.h"
 
+enum ThreadState
+{
+    ThreadState_Init,
+    ThreadState_Run,
+    ThreadState_Stoped,
+};
+
 class ThreadObjectList: public IDisposable
 {
 public:
@@ -19,7 +26,7 @@ public:
     void Dispose() override;
 
 protected:
-    // 本线程的所有对象         
+    // 本线程的所有对象        
     std::mutex _obj_lock;
     CacheRefresh<ThreadObject> _objlist;
 
@@ -32,11 +39,13 @@ class Thread : public ThreadObjectList, public SnObject {
 public:
     Thread();
     void Start();
-    void Stop();
+
     bool IsRun() const;
-   
+    bool IsStop() const;
+    bool IsDispose();
+
 private:
-    bool _isRun;
+    ThreadState _state;
     std::thread _thread;
 };
 

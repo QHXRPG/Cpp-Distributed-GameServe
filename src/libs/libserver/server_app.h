@@ -3,14 +3,18 @@
 #include "common.h"
 #include "thread_mgr.h"
 
+#if ENGINE_PLATFORM != PLATFORM_WIN32
+#include <signal.h>
+#else
+#include <csignal>
+#endif
+
 template<class APPClass>
 inline int MainTemplate()
 {
 	APPClass* pApp = new APPClass();
-	pApp->InitApp();
-	pApp->StartAllThread();
+	pApp->InitApp();	
 	pApp->Run();
-	pApp->Dispose();
 	delete pApp;
 	return 0;
 }
@@ -24,11 +28,13 @@ public:
 	virtual void InitApp() = 0;
 	void Dispose() override;
 
-	void StartAllThread() const;
 	void Run() const;
 	void UpdateTime() const;
 
 	bool AddListenerToThread(std::string ip, int port) const;
+
+    // signal
+    static void Signalhandler(int signalValue);
 
 protected:
 	ThreadMgr * _pThreadMgr;
