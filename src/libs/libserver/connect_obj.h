@@ -4,6 +4,7 @@
 #include "disposable.h"
 #include "network.h"
 #include "time.h"
+#include "object_block.h"
 
 class RecvNetworkBuffer;
 class SendNetworkBuffer;
@@ -12,13 +13,11 @@ class Packet;
 #define PingTime 1000 // 1Ãë
 #define PingDelayTime  10 * 1000 // 10Ãë
 
-class ConnectObj : public IDisposable
+class ConnectObj : public ObjectBlock
 {
 public:
-    ConnectObj(Network* pNetWork, SOCKET socket);
-    ~ConnectObj() override;
-
-    void Dispose() override;
+    ConnectObj(IDynamicObjectPool* pPool);
+    virtual ~ConnectObj();
 
     SOCKET GetSocket() const { return _socket; }
     bool HasRecvData() const;
@@ -30,9 +29,13 @@ public:
     bool Send() const;
     void Close();
 
+    // Í¨¹ý ObjectBlock ¼Ì³Ð
+    void TakeoutFromPool(Network* pNetWork, SOCKET socket);
+    virtual void BackToPool() override;
+
 protected:
     Network* _pNetWork{ nullptr };
-    const SOCKET _socket;
+    SOCKET _socket;
     RecvNetworkBuffer* _recvBuffer{ nullptr };
     SendNetworkBuffer* _sendBuffer{ nullptr };
 };

@@ -81,24 +81,24 @@ inline bool CacheRefresh<T>::CanSwap()
 template<class T>
 inline void CacheRefresh<T>::Dispose()
 {
-    for (auto iter = _add.begin(); iter != _add.end(); ++iter)
-    {
-        (*iter)->Dispose();
-        delete (*iter);
-    }
-    _add.clear();
+	for (auto iter = _add.begin(); iter != _add.end(); ++iter)
+	{
+		(*iter)->Dispose();
+		delete (*iter);
+	}
+	_add.clear();
 
-    for (auto iter = _remove.begin(); iter != _remove.end(); ++iter)
-    {
-        (*iter)->Dispose();
-        delete (*iter);
-    }
-    _remove.clear();
+	for (auto iter = _remove.begin(); iter != _remove.end(); ++iter)
+	{
+		(*iter)->Dispose();
+		delete (*iter);
+	}
+	_remove.clear();
 
-    for (auto iter = _reader.begin(); iter != _reader.end(); ++iter)
-    {
-        (*iter)->Dispose();
-        delete (*iter);
-    }
-    _reader.clear();
+	for (auto iter = _reader.begin(); iter != _reader.end(); ++iter)
+	{
+		(*iter)->Dispose();
+		delete (*iter);
+	}
+	_reader.clear();
 }

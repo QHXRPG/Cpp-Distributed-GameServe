@@ -8,17 +8,18 @@
 
 #define ConsoleMaxBuffer 512
 
-typedef std::function<void(std::string, std::string)> HandleConsole;
+typedef std::function<void(std::vector<std::string>&)> HandleConsole;
 
 class ConsoleCmd : public IDisposable
 {
 public:
 	virtual void RegisterHandler() = 0;
 	void Dispose() override;
-	void Process(std::vector<std::string> params);
+	void Process(std::vector<std::string>& params);
 
 protected:
 	void OnRegisterHandler(std::string key, HandleConsole handler);
+    static bool CheckParamCnt(std::vector<std::string>& params, const size_t count);
 
 private:
 	std::map<std::string, HandleConsole> _handles;

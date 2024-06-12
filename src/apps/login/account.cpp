@@ -17,11 +17,20 @@ void Account::RegisterMsgFunction()
 
     pMsgCallBack->RegisterFunction(Proto::MsgId::C2L_AccountCheck, BindFunP1(this, &Account::HandleAccountCheck));
     pMsgCallBack->RegisterFunction(Proto::MsgId::MI_AccountCheckToHttpRs, BindFunP1(this, &Account::HandleAccountCheckToHttpRs));
+
+    // ´¦Àí¶ÏÏß
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkDisconnect, BindFunP1(this, &Account::HandleNetworkDisconnect));
 }
 
 void Account::Update()
 {
 
+}
+
+void Account::HandleNetworkDisconnect(Packet* pPacket)
+{
+    //std::cout << "player offline. socket:" << pPacket->GetSocket() << std::endl;
+    _playerMgr.RemovePlayer(pPacket->GetSocket());
 }
 
 void Account::HandleAccountCheck(Packet* pPacket)

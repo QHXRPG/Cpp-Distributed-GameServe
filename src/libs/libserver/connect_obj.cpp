@@ -6,8 +6,12 @@
 #include "packet.h"
 #include "thread_mgr.h"
 
-ConnectObj::ConnectObj(Network* pNetWork, SOCKET socket) :_pNetWork(pNetWork), _socket(socket)
+#include "object_pool_interface.h"
+
+ConnectObj::ConnectObj(IDynamicObjectPool* pPool) :ObjectBlock(pPool)
 {
+    _pNetWork = nullptr;
+    _socket = INVALID_SOCKET;
     _recvBuffer = new RecvNetworkBuffer(DEFAULT_RECV_BUFFER_SIZE, this);
     _sendBuffer = new SendNetworkBuffer(DEFAULT_SEND_BUFFER_SIZE, this);
 }
@@ -21,13 +25,29 @@ ConnectObj::~ConnectObj()
         delete _sendBuffer;
 }
 
-void ConnectObj::Dispose()
+void ConnectObj::TakeoutFromPool(Network* pNetWork, SOCKET socket)
+{
+    _pNetWork = pNetWork;
+    _socket = socket;
+}
+
+void ConnectObj::BackToPool()
 {
     //std::cout << "close socket:" << _socket << std::endl;
-    _sock_close(_socket);
 
-    _recvBuffer->Dispose();
-    _sendBuffer->Dispose();
+    if (!Global::GetInstance()->IsStop)
+    {
+        // 通知其他对象，有Socket中断了
+        Packet* pResultPacket = new Packet(Proto::MsgId::MI_NetworkDisconnect, _socket);
+        MessageList::DispatchPacket(pResultPacket);
+    }
+
+    _pNetWork = nullptr;
+    _socket = INVALID_SOCKET;
+    _recvBuffer->BackToPool();
+    _sendBuffer->BackToPool();
+
+    _pPool->FreeObject(this);
 }
 
 bool ConnectObj::HasRecvData() const
@@ -43,7 +63,7 @@ Packet* ConnectObj::GetRecvPacket() const
 bool ConnectObj::Recv() const
 {
     bool isRs = false;
-    char *pBuffer = nullptr;
+    char* pBuffer = nullptr;
     while (true)
     {
         // 总空间数据不足一个头的大小，扩容
@@ -134,7 +154,7 @@ void ConnectObj::SendPacket(Packet* pPacket) const
 bool ConnectObj::Send() const
 {
     while (true) {
-        char *pBuffer = nullptr;
+        char* pBuffer = nullptr;
         const int needSendSize = _sendBuffer->GetBuffer(pBuffer);
 
         // 没有数据可发送
@@ -169,3 +189,4 @@ void ConnectObj::Close()
     const auto pPacketDis = new Packet(Proto::MsgId::MI_NetworkDisconnectToNet, GetSocket());
     _pNetWork->GetThread()->AddPacketToList(pPacketDis);
 }
+

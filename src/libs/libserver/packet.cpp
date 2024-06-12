@@ -17,7 +17,7 @@ Packet::~Packet()
     CleanBuffer();
 }
 
-void Packet::Dispose()
+void Packet::BackToPool()
 {
     _msgId = Proto::MsgId::None;
     _beginIndex = 0;

@@ -78,7 +78,10 @@ void ThreadObjectList::AddPacketToList(Packet* pPacket)
 
 void ThreadObjectList::Dispose()
 {
+	std::lock_guard<std::mutex> guardObj(_obj_lock);
     _objlist.Dispose();
+
+	std::lock_guard<std::mutex> guardPacket(_packet_lock);
     _cachePackets.Dispose();
 }
 

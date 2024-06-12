@@ -4,10 +4,21 @@
 #include <thread>
 #include "thread.h"
 #include "util_string.h"
+#include "console_cmd_pool.h"
 
 void ConsoleCmd::OnRegisterHandler(std::string key, HandleConsole handler)
 {
     _handles[key] = handler;
+}
+
+bool ConsoleCmd::CheckParamCnt(std::vector<std::string>& params, const size_t count)
+{
+    if (params.size() == count)
+        return true;
+
+    std::cout << "input param size is error. see: -help" << std::endl;
+
+    return false;
 }
 
 void ConsoleCmd::Dispose()
@@ -15,7 +26,7 @@ void ConsoleCmd::Dispose()
     _handles.clear();
 }
 
-void ConsoleCmd::Process(std::vector<std::string> params)
+void ConsoleCmd::Process(std::vector<std::string>& params)
 {
     if (params.size() <= 1)
         return;
@@ -29,21 +40,8 @@ void ConsoleCmd::Process(std::vector<std::string> params)
         return;
     }
 
-    switch (params.size())
-    {
-    case 2:
-        iter->second("", "");
-        break;
-    case 3:
-        iter->second(params[2], "");
-        break;
-    case 4:
-        iter->second(params[2], params[3]);
-        break;
-    default:
-        std::cout << "input error. -help for help." << std::endl;
-        break;;
-    }
+    params.erase(params.begin(), params.begin() + 2);
+    iter->second(params);
 }
 
 bool Console::Init()
@@ -70,6 +68,7 @@ bool Console::Init()
         } while (_isRun);
     });
 
+    Register<ConsoleCmdPool>("pool");
     return true;
 }
 

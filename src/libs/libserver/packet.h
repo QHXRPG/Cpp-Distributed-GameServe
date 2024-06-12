@@ -35,7 +35,7 @@ public:
     template<class ProtoClass>
     void SerializeToBuffer(ProtoClass& protoClase)
     {
-        auto total = protoClase.ByteSizeLong();
+        auto total = (unsigned int)protoClase.ByteSizeLong();
         while (GetEmptySize() < total)
         {
             ReAllocBuffer();
@@ -45,7 +45,7 @@ public:
         FillData(total);
     }
 
-    void Dispose() override;
+    void BackToPool();
     void CleanBuffer();
 
     char* GetBuffer() const;

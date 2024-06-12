@@ -2,12 +2,16 @@
 #include "disposable.h"
 
 // 追加大小
-#define ADDITIONAL_SIZE 10 //1024 * 128
+#if TestNetwork
+#define ADDITIONAL_SIZE 10
+#else
+#define ADDITIONAL_SIZE 1024 * 128
+#endif
 
 // 最大缓冲
 #define MAX_SIZE		1024 * 1024 // 1M
 
-class Buffer :public IDisposable
+class Buffer
 {
 public:
 	virtual unsigned int GetEmptySize();

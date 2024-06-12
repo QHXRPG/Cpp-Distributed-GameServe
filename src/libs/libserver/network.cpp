@@ -4,6 +4,7 @@
 #include "common.h"
 
 #include <iostream>
+#include "object_pool.h"
 
 void Network::Dispose()
 {
@@ -17,7 +18,6 @@ void Network::Clean()
     {
         auto pObj = iter->second;
         pObj->Dispose();
-        delete pObj;
     }
     _connects.clear();
 
@@ -101,7 +101,7 @@ SOCKET Network::CreateSocket()
 
 void Network::CreateConnectObj(SOCKET socket)
 {
-    ConnectObj* pConnectObj = new ConnectObj(this, socket);
+    ConnectObj* pConnectObj = DynamicObjectPool<ConnectObj>::GetInstance()->MallocObject(this, socket);
 
     if (_connects.find(socket) != _connects.end())
     {
@@ -120,7 +120,6 @@ void Network::CreateConnectObj(SOCKET socket)
 #define RemoveConnectObj(iter) \
     iter->second->Dispose( ); \
     DeleteEvent(_epfd, iter->first); \
-    delete iter->second; \
     iter = _connects.erase( iter ); 
 
 void Network::AddEvent(int epollfd, int fd, int flag)
@@ -203,7 +202,6 @@ void Network::Epoll()
 
 #define RemoveConnectObj(iter) \
     iter->second->Dispose( ); \
-    delete iter->second; \
     iter = _connects.erase( iter ); 
 
 void Network::Select()

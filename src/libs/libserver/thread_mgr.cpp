@@ -109,8 +109,9 @@ bool ThreadMgr::IsDisposeAll()
 
 void ThreadMgr::Dispose()
 {
-    std::lock_guard<std::mutex> guard(_thread_lock);
+	ThreadObjectList::Dispose();
 
+    std::lock_guard<std::mutex> guard(_thread_lock);
     auto iter = _threads.begin();
     while (iter != _threads.end())
     {
@@ -120,8 +121,6 @@ void ThreadMgr::Dispose()
         ++iter;
     }
     _threads.clear();
-
-    ThreadObjectList::Dispose();
 }
 
 void ThreadMgr::DispatchPacket(Packet* pPacket)

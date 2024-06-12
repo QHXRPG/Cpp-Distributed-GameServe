@@ -13,7 +13,7 @@ public:
 	void RegisterHandler() override;
 
 private:
-	void HandleHelp(std::string p1, std::string p2);
-	void HandleLogin(std::string p1, std::string p2);
-	void HandleLoginEx(std::string p1, std::string p2);	
+    void HandleHelp(std::vector<std::string>& params);
+    void HandleLogin(std::vector<std::string>& params);
+    void HandleLoginEx(std::vector<std::string>& params);
 };

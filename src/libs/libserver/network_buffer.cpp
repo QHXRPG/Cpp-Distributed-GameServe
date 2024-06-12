@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <cstring>
 
-NetworkBuffer::NetworkBuffer(const unsigned size, ConnectObj* pConnectObj)
+NetworkBuffer::NetworkBuffer(const unsigned int size, ConnectObj* pConnectObj)
 {
     _pConnectObj = pConnectObj;
     _bufferSize = size;
@@ -19,6 +19,13 @@ NetworkBuffer::~NetworkBuffer()
 {
     if (_buffer != nullptr)
         delete[] _buffer;
+}
+
+void NetworkBuffer::BackToPool()
+{
+    _beginIndex = 0;
+    _endIndex = 0;
+    _dataSize = 0;
 }
 
 bool NetworkBuffer::HasData() const
@@ -104,10 +111,6 @@ RecvNetworkBuffer::RecvNetworkBuffer(const unsigned int size, ConnectObj* pConne
 
 }
 
-void RecvNetworkBuffer::Dispose() {
-
-}
-
 int RecvNetworkBuffer::GetBuffer(char*& pBuffer) const
 {
     pBuffer = _buffer + _endIndex;
@@ -152,7 +155,7 @@ Packet* RecvNetworkBuffer::GetPacket()
 
     const auto socket = _pConnectObj->GetSocket();
     Packet* pPacket = new Packet((Proto::MsgId)head.MsgId, socket);
-    const auto dataLength = totalSize - sizeof(PacketHead) - sizeof(TotalSizeType);
+    const unsigned int dataLength = totalSize - sizeof(PacketHead) - sizeof(TotalSizeType);
     while (pPacket->GetTotalSize() < dataLength)
     {
         pPacket->ReAllocBuffer();
@@ -186,11 +189,6 @@ void RecvNetworkBuffer::MemcpyFromBuffer(char* pVoid, const unsigned int size)
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 SendNetworkBuffer::SendNetworkBuffer(const unsigned int size, ConnectObj* pConnectObj) : NetworkBuffer(size, pConnectObj)
-{
-
-}
-
-void SendNetworkBuffer::Dispose()
 {
 
 }

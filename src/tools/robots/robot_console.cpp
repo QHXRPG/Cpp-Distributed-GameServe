@@ -18,32 +18,38 @@ bool RobotConsole::Init()
 
 void RobotConsoleLogin::RegisterHandler()
 {
-    OnRegisterHandler("-help", BindFunP2(this, &RobotConsoleLogin::HandleHelp));
-    OnRegisterHandler("-a", BindFunP2(this, &RobotConsoleLogin::HandleLogin));
-    OnRegisterHandler("-ex", BindFunP2(this, &RobotConsoleLogin::HandleLoginEx));
+    OnRegisterHandler("-help", BindFunP1(this, &RobotConsoleLogin::HandleHelp));
+    OnRegisterHandler("-a", BindFunP1(this, &RobotConsoleLogin::HandleLogin));
+    OnRegisterHandler("-ex", BindFunP1(this, &RobotConsoleLogin::HandleLoginEx));
 }
 
-void RobotConsoleLogin::HandleHelp(std::string p1, std::string p2)
+void RobotConsoleLogin::HandleHelp(std::vector<std::string>& params)
 {
     std::cout << "-a account.\t\tlogin by account" << std::endl;
     std::cout << "-ex account count.\tbatch login, account is prefix, count as number" << std::endl;
 }
 
-void RobotConsoleLogin::HandleLogin(std::string p1, std::string p2)
+void RobotConsoleLogin::HandleLogin(std::vector<std::string>& params)
 {
-    //std::cout << "login. account:" << p1.c_str() << std::endl;
+    if (!CheckParamCnt(params, 1))
+        return;
+
     GlobalRobots::GetInstance()->SetRobotsCount(1);
-    Robot* pRobot = new Robot(p1);
+    const std::string name = params[0];
+    Robot* pRobot = new Robot(name);
     ThreadMgr::GetInstance()->AddObjToThread(pRobot);
 }
 
-void RobotConsoleLogin::HandleLoginEx(std::string p1, std::string p2)
+void RobotConsoleLogin::HandleLoginEx(std::vector<std::string>& params)
 {
-    int count = std::atoi(p2.c_str());
+    if (!CheckParamCnt(params, 2))
+        return;
+
+    const int count = std::atoi(params[1].c_str());
     GlobalRobots::GetInstance()->SetRobotsCount(count);
     for (int i = 1; i <= count; i++)
     {
-        std::string account = p1 + std::to_string(i);
+        const std::string account = params[0] + std::to_string(i);
         Robot* pRobot = new Robot(account);
         ThreadMgr::GetInstance()->AddObjToThread(pRobot);
     }

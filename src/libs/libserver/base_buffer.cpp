@@ -9,9 +9,9 @@ unsigned Buffer::GetEmptySize()
 
 void Buffer::ReAllocBuffer(const unsigned int dataLength)
 {
-	// 如果缓冲区超过最大缓冲值，可能有异常，直接关闭socket
+	// 如果缓冲区超过最大缓冲值，发出警告
 	if (_bufferSize >= MAX_SIZE) {
-		std::cout << "Buffer::Realloc except!! " << std::endl;
+		std::cout << "Buffer::Realloc except!! Max size:" << _bufferSize << std::endl;
 	}
 
 	char* tempBuffer = new char[_bufferSize + ADDITIONAL_SIZE];
@@ -53,3 +53,4 @@ void Buffer::ReAllocBuffer(const unsigned int dataLength)
 
 	//std::cout << "Buffer::Realloc. _bufferSize:" << _bufferSize << std::endl;
 }
+
