@@ -1,10 +1,9 @@
 #pragma once
 #include <list>
 #include <mutex>
-#include "disposable.h"
 
 template<class T>
-class CacheSwap :public IDisposable
+class CacheSwap
 {
 public:
     CacheSwap()
@@ -17,7 +16,7 @@ public:
     std::list<T*>* GetReaderCache();
     void Swap();
     bool CanSwap();
-    void Dispose() override;
+    void BackToPool();
 
 private:
     std::list<T*> _caches1;
@@ -54,12 +53,18 @@ inline bool CacheSwap<T>::CanSwap()
 }
 
 template<class T>
-inline void CacheSwap<T>::Dispose()
+inline void CacheSwap<T>::BackToPool()
 {
+	for (auto iter = _caches1.begin(); iter != _caches1.end(); ++iter)
+	{
+		(*iter)->BackToPool();
+	}
     _caches1.clear();
-    _caches2.clear();
 
-    _readerCache = nullptr;
-    _writerCache = nullptr;
+	for (auto iter = _caches2.begin(); iter != _caches2.end(); ++iter)
+	{
+		(*iter)->BackToPool();
+	}
+    _caches2.clear();
 }
 

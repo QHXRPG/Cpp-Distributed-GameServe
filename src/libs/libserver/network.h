@@ -2,9 +2,11 @@
 
 #include <map>
 #include "common.h"
-#include "thread_obj.h"
+#include "entity.h"
 #include "socket_object.h"
 #include "cache_swap.h"
+#include "message_system.h"
+#include "network_interface.h"
 
 #if ENGINE_PLATFORM != PLATFORM_WIN32
 #include <errno.h>
@@ -45,13 +47,13 @@
 class ConnectObj;
 class Packet;
 
-class Network : public ThreadObject, public ISocketObject
+class Network : public Entity<Network>, public IMessageSystem, public INetwork
 {
 public:
-    void Dispose() override;
+    void BackToPool() override;
     void RegisterMsgFunction() override;
     SOCKET GetSocket() override { return _masterSocket; }
-    void SendPacket(Packet*);
+    void SendPacket(Packet*& pPacket) override;
     bool IsBroadcast() { return _isBroadcast; }
 
 protected:
@@ -70,7 +72,7 @@ protected:
     void Select();
 #endif
 
-    void Update() override;
+    void OnNetworkUpdate();
 
 private:
     void HandleDisconnect(Packet* pPacket);

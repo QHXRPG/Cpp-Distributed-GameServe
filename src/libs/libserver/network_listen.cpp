@@ -3,17 +3,17 @@
 #include "common.h"
 #include "network_listen.h"
 #include "connect_obj.h"
+#include "thread_mgr.h"
+#include "network_locator.h"
 
-bool NetworkListen::Init()
+void NetworkListen::AwakeFromPool(std::string ip, int port)
 {
-    return true;
-}
+	auto pNetworkLocator = ThreadMgr::GetInstance()->GetComponent<NetworkLocator>();
+	pNetworkLocator->AddListenLocator(this, NetworkTcpListen);
 
-bool NetworkListen::Listen(std::string ip, int port)
-{
     _masterSocket = CreateSocket();
     if (_masterSocket == INVALID_SOCKET)
-        return false;
+        return;
 
     sockaddr_in addr;
     memset(&addr, 0, sizeof(sockaddr_in));
@@ -24,13 +24,13 @@ bool NetworkListen::Listen(std::string ip, int port)
     if (::bind(_masterSocket, reinterpret_cast<sockaddr *>(&addr), sizeof(addr)) < 0)
     {
         std::cout << "::bind failed. err:" << _sock_err() << std::endl;
-        return false;
+        return;
     }
 
     if (::listen(_masterSocket, SOMAXCONN) < 0)
     {
         std::cout << "::listen failed." << _sock_err() << std::endl;
-        return false;
+        return;
     }
 
 #ifdef EPOLL
@@ -40,7 +40,7 @@ bool NetworkListen::Listen(std::string ip, int port)
     std::cout << "select model" << std::endl;
 #endif
 
-    return true;
+    return;
 }
 
 int NetworkListen::Accept()
@@ -63,6 +63,11 @@ int NetworkListen::Accept()
     }
 }
 
+const char* NetworkListen::GetTypeName()
+{
+    return typeid(NetworkListen).name();
+}
+
 #ifndef EPOLL
 
 void NetworkListen::Update()
@@ -74,7 +79,7 @@ void NetworkListen::Update()
         Accept();
     }
 
-    Network::Update();
+    Network::OnNetworkUpdate();
 }
 
 #else
@@ -88,7 +93,7 @@ void NetworkListen::Update()
         Accept();
     }
 
-    Network::Update();
+    Network::OnNetworkUpdate();
 }
 
 #endif

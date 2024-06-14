@@ -2,143 +2,99 @@
 #include "common.h"
 #include <iostream>
 
-#include "network.h"
-#include "network_listen.h"
-
 ThreadMgr::ThreadMgr()
 {
 }
 
 void ThreadMgr::StartAllThread()
 {
-    auto iter = _threads.begin();
-    while (iter != _threads.end())
-    {
-        iter->second->Start();
-        ++iter;
-    }
+	for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
+	{
+		(*iter)->Start();
+	}
 }
 
-void ThreadMgr::NewThread()
+void ThreadMgr::Update()
 {
-    std::lock_guard<std::mutex> guard(_thread_lock);
-    auto pThread = new Thread();
-    _threads.insert(std::make_pair(pThread->GetSN(), pThread));
+	_create_lock.lock();
+	if (_createPackets.CanSwap()) {
+		_createPackets.Swap();
+	}
+	_create_lock.unlock();
+
+	auto pList = _createPackets.GetReaderCache();
+	for (auto iter = pList->begin(); iter != pList->end(); ++iter)
+	{
+		const auto packet = (*iter);
+		if (_threadIndex >= _threads.size())
+			_threadIndex = 0;
+
+		_threads[_threadIndex]->AddPacketToList(packet);
+		_threadIndex++;
+	}
+	pList->clear();
+
+	EntitySystem::Update();
 }
 
-// 平均加入各线程中
-bool ThreadMgr::AddObjToThread(ThreadObject* obj)
+void ThreadMgr::CreateThread()
 {
-    std::lock_guard<std::mutex> guard(_thread_lock);
-
-    // 找到上一次的线程	
-    auto iter = _threads.begin();
-    if (_lastThreadSn > 0)
-    {
-        iter = _threads.find(_lastThreadSn);
-    }
-
-    if (iter == _threads.end())
-    {
-        // 没有找到，可能没有配线程
-        std::cout << "AddThreadObj Failed. no thead." << std::endl;
-        return false;
-    }
-
-    // 取到它的下一个活动线程
-    do
-    {
-        ++iter;
-        if (iter == _threads.end())
-            iter = _threads.begin();
-    } while (!(iter->second->IsRun()));
-
-    auto pThread = iter->second;
-    pThread->AddObject(obj);
-    _lastThreadSn = pThread->GetSN();
-    //std::cout << "add obj to thread.id:" << pThread->GetSN() << std::endl;
-
-    return true;
-}
-
-void ThreadMgr::AddNetworkToThread(APP_TYPE appType, Network* pNetwork)
-{
-    if (!AddObjToThread(pNetwork))
-        return;
-
-    std::lock_guard<std::mutex> guard(_locator_lock);
-    _networkLocator[appType] = pNetwork;
-}
-
-Network* ThreadMgr::GetNetwork(APP_TYPE appType)
-{
-    std::lock_guard<std::mutex> guard(_locator_lock);
-
-    auto iter = _networkLocator.find(appType);
-    if (iter == _networkLocator.end())
-        return nullptr;
-
-    return iter->second;
+	_threads.emplace_back(new Thread());
 }
 
 bool ThreadMgr::IsStopAll()
 {
-    std::lock_guard<std::mutex> guard(_thread_lock);
-    for (auto iter = _threads.begin(); iter != _threads.end(); ++iter) 
-    {
-        if (!iter->second->IsStop())
-        {
-            return false;
-        }
-    }
-    return true;
+	for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
+	{
+		if (!(*iter)->IsStop())
+		{
+			return false;
+		}
+	}
+	return true;
 }
 
 bool ThreadMgr::IsDisposeAll()
 {
-    std::lock_guard<std::mutex> guard(_thread_lock);
-    for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
-    {
-        if (!iter->second->IsDispose())
-        {
-            return false;
-        }
-    }
-    return true;
+	for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
+	{
+		if (!(*iter)->IsDispose())
+		{
+			return false;
+		}
+	}
+	return true;
 }
 
 void ThreadMgr::Dispose()
 {
-	ThreadObjectList::Dispose();
+	EntitySystem::Dispose();
 
-    std::lock_guard<std::mutex> guard(_thread_lock);
-    auto iter = _threads.begin();
-    while (iter != _threads.end())
-    {
-        Thread* pThread = iter->second;
-        pThread->Dispose();
-        delete pThread;
-        ++iter;
-    }
-    _threads.clear();
+	auto iter = _threads.begin();
+	while (iter != _threads.end())
+	{
+		Thread* pThread = *iter;
+		pThread->Dispose();
+		delete pThread;
+		++iter;
+	}
+	_threads.clear();
 }
 
 void ThreadMgr::DispatchPacket(Packet* pPacket)
 {
-    // 主线程
-    AddPacketToList(pPacket);
+	// 主线程
+	AddPacketToList(pPacket);
 
-    // 子线程
-    std::lock_guard<std::mutex> guard(_thread_lock);
-    for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
-    {
-        Thread* pThread = iter->second;
-        pThread->AddPacketToList(pPacket);
-    }
+	// 子线程
+	for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
+	{
+		(*iter)->AddPacketToList(pPacket);
+	}
 }
 
 void ThreadMgr::SendPacket(Packet* pPacket)
 {
-    NetworkListen* pLocator = static_cast<NetworkListen*>(GetNetwork(APP_Listen));
-    pLocator->SendPacket(pPacket);
+	//NetworkListen* pLocator = static_cast<NetworkListen*>(GetNetwork(APP_Listen));
+	//pLocator->SendPacket(pPacket);
 }

@@ -3,8 +3,12 @@
 #include <thread>
 #include <vector>
 #include <queue>
+#include <functional>
 
-#include "thread_obj.h"
+#include "system.h"
+#include "disposable.h"
+
+#include "entity.h"
 
 #define ConsoleMaxBuffer 512
 
@@ -14,27 +18,28 @@ class ConsoleCmd : public IDisposable
 {
 public:
 	virtual void RegisterHandler() = 0;
+	virtual void HandleHelp() = 0;
+
 	void Dispose() override;
 	void Process(std::vector<std::string>& params);
 
 protected:
 	void OnRegisterHandler(std::string key, HandleConsole handler);
-    static bool CheckParamCnt(std::vector<std::string>& params, const size_t count);
+	static bool CheckParamCnt(std::vector<std::string>& params, const size_t count);
 
 private:
 	std::map<std::string, HandleConsole> _handles;
 
 };
 
-class Console : public ThreadObject
+class Console : public Entity<Console>, public IAwakeFromPoolSystem<>, public IUpdateSystem
 {
 public:
-	bool Init() override;
-	void RegisterMsgFunction() override;
-	void Update() override;
-	void Dispose() override;
+	void AwakeFromPool() override;
+	void BackToPool() override;
 
-protected:
+	void Update() override;
+
 	template<class T>
 	void Register(std::string cmd);
 
@@ -44,14 +49,15 @@ protected:
 	std::mutex _lock;
 	std::thread _thread;
 	std::queue<std::string> _commands;
-    bool _isRun{ true };
+
+	bool _isRun{ true };
 };
 
 template<class T>
 void Console::Register(std::string cmd)
 {
-	std::shared_ptr<T> pObj = std::make_shared<T>();
+	std::shared_ptr<T> pObj = std::make_shared<T>();	
 	pObj->RegisterHandler();
-	this->_handles.insert(std::make_pair(cmd, pObj));
+	this->_handles[cmd] = pObj;
 }
 

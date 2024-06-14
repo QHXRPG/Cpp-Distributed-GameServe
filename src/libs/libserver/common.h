@@ -46,7 +46,7 @@ typedef unsigned __int32	uint32;
 
 enum APP_TYPE
 {
-    APP_Listen = 0,
+    APP_None = 0,
 
     APP_DB_MGR = 1,
     APP_GAME_MGR = 1 << 1,

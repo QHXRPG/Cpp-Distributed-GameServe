@@ -1,7 +1,10 @@
 #include "common.h"
 #include "server_app.h"
-#include "network_listen.h"
 #include "object_pool_mgr.h"
+
+#include "console.h"
+#include "console_cmd_pool.h"
+#include "network_locator.h"
 
 ServerApp::ServerApp(APP_TYPE  appType)
 {
@@ -11,6 +14,8 @@ ServerApp::ServerApp(APP_TYPE  appType)
 
     DynamicObjectPoolMgr::Instance();
     Global::Instance();
+    Global::GetInstance()->SetAppInfo(_appType, 1);
+
     ThreadMgr::Instance();
     _pThreadMgr = ThreadMgr::GetInstance();
     UpdateTime();
@@ -18,10 +23,15 @@ ServerApp::ServerApp(APP_TYPE  appType)
     // 创建线程
     for (int i = 0; i < 3; i++)
     {
-        _pThreadMgr->NewThread();
+        _pThreadMgr->CreateThread();
     }
 
     _pThreadMgr->StartAllThread();
+
+    // 全局Console
+    _pThreadMgr->AddComponent<NetworkLocator>();
+    auto pConsole = _pThreadMgr->AddComponent<Console>();
+    pConsole->Register<ConsoleCmdPool>("pool");
 }
 
 ServerApp::~ServerApp()
@@ -116,17 +126,4 @@ void ServerApp::UpdateTime() const
 //    localtime_s(&tm, &tt);
 //    Global::GetInstance()->YearDay = tm.tm_yday;
 //#endif
-}
-
-bool ServerApp::AddListenerToThread(std::string ip, int port) const
-{
-    NetworkListen* pListener = new NetworkListen();
-    if (!pListener->Listen(ip, port))
-    {
-        delete pListener;
-        return false;
-    }
-
-    _pThreadMgr->AddNetworkToThread(APP_Listen, pListener);
-    return true;
 }

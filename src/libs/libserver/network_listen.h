@@ -2,12 +2,12 @@
 
 #include "network.h"
 
-class NetworkListen :public Network
+class NetworkListen :public Network, public IUpdateSystem, public IAwakeFromPoolSystem<std::string, int>
 {
 public:
-    bool Init() override;
-    bool Listen(std::string ip, int port);
+    void AwakeFromPool(std::string ip, int port);
     void Update() override;
+	const char* GetTypeName() override;
 
 protected:
     virtual int Accept();

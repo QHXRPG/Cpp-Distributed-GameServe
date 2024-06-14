@@ -5,10 +5,8 @@
 #include <list>
 
 #include "sn_object.h"
-#include "object_block.h"
 #include "packet.h"
 #include "object_pool_interface.h"
-#include "thread_obj.h"
 #include "cache_refresh.h"
 #include "object_pool_mgr.h"
 
@@ -46,7 +44,7 @@ public:
     T* MallocObject(Targs... args);
 
     void Update() override;
-    void FreeObject(ObjectBlock* pObj) override;
+    void FreeObject(IComponent* pObj) override;
 
     void Show();
 
@@ -54,11 +52,11 @@ private:
     void CreateOne();
 
 private:
-    std::queue<T*> _free; //存放对象池中未使用的对象
+    std::queue<T*> _free;
     std::mutex _freeLock;
 
     std::mutex _inUseLock;
-    CacheRefresh<T> _objInUse;  // //存放对象池中正在使用的对象
+    CacheRefresh<T> _objInUse;
 
     static DynamicObjectPool<T>* _pInstance;
     static std::mutex _instanceLock;
@@ -83,7 +81,8 @@ DynamicObjectPool<T>::DynamicObjectPool()
 template <typename T>
 void DynamicObjectPool<T>::CreateOne()
 {
-    T* pObj = new T(this);
+    T* pObj = new T();
+	pObj->SetPool(this);
     _free.push(pObj);
 }
 
@@ -109,8 +108,6 @@ DynamicObjectPool<T>::~DynamicObjectPool()
         delete iter;
         _free.pop();
     }
-
-    _objInUse.Dispose();
 }
 
 template <typename T>
@@ -133,7 +130,7 @@ T* DynamicObjectPool<T>::MallocObject(Targs... args)
     _freeLock.unlock();
 
     pObj->ResetSN();
-    pObj->TakeoutFromPool(std::forward<Targs>(args)...);
+    pObj->AwakeFromPool(std::forward<Targs>(args)...);
 
     _inUseLock.lock();
     _objInUse.GetAddCache()->push_back(pObj);
@@ -161,7 +158,7 @@ void DynamicObjectPool<T>::Update()
 }
 
 template<typename T>
-inline void DynamicObjectPool<T>::FreeObject(ObjectBlock* pObj)
+inline void DynamicObjectPool<T>::FreeObject(IComponent* pObj)
 {
     std::lock_guard<std::mutex> guard(_inUseLock);
     _objInUse.GetRemoveCache()->emplace_back(dynamic_cast<T*>(pObj));

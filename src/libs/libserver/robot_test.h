@@ -1,12 +1,13 @@
 #pragma once
-#include "thread_obj.h"
+#include "component.h"
+#include "message_system.h"
 
-class RobotTest :public ThreadObject
+class RobotTest :public Component<RobotTest>, public IMessageSystem, public IAwakeFromPoolSystem<>
 {
 public:
-    bool Init() override;
+    void AwakeFromPool() override { };
     void RegisterMsgFunction() override;
-    void Update() override;
+    void BackToPool() override {};
 
 private:
     void HandleTestBegin(Packet* pPacket);

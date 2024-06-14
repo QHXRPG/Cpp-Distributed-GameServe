@@ -1,10 +1,10 @@
 #pragma once
 #include <memory>
 
-#include "disposable.h"
 #include "network.h"
 #include "time.h"
-#include "object_block.h"
+#include "entity.h"
+#include "system.h"
 
 class RecvNetworkBuffer;
 class SendNetworkBuffer;
@@ -13,30 +13,28 @@ class Packet;
 #define PingTime 1000 // 1Ãë
 #define PingDelayTime  10 * 1000 // 10Ãë
 
-class ConnectObj : public ObjectBlock
+class ConnectObj : public Entity<ConnectObj>, public IAwakeFromPoolSystem<SOCKET>
 {
 public:
-    ConnectObj(IDynamicObjectPool* pPool);
-    virtual ~ConnectObj();
+	ConnectObj();
+	virtual ~ConnectObj();
 
-    SOCKET GetSocket() const { return _socket; }
-    bool HasRecvData() const;
-    Packet* GetRecvPacket() const;
-    bool Recv() const;
+	void AwakeFromPool(SOCKET socket);
+	virtual void BackToPool() override;
 
-    bool HasSendData() const;
-    void SendPacket(Packet* pPacket) const;
-    bool Send() const;
-    void Close();
+	SOCKET GetSocket() const { return _socket; }
+	bool HasRecvData() const;
+	Packet* GetRecvPacket() const;
+	bool Recv();
 
-    // Í¨¹ý ObjectBlock ¼Ì³Ð
-    void TakeoutFromPool(Network* pNetWork, SOCKET socket);
-    virtual void BackToPool() override;
+	bool HasSendData() const;
+	void SendPacket(Packet* pPacket) const;
+	bool Send() const;
+	void Close();
 
 protected:
-    Network* _pNetWork{ nullptr };
-    SOCKET _socket;
-    RecvNetworkBuffer* _recvBuffer{ nullptr };
-    SendNetworkBuffer* _sendBuffer{ nullptr };
+	SOCKET _socket;
+	RecvNetworkBuffer* _recvBuffer{ nullptr };
+	SendNetworkBuffer* _sendBuffer{ nullptr };
 };
 

@@ -1,5 +1,4 @@
 #pragma once
-#include "disposable.h"
 
 // ×·¼Ó´óÐ¡
 #if TestNetwork

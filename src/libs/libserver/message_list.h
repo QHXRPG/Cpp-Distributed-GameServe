@@ -94,17 +94,3 @@ void MessageCallBackFunctionFilterObj<T>::ProcessPacket(Packet* packet)
         }
     }
 }
-
-class MessageList :public IDisposable
-{
-public:
-    void Dispose() override;
-    void AttachCallBackHander(MessageCallBackFunctionInfo* pCallback);
-    bool IsFollowMsgId(Packet* packet) const;
-    void ProcessPacket(Packet* packet) const;
-    static void DispatchPacket(Packet* pPacket);
-    static void SendPacket(Packet* pPacket);
-
-protected:
-    MessageCallBackFunctionInfo* _pCallBackFuns{ nullptr };
-};

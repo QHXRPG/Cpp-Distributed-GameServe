@@ -6,10 +6,9 @@
 #include <iostream>
 #include "object_pool.h"
 
-void Network::Dispose()
+void Network::BackToPool()
 {
     Clean();
-    ThreadObject::Dispose();
 }
 
 void Network::Clean()
@@ -17,7 +16,7 @@ void Network::Clean()
     for (auto iter = _connects.begin(); iter != _connects.end(); ++iter)
     {
         auto pObj = iter->second;
-        pObj->Dispose();
+        pObj->ComponentBackToPool();
     }
     _connects.clear();
 
@@ -34,7 +33,7 @@ void Network::Clean()
 void Network::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHander(pMsgCallBack);
+    AttachCallBackHandler(pMsgCallBack);
     pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkDisconnectToNet, BindFunP1(this, &Network::HandleDisconnect));
 }
 
@@ -101,8 +100,9 @@ SOCKET Network::CreateSocket()
 
 void Network::CreateConnectObj(SOCKET socket)
 {
-    ConnectObj* pConnectObj = DynamicObjectPool<ConnectObj>::GetInstance()->MallocObject(this, socket);
-
+    ConnectObj* pConnectObj = DynamicObjectPool<ConnectObj>::GetInstance()->MallocObject(socket);
+    pConnectObj->SetParent(this);
+    pConnectObj->SetEntitySystem(GetEntitySystem());
     if (_connects.find(socket) != _connects.end())
     {
         std::cout << "Network::CreateConnectObj. socket is exist. socket:" << socket << std::endl;
@@ -118,7 +118,7 @@ void Network::CreateConnectObj(SOCKET socket)
 #ifdef EPOLL
 
 #define RemoveConnectObj(iter) \
-    iter->second->Dispose( ); \
+    iter->second->ComponentBackToPool( ); \
     DeleteEvent(_epfd, iter->first); \
     iter = _connects.erase( iter ); 
 
@@ -201,7 +201,7 @@ void Network::Epoll()
 #else
 
 #define RemoveConnectObj(iter) \
-    iter->second->Dispose( ); \
+    iter->second->ComponentBackToPool( ); \
     iter = _connects.erase( iter ); 
 
 void Network::Select()
@@ -270,7 +270,7 @@ void Network::Select()
 
 #endif
 
-void Network::Update()
+void Network::OnNetworkUpdate()
 {
     _sendMsgMutex.lock();
     if (_sendMsgList.CanSwap())
@@ -314,7 +314,7 @@ void Network::HandleDisconnect(Packet* pPacket)
     std::cout << "logical layer requires shutdown. socket:" << socket << std::endl;
 }
 
-void Network::SendPacket(Packet* pPacket)
+void Network::SendPacket(Packet*& pPacket)
 {
     std::lock_guard<std::mutex> guard(_sendMsgMutex);
     _sendMsgList.GetWriterCache()->emplace_back(pPacket);

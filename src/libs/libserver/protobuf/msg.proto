@@ -2,6 +2,33 @@ syntax = "proto3";
 
 package Proto;
 
+///////////////////////////////////////////////////////////////
+
+message CreateComponentParam
+{
+	enum ParamType
+	{
+		Int = 0;
+		String = 1;
+	}
+
+	ParamType type = 1;
+	int32 int_param = 2;
+	string string_param = 3;
+}
+
+message CreateComponent {
+	string class_name = 1;
+	uint64 parent_sn = 2;
+	repeated CreateComponentParam params = 3;
+}
+
+message RemoveComponent {
+	uint64 sn = 1;
+}
+
+///////////////////////////////////////////////////////////////
+
 message AccountCheck {
 	string account = 1;
 	string password = 2;

@@ -48,7 +48,7 @@ struct TableStruct_msg_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -65,6 +65,15 @@ extern AccountCheckRsDefaultTypeInternal _AccountCheckRs_default_instance_;
 class AccountCheckToHttpRs;
 class AccountCheckToHttpRsDefaultTypeInternal;
 extern AccountCheckToHttpRsDefaultTypeInternal _AccountCheckToHttpRs_default_instance_;
+class CreateComponent;
+class CreateComponentDefaultTypeInternal;
+extern CreateComponentDefaultTypeInternal _CreateComponent_default_instance_;
+class CreateComponentParam;
+class CreateComponentParamDefaultTypeInternal;
+extern CreateComponentParamDefaultTypeInternal _CreateComponentParam_default_instance_;
+class RemoveComponent;
+class RemoveComponentDefaultTypeInternal;
+extern RemoveComponentDefaultTypeInternal _RemoveComponent_default_instance_;
 class RobotState;
 class RobotStateDefaultTypeInternal;
 extern RobotStateDefaultTypeInternal _RobotState_default_instance_;
@@ -79,12 +88,40 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::Proto::AccountCheck* Arena::CreateMaybeMessage<::Proto::AccountCheck>(Arena*);
 template<> ::Proto::AccountCheckRs* Arena::CreateMaybeMessage<::Proto::AccountCheckRs>(Arena*);
 template<> ::Proto::AccountCheckToHttpRs* Arena::CreateMaybeMessage<::Proto::AccountCheckToHttpRs>(Arena*);
+template<> ::Proto::CreateComponent* Arena::CreateMaybeMessage<::Proto::CreateComponent>(Arena*);
+template<> ::Proto::CreateComponentParam* Arena::CreateMaybeMessage<::Proto::CreateComponentParam>(Arena*);
+template<> ::Proto::RemoveComponent* Arena::CreateMaybeMessage<::Proto::RemoveComponent>(Arena*);
 template<> ::Proto::RobotState* Arena::CreateMaybeMessage<::Proto::RobotState>(Arena*);
 template<> ::Proto::RobotSyncState* Arena::CreateMaybeMessage<::Proto::RobotSyncState>(Arena*);
 template<> ::Proto::RobotTestEnd* Arena::CreateMaybeMessage<::Proto::RobotTestEnd>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace Proto {
 
+enum CreateComponentParam_ParamType : int {
+  CreateComponentParam_ParamType_Int = 0,
+  CreateComponentParam_ParamType_String = 1,
+  CreateComponentParam_ParamType_CreateComponentParam_ParamType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  CreateComponentParam_ParamType_CreateComponentParam_ParamType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool CreateComponentParam_ParamType_IsValid(int value);
+constexpr CreateComponentParam_ParamType CreateComponentParam_ParamType_ParamType_MIN = CreateComponentParam_ParamType_Int;
+constexpr CreateComponentParam_ParamType CreateComponentParam_ParamType_ParamType_MAX = CreateComponentParam_ParamType_String;
+constexpr int CreateComponentParam_ParamType_ParamType_ARRAYSIZE = CreateComponentParam_ParamType_ParamType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CreateComponentParam_ParamType_descriptor();
+template<typename T>
+inline const std::string& CreateComponentParam_ParamType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, CreateComponentParam_ParamType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function CreateComponentParam_ParamType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    CreateComponentParam_ParamType_descriptor(), enum_t_value);
+}
+inline bool CreateComponentParam_ParamType_Parse(
+    const std::string& name, CreateComponentParam_ParamType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CreateComponentParam_ParamType>(
+    CreateComponentParam_ParamType_descriptor(), name, value);
+}
 enum AccountCheckRs_ReturnCode : int {
   AccountCheckRs_ReturnCode_ARC_OK = 0,
   AccountCheckRs_ReturnCode_ARC_UNKONWN = 1,
@@ -115,6 +152,475 @@ inline bool AccountCheckRs_ReturnCode_Parse(
     AccountCheckRs_ReturnCode_descriptor(), name, value);
 }
 // ===================================================================
+
+class CreateComponentParam :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.CreateComponentParam) */ {
+ public:
+  CreateComponentParam();
+  virtual ~CreateComponentParam();
+
+  CreateComponentParam(const CreateComponentParam& from);
+  CreateComponentParam(CreateComponentParam&& from) noexcept
+    : CreateComponentParam() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateComponentParam& operator=(const CreateComponentParam& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateComponentParam& operator=(CreateComponentParam&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CreateComponentParam& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreateComponentParam* internal_default_instance() {
+    return reinterpret_cast<const CreateComponentParam*>(
+               &_CreateComponentParam_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(CreateComponentParam& a, CreateComponentParam& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateComponentParam* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateComponentParam* New() const final {
+    return CreateMaybeMessage<CreateComponentParam>(nullptr);
+  }
+
+  CreateComponentParam* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateComponentParam>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CreateComponentParam& from);
+  void MergeFrom(const CreateComponentParam& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateComponentParam* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.CreateComponentParam";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef CreateComponentParam_ParamType ParamType;
+  static constexpr ParamType Int =
+    CreateComponentParam_ParamType_Int;
+  static constexpr ParamType String =
+    CreateComponentParam_ParamType_String;
+  static inline bool ParamType_IsValid(int value) {
+    return CreateComponentParam_ParamType_IsValid(value);
+  }
+  static constexpr ParamType ParamType_MIN =
+    CreateComponentParam_ParamType_ParamType_MIN;
+  static constexpr ParamType ParamType_MAX =
+    CreateComponentParam_ParamType_ParamType_MAX;
+  static constexpr int ParamType_ARRAYSIZE =
+    CreateComponentParam_ParamType_ParamType_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  ParamType_descriptor() {
+    return CreateComponentParam_ParamType_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& ParamType_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, ParamType>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function ParamType_Name.");
+    return CreateComponentParam_ParamType_Name(enum_t_value);
+  }
+  static inline bool ParamType_Parse(const std::string& name,
+      ParamType* value) {
+    return CreateComponentParam_ParamType_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStringParamFieldNumber = 3,
+    kTypeFieldNumber = 1,
+    kIntParamFieldNumber = 2,
+  };
+  // string string_param = 3;
+  void clear_string_param();
+  const std::string& string_param() const;
+  void set_string_param(const std::string& value);
+  void set_string_param(std::string&& value);
+  void set_string_param(const char* value);
+  void set_string_param(const char* value, size_t size);
+  std::string* mutable_string_param();
+  std::string* release_string_param();
+  void set_allocated_string_param(std::string* string_param);
+
+  // .Proto.CreateComponentParam.ParamType type = 1;
+  void clear_type();
+  ::Proto::CreateComponentParam_ParamType type() const;
+  void set_type(::Proto::CreateComponentParam_ParamType value);
+
+  // int32 int_param = 2;
+  void clear_int_param();
+  ::PROTOBUF_NAMESPACE_ID::int32 int_param() const;
+  void set_int_param(::PROTOBUF_NAMESPACE_ID::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Proto.CreateComponentParam)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr string_param_;
+  int type_;
+  ::PROTOBUF_NAMESPACE_ID::int32 int_param_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateComponent :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.CreateComponent) */ {
+ public:
+  CreateComponent();
+  virtual ~CreateComponent();
+
+  CreateComponent(const CreateComponent& from);
+  CreateComponent(CreateComponent&& from) noexcept
+    : CreateComponent() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateComponent& operator=(const CreateComponent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateComponent& operator=(CreateComponent&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CreateComponent& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreateComponent* internal_default_instance() {
+    return reinterpret_cast<const CreateComponent*>(
+               &_CreateComponent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(CreateComponent& a, CreateComponent& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateComponent* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateComponent* New() const final {
+    return CreateMaybeMessage<CreateComponent>(nullptr);
+  }
+
+  CreateComponent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateComponent>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CreateComponent& from);
+  void MergeFrom(const CreateComponent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateComponent* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.CreateComponent";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kParamsFieldNumber = 3,
+    kClassNameFieldNumber = 1,
+    kParentSnFieldNumber = 2,
+  };
+  // repeated .Proto.CreateComponentParam params = 3;
+  int params_size() const;
+  void clear_params();
+  ::Proto::CreateComponentParam* mutable_params(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::CreateComponentParam >*
+      mutable_params();
+  const ::Proto::CreateComponentParam& params(int index) const;
+  ::Proto::CreateComponentParam* add_params();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::CreateComponentParam >&
+      params() const;
+
+  // string class_name = 1;
+  void clear_class_name();
+  const std::string& class_name() const;
+  void set_class_name(const std::string& value);
+  void set_class_name(std::string&& value);
+  void set_class_name(const char* value);
+  void set_class_name(const char* value, size_t size);
+  std::string* mutable_class_name();
+  std::string* release_class_name();
+  void set_allocated_class_name(std::string* class_name);
+
+  // uint64 parent_sn = 2;
+  void clear_parent_sn();
+  ::PROTOBUF_NAMESPACE_ID::uint64 parent_sn() const;
+  void set_parent_sn(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:Proto.CreateComponent)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::CreateComponentParam > params_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr class_name_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 parent_sn_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RemoveComponent :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.RemoveComponent) */ {
+ public:
+  RemoveComponent();
+  virtual ~RemoveComponent();
+
+  RemoveComponent(const RemoveComponent& from);
+  RemoveComponent(RemoveComponent&& from) noexcept
+    : RemoveComponent() {
+    *this = ::std::move(from);
+  }
+
+  inline RemoveComponent& operator=(const RemoveComponent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RemoveComponent& operator=(RemoveComponent&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const RemoveComponent& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RemoveComponent* internal_default_instance() {
+    return reinterpret_cast<const RemoveComponent*>(
+               &_RemoveComponent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(RemoveComponent& a, RemoveComponent& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RemoveComponent* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RemoveComponent* New() const final {
+    return CreateMaybeMessage<RemoveComponent>(nullptr);
+  }
+
+  RemoveComponent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RemoveComponent>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const RemoveComponent& from);
+  void MergeFrom(const RemoveComponent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RemoveComponent* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.RemoveComponent";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSnFieldNumber = 1,
+  };
+  // uint64 sn = 1;
+  void clear_sn();
+  ::PROTOBUF_NAMESPACE_ID::uint64 sn() const;
+  void set_sn(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:Proto.RemoveComponent)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 sn_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
 
 class AccountCheck :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.AccountCheck) */ {
@@ -158,7 +664,7 @@ class AccountCheck :
                &_AccountCheck_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    3;
 
   friend void swap(AccountCheck& a, AccountCheck& b) {
     a.Swap(&b);
@@ -308,7 +814,7 @@ class AccountCheckRs :
                &_AccountCheckRs_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    4;
 
   friend void swap(AccountCheckRs& a, AccountCheckRs& b) {
     a.Swap(&b);
@@ -477,7 +983,7 @@ class AccountCheckToHttpRs :
                &_AccountCheckToHttpRs_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    5;
 
   friend void swap(AccountCheckToHttpRs& a, AccountCheckToHttpRs& b) {
     a.Swap(&b);
@@ -621,7 +1127,7 @@ class RobotState :
                &_RobotState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    6;
 
   friend void swap(RobotState& a, RobotState& b) {
     a.Swap(&b);
@@ -765,7 +1271,7 @@ class RobotSyncState :
                &_RobotSyncState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    7;
 
   friend void swap(RobotSyncState& a, RobotSyncState& b) {
     a.Swap(&b);
@@ -902,7 +1408,7 @@ class RobotTestEnd :
                &_RobotTestEnd_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    8;
 
   friend void swap(RobotTestEnd& a, RobotTestEnd& b) {
     a.Swap(&b);
@@ -998,6 +1504,206 @@ class RobotTestEnd :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// CreateComponentParam
+
+// .Proto.CreateComponentParam.ParamType type = 1;
+inline void CreateComponentParam::clear_type() {
+  type_ = 0;
+}
+inline ::Proto::CreateComponentParam_ParamType CreateComponentParam::type() const {
+  // @@protoc_insertion_point(field_get:Proto.CreateComponentParam.type)
+  return static_cast< ::Proto::CreateComponentParam_ParamType >(type_);
+}
+inline void CreateComponentParam::set_type(::Proto::CreateComponentParam_ParamType value) {
+  
+  type_ = value;
+  // @@protoc_insertion_point(field_set:Proto.CreateComponentParam.type)
+}
+
+// int32 int_param = 2;
+inline void CreateComponentParam::clear_int_param() {
+  int_param_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 CreateComponentParam::int_param() const {
+  // @@protoc_insertion_point(field_get:Proto.CreateComponentParam.int_param)
+  return int_param_;
+}
+inline void CreateComponentParam::set_int_param(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  int_param_ = value;
+  // @@protoc_insertion_point(field_set:Proto.CreateComponentParam.int_param)
+}
+
+// string string_param = 3;
+inline void CreateComponentParam::clear_string_param() {
+  string_param_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& CreateComponentParam::string_param() const {
+  // @@protoc_insertion_point(field_get:Proto.CreateComponentParam.string_param)
+  return string_param_.GetNoArena();
+}
+inline void CreateComponentParam::set_string_param(const std::string& value) {
+  
+  string_param_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Proto.CreateComponentParam.string_param)
+}
+inline void CreateComponentParam::set_string_param(std::string&& value) {
+  
+  string_param_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Proto.CreateComponentParam.string_param)
+}
+inline void CreateComponentParam::set_string_param(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  string_param_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Proto.CreateComponentParam.string_param)
+}
+inline void CreateComponentParam::set_string_param(const char* value, size_t size) {
+  
+  string_param_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Proto.CreateComponentParam.string_param)
+}
+inline std::string* CreateComponentParam::mutable_string_param() {
+  
+  // @@protoc_insertion_point(field_mutable:Proto.CreateComponentParam.string_param)
+  return string_param_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* CreateComponentParam::release_string_param() {
+  // @@protoc_insertion_point(field_release:Proto.CreateComponentParam.string_param)
+  
+  return string_param_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateComponentParam::set_allocated_string_param(std::string* string_param) {
+  if (string_param != nullptr) {
+    
+  } else {
+    
+  }
+  string_param_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), string_param);
+  // @@protoc_insertion_point(field_set_allocated:Proto.CreateComponentParam.string_param)
+}
+
+// -------------------------------------------------------------------
+
+// CreateComponent
+
+// string class_name = 1;
+inline void CreateComponent::clear_class_name() {
+  class_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& CreateComponent::class_name() const {
+  // @@protoc_insertion_point(field_get:Proto.CreateComponent.class_name)
+  return class_name_.GetNoArena();
+}
+inline void CreateComponent::set_class_name(const std::string& value) {
+  
+  class_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Proto.CreateComponent.class_name)
+}
+inline void CreateComponent::set_class_name(std::string&& value) {
+  
+  class_name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Proto.CreateComponent.class_name)
+}
+inline void CreateComponent::set_class_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  class_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Proto.CreateComponent.class_name)
+}
+inline void CreateComponent::set_class_name(const char* value, size_t size) {
+  
+  class_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Proto.CreateComponent.class_name)
+}
+inline std::string* CreateComponent::mutable_class_name() {
+  
+  // @@protoc_insertion_point(field_mutable:Proto.CreateComponent.class_name)
+  return class_name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* CreateComponent::release_class_name() {
+  // @@protoc_insertion_point(field_release:Proto.CreateComponent.class_name)
+  
+  return class_name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateComponent::set_allocated_class_name(std::string* class_name) {
+  if (class_name != nullptr) {
+    
+  } else {
+    
+  }
+  class_name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), class_name);
+  // @@protoc_insertion_point(field_set_allocated:Proto.CreateComponent.class_name)
+}
+
+// uint64 parent_sn = 2;
+inline void CreateComponent::clear_parent_sn() {
+  parent_sn_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CreateComponent::parent_sn() const {
+  // @@protoc_insertion_point(field_get:Proto.CreateComponent.parent_sn)
+  return parent_sn_;
+}
+inline void CreateComponent::set_parent_sn(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  parent_sn_ = value;
+  // @@protoc_insertion_point(field_set:Proto.CreateComponent.parent_sn)
+}
+
+// repeated .Proto.CreateComponentParam params = 3;
+inline int CreateComponent::params_size() const {
+  return params_.size();
+}
+inline void CreateComponent::clear_params() {
+  params_.Clear();
+}
+inline ::Proto::CreateComponentParam* CreateComponent::mutable_params(int index) {
+  // @@protoc_insertion_point(field_mutable:Proto.CreateComponent.params)
+  return params_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::CreateComponentParam >*
+CreateComponent::mutable_params() {
+  // @@protoc_insertion_point(field_mutable_list:Proto.CreateComponent.params)
+  return &params_;
+}
+inline const ::Proto::CreateComponentParam& CreateComponent::params(int index) const {
+  // @@protoc_insertion_point(field_get:Proto.CreateComponent.params)
+  return params_.Get(index);
+}
+inline ::Proto::CreateComponentParam* CreateComponent::add_params() {
+  // @@protoc_insertion_point(field_add:Proto.CreateComponent.params)
+  return params_.Add();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::CreateComponentParam >&
+CreateComponent::params() const {
+  // @@protoc_insertion_point(field_list:Proto.CreateComponent.params)
+  return params_;
+}
+
+// -------------------------------------------------------------------
+
+// RemoveComponent
+
+// uint64 sn = 1;
+inline void RemoveComponent::clear_sn() {
+  sn_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RemoveComponent::sn() const {
+  // @@protoc_insertion_point(field_get:Proto.RemoveComponent.sn)
+  return sn_;
+}
+inline void RemoveComponent::set_sn(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  sn_ = value;
+  // @@protoc_insertion_point(field_set:Proto.RemoveComponent.sn)
+}
+
+// -------------------------------------------------------------------
+
 // AccountCheck
 
 // string account = 1;
@@ -1323,6 +2029,12 @@ inline void RobotTestEnd::set_state(::PROTOBUF_NAMESPACE_ID::int32 value) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -1330,6 +2042,11 @@ inline void RobotTestEnd::set_state(::PROTOBUF_NAMESPACE_ID::int32 value) {
 
 PROTOBUF_NAMESPACE_OPEN
 
+template <> struct is_proto_enum< ::Proto::CreateComponentParam_ParamType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Proto::CreateComponentParam_ParamType>() {
+  return ::Proto::CreateComponentParam_ParamType_descriptor();
+}
 template <> struct is_proto_enum< ::Proto::AccountCheckRs_ReturnCode> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Proto::AccountCheckRs_ReturnCode>() {

@@ -23,6 +23,8 @@ enum MsgId {
 	*/
 	MI_NetworkDisconnectToNet	= 5;	
 
+	MI_RemoveComponent			= 50;	// remove Component
+	MI_CreateComponent			= 51;	// ´´½¨Component
 	MI_Ping						= 101;
 
 	// µÇÂ¼

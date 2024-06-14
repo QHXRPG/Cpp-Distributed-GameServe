@@ -64,6 +64,8 @@ enum MsgId : int {
   MI_NetworkDisconnect = 3,
   MI_NetworkDisconnectEx = 4,
   MI_NetworkDisconnectToNet = 5,
+  MI_RemoveComponent = 50,
+  MI_CreateComponent = 51,
   MI_Ping = 101,
   C2L_AccountCheck = 1001,
   C2L_AccountCheckRs = 1002,

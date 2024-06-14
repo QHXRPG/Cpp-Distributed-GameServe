@@ -7,10 +7,10 @@
 #include "thread_mgr.h"
 
 #include "object_pool_interface.h"
+#include "entity_system.h"
 
-ConnectObj::ConnectObj(IDynamicObjectPool* pPool) :ObjectBlock(pPool)
+ConnectObj::ConnectObj()
 {
-    _pNetWork = nullptr;
     _socket = INVALID_SOCKET;
     _recvBuffer = new RecvNetworkBuffer(DEFAULT_RECV_BUFFER_SIZE, this);
     _sendBuffer = new SendNetworkBuffer(DEFAULT_SEND_BUFFER_SIZE, this);
@@ -25,9 +25,8 @@ ConnectObj::~ConnectObj()
         delete _sendBuffer;
 }
 
-void ConnectObj::TakeoutFromPool(Network* pNetWork, SOCKET socket)
+void ConnectObj::AwakeFromPool(SOCKET socket)
 {
-    _pNetWork = pNetWork;
     _socket = socket;
 }
 
@@ -39,15 +38,12 @@ void ConnectObj::BackToPool()
     {
         // 通知其他对象，有Socket中断了
         Packet* pResultPacket = new Packet(Proto::MsgId::MI_NetworkDisconnect, _socket);
-        MessageList::DispatchPacket(pResultPacket);
+		IMessageSystem::DispatchPacket(pResultPacket);
     }
 
-    _pNetWork = nullptr;
     _socket = INVALID_SOCKET;
     _recvBuffer->BackToPool();
     _sendBuffer->BackToPool();
-
-    _pPool->FreeObject(this);
 }
 
 bool ConnectObj::HasRecvData() const
@@ -60,7 +56,7 @@ Packet* ConnectObj::GetRecvPacket() const
     return _recvBuffer->GetPacket();
 }
 
-bool ConnectObj::Recv() const
+bool ConnectObj::Recv()
 {
     bool isRs = false;
     char* pBuffer = nullptr;
@@ -122,13 +118,14 @@ bool ConnectObj::Recv() const
             }
             else
             {
-                if (_pNetWork->IsBroadcast() && _pNetWork->GetThread() != nullptr)
+				auto pNetwork = this->GetParent<Network>();
+                if (pNetwork->IsBroadcast())
                 {
-                    ThreadMgr::GetInstance()->DispatchPacket(pPacket);
+					ThreadMgr::GetInstance()->DispatchPacket(pPacket);
                 }
                 else
                 {
-                    _pNetWork->GetThread()->AddPacketToList(pPacket);
+					pNetwork->GetEntitySystem()->AddPacketToList(pPacket);
                 }
             }
         }
@@ -187,6 +184,6 @@ bool ConnectObj::Send() const
 void ConnectObj::Close()
 {
     const auto pPacketDis = new Packet(Proto::MsgId::MI_NetworkDisconnectToNet, GetSocket());
-    _pNetWork->GetThread()->AddPacketToList(pPacketDis);
+    ThreadMgr::GetInstance()->AddPacketToList(pPacketDis);
 }
 

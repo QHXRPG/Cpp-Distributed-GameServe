@@ -31,8 +31,6 @@ public:
 	void Run() const;
 	void UpdateTime() const;
 
-	bool AddListenerToThread(std::string ip, int port) const;
-
     // signal
     static void Signalhandler(int signalValue);
 

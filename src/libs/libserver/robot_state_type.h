@@ -23,7 +23,6 @@ enum RobotStateType
 const char RobotStateTypeName[][255] = {
     "[     ] HttpRequest :",
     "[Login] Connecting :",
-
     "[Login] Connected  :",
     "[Login] Logined     :",
 

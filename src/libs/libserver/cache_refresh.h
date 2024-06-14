@@ -2,10 +2,9 @@
 #include <vector>
 #include <algorithm>
 #include <list>
-#include "disposable.h"
 
 template<class T>
-class CacheRefresh :public IDisposable
+class CacheRefresh
 {
 public:
 	std::vector<T*>* GetAddCache();
@@ -15,7 +14,7 @@ public:
 	// 返回删除的Obj，后续是否有内存回收处理
 	std::list<T*> Swap();
 	bool CanSwap();
-    void Dispose() override;
+    void BackToPool();
 
 protected:
 	std::vector<T*> _reader;
@@ -79,26 +78,23 @@ inline bool CacheRefresh<T>::CanSwap()
 }
 
 template<class T>
-inline void CacheRefresh<T>::Dispose()
+inline void CacheRefresh<T>::BackToPool()
 {
 	for (auto iter = _add.begin(); iter != _add.end(); ++iter)
 	{
-		(*iter)->Dispose();
-		delete (*iter);
+		(*iter)->BackToPool();
 	}
 	_add.clear();
 
 	for (auto iter = _remove.begin(); iter != _remove.end(); ++iter)
 	{
-		(*iter)->Dispose();
-		delete (*iter);
+		(*iter)->BackToPool();
 	}
 	_remove.clear();
 
 	for (auto iter = _reader.begin(); iter != _reader.end(); ++iter)
 	{
-		(*iter)->Dispose();
-		delete (*iter);
+		(*iter)->BackToPool();
 	}
 	_reader.clear();
 }
