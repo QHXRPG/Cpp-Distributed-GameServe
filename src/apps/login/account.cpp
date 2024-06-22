@@ -5,15 +5,10 @@
 
 #include "http_request_account.h"
 
-bool Account::Init()
-{
-    return true;
-}
-
 void Account::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHander(pMsgCallBack);
+    AttachCallBackHandler(pMsgCallBack);
 
     pMsgCallBack->RegisterFunction(Proto::MsgId::C2L_AccountCheck, BindFunP1(this, &Account::HandleAccountCheck));
     pMsgCallBack->RegisterFunction(Proto::MsgId::MI_AccountCheckToHttpRs, BindFunP1(this, &Account::HandleAccountCheckToHttpRs));
@@ -22,9 +17,9 @@ void Account::RegisterMsgFunction()
     pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkDisconnect, BindFunP1(this, &Account::HandleNetworkDisconnect));
 }
 
-void Account::Update()
+void Account::BackToPool()
 {
-
+    _playerMgr.BackToPool();
 }
 
 void Account::HandleNetworkDisconnect(Packet* pPacket)
@@ -65,8 +60,7 @@ void Account::HandleAccountCheck(Packet* pPacket)
     _playerMgr.AddPlayer(socket, protoCheck.account(), protoCheck.password());
 
     // ÑéÖ¤ÕËºÅ(HTTP)
-    HttpRequestAccount* pHttp = new HttpRequestAccount(protoCheck.account(), protoCheck.password());
-    ThreadMgr::GetInstance()->AddObjToThread(pHttp);
+    ThreadMgr::GetInstance()->CreateComponent<HttpRequestAccount>(protoCheck.account(), protoCheck.password());
 }
 
 void Account::HandleAccountCheckToHttpRs(Packet* pPacket)

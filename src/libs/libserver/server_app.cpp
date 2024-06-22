@@ -6,6 +6,10 @@
 #include "console_cmd_pool.h"
 #include "network_locator.h"
 
+#if ENGINE_PLATFORM != PLATFORM_WIN32
+#include <sys/time.h>
+#endif
+
 ServerApp::ServerApp(APP_TYPE  appType)
 {
     signal(SIGINT, Signalhandler);
@@ -28,8 +32,9 @@ ServerApp::ServerApp(APP_TYPE  appType)
 
     _pThreadMgr->StartAllThread();
 
-    // 全局Console
+    // 全局 Component
     _pThreadMgr->AddComponent<NetworkLocator>();
+
     auto pConsole = _pThreadMgr->AddComponent<Console>();
     pConsole->Register<ConsoleCmdPool>("pool");
 }

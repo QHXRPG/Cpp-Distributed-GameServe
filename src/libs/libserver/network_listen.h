@@ -7,7 +7,7 @@ class NetworkListen :public Network, public IUpdateSystem, public IAwakeFromPool
 public:
     void AwakeFromPool(std::string ip, int port);
     void Update() override;
-	const char* GetTypeName() override;
+    const char* GetTypeName() override;
 
 protected:
     virtual int Accept();

@@ -1,6 +1,7 @@
 #pragma once
 #include "libserver/common.h"
-#include "libserver/thread_obj.h"
+#include "libserver/component.h"
+#include "libserver/system.h"
 #include <curl/curl.h>
 #include <json/json.h>  
 
@@ -30,13 +31,11 @@ enum CURLMRS
     CRS_SelectError,
 };
 
-class HttpRequest :public ThreadObject
+class HttpRequest :public Component<HttpRequest>, public IUpdateSystem
 {
 public:
-    explicit HttpRequest(std::string account);
-    bool Init() override;
-    void RegisterMsgFunction() override;
     void Update() override;
+    void BackToPool() override;
 
 protected:
     bool ProcessSend();
@@ -66,7 +65,6 @@ protected:
 */
 inline CURLMRS curl_multi_select(CURLM * curl_m)
 {
-
     struct timeval timeout_tv;
     fd_set  fd_read;
     fd_set  fd_write;

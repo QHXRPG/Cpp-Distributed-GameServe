@@ -1,8 +1,7 @@
 #include "login_obj_mgr.h"
 #include <iostream>
 
-
-void LoginObjMgr::Dispose()
+void LoginObjMgr::BackToPool()
 {
 	auto iter = _players.begin();
 	while (iter != _players.end())
@@ -12,6 +11,7 @@ void LoginObjMgr::Dispose()
 	}
 
 	_players.clear();
+    _accounts.clear();
 }
 
 void LoginObjMgr::AddPlayer(SOCKET socket, std::string account, std::string password)

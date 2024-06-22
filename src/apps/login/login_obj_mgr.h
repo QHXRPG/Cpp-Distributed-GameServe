@@ -3,9 +3,9 @@
 #include "login_obj.h"
 #include <mutex>
 #include <map>
-#include "libserver/disposable.h"
+#include "libserver/component.h"
 
-class LoginObjMgr :public IDisposable
+class LoginObjMgr :public Component<LoginObjMgr>
 {
 public:
 	void AddPlayer(SOCKET socket, std::string account, std::string password);
@@ -14,7 +14,7 @@ public:
 	LoginObj* GetPlayer(SOCKET socket);
 	LoginObj* GetPlayer(std::string account);
 
-	void Dispose() override;
+	void BackToPool() override;
 
 private:
 	// 正在验证账号

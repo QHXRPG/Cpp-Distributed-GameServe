@@ -6,21 +6,17 @@
 #include "global_robots.h"
 #include <sstream>
 
+void RobotMgr::AwakeFromPool()
+{
+    this->Connect("127.0.0.1", 2233);
+}
+
 void RobotMgr::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHander(pMsgCallBack);
+    AttachCallBackHandler(pMsgCallBack);
 
     pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
-}
-
-bool RobotMgr::Init()
-{
-    if (!NetworkConnector::Init())
-        return false;
-
-    this->Connect("127.0.0.1", 2233);
-    return true;
 }
 
 void RobotMgr::Update()
@@ -106,7 +102,8 @@ void RobotMgr::ShowInfo()
     });
 
     std::stringstream show;
-    show << "++++++++++++++++++++++++++++" << std::endl;
+    auto curTime = timeutil::NowToString();
+    show << "++++++++++++++++++++++++++++ " << std::endl << curTime.c_str() << std::endl;
 
     for (RobotStateType rss = RobotState_HttpRequest; rss < RobotState_End; rss = static_cast<RobotStateType>(rss + 1))
     {

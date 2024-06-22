@@ -6,20 +6,13 @@
 #include "libserver/packet.h"
 #include "libserver/robot_state_type.h"
 
-Robot::Robot(std::string account)
+void Robot::AwakeFromPool(std::string account)
 {
     _account = account;
     _isBroadcast = false;
-}
-
-bool Robot::Init()
-{
-    if (!NetworkConnector::Init())
-        return false;
 
     InitStateTemplateMgr(RobotStateType::RobotState_Login_Connecting);
     this->Connect("127.0.0.1", 2233);
-    return true;
 }
 
 void Robot::RegisterMsgFunction()
@@ -33,7 +26,7 @@ void Robot::RegisterMsgFunction()
         return nullptr;
     };
 
-    AttachCallBackHander(pMsgCallBack);
+    AttachCallBackHandler(pMsgCallBack);
 
     pMsgCallBack->RegisterFunctionWithObj(Proto::MsgId::C2L_AccountCheckRs, BindFunP2(this, &Robot::HandleAccountCheckRs));
 }

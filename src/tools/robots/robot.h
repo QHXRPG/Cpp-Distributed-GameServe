@@ -6,11 +6,10 @@
 
 #include "robot_state.h"
 
-class Robot : public NetworkConnector, public StateTemplateMgr<RobotStateType, RobotState, Robot>
+class Robot : public NetworkConnector, public StateTemplateMgr<RobotStateType, RobotState, Robot>, public IAwakeFromPoolSystem<std::string>
 {
 public:
-	explicit Robot(std::string account);
-	bool Init( ) override;
+	void AwakeFromPool(std::string account) override;
 	void RegisterMsgFunction( ) override;
 	void Update( ) override;
 

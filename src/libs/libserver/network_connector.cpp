@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "network_connector.h"
+#include "network_locator.h"
 
 bool NetworkConnector::IsConnected() const
 {

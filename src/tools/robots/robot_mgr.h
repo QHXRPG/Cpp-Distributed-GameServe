@@ -4,10 +4,11 @@
 #include "libserver/robot_state_type.h"
 #include "libserver/network_connector.h"
 
-class RobotMgr : public NetworkConnector {
+class RobotMgr : public NetworkConnector, public IAwakeFromPoolSystem<>
+{
 public:
-    void RegisterMsgFunction() override;
-    bool Init() override;
+    void AwakeFromPool() override;
+    void RegisterMsgFunction() override;    
     void Update() override;
 
     void ShowInfo();

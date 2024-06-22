@@ -1,13 +1,15 @@
 #pragma once
-#include "libserver/thread_obj.h"
+#include "libserver/component.h"
+#include "libserver/message_system.h"
+
 #include "login_obj_mgr.h"
 
-class Account :public ThreadObject
+class Account :public Component<Account>, public IMessageSystem, public IAwakeFromPoolSystem<>
 {
 public:
-	bool Init() override;
-	void RegisterMsgFunction() override;
-	void Update() override;
+    void AwakeFromPool() override {}
+    void RegisterMsgFunction() override;
+    virtual void BackToPool() override;
 
 private:
     void HandleNetworkDisconnect(Packet* pPacket);
@@ -15,7 +17,6 @@ private:
     void HandleAccountCheckToHttpRs(Packet* pPacket);
 
 private:
-	LoginObjMgr _playerMgr;
+    LoginObjMgr _playerMgr;
 };
 
- 

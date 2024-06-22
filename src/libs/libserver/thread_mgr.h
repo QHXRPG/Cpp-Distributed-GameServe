@@ -30,7 +30,6 @@ public:
 
     // message
     void DispatchPacket(Packet* pPacket);
-    void SendPacket(Packet* pPacket);
 
 private:
 private:

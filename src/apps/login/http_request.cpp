@@ -1,10 +1,11 @@
 #include "http_request.h"
 #include "libserver/thread_mgr.h"
 #include "libserver/packet.h"
+#include "libserver/message_system.h"
 
-size_t WriteFunction(void * buffer, size_t size, size_t nmemb, void * lpVoid)
+size_t WriteFunction(void* buffer, size_t size, size_t nmemb, void* lpVoid)
 {
-    std::string* str = static_cast<std::string *>(lpVoid);
+    std::string* str = static_cast<std::string*>(lpVoid);
     if (nullptr == str || nullptr == buffer)
     {
         return -1;
@@ -12,23 +13,25 @@ size_t WriteFunction(void * buffer, size_t size, size_t nmemb, void * lpVoid)
 
     char* pData = static_cast<char*>(buffer);
     str->append(pData, size * nmemb);
-
     return size * nmemb;
 }
 
-HttpRequest::HttpRequest(std::string account) :_account(account)
+void HttpRequest::BackToPool()
 {
-}
+    _responseBuffer = "";
+    State = HttpResquestState::HRS_Send;
 
-bool HttpRequest::Init()
-{
-    _pCurl = curl_easy_init();
-    _pMultiHandle = curl_multi_init();
-    return true;
-}
+    if (_pMultiHandle != nullptr && _pCurl != nullptr )
+        curl_multi_remove_handle(_pMultiHandle, _pCurl);
 
-void HttpRequest::RegisterMsgFunction()
-{
+    if (_pCurl != nullptr)
+        curl_easy_cleanup(_pCurl);
+
+    if (_pMultiHandle != nullptr)
+        curl_multi_cleanup(_pMultiHandle);
+
+    _pCurl = nullptr;
+    _pMultiHandle = nullptr;
 }
 
 void HttpRequest::Update()
@@ -68,10 +71,13 @@ void HttpRequest::Update()
 
 bool HttpRequest::ProcessSend()
 {
+    _pCurl = curl_easy_init();
+    _pMultiHandle = curl_multi_init();
+
     curl_easy_setopt(_pCurl, CURLOPT_URL, _url.c_str());
     curl_easy_setopt(_pCurl, CURLOPT_READFUNCTION, NULL);
     curl_easy_setopt(_pCurl, CURLOPT_WRITEFUNCTION, WriteFunction);  // 设置server的返回的数据的接收方式
-    curl_easy_setopt(_pCurl, CURLOPT_WRITEDATA, static_cast<void *>(&_responseBuffer));
+    curl_easy_setopt(_pCurl, CURLOPT_WRITEDATA, static_cast<void*>(&_responseBuffer));
 
     curl_easy_setopt(_pCurl, CURLOPT_NOSIGNAL, 1);
     curl_easy_setopt(_pCurl, CURLOPT_VERBOSE, 0); //打印调试信息  
@@ -79,13 +85,13 @@ bool HttpRequest::ProcessSend()
                                                  //curl_easy_setopt( _pCurl, CURLOPT_CONNECTTIMEOUT, 3 );
                                                  //curl_easy_setopt( _pCurl, CURLOPT_TIMEOUT, 3 );
 
-    curl_multi_add_handle(_pMultiHandle, _pCurl);
-
     if (_method == HttpResquestMethod::HRM_Post)
     {
         curl_easy_setopt(_pCurl, CURLOPT_POST, true); //设置问非0表示本次操作为post 
         curl_easy_setopt(_pCurl, CURLOPT_POSTFIELDS, _params.c_str()); //post参数
     }
+
+    curl_multi_add_handle(_pMultiHandle, _pCurl);
 
     State = HttpResquestState::HRS_Process;
     return true;
@@ -100,7 +106,7 @@ void HttpRequest::ProcessTimeout() const
 
     auto pCheckPacket = new Packet(Proto::MsgId::MI_AccountCheckToHttpRs, 0);
     pCheckPacket->SerializeToBuffer(checkProto);
-    DispatchPacket(pCheckPacket);
+    IMessageSystem::DispatchPacket(pCheckPacket);
 }
 
 bool HttpRequest::ProcessOver()
@@ -108,6 +114,10 @@ bool HttpRequest::ProcessOver()
     curl_multi_remove_handle(_pMultiHandle, _pCurl);
     curl_easy_cleanup(_pCurl);
     curl_multi_cleanup(_pMultiHandle);
+
+    _pCurl = nullptr;
+    _pMultiHandle = nullptr;
+
     return true;
 }
 
@@ -138,7 +148,7 @@ bool HttpRequest::Process()
     {
         _curlRs = rs;
         State = HRS_Timeout;
-        return true;
+        return false;
     }
 
     // 下一Frame继续执行
@@ -148,7 +158,7 @@ bool HttpRequest::Process()
 void HttpRequest::ProcessMsg()
 {
     int         msgs_left;
-    CURLMsg *   msg;
+    CURLMsg* msg;
     msg = curl_multi_info_read(_pMultiHandle, &msgs_left);
     if (CURLMSG_DONE == msg->msg)
     {
@@ -177,3 +187,4 @@ void HttpRequest::ProcessMsg()
         delete jsonReader;
     }
 }
+

@@ -4,9 +4,11 @@
 #include "libserver/common.h"
 #include "libserver/thread_mgr.h"
 #include "libserver/packet.h"
+#include "libserver/message_system.h"
 
-HttpRequestAccount::HttpRequestAccount(std::string account, std::string password) :HttpRequest(account)
+void HttpRequestAccount::AwakeFromPool(std::string account, std::string password)
 {
+    _account = account;
     _password = password;
     _curlRs = CRS_None;
     _method = HttpResquestMethod::HRM_Post;
@@ -15,7 +17,6 @@ HttpRequestAccount::HttpRequestAccount(std::string account, std::string password
     _params.append("account=").append(_account).append("&password=").append(_password);
 
     //std::cout << "account check url:" << _url.c_str() << "?" << _params.c_str() << std::endl;
-
 }
 
 void HttpRequestAccount::ProcessMsg(Json::Value value)
@@ -35,5 +36,5 @@ void HttpRequestAccount::ProcessMsg(Json::Value value)
 
     auto pCheckPacket = new Packet(Proto::MsgId::MI_AccountCheckToHttpRs, 0);
     pCheckPacket->SerializeToBuffer(checkProto);
-    DispatchPacket(pCheckPacket);
+    IMessageSystem::DispatchPacket(pCheckPacket);
 }
