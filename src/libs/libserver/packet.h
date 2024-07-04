@@ -54,6 +54,7 @@ public:
     void FillData(unsigned int size);
     void ReAllocBuffer();
     SOCKET GetSocket() const;
+    void SetSocket(SOCKET socket);
 
 private:
     Proto::MsgId _msgId;

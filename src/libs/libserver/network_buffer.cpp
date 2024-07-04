@@ -154,7 +154,7 @@ Packet* RecvNetworkBuffer::GetPacket()
     }
 
     const auto socket = _pConnectObj->GetSocket();
-    Packet* pPacket = new Packet((Proto::MsgId)head.MsgId, socket);
+    Packet* pPacket = IMessageSystem::CreatePacket((Proto::MsgId)head.MsgId, socket);
     const unsigned int dataLength = totalSize - sizeof(PacketHead) - sizeof(TotalSizeType);
     while (pPacket->GetTotalSize() < dataLength)
     {

@@ -2,13 +2,17 @@
 #include "libserver/common.h"
 #include "libserver/packet.h"
 #include "libserver/global.h"
+#include "libserver/yaml.h"
+#include "libserver/entity_system.h"
 
 #include "global_robots.h"
 #include <sstream>
 
 void RobotMgr::AwakeFromPool()
 {
-    this->Connect("127.0.0.1", 2233);
+    auto pYaml = Yaml::GetInstance();
+	const auto pLoginConfig = dynamic_cast<LoginConfig*>(pYaml->GetConfig(APP_LOGIN));
+	this->Connect(pLoginConfig->Ip, pLoginConfig->Port);
 }
 
 void RobotMgr::RegisterMsgFunction()

@@ -1,5 +1,6 @@
 #pragma once
 #include "libserver/server_app.h"
+#include "libserver/app_type_mgr.h"
 
 class RobotsApp : public ServerApp
 {

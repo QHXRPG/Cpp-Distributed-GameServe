@@ -5,6 +5,8 @@
 #include "libserver/common.h"
 #include "libserver/packet.h"
 #include "libserver/robot_state_type.h"
+#include "libserver/yaml.h"
+#include "libserver/entity_system.h"
 
 void Robot::AwakeFromPool(std::string account)
 {
@@ -12,7 +14,10 @@ void Robot::AwakeFromPool(std::string account)
     _isBroadcast = false;
 
     InitStateTemplateMgr(RobotStateType::RobotState_Login_Connecting);
-    this->Connect("127.0.0.1", 2233);
+
+    auto pYaml = Yaml::GetInstance();
+	const auto pLoginConfig = dynamic_cast<LoginConfig*>(pYaml->GetConfig(APP_LOGIN));
+    this->Connect(pLoginConfig->Ip, pLoginConfig->Port);
 }
 
 void Robot::RegisterMsgFunction()

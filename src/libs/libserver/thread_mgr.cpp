@@ -26,11 +26,19 @@ void ThreadMgr::Update()
     for (auto iter = pList->begin(); iter != pList->end(); ++iter)
     {
         const auto packet = (*iter);
-        if (_threadIndex >= _threads.size())
-            _threadIndex = 0;
+        if (_threads.size() > 0)
+        {
+            if (_threadIndex >= _threads.size())
+                _threadIndex = 0;
 
-        _threads[_threadIndex]->AddPacketToList(packet);
-        _threadIndex++;
+            _threads[_threadIndex]->AddPacketToList(packet);
+            _threadIndex++;
+        }
+        else
+        {
+            // µ¥Ïß³Ì
+            AddPacketToList(packet);
+        }
     }
     pList->clear();
 

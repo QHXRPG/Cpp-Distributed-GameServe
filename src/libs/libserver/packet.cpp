@@ -63,3 +63,8 @@ SOCKET Packet::GetSocket() const
 {
     return _socket;
 }
+
+void Packet::SetSocket(SOCKET socket)
+{
+    _socket = socket;
+}

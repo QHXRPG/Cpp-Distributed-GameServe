@@ -4,6 +4,7 @@
 #include <thread>
 
 #include "util_string.h"
+#include "log4_help.h"
 
 void ConsoleCmd::OnRegisterHandler(std::string key, HandleConsole handler)
 {
@@ -40,7 +41,7 @@ void ConsoleCmd::Process(std::vector<std::string>& params)
             return;
         }
 
-        std::cout << "input error. can't find cmd:" << key.c_str() << std::endl;
+        LOG_ERROR("input error. can't find cmd:" << key.c_str());
         return;
     }
 
@@ -123,7 +124,7 @@ void Console::Update()
             }
             return;
         }
-        std::cout << "input error. cmd:" << cmd.c_str() << std::endl;
+        LOG_ERROR("input error. cmd:" << cmd.c_str());
         return;
     }
 

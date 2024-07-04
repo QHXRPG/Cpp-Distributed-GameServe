@@ -66,7 +66,7 @@ inline void ThreadMgr::CreateComponent(TArgs ...args)
 	proto.set_class_name(className.c_str());
 	AnalyseParam(proto, std::forward<TArgs>(args)...);
 
-	auto pCreatePacket = new Packet(Proto::MsgId::MI_CreateComponent, 0);
+	auto pCreatePacket = IMessageSystem::CreatePacket(Proto::MsgId::MI_CreateComponent, 0);
 	pCreatePacket->SerializeToBuffer(proto);
 	_createPackets.GetWriterCache()->emplace_back(pCreatePacket);
 }

@@ -3,15 +3,16 @@
 #include "common.h"
 #include "util_time.h"
 #include "singleton.h"
+#include "app_type_mgr.h"
 
 #include <mutex>
 
 class Global : public Singleton<Global>
 {
 public:
+    Global(APP_TYPE appType, int appId);
 	uint64 GenerateSN();	// SN = 64位,时间+服务器ID+ticket
 
-	void SetAppInfo(APP_TYPE appType, int appId);
 	APP_TYPE GetCurAppType() const;
 	int GetCurAppId() const;
 

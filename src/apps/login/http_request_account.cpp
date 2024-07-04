@@ -5,6 +5,7 @@
 #include "libserver/thread_mgr.h"
 #include "libserver/packet.h"
 #include "libserver/message_system.h"
+#include "libserver/yaml.h"
 
 void HttpRequestAccount::AwakeFromPool(std::string account, std::string password)
 {
@@ -13,10 +14,13 @@ void HttpRequestAccount::AwakeFromPool(std::string account, std::string password
     _curlRs = CRS_None;
     _method = HttpResquestMethod::HRM_Post;
 
-    _url = "192.168.0.120/member_login_t.php";
+    auto pYaml = Yaml::GetInstance();
+    const auto pLoginConfig = dynamic_cast<LoginConfig*>(pYaml->GetConfig(APP_LOGIN));
+
+    _url = pLoginConfig->UrlLogin;
     _params.append("account=").append(_account).append("&password=").append(_password);
 
-    //std::cout << "account check url:" << _url.c_str() << "?" << _params.c_str() << std::endl;
+    std::cout << "account check url:" << _url.c_str() << "?" << _params.c_str() << std::endl;
 }
 
 void HttpRequestAccount::ProcessMsg(Json::Value value)

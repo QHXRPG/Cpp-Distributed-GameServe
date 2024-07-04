@@ -37,8 +37,7 @@ void ConnectObj::BackToPool()
     if (!Global::GetInstance()->IsStop)
     {
         // 通知其他对象，有Socket中断了
-        Packet* pResultPacket = new Packet(Proto::MsgId::MI_NetworkDisconnect, _socket);
-		IMessageSystem::DispatchPacket(pResultPacket);
+        IMessageSystem::DispatchPacket(Proto::MsgId::MI_NetworkDisconnect, _socket);
     }
 
     _socket = INVALID_SOCKET;
@@ -118,14 +117,14 @@ bool ConnectObj::Recv()
             }
             else
             {
-				auto pNetwork = this->GetParent<Network>();
+                auto pNetwork = this->GetParent<Network>();
                 if (pNetwork->IsBroadcast())
                 {
-					ThreadMgr::GetInstance()->DispatchPacket(pPacket);
+                    ThreadMgr::GetInstance()->DispatchPacket(pPacket);
                 }
                 else
                 {
-					pNetwork->GetEntitySystem()->AddPacketToList(pPacket);
+                    pNetwork->GetEntitySystem()->AddPacketToList(pPacket);
                 }
             }
         }
@@ -183,7 +182,7 @@ bool ConnectObj::Send() const
 
 void ConnectObj::Close()
 {
-    const auto pPacketDis = new Packet(Proto::MsgId::MI_NetworkDisconnectToNet, GetSocket());
-    ThreadMgr::GetInstance()->AddPacketToList(pPacketDis);
+    // ConnectoObj 一定和Network在同一个线程中的，这里，只需要要本线程发送数据即可
+    const auto pPacketDis = IMessageSystem::CreatePacket(Proto::MsgId::MI_NetworkRequestDisconnect, GetSocket());
+    GetEntitySystem()->AddPacketToList(pPacketDis);
 }
-

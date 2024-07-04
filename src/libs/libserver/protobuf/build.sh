@@ -1,1 +1,1 @@
-protoc --cpp_out=./ proto_id.proto msg.proto 
+protoc --cpp_out=./ proto_id.proto db.proto msg.proto 

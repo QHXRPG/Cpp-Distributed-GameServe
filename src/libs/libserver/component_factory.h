@@ -10,11 +10,11 @@ class ComponentFactory
 public:
 	typedef std::function <IComponent*(Targs...)> FactoryFunction;
 
-	static std::shared_ptr<ComponentFactory<Targs...>> GetInstance()
+	static ComponentFactory<Targs...>* GetInstance()
 	{
 		if (_pInstance == nullptr)
 		{
-			_pInstance = std::make_shared<ComponentFactory<Targs...>>();
+			_pInstance = new ComponentFactory<Targs...>();
 		}
 		return _pInstance;
 	}
@@ -51,7 +51,7 @@ public:
 	}
 
 private:
-	static std::shared_ptr<ComponentFactory<Targs...>> _pInstance;
+	static ComponentFactory<Targs...>* _pInstance;
 
 	std::map<std::string, FactoryFunction> _map;
 
@@ -59,4 +59,4 @@ private:
 };
 
 template<typename ...Targs>
-std::shared_ptr<ComponentFactory<Targs...>> ComponentFactory<Targs...>::_pInstance = nullptr;
+ComponentFactory<Targs...>* ComponentFactory<Targs...>::_pInstance = nullptr;

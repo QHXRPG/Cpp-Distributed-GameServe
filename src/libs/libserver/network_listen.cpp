@@ -5,11 +5,12 @@
 #include "connect_obj.h"
 #include "thread_mgr.h"
 #include "network_locator.h"
+#include "log4_help.h"
 
 void NetworkListen::AwakeFromPool(std::string ip, int port)
 {
-	auto pNetworkLocator = ThreadMgr::GetInstance()->GetComponent<NetworkLocator>();
-	pNetworkLocator->AddListenLocator(this, NetworkTcpListen);
+    auto pNetworkLocator = ThreadMgr::GetInstance()->GetComponent<NetworkLocator>();
+    pNetworkLocator->AddListenLocator(this, NetworkTcpListen);
 
     _masterSocket = CreateSocket();
     if (_masterSocket == INVALID_SOCKET)
@@ -21,7 +22,7 @@ void NetworkListen::AwakeFromPool(std::string ip, int port)
     addr.sin_port = htons(port);
     ::inet_pton(AF_INET, ip.c_str(), &addr.sin_addr.s_addr);
 
-    if (::bind(_masterSocket, reinterpret_cast<sockaddr *>(&addr), sizeof(addr)) < 0)
+    if (::bind(_masterSocket, reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) < 0)
     {
         std::cout << "::bind failed. err:" << _sock_err() << std::endl;
         return;
@@ -34,10 +35,10 @@ void NetworkListen::AwakeFromPool(std::string ip, int port)
     }
 
 #ifdef EPOLL
-    std::cout << "epoll model" << std::endl;
+    LOG_INFO("epoll model. listen " << ip.c_str() << ":" << port);
     InitEpoll();
 #else
-    std::cout << "select model" << std::endl;
+    LOG_INFO("select model. listen " << ip.c_str() << ":" << port);
 #endif
 
     return;

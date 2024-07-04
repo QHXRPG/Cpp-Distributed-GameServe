@@ -1,1 +1,1 @@
-"../../../../../tools/protoc.exe" --cpp_out=./ proto_id.proto msg.proto 
+"../../../../../tools/protoc.exe" --cpp_out=./ proto_id.proto db.proto msg.proto 

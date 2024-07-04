@@ -28,7 +28,7 @@ include_directories(/usr/local/include/common/json)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../../../bin")
 
-set(CMAKE_CXX_FLAGS "-Wall -std=c++14 -pthread -lprotobuf -lcurl -ljsoncpp -DEPOLL")
+set(CMAKE_CXX_FLAGS "-Wall -std=c++14 -pthread -lprotobuf -lcurl -ljsoncpp -DEPOLL -lyaml-cpp")
 set(CMAKE_CXX_FLAGS_DEBUG "-D_DEBUG -O0 -g -ggdb")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 

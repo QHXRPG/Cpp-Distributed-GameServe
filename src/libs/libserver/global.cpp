@@ -1,28 +1,27 @@
 #include "global.h"
 
-uint64 Global::GenerateSN()
+Global::Global(APP_TYPE appType, int appId)
 {
-	std::lock_guard<std::mutex> guard(_mtx);
-	uint64 ret = (TimeTick << 32) + (_serverId << 16) + _snTicket;
-	_snTicket += 1;
-	return ret;
+    _appType = appType;
+    _appId = appId;
+    std::cout << "app type:" << appType << " id:" << _appId << std::endl;
 }
 
-void Global::SetAppInfo(const APP_TYPE appType, const int appId)
+uint64 Global::GenerateSN()
 {
-	_appType = appType;
-	_appId = appId;
-
-	std::cout << "app type:" << appType << " id:" << _appId << std::endl;
+    std::lock_guard<std::mutex> guard(_mtx);
+    uint64 ret = (TimeTick << 32) + (_serverId << 16) + _snTicket;
+    _snTicket += 1;
+    return ret;
 }
 
 APP_TYPE Global::GetCurAppType() const
 {
-	return _appType;
+    return _appType;
 }
 
 int Global::GetCurAppId() const
 {
-	return _appId;
+    return _appId;
 }
 

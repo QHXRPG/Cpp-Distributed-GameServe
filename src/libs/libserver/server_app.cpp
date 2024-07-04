@@ -5,43 +5,58 @@
 #include "console.h"
 #include "console_cmd_pool.h"
 #include "network_locator.h"
+#include "res_path.h"
+#include "app_type_mgr.h"
+#include "yaml.h"
+#include "log4.h"
 
 #if ENGINE_PLATFORM != PLATFORM_WIN32
 #include <sys/time.h>
 #endif
 
-ServerApp::ServerApp(APP_TYPE  appType)
+ServerApp::ServerApp(APP_TYPE appType, int argc, char* argv[])
+{
+    _appType = appType;
+    _argc = argc;
+    _argv = argv;
+}
+
+void ServerApp::Dispose()
+{
+    ThreadMgr::DestroyInstance();
+    Global::DestroyInstance();
+}
+
+void ServerApp::Initialize()
 {
     signal(SIGINT, Signalhandler);
+    Global::Instance(_appType, 1);
 
-    _appType = appType;
-
+    // 全局数据
+    AppTypeMgr::Instance();
     DynamicObjectPoolMgr::Instance();
-    Global::Instance();
-    Global::GetInstance()->SetAppInfo(_appType, 1);
+    ResPath::Instance();
+    Log4::Instance(_appType);
+    Yaml::Instance();
 
     ThreadMgr::Instance();
     _pThreadMgr = ThreadMgr::GetInstance();
     UpdateTime();
 
+    // 全局 Component
+    _pThreadMgr->AddComponent<NetworkLocator>();
+    auto pConsole = _pThreadMgr->AddComponent<Console>();
+    pConsole->Register<ConsoleCmdPool>("pool");
+
     // 创建线程
-    for (int i = 0; i < 3; i++)
+    const auto pLoginConfig = dynamic_cast<AppConfig*>(Yaml::GetInstance()->GetConfig(_appType));
+    for (int i = 0; i < pLoginConfig->ThreadNum; i++)
     {
         _pThreadMgr->CreateThread();
     }
 
+    _pThreadMgr->InitComponent();
     _pThreadMgr->StartAllThread();
-
-    // 全局 Component
-    _pThreadMgr->AddComponent<NetworkLocator>();
-
-    auto pConsole = _pThreadMgr->AddComponent<Console>();
-    pConsole->Register<ConsoleCmdPool>("pool");
-}
-
-ServerApp::~ServerApp()
-{
-    _pThreadMgr->DestroyInstance();
 }
 
 void ServerApp::Signalhandler(const int signalValue)
@@ -62,12 +77,7 @@ void ServerApp::Signalhandler(const int signalValue)
     std::cout << "\nrecv signal. value:" << signalValue << " Global IsStop::" << Global::GetInstance()->IsStop << std::endl;
 }
 
-void ServerApp::Dispose()
-{
-    _pThreadMgr->Dispose();
-}
-
-void ServerApp::Run() const
+void ServerApp::Run()
 {
     while (!Global::GetInstance()->IsStop)
     {
@@ -104,11 +114,7 @@ void ServerApp::Run() const
     DynamicObjectPoolMgr::GetInstance()->Update();
     DynamicObjectPoolMgr::GetInstance()->Dispose();
     DynamicObjectPoolMgr::DestroyInstance();
-
-    Global::DestroyInstance();
-    ThreadMgr::DestroyInstance();
 }
-
 
 void ServerApp::UpdateTime() const
 {

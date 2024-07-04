@@ -33,6 +33,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "db.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_msg_2eproto
@@ -48,7 +49,7 @@ struct TableStruct_msg_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[21]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -71,6 +72,33 @@ extern CreateComponentDefaultTypeInternal _CreateComponent_default_instance_;
 class CreateComponentParam;
 class CreateComponentParamDefaultTypeInternal;
 extern CreateComponentParamDefaultTypeInternal _CreateComponentParam_default_instance_;
+class CreatePlayer;
+class CreatePlayerDefaultTypeInternal;
+extern CreatePlayerDefaultTypeInternal _CreatePlayer_default_instance_;
+class CreatePlayerRs;
+class CreatePlayerRsDefaultTypeInternal;
+extern CreatePlayerRsDefaultTypeInternal _CreatePlayerRs_default_instance_;
+class CreatePlayerToDB;
+class CreatePlayerToDBDefaultTypeInternal;
+extern CreatePlayerToDBDefaultTypeInternal _CreatePlayerToDB_default_instance_;
+class CreatePlayerToDBRs;
+class CreatePlayerToDBRsDefaultTypeInternal;
+extern CreatePlayerToDBRsDefaultTypeInternal _CreatePlayerToDBRs_default_instance_;
+class PlayerList;
+class PlayerListDefaultTypeInternal;
+extern PlayerListDefaultTypeInternal _PlayerList_default_instance_;
+class PlayerLittle;
+class PlayerLittleDefaultTypeInternal;
+extern PlayerLittleDefaultTypeInternal _PlayerLittle_default_instance_;
+class QueryPlayer;
+class QueryPlayerDefaultTypeInternal;
+extern QueryPlayerDefaultTypeInternal _QueryPlayer_default_instance_;
+class QueryPlayerList;
+class QueryPlayerListDefaultTypeInternal;
+extern QueryPlayerListDefaultTypeInternal _QueryPlayerList_default_instance_;
+class QueryPlayerRs;
+class QueryPlayerRsDefaultTypeInternal;
+extern QueryPlayerRsDefaultTypeInternal _QueryPlayerRs_default_instance_;
 class RemoveComponent;
 class RemoveComponentDefaultTypeInternal;
 extern RemoveComponentDefaultTypeInternal _RemoveComponent_default_instance_;
@@ -83,6 +111,15 @@ extern RobotSyncStateDefaultTypeInternal _RobotSyncState_default_instance_;
 class RobotTestEnd;
 class RobotTestEndDefaultTypeInternal;
 extern RobotTestEndDefaultTypeInternal _RobotTestEnd_default_instance_;
+class SavePlayer;
+class SavePlayerDefaultTypeInternal;
+extern SavePlayerDefaultTypeInternal _SavePlayer_default_instance_;
+class SelectPlayer;
+class SelectPlayerDefaultTypeInternal;
+extern SelectPlayerDefaultTypeInternal _SelectPlayer_default_instance_;
+class SelectPlayerRs;
+class SelectPlayerRsDefaultTypeInternal;
+extern SelectPlayerRsDefaultTypeInternal _SelectPlayerRs_default_instance_;
 }  // namespace Proto
 PROTOBUF_NAMESPACE_OPEN
 template<> ::Proto::AccountCheck* Arena::CreateMaybeMessage<::Proto::AccountCheck>(Arena*);
@@ -90,10 +127,22 @@ template<> ::Proto::AccountCheckRs* Arena::CreateMaybeMessage<::Proto::AccountCh
 template<> ::Proto::AccountCheckToHttpRs* Arena::CreateMaybeMessage<::Proto::AccountCheckToHttpRs>(Arena*);
 template<> ::Proto::CreateComponent* Arena::CreateMaybeMessage<::Proto::CreateComponent>(Arena*);
 template<> ::Proto::CreateComponentParam* Arena::CreateMaybeMessage<::Proto::CreateComponentParam>(Arena*);
+template<> ::Proto::CreatePlayer* Arena::CreateMaybeMessage<::Proto::CreatePlayer>(Arena*);
+template<> ::Proto::CreatePlayerRs* Arena::CreateMaybeMessage<::Proto::CreatePlayerRs>(Arena*);
+template<> ::Proto::CreatePlayerToDB* Arena::CreateMaybeMessage<::Proto::CreatePlayerToDB>(Arena*);
+template<> ::Proto::CreatePlayerToDBRs* Arena::CreateMaybeMessage<::Proto::CreatePlayerToDBRs>(Arena*);
+template<> ::Proto::PlayerList* Arena::CreateMaybeMessage<::Proto::PlayerList>(Arena*);
+template<> ::Proto::PlayerLittle* Arena::CreateMaybeMessage<::Proto::PlayerLittle>(Arena*);
+template<> ::Proto::QueryPlayer* Arena::CreateMaybeMessage<::Proto::QueryPlayer>(Arena*);
+template<> ::Proto::QueryPlayerList* Arena::CreateMaybeMessage<::Proto::QueryPlayerList>(Arena*);
+template<> ::Proto::QueryPlayerRs* Arena::CreateMaybeMessage<::Proto::QueryPlayerRs>(Arena*);
 template<> ::Proto::RemoveComponent* Arena::CreateMaybeMessage<::Proto::RemoveComponent>(Arena*);
 template<> ::Proto::RobotState* Arena::CreateMaybeMessage<::Proto::RobotState>(Arena*);
 template<> ::Proto::RobotSyncState* Arena::CreateMaybeMessage<::Proto::RobotSyncState>(Arena*);
 template<> ::Proto::RobotTestEnd* Arena::CreateMaybeMessage<::Proto::RobotTestEnd>(Arena*);
+template<> ::Proto::SavePlayer* Arena::CreateMaybeMessage<::Proto::SavePlayer>(Arena*);
+template<> ::Proto::SelectPlayer* Arena::CreateMaybeMessage<::Proto::SelectPlayer>(Arena*);
+template<> ::Proto::SelectPlayerRs* Arena::CreateMaybeMessage<::Proto::SelectPlayerRs>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace Proto {
 
@@ -122,34 +171,86 @@ inline bool CreateComponentParam_ParamType_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CreateComponentParam_ParamType>(
     CreateComponentParam_ParamType_descriptor(), name, value);
 }
-enum AccountCheckRs_ReturnCode : int {
-  AccountCheckRs_ReturnCode_ARC_OK = 0,
-  AccountCheckRs_ReturnCode_ARC_UNKONWN = 1,
-  AccountCheckRs_ReturnCode_ARC_NOT_FOUND_ACCOUNT = 2,
-  AccountCheckRs_ReturnCode_ARC_PASSWORD_WRONG = 3,
-  AccountCheckRs_ReturnCode_ARC_LOGGING = 4,
-  AccountCheckRs_ReturnCode_ARC_TIMEOUT = 5,
-  AccountCheckRs_ReturnCode_AccountCheckRs_ReturnCode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  AccountCheckRs_ReturnCode_AccountCheckRs_ReturnCode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+enum SelectPlayerRs_SelectPlayerReturnCode : int {
+  SelectPlayerRs_SelectPlayerReturnCode_SPRC_OK = 0,
+  SelectPlayerRs_SelectPlayerReturnCode_SPRC_NotFound = 1,
+  SelectPlayerRs_SelectPlayerReturnCode_SelectPlayerRs_SelectPlayerReturnCode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  SelectPlayerRs_SelectPlayerReturnCode_SelectPlayerRs_SelectPlayerReturnCode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool AccountCheckRs_ReturnCode_IsValid(int value);
-constexpr AccountCheckRs_ReturnCode AccountCheckRs_ReturnCode_ReturnCode_MIN = AccountCheckRs_ReturnCode_ARC_OK;
-constexpr AccountCheckRs_ReturnCode AccountCheckRs_ReturnCode_ReturnCode_MAX = AccountCheckRs_ReturnCode_ARC_TIMEOUT;
-constexpr int AccountCheckRs_ReturnCode_ReturnCode_ARRAYSIZE = AccountCheckRs_ReturnCode_ReturnCode_MAX + 1;
+bool SelectPlayerRs_SelectPlayerReturnCode_IsValid(int value);
+constexpr SelectPlayerRs_SelectPlayerReturnCode SelectPlayerRs_SelectPlayerReturnCode_SelectPlayerReturnCode_MIN = SelectPlayerRs_SelectPlayerReturnCode_SPRC_OK;
+constexpr SelectPlayerRs_SelectPlayerReturnCode SelectPlayerRs_SelectPlayerReturnCode_SelectPlayerReturnCode_MAX = SelectPlayerRs_SelectPlayerReturnCode_SPRC_NotFound;
+constexpr int SelectPlayerRs_SelectPlayerReturnCode_SelectPlayerReturnCode_ARRAYSIZE = SelectPlayerRs_SelectPlayerReturnCode_SelectPlayerReturnCode_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AccountCheckRs_ReturnCode_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SelectPlayerRs_SelectPlayerReturnCode_descriptor();
 template<typename T>
-inline const std::string& AccountCheckRs_ReturnCode_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, AccountCheckRs_ReturnCode>::value ||
+inline const std::string& SelectPlayerRs_SelectPlayerReturnCode_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, SelectPlayerRs_SelectPlayerReturnCode>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function AccountCheckRs_ReturnCode_Name.");
+    "Incorrect type passed to function SelectPlayerRs_SelectPlayerReturnCode_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    AccountCheckRs_ReturnCode_descriptor(), enum_t_value);
+    SelectPlayerRs_SelectPlayerReturnCode_descriptor(), enum_t_value);
 }
-inline bool AccountCheckRs_ReturnCode_Parse(
-    const std::string& name, AccountCheckRs_ReturnCode* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<AccountCheckRs_ReturnCode>(
-    AccountCheckRs_ReturnCode_descriptor(), name, value);
+inline bool SelectPlayerRs_SelectPlayerReturnCode_Parse(
+    const std::string& name, SelectPlayerRs_SelectPlayerReturnCode* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<SelectPlayerRs_SelectPlayerReturnCode>(
+    SelectPlayerRs_SelectPlayerReturnCode_descriptor(), name, value);
+}
+enum AccountCheckReturnCode : int {
+  ARC_OK = 0,
+  ARC_UNKONWN = 1,
+  ARC_NOT_FOUND_ACCOUNT = 2,
+  ARC_PASSWORD_WRONG = 3,
+  ARC_LOGGING = 4,
+  ARC_TIMEOUT = 5,
+  ARC_ONLINE = 6,
+  AccountCheckReturnCode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  AccountCheckReturnCode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool AccountCheckReturnCode_IsValid(int value);
+constexpr AccountCheckReturnCode AccountCheckReturnCode_MIN = ARC_OK;
+constexpr AccountCheckReturnCode AccountCheckReturnCode_MAX = ARC_ONLINE;
+constexpr int AccountCheckReturnCode_ARRAYSIZE = AccountCheckReturnCode_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AccountCheckReturnCode_descriptor();
+template<typename T>
+inline const std::string& AccountCheckReturnCode_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, AccountCheckReturnCode>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function AccountCheckReturnCode_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    AccountCheckReturnCode_descriptor(), enum_t_value);
+}
+inline bool AccountCheckReturnCode_Parse(
+    const std::string& name, AccountCheckReturnCode* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<AccountCheckReturnCode>(
+    AccountCheckReturnCode_descriptor(), name, value);
+}
+enum CreatePlayerReturnCode : int {
+  CPR_Create_OK = 0,
+  CPR_Unkonwn = 1,
+  CPR_Rename = 2,
+  CreatePlayerReturnCode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  CreatePlayerReturnCode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool CreatePlayerReturnCode_IsValid(int value);
+constexpr CreatePlayerReturnCode CreatePlayerReturnCode_MIN = CPR_Create_OK;
+constexpr CreatePlayerReturnCode CreatePlayerReturnCode_MAX = CPR_Rename;
+constexpr int CreatePlayerReturnCode_ARRAYSIZE = CreatePlayerReturnCode_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CreatePlayerReturnCode_descriptor();
+template<typename T>
+inline const std::string& CreatePlayerReturnCode_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, CreatePlayerReturnCode>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function CreatePlayerReturnCode_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    CreatePlayerReturnCode_descriptor(), enum_t_value);
+}
+inline bool CreatePlayerReturnCode_Parse(
+    const std::string& name, CreatePlayerReturnCode* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CreatePlayerReturnCode>(
+    CreatePlayerReturnCode_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -882,60 +983,22 @@ class AccountCheckRs :
 
   // nested types ----------------------------------------------------
 
-  typedef AccountCheckRs_ReturnCode ReturnCode;
-  static constexpr ReturnCode ARC_OK =
-    AccountCheckRs_ReturnCode_ARC_OK;
-  static constexpr ReturnCode ARC_UNKONWN =
-    AccountCheckRs_ReturnCode_ARC_UNKONWN;
-  static constexpr ReturnCode ARC_NOT_FOUND_ACCOUNT =
-    AccountCheckRs_ReturnCode_ARC_NOT_FOUND_ACCOUNT;
-  static constexpr ReturnCode ARC_PASSWORD_WRONG =
-    AccountCheckRs_ReturnCode_ARC_PASSWORD_WRONG;
-  static constexpr ReturnCode ARC_LOGGING =
-    AccountCheckRs_ReturnCode_ARC_LOGGING;
-  static constexpr ReturnCode ARC_TIMEOUT =
-    AccountCheckRs_ReturnCode_ARC_TIMEOUT;
-  static inline bool ReturnCode_IsValid(int value) {
-    return AccountCheckRs_ReturnCode_IsValid(value);
-  }
-  static constexpr ReturnCode ReturnCode_MIN =
-    AccountCheckRs_ReturnCode_ReturnCode_MIN;
-  static constexpr ReturnCode ReturnCode_MAX =
-    AccountCheckRs_ReturnCode_ReturnCode_MAX;
-  static constexpr int ReturnCode_ARRAYSIZE =
-    AccountCheckRs_ReturnCode_ReturnCode_ARRAYSIZE;
-  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
-  ReturnCode_descriptor() {
-    return AccountCheckRs_ReturnCode_descriptor();
-  }
-  template<typename T>
-  static inline const std::string& ReturnCode_Name(T enum_t_value) {
-    static_assert(::std::is_same<T, ReturnCode>::value ||
-      ::std::is_integral<T>::value,
-      "Incorrect type passed to function ReturnCode_Name.");
-    return AccountCheckRs_ReturnCode_Name(enum_t_value);
-  }
-  static inline bool ReturnCode_Parse(const std::string& name,
-      ReturnCode* value) {
-    return AccountCheckRs_ReturnCode_Parse(name, value);
-  }
-
   // accessors -------------------------------------------------------
 
   enum : int {
     kReturnCodeFieldNumber = 1,
   };
-  // int32 return_code = 1;
+  // .Proto.AccountCheckReturnCode return_code = 1;
   void clear_return_code();
-  ::PROTOBUF_NAMESPACE_ID::int32 return_code() const;
-  void set_return_code(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::Proto::AccountCheckReturnCode return_code() const;
+  void set_return_code(::Proto::AccountCheckReturnCode value);
 
   // @@protoc_insertion_point(class_scope:Proto.AccountCheckRs)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::int32 return_code_;
+  int return_code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_msg_2eproto;
 };
@@ -1068,10 +1131,10 @@ class AccountCheckToHttpRs :
   std::string* release_account();
   void set_allocated_account(std::string* account);
 
-  // int32 return_code = 1;
+  // .Proto.AccountCheckReturnCode return_code = 1;
   void clear_return_code();
-  ::PROTOBUF_NAMESPACE_ID::int32 return_code() const;
-  void set_return_code(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::Proto::AccountCheckReturnCode return_code() const;
+  void set_return_code(::Proto::AccountCheckReturnCode value);
 
   // @@protoc_insertion_point(class_scope:Proto.AccountCheckToHttpRs)
  private:
@@ -1079,7 +1142,7 @@ class AccountCheckToHttpRs :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_;
-  ::PROTOBUF_NAMESPACE_ID::int32 return_code_;
+  int return_code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_msg_2eproto;
 };
@@ -1495,6 +1558,1728 @@ class RobotTestEnd :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_msg_2eproto;
 };
+// -------------------------------------------------------------------
+
+class PlayerLittle :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.PlayerLittle) */ {
+ public:
+  PlayerLittle();
+  virtual ~PlayerLittle();
+
+  PlayerLittle(const PlayerLittle& from);
+  PlayerLittle(PlayerLittle&& from) noexcept
+    : PlayerLittle() {
+    *this = ::std::move(from);
+  }
+
+  inline PlayerLittle& operator=(const PlayerLittle& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PlayerLittle& operator=(PlayerLittle&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PlayerLittle& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PlayerLittle* internal_default_instance() {
+    return reinterpret_cast<const PlayerLittle*>(
+               &_PlayerLittle_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(PlayerLittle& a, PlayerLittle& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PlayerLittle* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PlayerLittle* New() const final {
+    return CreateMaybeMessage<PlayerLittle>(nullptr);
+  }
+
+  PlayerLittle* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PlayerLittle>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PlayerLittle& from);
+  void MergeFrom(const PlayerLittle& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PlayerLittle* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.PlayerLittle";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 2,
+    kSnFieldNumber = 1,
+    kGenderFieldNumber = 3,
+    kLevelFieldNumber = 4,
+  };
+  // string name = 2;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+
+  // uint64 sn = 1;
+  void clear_sn();
+  ::PROTOBUF_NAMESPACE_ID::uint64 sn() const;
+  void set_sn(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // .Proto.Gender gender = 3;
+  void clear_gender();
+  ::Proto::Gender gender() const;
+  void set_gender(::Proto::Gender value);
+
+  // int32 level = 4;
+  void clear_level();
+  ::PROTOBUF_NAMESPACE_ID::int32 level() const;
+  void set_level(::PROTOBUF_NAMESPACE_ID::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Proto.PlayerLittle)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 sn_;
+  int gender_;
+  ::PROTOBUF_NAMESPACE_ID::int32 level_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PlayerList :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.PlayerList) */ {
+ public:
+  PlayerList();
+  virtual ~PlayerList();
+
+  PlayerList(const PlayerList& from);
+  PlayerList(PlayerList&& from) noexcept
+    : PlayerList() {
+    *this = ::std::move(from);
+  }
+
+  inline PlayerList& operator=(const PlayerList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PlayerList& operator=(PlayerList&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PlayerList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PlayerList* internal_default_instance() {
+    return reinterpret_cast<const PlayerList*>(
+               &_PlayerList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(PlayerList& a, PlayerList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PlayerList* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PlayerList* New() const final {
+    return CreateMaybeMessage<PlayerList>(nullptr);
+  }
+
+  PlayerList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PlayerList>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PlayerList& from);
+  void MergeFrom(const PlayerList& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PlayerList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.PlayerList";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPlayerFieldNumber = 2,
+    kAccountFieldNumber = 1,
+  };
+  // repeated .Proto.PlayerLittle player = 2;
+  int player_size() const;
+  void clear_player();
+  ::Proto::PlayerLittle* mutable_player(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::PlayerLittle >*
+      mutable_player();
+  const ::Proto::PlayerLittle& player(int index) const;
+  ::Proto::PlayerLittle* add_player();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::PlayerLittle >&
+      player() const;
+
+  // string account = 1;
+  void clear_account();
+  const std::string& account() const;
+  void set_account(const std::string& value);
+  void set_account(std::string&& value);
+  void set_account(const char* value);
+  void set_account(const char* value, size_t size);
+  std::string* mutable_account();
+  std::string* release_account();
+  void set_allocated_account(std::string* account);
+
+  // @@protoc_insertion_point(class_scope:Proto.PlayerList)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::PlayerLittle > player_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class QueryPlayerList :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.QueryPlayerList) */ {
+ public:
+  QueryPlayerList();
+  virtual ~QueryPlayerList();
+
+  QueryPlayerList(const QueryPlayerList& from);
+  QueryPlayerList(QueryPlayerList&& from) noexcept
+    : QueryPlayerList() {
+    *this = ::std::move(from);
+  }
+
+  inline QueryPlayerList& operator=(const QueryPlayerList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline QueryPlayerList& operator=(QueryPlayerList&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const QueryPlayerList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const QueryPlayerList* internal_default_instance() {
+    return reinterpret_cast<const QueryPlayerList*>(
+               &_QueryPlayerList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(QueryPlayerList& a, QueryPlayerList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(QueryPlayerList* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline QueryPlayerList* New() const final {
+    return CreateMaybeMessage<QueryPlayerList>(nullptr);
+  }
+
+  QueryPlayerList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<QueryPlayerList>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const QueryPlayerList& from);
+  void MergeFrom(const QueryPlayerList& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(QueryPlayerList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.QueryPlayerList";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAccountFieldNumber = 1,
+  };
+  // string account = 1;
+  void clear_account();
+  const std::string& account() const;
+  void set_account(const std::string& value);
+  void set_account(std::string&& value);
+  void set_account(const char* value);
+  void set_account(const char* value, size_t size);
+  std::string* mutable_account();
+  std::string* release_account();
+  void set_allocated_account(std::string* account);
+
+  // @@protoc_insertion_point(class_scope:Proto.QueryPlayerList)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class QueryPlayer :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.QueryPlayer) */ {
+ public:
+  QueryPlayer();
+  virtual ~QueryPlayer();
+
+  QueryPlayer(const QueryPlayer& from);
+  QueryPlayer(QueryPlayer&& from) noexcept
+    : QueryPlayer() {
+    *this = ::std::move(from);
+  }
+
+  inline QueryPlayer& operator=(const QueryPlayer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline QueryPlayer& operator=(QueryPlayer&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const QueryPlayer& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const QueryPlayer* internal_default_instance() {
+    return reinterpret_cast<const QueryPlayer*>(
+               &_QueryPlayer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(QueryPlayer& a, QueryPlayer& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(QueryPlayer* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline QueryPlayer* New() const final {
+    return CreateMaybeMessage<QueryPlayer>(nullptr);
+  }
+
+  QueryPlayer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<QueryPlayer>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const QueryPlayer& from);
+  void MergeFrom(const QueryPlayer& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(QueryPlayer* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.QueryPlayer";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPlayerSnFieldNumber = 1,
+  };
+  // uint64 player_sn = 1;
+  void clear_player_sn();
+  ::PROTOBUF_NAMESPACE_ID::uint64 player_sn() const;
+  void set_player_sn(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:Proto.QueryPlayer)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 player_sn_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class QueryPlayerRs :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.QueryPlayerRs) */ {
+ public:
+  QueryPlayerRs();
+  virtual ~QueryPlayerRs();
+
+  QueryPlayerRs(const QueryPlayerRs& from);
+  QueryPlayerRs(QueryPlayerRs&& from) noexcept
+    : QueryPlayerRs() {
+    *this = ::std::move(from);
+  }
+
+  inline QueryPlayerRs& operator=(const QueryPlayerRs& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline QueryPlayerRs& operator=(QueryPlayerRs&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const QueryPlayerRs& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const QueryPlayerRs* internal_default_instance() {
+    return reinterpret_cast<const QueryPlayerRs*>(
+               &_QueryPlayerRs_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(QueryPlayerRs& a, QueryPlayerRs& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(QueryPlayerRs* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline QueryPlayerRs* New() const final {
+    return CreateMaybeMessage<QueryPlayerRs>(nullptr);
+  }
+
+  QueryPlayerRs* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<QueryPlayerRs>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const QueryPlayerRs& from);
+  void MergeFrom(const QueryPlayerRs& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(QueryPlayerRs* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.QueryPlayerRs";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAccountFieldNumber = 1,
+    kPlayerFieldNumber = 2,
+  };
+  // string account = 1;
+  void clear_account();
+  const std::string& account() const;
+  void set_account(const std::string& value);
+  void set_account(std::string&& value);
+  void set_account(const char* value);
+  void set_account(const char* value, size_t size);
+  std::string* mutable_account();
+  std::string* release_account();
+  void set_allocated_account(std::string* account);
+
+  // .Proto.Player player = 2;
+  bool has_player() const;
+  void clear_player();
+  const ::Proto::Player& player() const;
+  ::Proto::Player* release_player();
+  ::Proto::Player* mutable_player();
+  void set_allocated_player(::Proto::Player* player);
+
+  // @@protoc_insertion_point(class_scope:Proto.QueryPlayerRs)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_;
+  ::Proto::Player* player_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreatePlayer :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.CreatePlayer) */ {
+ public:
+  CreatePlayer();
+  virtual ~CreatePlayer();
+
+  CreatePlayer(const CreatePlayer& from);
+  CreatePlayer(CreatePlayer&& from) noexcept
+    : CreatePlayer() {
+    *this = ::std::move(from);
+  }
+
+  inline CreatePlayer& operator=(const CreatePlayer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreatePlayer& operator=(CreatePlayer&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CreatePlayer& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreatePlayer* internal_default_instance() {
+    return reinterpret_cast<const CreatePlayer*>(
+               &_CreatePlayer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(CreatePlayer& a, CreatePlayer& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreatePlayer* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreatePlayer* New() const final {
+    return CreateMaybeMessage<CreatePlayer>(nullptr);
+  }
+
+  CreatePlayer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreatePlayer>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CreatePlayer& from);
+  void MergeFrom(const CreatePlayer& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreatePlayer* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.CreatePlayer";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kGenderFieldNumber = 2,
+  };
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+
+  // .Proto.Gender gender = 2;
+  void clear_gender();
+  ::Proto::Gender gender() const;
+  void set_gender(::Proto::Gender value);
+
+  // @@protoc_insertion_point(class_scope:Proto.CreatePlayer)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  int gender_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreatePlayerRs :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.CreatePlayerRs) */ {
+ public:
+  CreatePlayerRs();
+  virtual ~CreatePlayerRs();
+
+  CreatePlayerRs(const CreatePlayerRs& from);
+  CreatePlayerRs(CreatePlayerRs&& from) noexcept
+    : CreatePlayerRs() {
+    *this = ::std::move(from);
+  }
+
+  inline CreatePlayerRs& operator=(const CreatePlayerRs& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreatePlayerRs& operator=(CreatePlayerRs&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CreatePlayerRs& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreatePlayerRs* internal_default_instance() {
+    return reinterpret_cast<const CreatePlayerRs*>(
+               &_CreatePlayerRs_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(CreatePlayerRs& a, CreatePlayerRs& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreatePlayerRs* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreatePlayerRs* New() const final {
+    return CreateMaybeMessage<CreatePlayerRs>(nullptr);
+  }
+
+  CreatePlayerRs* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreatePlayerRs>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CreatePlayerRs& from);
+  void MergeFrom(const CreatePlayerRs& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreatePlayerRs* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.CreatePlayerRs";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kReturnCodeFieldNumber = 2,
+  };
+  // .Proto.CreatePlayerReturnCode return_code = 2;
+  void clear_return_code();
+  ::Proto::CreatePlayerReturnCode return_code() const;
+  void set_return_code(::Proto::CreatePlayerReturnCode value);
+
+  // @@protoc_insertion_point(class_scope:Proto.CreatePlayerRs)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  int return_code_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreatePlayerToDB :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.CreatePlayerToDB) */ {
+ public:
+  CreatePlayerToDB();
+  virtual ~CreatePlayerToDB();
+
+  CreatePlayerToDB(const CreatePlayerToDB& from);
+  CreatePlayerToDB(CreatePlayerToDB&& from) noexcept
+    : CreatePlayerToDB() {
+    *this = ::std::move(from);
+  }
+
+  inline CreatePlayerToDB& operator=(const CreatePlayerToDB& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreatePlayerToDB& operator=(CreatePlayerToDB&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CreatePlayerToDB& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreatePlayerToDB* internal_default_instance() {
+    return reinterpret_cast<const CreatePlayerToDB*>(
+               &_CreatePlayerToDB_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(CreatePlayerToDB& a, CreatePlayerToDB& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreatePlayerToDB* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreatePlayerToDB* New() const final {
+    return CreateMaybeMessage<CreatePlayerToDB>(nullptr);
+  }
+
+  CreatePlayerToDB* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreatePlayerToDB>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CreatePlayerToDB& from);
+  void MergeFrom(const CreatePlayerToDB& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreatePlayerToDB* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.CreatePlayerToDB";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAccountFieldNumber = 1,
+    kPlayerFieldNumber = 2,
+  };
+  // string account = 1;
+  void clear_account();
+  const std::string& account() const;
+  void set_account(const std::string& value);
+  void set_account(std::string&& value);
+  void set_account(const char* value);
+  void set_account(const char* value, size_t size);
+  std::string* mutable_account();
+  std::string* release_account();
+  void set_allocated_account(std::string* account);
+
+  // .Proto.Player player = 2;
+  bool has_player() const;
+  void clear_player();
+  const ::Proto::Player& player() const;
+  ::Proto::Player* release_player();
+  ::Proto::Player* mutable_player();
+  void set_allocated_player(::Proto::Player* player);
+
+  // @@protoc_insertion_point(class_scope:Proto.CreatePlayerToDB)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_;
+  ::Proto::Player* player_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreatePlayerToDBRs :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.CreatePlayerToDBRs) */ {
+ public:
+  CreatePlayerToDBRs();
+  virtual ~CreatePlayerToDBRs();
+
+  CreatePlayerToDBRs(const CreatePlayerToDBRs& from);
+  CreatePlayerToDBRs(CreatePlayerToDBRs&& from) noexcept
+    : CreatePlayerToDBRs() {
+    *this = ::std::move(from);
+  }
+
+  inline CreatePlayerToDBRs& operator=(const CreatePlayerToDBRs& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreatePlayerToDBRs& operator=(CreatePlayerToDBRs&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CreatePlayerToDBRs& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreatePlayerToDBRs* internal_default_instance() {
+    return reinterpret_cast<const CreatePlayerToDBRs*>(
+               &_CreatePlayerToDBRs_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(CreatePlayerToDBRs& a, CreatePlayerToDBRs& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreatePlayerToDBRs* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreatePlayerToDBRs* New() const final {
+    return CreateMaybeMessage<CreatePlayerToDBRs>(nullptr);
+  }
+
+  CreatePlayerToDBRs* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreatePlayerToDBRs>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CreatePlayerToDBRs& from);
+  void MergeFrom(const CreatePlayerToDBRs& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreatePlayerToDBRs* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.CreatePlayerToDBRs";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAccountFieldNumber = 1,
+    kReturnCodeFieldNumber = 2,
+  };
+  // string account = 1;
+  void clear_account();
+  const std::string& account() const;
+  void set_account(const std::string& value);
+  void set_account(std::string&& value);
+  void set_account(const char* value);
+  void set_account(const char* value, size_t size);
+  std::string* mutable_account();
+  std::string* release_account();
+  void set_allocated_account(std::string* account);
+
+  // .Proto.CreatePlayerReturnCode return_code = 2;
+  void clear_return_code();
+  ::Proto::CreatePlayerReturnCode return_code() const;
+  void set_return_code(::Proto::CreatePlayerReturnCode value);
+
+  // @@protoc_insertion_point(class_scope:Proto.CreatePlayerToDBRs)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_;
+  int return_code_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SelectPlayer :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.SelectPlayer) */ {
+ public:
+  SelectPlayer();
+  virtual ~SelectPlayer();
+
+  SelectPlayer(const SelectPlayer& from);
+  SelectPlayer(SelectPlayer&& from) noexcept
+    : SelectPlayer() {
+    *this = ::std::move(from);
+  }
+
+  inline SelectPlayer& operator=(const SelectPlayer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SelectPlayer& operator=(SelectPlayer&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const SelectPlayer& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SelectPlayer* internal_default_instance() {
+    return reinterpret_cast<const SelectPlayer*>(
+               &_SelectPlayer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(SelectPlayer& a, SelectPlayer& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SelectPlayer* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SelectPlayer* New() const final {
+    return CreateMaybeMessage<SelectPlayer>(nullptr);
+  }
+
+  SelectPlayer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SelectPlayer>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const SelectPlayer& from);
+  void MergeFrom(const SelectPlayer& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SelectPlayer* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.SelectPlayer";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPlayerSnFieldNumber = 1,
+  };
+  // uint64 player_sn = 1;
+  void clear_player_sn();
+  ::PROTOBUF_NAMESPACE_ID::uint64 player_sn() const;
+  void set_player_sn(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:Proto.SelectPlayer)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 player_sn_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SelectPlayerRs :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.SelectPlayerRs) */ {
+ public:
+  SelectPlayerRs();
+  virtual ~SelectPlayerRs();
+
+  SelectPlayerRs(const SelectPlayerRs& from);
+  SelectPlayerRs(SelectPlayerRs&& from) noexcept
+    : SelectPlayerRs() {
+    *this = ::std::move(from);
+  }
+
+  inline SelectPlayerRs& operator=(const SelectPlayerRs& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SelectPlayerRs& operator=(SelectPlayerRs&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const SelectPlayerRs& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SelectPlayerRs* internal_default_instance() {
+    return reinterpret_cast<const SelectPlayerRs*>(
+               &_SelectPlayerRs_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(SelectPlayerRs& a, SelectPlayerRs& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SelectPlayerRs* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SelectPlayerRs* New() const final {
+    return CreateMaybeMessage<SelectPlayerRs>(nullptr);
+  }
+
+  SelectPlayerRs* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SelectPlayerRs>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const SelectPlayerRs& from);
+  void MergeFrom(const SelectPlayerRs& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SelectPlayerRs* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.SelectPlayerRs";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef SelectPlayerRs_SelectPlayerReturnCode SelectPlayerReturnCode;
+  static constexpr SelectPlayerReturnCode SPRC_OK =
+    SelectPlayerRs_SelectPlayerReturnCode_SPRC_OK;
+  static constexpr SelectPlayerReturnCode SPRC_NotFound =
+    SelectPlayerRs_SelectPlayerReturnCode_SPRC_NotFound;
+  static inline bool SelectPlayerReturnCode_IsValid(int value) {
+    return SelectPlayerRs_SelectPlayerReturnCode_IsValid(value);
+  }
+  static constexpr SelectPlayerReturnCode SelectPlayerReturnCode_MIN =
+    SelectPlayerRs_SelectPlayerReturnCode_SelectPlayerReturnCode_MIN;
+  static constexpr SelectPlayerReturnCode SelectPlayerReturnCode_MAX =
+    SelectPlayerRs_SelectPlayerReturnCode_SelectPlayerReturnCode_MAX;
+  static constexpr int SelectPlayerReturnCode_ARRAYSIZE =
+    SelectPlayerRs_SelectPlayerReturnCode_SelectPlayerReturnCode_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  SelectPlayerReturnCode_descriptor() {
+    return SelectPlayerRs_SelectPlayerReturnCode_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& SelectPlayerReturnCode_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, SelectPlayerReturnCode>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function SelectPlayerReturnCode_Name.");
+    return SelectPlayerRs_SelectPlayerReturnCode_Name(enum_t_value);
+  }
+  static inline bool SelectPlayerReturnCode_Parse(const std::string& name,
+      SelectPlayerReturnCode* value) {
+    return SelectPlayerRs_SelectPlayerReturnCode_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kReturnCodeFieldNumber = 1,
+  };
+  // .Proto.SelectPlayerRs.SelectPlayerReturnCode return_code = 1;
+  void clear_return_code();
+  ::Proto::SelectPlayerRs_SelectPlayerReturnCode return_code() const;
+  void set_return_code(::Proto::SelectPlayerRs_SelectPlayerReturnCode value);
+
+  // @@protoc_insertion_point(class_scope:Proto.SelectPlayerRs)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  int return_code_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SavePlayer :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Proto.SavePlayer) */ {
+ public:
+  SavePlayer();
+  virtual ~SavePlayer();
+
+  SavePlayer(const SavePlayer& from);
+  SavePlayer(SavePlayer&& from) noexcept
+    : SavePlayer() {
+    *this = ::std::move(from);
+  }
+
+  inline SavePlayer& operator=(const SavePlayer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SavePlayer& operator=(SavePlayer&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const SavePlayer& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SavePlayer* internal_default_instance() {
+    return reinterpret_cast<const SavePlayer*>(
+               &_SavePlayer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(SavePlayer& a, SavePlayer& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SavePlayer* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SavePlayer* New() const final {
+    return CreateMaybeMessage<SavePlayer>(nullptr);
+  }
+
+  SavePlayer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SavePlayer>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const SavePlayer& from);
+  void MergeFrom(const SavePlayer& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SavePlayer* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Proto.SavePlayer";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_msg_2eproto);
+    return ::descriptor_table_msg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPlayerFieldNumber = 2,
+    kPlayerSnFieldNumber = 1,
+  };
+  // .Proto.Player player = 2;
+  bool has_player() const;
+  void clear_player();
+  const ::Proto::Player& player() const;
+  ::Proto::Player* release_player();
+  ::Proto::Player* mutable_player();
+  void set_allocated_player(::Proto::Player* player);
+
+  // uint64 player_sn = 1;
+  void clear_player_sn();
+  ::PROTOBUF_NAMESPACE_ID::uint64 player_sn() const;
+  void set_player_sn(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:Proto.SavePlayer)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::Proto::Player* player_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 player_sn_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_msg_2eproto;
+};
 // ===================================================================
 
 
@@ -1812,15 +3597,15 @@ inline void AccountCheck::set_allocated_password(std::string* password) {
 
 // AccountCheckRs
 
-// int32 return_code = 1;
+// .Proto.AccountCheckReturnCode return_code = 1;
 inline void AccountCheckRs::clear_return_code() {
   return_code_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 AccountCheckRs::return_code() const {
+inline ::Proto::AccountCheckReturnCode AccountCheckRs::return_code() const {
   // @@protoc_insertion_point(field_get:Proto.AccountCheckRs.return_code)
-  return return_code_;
+  return static_cast< ::Proto::AccountCheckReturnCode >(return_code_);
 }
-inline void AccountCheckRs::set_return_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void AccountCheckRs::set_return_code(::Proto::AccountCheckReturnCode value) {
   
   return_code_ = value;
   // @@protoc_insertion_point(field_set:Proto.AccountCheckRs.return_code)
@@ -1830,15 +3615,15 @@ inline void AccountCheckRs::set_return_code(::PROTOBUF_NAMESPACE_ID::int32 value
 
 // AccountCheckToHttpRs
 
-// int32 return_code = 1;
+// .Proto.AccountCheckReturnCode return_code = 1;
 inline void AccountCheckToHttpRs::clear_return_code() {
   return_code_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 AccountCheckToHttpRs::return_code() const {
+inline ::Proto::AccountCheckReturnCode AccountCheckToHttpRs::return_code() const {
   // @@protoc_insertion_point(field_get:Proto.AccountCheckToHttpRs.return_code)
-  return return_code_;
+  return static_cast< ::Proto::AccountCheckReturnCode >(return_code_);
 }
-inline void AccountCheckToHttpRs::set_return_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void AccountCheckToHttpRs::set_return_code(::Proto::AccountCheckReturnCode value) {
   
   return_code_ = value;
   // @@protoc_insertion_point(field_set:Proto.AccountCheckToHttpRs.return_code)
@@ -2016,9 +3801,743 @@ inline void RobotTestEnd::set_state(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:Proto.RobotTestEnd.state)
 }
 
+// -------------------------------------------------------------------
+
+// PlayerLittle
+
+// uint64 sn = 1;
+inline void PlayerLittle::clear_sn() {
+  sn_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PlayerLittle::sn() const {
+  // @@protoc_insertion_point(field_get:Proto.PlayerLittle.sn)
+  return sn_;
+}
+inline void PlayerLittle::set_sn(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  sn_ = value;
+  // @@protoc_insertion_point(field_set:Proto.PlayerLittle.sn)
+}
+
+// string name = 2;
+inline void PlayerLittle::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& PlayerLittle::name() const {
+  // @@protoc_insertion_point(field_get:Proto.PlayerLittle.name)
+  return name_.GetNoArena();
+}
+inline void PlayerLittle::set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Proto.PlayerLittle.name)
+}
+inline void PlayerLittle::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Proto.PlayerLittle.name)
+}
+inline void PlayerLittle::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Proto.PlayerLittle.name)
+}
+inline void PlayerLittle::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Proto.PlayerLittle.name)
+}
+inline std::string* PlayerLittle::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:Proto.PlayerLittle.name)
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* PlayerLittle::release_name() {
+  // @@protoc_insertion_point(field_release:Proto.PlayerLittle.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void PlayerLittle::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:Proto.PlayerLittle.name)
+}
+
+// .Proto.Gender gender = 3;
+inline void PlayerLittle::clear_gender() {
+  gender_ = 0;
+}
+inline ::Proto::Gender PlayerLittle::gender() const {
+  // @@protoc_insertion_point(field_get:Proto.PlayerLittle.gender)
+  return static_cast< ::Proto::Gender >(gender_);
+}
+inline void PlayerLittle::set_gender(::Proto::Gender value) {
+  
+  gender_ = value;
+  // @@protoc_insertion_point(field_set:Proto.PlayerLittle.gender)
+}
+
+// int32 level = 4;
+inline void PlayerLittle::clear_level() {
+  level_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PlayerLittle::level() const {
+  // @@protoc_insertion_point(field_get:Proto.PlayerLittle.level)
+  return level_;
+}
+inline void PlayerLittle::set_level(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  level_ = value;
+  // @@protoc_insertion_point(field_set:Proto.PlayerLittle.level)
+}
+
+// -------------------------------------------------------------------
+
+// PlayerList
+
+// string account = 1;
+inline void PlayerList::clear_account() {
+  account_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& PlayerList::account() const {
+  // @@protoc_insertion_point(field_get:Proto.PlayerList.account)
+  return account_.GetNoArena();
+}
+inline void PlayerList::set_account(const std::string& value) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Proto.PlayerList.account)
+}
+inline void PlayerList::set_account(std::string&& value) {
+  
+  account_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Proto.PlayerList.account)
+}
+inline void PlayerList::set_account(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Proto.PlayerList.account)
+}
+inline void PlayerList::set_account(const char* value, size_t size) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Proto.PlayerList.account)
+}
+inline std::string* PlayerList::mutable_account() {
+  
+  // @@protoc_insertion_point(field_mutable:Proto.PlayerList.account)
+  return account_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* PlayerList::release_account() {
+  // @@protoc_insertion_point(field_release:Proto.PlayerList.account)
+  
+  return account_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void PlayerList::set_allocated_account(std::string* account) {
+  if (account != nullptr) {
+    
+  } else {
+    
+  }
+  account_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), account);
+  // @@protoc_insertion_point(field_set_allocated:Proto.PlayerList.account)
+}
+
+// repeated .Proto.PlayerLittle player = 2;
+inline int PlayerList::player_size() const {
+  return player_.size();
+}
+inline void PlayerList::clear_player() {
+  player_.Clear();
+}
+inline ::Proto::PlayerLittle* PlayerList::mutable_player(int index) {
+  // @@protoc_insertion_point(field_mutable:Proto.PlayerList.player)
+  return player_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::PlayerLittle >*
+PlayerList::mutable_player() {
+  // @@protoc_insertion_point(field_mutable_list:Proto.PlayerList.player)
+  return &player_;
+}
+inline const ::Proto::PlayerLittle& PlayerList::player(int index) const {
+  // @@protoc_insertion_point(field_get:Proto.PlayerList.player)
+  return player_.Get(index);
+}
+inline ::Proto::PlayerLittle* PlayerList::add_player() {
+  // @@protoc_insertion_point(field_add:Proto.PlayerList.player)
+  return player_.Add();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Proto::PlayerLittle >&
+PlayerList::player() const {
+  // @@protoc_insertion_point(field_list:Proto.PlayerList.player)
+  return player_;
+}
+
+// -------------------------------------------------------------------
+
+// QueryPlayerList
+
+// string account = 1;
+inline void QueryPlayerList::clear_account() {
+  account_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& QueryPlayerList::account() const {
+  // @@protoc_insertion_point(field_get:Proto.QueryPlayerList.account)
+  return account_.GetNoArena();
+}
+inline void QueryPlayerList::set_account(const std::string& value) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Proto.QueryPlayerList.account)
+}
+inline void QueryPlayerList::set_account(std::string&& value) {
+  
+  account_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Proto.QueryPlayerList.account)
+}
+inline void QueryPlayerList::set_account(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Proto.QueryPlayerList.account)
+}
+inline void QueryPlayerList::set_account(const char* value, size_t size) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Proto.QueryPlayerList.account)
+}
+inline std::string* QueryPlayerList::mutable_account() {
+  
+  // @@protoc_insertion_point(field_mutable:Proto.QueryPlayerList.account)
+  return account_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* QueryPlayerList::release_account() {
+  // @@protoc_insertion_point(field_release:Proto.QueryPlayerList.account)
+  
+  return account_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void QueryPlayerList::set_allocated_account(std::string* account) {
+  if (account != nullptr) {
+    
+  } else {
+    
+  }
+  account_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), account);
+  // @@protoc_insertion_point(field_set_allocated:Proto.QueryPlayerList.account)
+}
+
+// -------------------------------------------------------------------
+
+// QueryPlayer
+
+// uint64 player_sn = 1;
+inline void QueryPlayer::clear_player_sn() {
+  player_sn_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 QueryPlayer::player_sn() const {
+  // @@protoc_insertion_point(field_get:Proto.QueryPlayer.player_sn)
+  return player_sn_;
+}
+inline void QueryPlayer::set_player_sn(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  player_sn_ = value;
+  // @@protoc_insertion_point(field_set:Proto.QueryPlayer.player_sn)
+}
+
+// -------------------------------------------------------------------
+
+// QueryPlayerRs
+
+// string account = 1;
+inline void QueryPlayerRs::clear_account() {
+  account_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& QueryPlayerRs::account() const {
+  // @@protoc_insertion_point(field_get:Proto.QueryPlayerRs.account)
+  return account_.GetNoArena();
+}
+inline void QueryPlayerRs::set_account(const std::string& value) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Proto.QueryPlayerRs.account)
+}
+inline void QueryPlayerRs::set_account(std::string&& value) {
+  
+  account_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Proto.QueryPlayerRs.account)
+}
+inline void QueryPlayerRs::set_account(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Proto.QueryPlayerRs.account)
+}
+inline void QueryPlayerRs::set_account(const char* value, size_t size) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Proto.QueryPlayerRs.account)
+}
+inline std::string* QueryPlayerRs::mutable_account() {
+  
+  // @@protoc_insertion_point(field_mutable:Proto.QueryPlayerRs.account)
+  return account_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* QueryPlayerRs::release_account() {
+  // @@protoc_insertion_point(field_release:Proto.QueryPlayerRs.account)
+  
+  return account_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void QueryPlayerRs::set_allocated_account(std::string* account) {
+  if (account != nullptr) {
+    
+  } else {
+    
+  }
+  account_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), account);
+  // @@protoc_insertion_point(field_set_allocated:Proto.QueryPlayerRs.account)
+}
+
+// .Proto.Player player = 2;
+inline bool QueryPlayerRs::has_player() const {
+  return this != internal_default_instance() && player_ != nullptr;
+}
+inline const ::Proto::Player& QueryPlayerRs::player() const {
+  const ::Proto::Player* p = player_;
+  // @@protoc_insertion_point(field_get:Proto.QueryPlayerRs.player)
+  return p != nullptr ? *p : *reinterpret_cast<const ::Proto::Player*>(
+      &::Proto::_Player_default_instance_);
+}
+inline ::Proto::Player* QueryPlayerRs::release_player() {
+  // @@protoc_insertion_point(field_release:Proto.QueryPlayerRs.player)
+  
+  ::Proto::Player* temp = player_;
+  player_ = nullptr;
+  return temp;
+}
+inline ::Proto::Player* QueryPlayerRs::mutable_player() {
+  
+  if (player_ == nullptr) {
+    auto* p = CreateMaybeMessage<::Proto::Player>(GetArenaNoVirtual());
+    player_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:Proto.QueryPlayerRs.player)
+  return player_;
+}
+inline void QueryPlayerRs::set_allocated_player(::Proto::Player* player) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(player_);
+  }
+  if (player) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      player = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, player, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  player_ = player;
+  // @@protoc_insertion_point(field_set_allocated:Proto.QueryPlayerRs.player)
+}
+
+// -------------------------------------------------------------------
+
+// CreatePlayer
+
+// string name = 1;
+inline void CreatePlayer::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& CreatePlayer::name() const {
+  // @@protoc_insertion_point(field_get:Proto.CreatePlayer.name)
+  return name_.GetNoArena();
+}
+inline void CreatePlayer::set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Proto.CreatePlayer.name)
+}
+inline void CreatePlayer::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Proto.CreatePlayer.name)
+}
+inline void CreatePlayer::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Proto.CreatePlayer.name)
+}
+inline void CreatePlayer::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Proto.CreatePlayer.name)
+}
+inline std::string* CreatePlayer::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:Proto.CreatePlayer.name)
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* CreatePlayer::release_name() {
+  // @@protoc_insertion_point(field_release:Proto.CreatePlayer.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreatePlayer::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:Proto.CreatePlayer.name)
+}
+
+// .Proto.Gender gender = 2;
+inline void CreatePlayer::clear_gender() {
+  gender_ = 0;
+}
+inline ::Proto::Gender CreatePlayer::gender() const {
+  // @@protoc_insertion_point(field_get:Proto.CreatePlayer.gender)
+  return static_cast< ::Proto::Gender >(gender_);
+}
+inline void CreatePlayer::set_gender(::Proto::Gender value) {
+  
+  gender_ = value;
+  // @@protoc_insertion_point(field_set:Proto.CreatePlayer.gender)
+}
+
+// -------------------------------------------------------------------
+
+// CreatePlayerRs
+
+// .Proto.CreatePlayerReturnCode return_code = 2;
+inline void CreatePlayerRs::clear_return_code() {
+  return_code_ = 0;
+}
+inline ::Proto::CreatePlayerReturnCode CreatePlayerRs::return_code() const {
+  // @@protoc_insertion_point(field_get:Proto.CreatePlayerRs.return_code)
+  return static_cast< ::Proto::CreatePlayerReturnCode >(return_code_);
+}
+inline void CreatePlayerRs::set_return_code(::Proto::CreatePlayerReturnCode value) {
+  
+  return_code_ = value;
+  // @@protoc_insertion_point(field_set:Proto.CreatePlayerRs.return_code)
+}
+
+// -------------------------------------------------------------------
+
+// CreatePlayerToDB
+
+// string account = 1;
+inline void CreatePlayerToDB::clear_account() {
+  account_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& CreatePlayerToDB::account() const {
+  // @@protoc_insertion_point(field_get:Proto.CreatePlayerToDB.account)
+  return account_.GetNoArena();
+}
+inline void CreatePlayerToDB::set_account(const std::string& value) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Proto.CreatePlayerToDB.account)
+}
+inline void CreatePlayerToDB::set_account(std::string&& value) {
+  
+  account_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Proto.CreatePlayerToDB.account)
+}
+inline void CreatePlayerToDB::set_account(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Proto.CreatePlayerToDB.account)
+}
+inline void CreatePlayerToDB::set_account(const char* value, size_t size) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Proto.CreatePlayerToDB.account)
+}
+inline std::string* CreatePlayerToDB::mutable_account() {
+  
+  // @@protoc_insertion_point(field_mutable:Proto.CreatePlayerToDB.account)
+  return account_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* CreatePlayerToDB::release_account() {
+  // @@protoc_insertion_point(field_release:Proto.CreatePlayerToDB.account)
+  
+  return account_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreatePlayerToDB::set_allocated_account(std::string* account) {
+  if (account != nullptr) {
+    
+  } else {
+    
+  }
+  account_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), account);
+  // @@protoc_insertion_point(field_set_allocated:Proto.CreatePlayerToDB.account)
+}
+
+// .Proto.Player player = 2;
+inline bool CreatePlayerToDB::has_player() const {
+  return this != internal_default_instance() && player_ != nullptr;
+}
+inline const ::Proto::Player& CreatePlayerToDB::player() const {
+  const ::Proto::Player* p = player_;
+  // @@protoc_insertion_point(field_get:Proto.CreatePlayerToDB.player)
+  return p != nullptr ? *p : *reinterpret_cast<const ::Proto::Player*>(
+      &::Proto::_Player_default_instance_);
+}
+inline ::Proto::Player* CreatePlayerToDB::release_player() {
+  // @@protoc_insertion_point(field_release:Proto.CreatePlayerToDB.player)
+  
+  ::Proto::Player* temp = player_;
+  player_ = nullptr;
+  return temp;
+}
+inline ::Proto::Player* CreatePlayerToDB::mutable_player() {
+  
+  if (player_ == nullptr) {
+    auto* p = CreateMaybeMessage<::Proto::Player>(GetArenaNoVirtual());
+    player_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:Proto.CreatePlayerToDB.player)
+  return player_;
+}
+inline void CreatePlayerToDB::set_allocated_player(::Proto::Player* player) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(player_);
+  }
+  if (player) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      player = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, player, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  player_ = player;
+  // @@protoc_insertion_point(field_set_allocated:Proto.CreatePlayerToDB.player)
+}
+
+// -------------------------------------------------------------------
+
+// CreatePlayerToDBRs
+
+// string account = 1;
+inline void CreatePlayerToDBRs::clear_account() {
+  account_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& CreatePlayerToDBRs::account() const {
+  // @@protoc_insertion_point(field_get:Proto.CreatePlayerToDBRs.account)
+  return account_.GetNoArena();
+}
+inline void CreatePlayerToDBRs::set_account(const std::string& value) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Proto.CreatePlayerToDBRs.account)
+}
+inline void CreatePlayerToDBRs::set_account(std::string&& value) {
+  
+  account_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Proto.CreatePlayerToDBRs.account)
+}
+inline void CreatePlayerToDBRs::set_account(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Proto.CreatePlayerToDBRs.account)
+}
+inline void CreatePlayerToDBRs::set_account(const char* value, size_t size) {
+  
+  account_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Proto.CreatePlayerToDBRs.account)
+}
+inline std::string* CreatePlayerToDBRs::mutable_account() {
+  
+  // @@protoc_insertion_point(field_mutable:Proto.CreatePlayerToDBRs.account)
+  return account_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* CreatePlayerToDBRs::release_account() {
+  // @@protoc_insertion_point(field_release:Proto.CreatePlayerToDBRs.account)
+  
+  return account_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreatePlayerToDBRs::set_allocated_account(std::string* account) {
+  if (account != nullptr) {
+    
+  } else {
+    
+  }
+  account_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), account);
+  // @@protoc_insertion_point(field_set_allocated:Proto.CreatePlayerToDBRs.account)
+}
+
+// .Proto.CreatePlayerReturnCode return_code = 2;
+inline void CreatePlayerToDBRs::clear_return_code() {
+  return_code_ = 0;
+}
+inline ::Proto::CreatePlayerReturnCode CreatePlayerToDBRs::return_code() const {
+  // @@protoc_insertion_point(field_get:Proto.CreatePlayerToDBRs.return_code)
+  return static_cast< ::Proto::CreatePlayerReturnCode >(return_code_);
+}
+inline void CreatePlayerToDBRs::set_return_code(::Proto::CreatePlayerReturnCode value) {
+  
+  return_code_ = value;
+  // @@protoc_insertion_point(field_set:Proto.CreatePlayerToDBRs.return_code)
+}
+
+// -------------------------------------------------------------------
+
+// SelectPlayer
+
+// uint64 player_sn = 1;
+inline void SelectPlayer::clear_player_sn() {
+  player_sn_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 SelectPlayer::player_sn() const {
+  // @@protoc_insertion_point(field_get:Proto.SelectPlayer.player_sn)
+  return player_sn_;
+}
+inline void SelectPlayer::set_player_sn(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  player_sn_ = value;
+  // @@protoc_insertion_point(field_set:Proto.SelectPlayer.player_sn)
+}
+
+// -------------------------------------------------------------------
+
+// SelectPlayerRs
+
+// .Proto.SelectPlayerRs.SelectPlayerReturnCode return_code = 1;
+inline void SelectPlayerRs::clear_return_code() {
+  return_code_ = 0;
+}
+inline ::Proto::SelectPlayerRs_SelectPlayerReturnCode SelectPlayerRs::return_code() const {
+  // @@protoc_insertion_point(field_get:Proto.SelectPlayerRs.return_code)
+  return static_cast< ::Proto::SelectPlayerRs_SelectPlayerReturnCode >(return_code_);
+}
+inline void SelectPlayerRs::set_return_code(::Proto::SelectPlayerRs_SelectPlayerReturnCode value) {
+  
+  return_code_ = value;
+  // @@protoc_insertion_point(field_set:Proto.SelectPlayerRs.return_code)
+}
+
+// -------------------------------------------------------------------
+
+// SavePlayer
+
+// uint64 player_sn = 1;
+inline void SavePlayer::clear_player_sn() {
+  player_sn_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 SavePlayer::player_sn() const {
+  // @@protoc_insertion_point(field_get:Proto.SavePlayer.player_sn)
+  return player_sn_;
+}
+inline void SavePlayer::set_player_sn(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  player_sn_ = value;
+  // @@protoc_insertion_point(field_set:Proto.SavePlayer.player_sn)
+}
+
+// .Proto.Player player = 2;
+inline bool SavePlayer::has_player() const {
+  return this != internal_default_instance() && player_ != nullptr;
+}
+inline const ::Proto::Player& SavePlayer::player() const {
+  const ::Proto::Player* p = player_;
+  // @@protoc_insertion_point(field_get:Proto.SavePlayer.player)
+  return p != nullptr ? *p : *reinterpret_cast<const ::Proto::Player*>(
+      &::Proto::_Player_default_instance_);
+}
+inline ::Proto::Player* SavePlayer::release_player() {
+  // @@protoc_insertion_point(field_release:Proto.SavePlayer.player)
+  
+  ::Proto::Player* temp = player_;
+  player_ = nullptr;
+  return temp;
+}
+inline ::Proto::Player* SavePlayer::mutable_player() {
+  
+  if (player_ == nullptr) {
+    auto* p = CreateMaybeMessage<::Proto::Player>(GetArenaNoVirtual());
+    player_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:Proto.SavePlayer.player)
+  return player_;
+}
+inline void SavePlayer::set_allocated_player(::Proto::Player* player) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(player_);
+  }
+  if (player) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      player = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, player, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  player_ = player;
+  // @@protoc_insertion_point(field_set_allocated:Proto.SavePlayer.player)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -2047,10 +4566,20 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Proto::CreateComponentParam_ParamType>() {
   return ::Proto::CreateComponentParam_ParamType_descriptor();
 }
-template <> struct is_proto_enum< ::Proto::AccountCheckRs_ReturnCode> : ::std::true_type {};
+template <> struct is_proto_enum< ::Proto::SelectPlayerRs_SelectPlayerReturnCode> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Proto::AccountCheckRs_ReturnCode>() {
-  return ::Proto::AccountCheckRs_ReturnCode_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::Proto::SelectPlayerRs_SelectPlayerReturnCode>() {
+  return ::Proto::SelectPlayerRs_SelectPlayerReturnCode_descriptor();
+}
+template <> struct is_proto_enum< ::Proto::AccountCheckReturnCode> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Proto::AccountCheckReturnCode>() {
+  return ::Proto::AccountCheckReturnCode_descriptor();
+}
+template <> struct is_proto_enum< ::Proto::CreatePlayerReturnCode> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Proto::CreatePlayerReturnCode>() {
+  return ::Proto::CreatePlayerReturnCode_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

@@ -1,9 +1,10 @@
 syntax = "proto3";
-
+import "db.proto";
 package Proto;
 
 ///////////////////////////////////////////////////////////////
 
+// 定义创建组件时的参数
 message CreateComponentParam
 {
 	enum ParamType
@@ -12,55 +13,143 @@ message CreateComponentParam
 		String = 1;
 	}
 
-	ParamType type = 1;
-	int32 int_param = 2;
-	string string_param = 3;
+	ParamType type = 1; // 参数类型
+	int32 int_param = 2; // 整数参数
+	string string_param = 3; // 字符串参数
 }
 
+// 创建组件的消息
 message CreateComponent {
-	string class_name = 1;
-	uint64 parent_sn = 2;
-	repeated CreateComponentParam params = 3;
+	string class_name = 1; // 组件类名
+	uint64 parent_sn = 2; // 父组件序列号
+	repeated CreateComponentParam params = 3; // 参数列表
 }
 
+// 删除组件的消息
 message RemoveComponent {
-	uint64 sn = 1;
+	uint64 sn = 1; // 组件序列号
 }
 
 ///////////////////////////////////////////////////////////////
 
+// 账号验证请求
 message AccountCheck {
-	string account = 1;
-	string password = 2;
+	string account = 1; // 账号
+	string password = 2; // 密码
 }
 
+// 账号验证返回码枚举
+enum AccountCheckReturnCode {
+	ARC_OK = 0;
+	ARC_UNKONWN = 1;
+	ARC_NOT_FOUND_ACCOUNT = 2;
+	ARC_PASSWORD_WRONG = 3;
+	ARC_LOGGING = 4;	 // 正在登录
+	ARC_TIMEOUT = 5;	// 超时
+	ARC_ONLINE = 6;		// 已在线		
+}
+
+// 账号验证响应
 message AccountCheckRs {
-	enum ReturnCode {
-		ARC_OK = 0;
-		ARC_UNKONWN = 1;
-		ARC_NOT_FOUND_ACCOUNT = 2;
-		ARC_PASSWORD_WRONG = 3;
-		ARC_LOGGING = 4; // 正在登录
-		ARC_TIMEOUT = 5; // 超时
+	AccountCheckReturnCode return_code = 1; // 返回码
+}
+
+// 账号验证HTTP响应
+message AccountCheckToHttpRs {
+	AccountCheckReturnCode return_code = 1; // 返回码
+	string account = 2; // 账号
+}
+
+// 机器人状态信息
+message RobotState {
+	string account = 1; // 账号
+	int32 state = 2; // 状态
+}
+
+// 同步机器人状态
+message RobotSyncState {
+	repeated RobotState states = 1; // 机器人状态列表
+}
+
+// 机器人测试结束消息
+message RobotTestEnd {
+	int32 state = 1; // 测试状态
+}
+
+// 玩家精简信息
+message PlayerLittle {
+	uint64 sn = 1; // 玩家序列号
+	string name = 2; // 玩家名
+	Gender gender = 3; // 性别
+	int32 level = 4; // 等级
+}
+
+// 玩家列表消息
+message PlayerList {
+	string account = 1; // 账号
+	repeated PlayerLittle player = 2; // 玩家列表
+}
+
+// 查询玩家列表请求
+message QueryPlayerList {
+	string account = 1; // 账号
+}
+
+// 查询玩家请求
+message QueryPlayer {
+	uint64 player_sn = 1; // 玩家序列号
+}
+
+// 查询玩家响应
+message QueryPlayerRs {
+	string account = 1; // 账号
+	Player player = 2; // 玩家信息
+}
+
+// 创建玩家请求
+message CreatePlayer {
+	string name = 1; // 玩家名
+	Gender gender = 2; // 性别
+}
+
+// 创建玩家返回码枚举
+enum CreatePlayerReturnCode {
+	CPR_Create_OK = 0;
+	CPR_Unkonwn = 1;
+	CPR_Rename = 2; 
+}
+
+// 创建玩家响应
+message CreatePlayerRs {
+	CreatePlayerReturnCode return_code = 2; // 返回码
+}
+
+// 创建玩家数据库请求
+message CreatePlayerToDB {
+	string account = 1; // 账号
+	Player player = 2; // 玩家信息
+}
+
+// 创建玩家数据库响应
+message CreatePlayerToDBRs {
+	string account = 1; // 账号
+	CreatePlayerReturnCode return_code = 2; // 返回码
+}
+
+message SelectPlayer {
+	uint64 player_sn = 1;
+}
+
+message SelectPlayerRs {
+
+	enum SelectPlayerReturnCode {
+		SPRC_OK = 0;
+		SPRC_NotFound = 1;
 	}
 
-	int32 return_code = 1;
+	SelectPlayerReturnCode return_code = 1;
 }
-
-message AccountCheckToHttpRs {
-	int32 return_code = 1;	// AccountCheckRs::ReturnCode
-	string account = 2;
-}
-
-message RobotState {
-	string account = 1;
-	int32 state = 2;
-}
-
-message RobotSyncState {
-	repeated RobotState states = 1;
-}
-
-message RobotTestEnd {
-	int32 state = 1;
+message SavePlayer {
+	uint64 player_sn = 1;
+	Player player = 2;
 }

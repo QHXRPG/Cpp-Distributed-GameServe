@@ -5,10 +5,11 @@
 class ConnectObj;
 class Packet;
 
-class NetworkConnector : public Network, public IUpdateSystem, public IAwakeFromPoolSystem <std::string, int>
+class NetworkConnector : public Network, public IUpdateSystem, public IAwakeFromPoolSystem <std::string, int>, public IAwakeFromPoolSystem<int, int>
 {
 public:
     void AwakeFromPool(std::string ip, int port);
+    void AwakeFromPool(int appType, int appId);
     void Update() override;
     bool IsConnected() const;
 	const char* GetTypeName() override;
