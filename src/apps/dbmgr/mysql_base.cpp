@@ -32,17 +32,14 @@ bool MysqlBase::ConnectInit()
 
 void MysqlBase::Disconnect()
 {
-    // 将指向结果集的指针置为空
     _pMysqlFields = nullptr;
 
-    // 如果结果集不为空,则释放结果集
     if (_pMysqlRes != nullptr)
     {
         mysql_free_result(_pMysqlRes);
         _pMysqlRes = nullptr;
     }
 
-    // 如果MySQL连接对象不为空,则关闭连接
     if (_pMysql != nullptr)
     {
         mysql_close(_pMysql);
@@ -64,37 +61,29 @@ int MysqlBase::CheckMysqlError() const
 
 bool MysqlBase::Query(const char* sql, my_ulonglong& affected_rows)
 {
-    // 如果之前有结果集,则先释放掉
     if (nullptr != _pMysqlRes)
     {
         mysql_free_result(_pMysqlRes);
         _pMysqlRes = nullptr;
     }
 
-    // 执行SQL查询
     if (mysql_query(_pMysql, sql) != 0)
     {
-        // 如果查询失败,记录错误日志并返回false
         LOG_ERROR("Query error:" << mysql_error(_pMysql) << " sql:" << sql);
         return false;
     }
 
-    // 获取查询结果集
+    // maybe query is not a select
     _pMysqlRes = mysql_store_result(_pMysql);
     if (_pMysqlRes != nullptr)
     {
-        // 如果有结果集,记录字段数和字段指针
         _numFields = mysql_num_fields(_pMysqlRes);
         _pMysqlFields = mysql_fetch_fields(_pMysqlRes);
     }
 
-    // 获取行数
     affected_rows = mysql_affected_rows(_pMysql);
-
-    // 返回true表示查询成功
     return true;
 }
-
 
 MYSQL_ROW MysqlBase::Fetch() const
 {

@@ -1,0 +1,3 @@
+/home/qhx/reactor/src/apps/dbmgr/CMakeFiles/rebuild_cache.dir
+/home/qhx/reactor/src/apps/dbmgr/CMakeFiles/edit_cache.dir
+/home/qhx/reactor/src/apps/dbmgr/CMakeFiles/dbmgrd.dir

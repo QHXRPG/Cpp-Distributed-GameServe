@@ -3,7 +3,8 @@
 #include "libserver/component.h"
 #include "libserver/system.h"
 #include <curl/curl.h>
-#include <json/json.h>  
+#include "/usr/include/common/json/json.h"
+
 
 enum HttpResquestState 
 {

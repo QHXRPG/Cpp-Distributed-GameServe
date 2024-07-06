@@ -3,8 +3,8 @@
 #include "libserver/log4_help.h"
 #include "libserver/util_string.h"
 
-#include <mysql/mysql.h>
-#include <mysql/mysqld_error.h>
+#include "/usr/include/windows/mysql/mysql.h"
+#include "/usr/include/windows/mysql/mysqld_error.h"
 #include <thread>
 
 MysqlTableUpdate::MysqlTableUpdate()

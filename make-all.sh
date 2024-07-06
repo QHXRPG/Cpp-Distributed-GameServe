@@ -24,11 +24,11 @@ build(){
     done
 }
 
-cd /home/qhx/reactor/src/libs/
+cd src/libs/
 build
 
-cd /home/qhx/reactor/src/apps/
+cd ../apps/
 build
 
-cd /home/qhx/reactor/src/tools/
+cd ../tools/
 build

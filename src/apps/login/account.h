@@ -13,8 +13,13 @@ public:
 
 private:
     void HandleNetworkDisconnect(Packet* pPacket);
+
     void HandleAccountCheck(Packet* pPacket);
     void HandleAccountCheckToHttpRs(Packet* pPacket);
+    void HandleQueryPlayerListRs(Packet* pPacket);
+
+    void HandleCreatePlayer(Packet* pPacket);
+    void HandleCreatePlayerRs(Packet* pPacket);
 
 private:
     LoginObjMgr _playerMgr;

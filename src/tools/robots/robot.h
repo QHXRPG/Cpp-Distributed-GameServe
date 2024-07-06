@@ -21,6 +21,7 @@ protected:
 
 private:
 	void HandleAccountCheckRs(Robot* pRobot, Packet* pPacket);
+    void HandlePlayerList(Robot* pRobot, Packet* pPacket);
 
 private:
 	std::string _account;

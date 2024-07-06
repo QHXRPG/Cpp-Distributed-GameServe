@@ -102,11 +102,9 @@ void HttpRequest::ProcessTimeout() const
 {
     Proto::AccountCheckToHttpRs checkProto;
     checkProto.set_account(_account);
-    checkProto.set_return_code(Proto::AccountCheckRs::ARC_TIMEOUT);
+    checkProto.set_return_code(Proto::AccountCheckReturnCode::ARC_TIMEOUT);
 
-    auto pCheckPacket = new Packet(Proto::MsgId::MI_AccountCheckToHttpRs, 0);
-    pCheckPacket->SerializeToBuffer(checkProto);
-    IMessageSystem::DispatchPacket(pCheckPacket);
+    IMessageSystem::DispatchPacket(Proto::MsgId::MI_AccountCheckToHttpRs, 0, checkProto);
 }
 
 bool HttpRequest::ProcessOver()

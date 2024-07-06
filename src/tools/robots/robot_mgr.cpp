@@ -42,7 +42,7 @@ void RobotMgr::HandleRobotState(Packet* pPacket)
     {
         std::cout << "test begin" << std::endl;
         _nextShowInfoTime = 0;
-        Packet* pPacketBegin = new Packet(Proto::MsgId::MI_RobotTestBegin, GetSocket());
+        Packet* pPacketBegin = IMessageSystem::CreatePacket(Proto::MsgId::MI_RobotTestBegin, GetSocket());
         SendPacket(pPacketBegin);
     }
 
@@ -78,7 +78,7 @@ void RobotMgr::NofityServer(RobotStateType iType)
     if (iter == _robots.end())
     {
         std::cout << "test over " << GetRobotStateTypeShortName(iType) << std::endl;;
-        Packet* pPacketEnd = new Packet(Proto::MsgId::MI_RobotTestEnd, GetSocket());
+        Packet* pPacketEnd = IMessageSystem::CreatePacket(Proto::MsgId::MI_RobotTestEnd, GetSocket());
         Proto::RobotTestEnd protoEnd;
         protoEnd.set_state(iType);
         pPacketEnd->SerializeToBuffer(protoEnd);

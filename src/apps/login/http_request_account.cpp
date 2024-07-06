@@ -25,20 +25,18 @@ void HttpRequestAccount::AwakeFromPool(std::string account, std::string password
 
 void HttpRequestAccount::ProcessMsg(Json::Value value)
 {
-    Proto::AccountCheckRs::ReturnCode code = Proto::AccountCheckRs::ARC_UNKONWN;
+    Proto::AccountCheckReturnCode code = Proto::AccountCheckReturnCode::ARC_UNKONWN;
     int httpcode = value["returncode"].asInt();
     if (httpcode == 0)
-        code = Proto::AccountCheckRs::ARC_OK;
+        code = Proto::AccountCheckReturnCode::ARC_OK;
     else if (httpcode == 2)
-        code = Proto::AccountCheckRs::ARC_NOT_FOUND_ACCOUNT;
+        code = Proto::AccountCheckReturnCode::ARC_NOT_FOUND_ACCOUNT;
     else if (httpcode == 3)
-        code = Proto::AccountCheckRs::ARC_PASSWORD_WRONG;
+        code = Proto::AccountCheckReturnCode::ARC_PASSWORD_WRONG;
 
     Proto::AccountCheckToHttpRs checkProto;
     checkProto.set_account(_account);
     checkProto.set_return_code(code);
 
-    auto pCheckPacket = new Packet(Proto::MsgId::MI_AccountCheckToHttpRs, 0);
-    pCheckPacket->SerializeToBuffer(checkProto);
-    IMessageSystem::DispatchPacket(pCheckPacket);
+    IMessageSystem::DispatchPacket(Proto::MsgId::MI_AccountCheckToHttpRs, 0, checkProto);
 }

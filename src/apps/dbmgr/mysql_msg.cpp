@@ -100,16 +100,15 @@ void MysqlConnector::HandleCreatePlayer(Packet* pPacket)
     auto protoPlayer = protoCreate.player();
 
     // todo 是否有重名
-    DatabaseStmt* stmt = GetStmt(DatabaseStmtKey::StmtCreate); // 从预处理字典中取出已经准备好的DatabaseStmt
+    DatabaseStmt* stmt = GetStmt(DatabaseStmtKey::StmtCreate);
     if (stmt == nullptr)
         return;
 
-    LOG_INFO("HandlePlayerCreate sn:" << protoPlayer.sn() << " account:" 
-            << protoCreate.account().c_str() << " name:" << protoPlayer.name().c_str());
+    LOG_INFO("HandlePlayerCreate sn:" << protoPlayer.sn() << " account:" << protoCreate.account().c_str() << " name:" << protoPlayer.name().c_str());
 
     // create
-    ClearStmtParam(stmt);   // 清除旧数据
-    AddParamUint64(stmt, protoPlayer.sn());  
+    ClearStmtParam(stmt);
+    AddParamUint64(stmt, protoPlayer.sn());
     AddParamStr(stmt, protoCreate.account().c_str());
     AddParamStr(stmt, protoPlayer.name().c_str());
 
