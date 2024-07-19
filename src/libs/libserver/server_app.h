@@ -25,8 +25,8 @@ public:
     static void Signalhandler(int signalValue);
 
 protected:
-	ThreadMgr * _pThreadMgr;
-	APP_TYPE _appType;
+    ThreadMgr* _pThreadMgr{ nullptr };
+    APP_TYPE _appType;
 
     int _argc;
     char** _argv;

@@ -1,11 +1,13 @@
 ﻿
 #include "mysql_connector.h"
 #include "libserver/log4_help.h"
+#include "libserver/message_component.h"
+#include "libserver/message_system_help.h"
 
-void MysqlConnector::RegisterMsgFunction()
+void MysqlConnector::InitMessageComponent()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHandler(pMsgCallBack);
+    AddComponent<MessageComponent>(pMsgCallBack);
 
     pMsgCallBack->RegisterFunction(Proto::MsgId::L2DB_QueryPlayerList, BindFunP1(this, &MysqlConnector::HandleQueryPlayerList));
     pMsgCallBack->RegisterFunction(Proto::MsgId::L2DB_CreatePlayer, BindFunP1(this, &MysqlConnector::HandleCreatePlayer));
@@ -51,10 +53,10 @@ void MysqlConnector::QueryPlayerList(std::string account, SOCKET socket)
         }
     }
 
-    LOG_DEBUG("player list. account:" << account.c_str() << " player list size:" << protoRs.player_size() << " socket:" << socket);
+    //LOG_DEBUG("player list. account:" << account.c_str() << " player list size:" << protoRs.player_size() << " socket:" << socket);
 
     // 没有找到也需要返回pResultPacket
-    SendPacket(Proto::MsgId::L2DB_QueryPlayerListRs, socket, protoRs);
+    MessageSystemHelp::SendPacket(Proto::MsgId::L2DB_QueryPlayerListRs, socket, protoRs);
 }
 
 void MysqlConnector::HandleQueryPlayer(Packet* pPacket)
@@ -90,7 +92,7 @@ void MysqlConnector::HandleQueryPlayer(Packet* pPacket)
     }
 
     //LOG_DEBUG("player  account:" << protoQuery.account().c_str() << " player list size:" << protoRs.player_size() << " socket:" << pPacket->GetSocket());
-    SendPacket(Proto::MsgId::G2DB_QueryPlayerRs, pPacket->GetSocket(), protoRs);
+    MessageSystemHelp::SendPacket(Proto::MsgId::G2DB_QueryPlayerRs, pPacket->GetSocket(), protoRs);
 }
 
 void MysqlConnector::HandleCreatePlayer(Packet* pPacket)
@@ -129,7 +131,7 @@ void MysqlConnector::HandleCreatePlayer(Packet* pPacket)
     }
     else
     {
-        SendPacket(Proto::MsgId::L2DB_CreatePlayerRs, pPacket->GetSocket(), protoRs);
+        MessageSystemHelp::SendPacket(Proto::MsgId::L2DB_CreatePlayerRs, pPacket->GetSocket(), protoRs);
     }
 }
 

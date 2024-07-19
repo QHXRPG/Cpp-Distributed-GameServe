@@ -7,7 +7,9 @@
 #include "thread_mgr.h"
 
 #include "object_pool_interface.h"
-#include "entity_system.h"
+#include "system_manager.h"
+#include "message_system.h"
+#include "message_system_help.h"
 
 ConnectObj::ConnectObj()
 {
@@ -37,7 +39,7 @@ void ConnectObj::BackToPool()
     if (!Global::GetInstance()->IsStop)
     {
         // 通知其他对象，有Socket中断了
-        IMessageSystem::DispatchPacket(Proto::MsgId::MI_NetworkDisconnect, _socket);
+        MessageSystemHelp::DispatchPacket(Proto::MsgId::MI_NetworkDisconnect, _socket);
     }
 
     _socket = INVALID_SOCKET;
@@ -124,7 +126,7 @@ bool ConnectObj::Recv()
                 }
                 else
                 {
-                    pNetwork->GetEntitySystem()->AddPacketToList(pPacket);
+                    GetSystemManager()->GetMessageSystem()->AddPacketToList(pPacket);
                 }
             }
         }
@@ -183,6 +185,6 @@ bool ConnectObj::Send() const
 void ConnectObj::Close()
 {
     // ConnectoObj 一定和Network在同一个线程中的，这里，只需要要本线程发送数据即可
-    const auto pPacketDis = IMessageSystem::CreatePacket(Proto::MsgId::MI_NetworkRequestDisconnect, GetSocket());
-    GetEntitySystem()->AddPacketToList(pPacketDis);
+    const auto pPacketDis = MessageSystemHelp::CreatePacket(Proto::MsgId::MI_NetworkRequestDisconnect, GetSocket());
+    GetSystemManager()->GetMessageSystem()->AddPacketToList(pPacketDis);
 }

@@ -1,12 +1,13 @@
 #pragma once
-#include "component.h"
-#include "message_system.h"
+#include "entity.h"
+#include "system.h"
 
-class RobotTest :public Component<RobotTest>, public IMessageSystem, public IAwakeFromPoolSystem<>
+class Packet;
+
+class RobotTest :public Entity<RobotTest>, public IAwakeFromPoolSystem<>
 {
 public:
-    void AwakeFromPool() override { };
-    void RegisterMsgFunction() override;
+    void AwakeFromPool() override;
     void BackToPool() override {};
 
 private:

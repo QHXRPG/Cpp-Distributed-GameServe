@@ -33,6 +33,11 @@
 #define _sock_close( sockfd ) ::shutdown( sockfd, SHUT_RDWR ) 
 #define _sock_is_blocked()	(errno == EAGAIN || errno == 0)
 
+#define RemoveConnectObj(iter) \
+    iter->second->ComponentBackToPool( ); \
+    DeleteEvent(_epfd, iter->first); \
+    iter = _connects.erase( iter ); 
+
 #else
 
 #define _sock_init( )	{ WSADATA wsaData; WSAStartup( MAKEWORD(2, 2), &wsaData ); }
@@ -42,16 +47,19 @@
 #define _sock_close( sockfd ) ::closesocket( sockfd )
 #define _sock_is_blocked()	(WSAGetLastError() == WSAEWOULDBLOCK)
 
+#define RemoveConnectObj(iter) \
+    iter->second->ComponentBackToPool( ); \
+    iter = _connects.erase( iter ); 
+
 #endif
 
 class ConnectObj;
 class Packet;
 
-class Network : public Entity<Network>, public IMessageSystem, public INetwork
+class Network : public Entity<Network>, public INetwork
 {
 public:
     void BackToPool() override;
-    void RegisterMsgFunction() override;
     SOCKET GetSocket() override { return _masterSocket; }
     void SendPacket(Packet*& pPacket) override;
     bool IsBroadcast() { return _isBroadcast; }
@@ -69,13 +77,11 @@ protected:
     void ModifyEvent(int epollfd, int fd, int flag);
     void DeleteEvent(int epollfd, int fd);
 #else
+
     void Select();
 #endif
 
     void OnNetworkUpdate();
-
-private:
-    void HandleDisconnect(Packet* pPacket);
 
 protected:
     SOCKET _masterSocket{ INVALID_SOCKET };

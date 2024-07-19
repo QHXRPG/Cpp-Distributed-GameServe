@@ -13,8 +13,8 @@ public:
         ComponentFactory<Targs...>::GetInstance()->Regist(typeid(T).name(), CreateComponent);
     }
 
-    static T* CreateComponent(Targs... args)
+    static T* CreateComponent(SystemManager* pSysMgr, Targs... args)
     {
-        return DynamicObjectPool<T>::GetInstance()->MallocObject(std::forward<Targs>(args)...);
+        return DynamicObjectPool<T>::GetInstance()->MallocObject(pSysMgr, std::forward<Targs>(args)...);
     }
 };

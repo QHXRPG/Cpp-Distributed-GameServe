@@ -4,6 +4,8 @@
 
 #include "console.h"
 #include "console_cmd_pool.h"
+#include "console_cmd_thread.h"
+
 #include "network_locator.h"
 #include "res_path.h"
 #include "app_type_mgr.h"
@@ -44,9 +46,11 @@ void ServerApp::Initialize()
     UpdateTime();
 
     // 全局 Component
-    _pThreadMgr->AddComponent<NetworkLocator>();
-    auto pConsole = _pThreadMgr->AddComponent<Console>();
+    _pThreadMgr->GetEntitySystem()->AddComponent<NetworkLocator>();
+    auto pConsole = _pThreadMgr->GetEntitySystem()->AddComponent<Console>();
     pConsole->Register<ConsoleCmdPool>("pool");
+    pConsole->Register<ConsoleCmdThread>("thread");
+
 
     // 创建线程
     const auto pLoginConfig = dynamic_cast<AppConfig*>(Yaml::GetInstance()->GetConfig(_appType));

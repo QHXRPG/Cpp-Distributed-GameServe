@@ -15,11 +15,12 @@ int main(int argc, char *argv[])
 
     auto pThreadMgr = ThreadMgr::GetInstance();
 
-    auto pConsole = pThreadMgr->GetComponent<Console>();
+    auto pConsole = pThreadMgr->GetEntitySystem()->GetComponent<Console>();
     pConsole->Register<RobotConsoleLogin>("login");
-    pThreadMgr->AddComponent<RobotMgr>();
+
+    // RobotMgr增加到主线程中
+    pThreadMgr->GetEntitySystem()->AddComponent<RobotMgr>();
 
     app.Run();
     app.Dispose();
-
 }

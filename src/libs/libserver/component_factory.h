@@ -8,7 +8,7 @@ template<typename ...Targs>
 class ComponentFactory
 {
 public:
-	typedef std::function <IComponent*(Targs...)> FactoryFunction;
+	typedef std::function <IComponent*(SystemManager*, Targs...)> FactoryFunction;
 
 	static ComponentFactory<Targs...>* GetInstance()
 	{
@@ -35,7 +35,7 @@ public:
 		return _map.find(className) != _map.end();
 	}
 
-	IComponent* Create(const std::string className, Targs... args)
+	IComponent* Create(SystemManager* pSysMgr, const std::string className, Targs... args)
 	{
 		_lock.lock();
 		auto iter = _map.find(className);
@@ -47,7 +47,7 @@ public:
 		auto fun = iter->second;
 		_lock.unlock();
 
-		return fun(std::forward<Targs>(args)...);
+		return fun(pSysMgr, std::forward<Targs>(args)...);
 	}
 
 private:

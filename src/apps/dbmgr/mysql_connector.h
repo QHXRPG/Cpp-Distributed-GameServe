@@ -5,10 +5,9 @@
 #include "libserver/util_time.h"
 #include "libserver/entity.h"
 #include "libserver/system.h"
-#include "libserver/message_system.h"
 #include "mysql_base.h"
 
-#include "/usr/include/windows/mysql/mysql.h"
+#include <mysql/mysql.h>
 #include <vector>
 
 class Packet;
@@ -43,12 +42,12 @@ struct DatabaseStmt
 #define MAX_BIND_BUFFER    40960
 #define MAX_BIND_STR       30000
 
-class MysqlConnector : public MysqlBase, public Entity<MysqlConnector>, public IMessageSystem, public IAwakeFromPoolSystem<>
+class MysqlConnector : public MysqlBase, public Entity<MysqlConnector>, public IAwakeFromPoolSystem<>
 {
 public:
 	void AwakeFromPool() override;
 	void BackToPool() override;
-    void RegisterMsgFunction() override;
+    void InitMessageComponent();
 
 	bool Connect();
 	void Disconnect() override;

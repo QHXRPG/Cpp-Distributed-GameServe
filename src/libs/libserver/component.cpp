@@ -1,42 +1,46 @@
 #include "component.h"
-#include "entity_system.h"
 #include "entity.h"
+#include "system_manager.h"
 #include "thread_mgr.h"
 #include "object_pool.h"
 
 void IComponent::SetParent(IEntity* pObj)
 {
-	_parent = pObj;
+    _parent = pObj;
+}
+
+void IComponent::SetSystemManager(SystemManager* pObj)
+{
+    _pSystemManager = pObj;
 }
 
 void IComponent::SetPool(IDynamicObjectPool* pPool)
 {
-	_pPool = pPool;
+    _pPool = pPool;
 }
 
-void IComponent::SetEntitySystem(EntitySystem* pSys)
+IEntity* IComponent::GetParent() const
 {
-	_pEntitySystem = pSys;
+    return _parent;
 }
 
-EntitySystem* IComponent::GetGlobalEntitySystem()
+SystemManager* IComponent::GetSystemManager() const
 {
-	return dynamic_cast<EntitySystem*>(ThreadMgr::GetInstance());
-}
-
-EntitySystem* IComponent::GetEntitySystem() const
-{
-	return _pEntitySystem;
+    return _pSystemManager;
 }
 
 void IComponent::ComponentBackToPool()
 {
-	_sn = 0;
-	_parent = nullptr;
-	_pEntitySystem = nullptr;
+    BackToPool();
+
+    _sn = 0;
+    _parent = nullptr;
+    _pSystemManager = nullptr;
     _active = true;
 
-	BackToPool();
-	if (_pPool != nullptr)
-		_pPool->FreeObject(this);
+    if (_pPool != nullptr)
+    {
+        _pPool->FreeObject(this);
+        _pPool = nullptr;
+    }
 }

@@ -224,6 +224,33 @@ component.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/component.cpp.s
 .PHONY : component.cpp.s
 
+component_collections.o: component_collections.cpp.o
+
+.PHONY : component_collections.o
+
+# target to build an object file
+component_collections.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/component_collections.cpp.o
+.PHONY : component_collections.cpp.o
+
+component_collections.i: component_collections.cpp.i
+
+.PHONY : component_collections.i
+
+# target to preprocess a source file
+component_collections.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/component_collections.cpp.i
+.PHONY : component_collections.cpp.i
+
+component_collections.s: component_collections.cpp.s
+
+.PHONY : component_collections.s
+
+# target to generate assembly for a file
+component_collections.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/component_collections.cpp.s
+.PHONY : component_collections.cpp.s
+
 connect_obj.o: connect_obj.cpp.o
 
 .PHONY : connect_obj.o
@@ -304,6 +331,60 @@ console_cmd_pool.s: console_cmd_pool.cpp.s
 console_cmd_pool.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console_cmd_pool.cpp.s
 .PHONY : console_cmd_pool.cpp.s
+
+console_cmd_thread.o: console_cmd_thread.cpp.o
+
+.PHONY : console_cmd_thread.o
+
+# target to build an object file
+console_cmd_thread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console_cmd_thread.cpp.o
+.PHONY : console_cmd_thread.cpp.o
+
+console_cmd_thread.i: console_cmd_thread.cpp.i
+
+.PHONY : console_cmd_thread.i
+
+# target to preprocess a source file
+console_cmd_thread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console_cmd_thread.cpp.i
+.PHONY : console_cmd_thread.cpp.i
+
+console_cmd_thread.s: console_cmd_thread.cpp.s
+
+.PHONY : console_cmd_thread.s
+
+# target to generate assembly for a file
+console_cmd_thread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console_cmd_thread.cpp.s
+.PHONY : console_cmd_thread.cpp.s
+
+console_thread_component.o: console_thread_component.cpp.o
+
+.PHONY : console_thread_component.o
+
+# target to build an object file
+console_thread_component.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console_thread_component.cpp.o
+.PHONY : console_thread_component.cpp.o
+
+console_thread_component.i: console_thread_component.cpp.i
+
+.PHONY : console_thread_component.i
+
+# target to preprocess a source file
+console_thread_component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console_thread_component.cpp.i
+.PHONY : console_thread_component.cpp.i
+
+console_thread_component.s: console_thread_component.cpp.s
+
+.PHONY : console_thread_component.s
+
+# target to generate assembly for a file
+console_thread_component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/console_thread_component.cpp.s
+.PHONY : console_thread_component.cpp.s
 
 create_component.o: create_component.cpp.o
 
@@ -467,32 +548,59 @@ log4_help.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/log4_help.cpp.s
 .PHONY : log4_help.cpp.s
 
-message_list.o: message_list.cpp.o
+message_callback.o: message_callback.cpp.o
 
-.PHONY : message_list.o
+.PHONY : message_callback.o
 
 # target to build an object file
-message_list.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_list.cpp.o
-.PHONY : message_list.cpp.o
+message_callback.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_callback.cpp.o
+.PHONY : message_callback.cpp.o
 
-message_list.i: message_list.cpp.i
+message_callback.i: message_callback.cpp.i
 
-.PHONY : message_list.i
+.PHONY : message_callback.i
 
 # target to preprocess a source file
-message_list.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_list.cpp.i
-.PHONY : message_list.cpp.i
+message_callback.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_callback.cpp.i
+.PHONY : message_callback.cpp.i
 
-message_list.s: message_list.cpp.s
+message_callback.s: message_callback.cpp.s
 
-.PHONY : message_list.s
+.PHONY : message_callback.s
 
 # target to generate assembly for a file
-message_list.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_list.cpp.s
-.PHONY : message_list.cpp.s
+message_callback.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_callback.cpp.s
+.PHONY : message_callback.cpp.s
+
+message_component.o: message_component.cpp.o
+
+.PHONY : message_component.o
+
+# target to build an object file
+message_component.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_component.cpp.o
+.PHONY : message_component.cpp.o
+
+message_component.i: message_component.cpp.i
+
+.PHONY : message_component.i
+
+# target to preprocess a source file
+message_component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_component.cpp.i
+.PHONY : message_component.cpp.i
+
+message_component.s: message_component.cpp.s
+
+.PHONY : message_component.s
+
+# target to generate assembly for a file
+message_component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_component.cpp.s
+.PHONY : message_component.cpp.s
 
 message_system.o: message_system.cpp.o
 
@@ -520,6 +628,33 @@ message_system.s: message_system.cpp.s
 message_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_system.cpp.s
 .PHONY : message_system.cpp.s
+
+message_system_help.o: message_system_help.cpp.o
+
+.PHONY : message_system_help.o
+
+# target to build an object file
+message_system_help.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_system_help.cpp.o
+.PHONY : message_system_help.cpp.o
+
+message_system_help.i: message_system_help.cpp.i
+
+.PHONY : message_system_help.i
+
+# target to preprocess a source file
+message_system_help.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_system_help.cpp.i
+.PHONY : message_system_help.cpp.i
+
+message_system_help.s: message_system_help.cpp.s
+
+.PHONY : message_system_help.s
+
+# target to generate assembly for a file
+message_system_help.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/message_system_help.cpp.s
+.PHONY : message_system_help.cpp.s
 
 network.o: network.cpp.o
 
@@ -791,6 +926,33 @@ server_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/server_app.cpp.s
 .PHONY : server_app.cpp.s
 
+system_manager.o: system_manager.cpp.o
+
+.PHONY : system_manager.o
+
+# target to build an object file
+system_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/system_manager.cpp.o
+.PHONY : system_manager.cpp.o
+
+system_manager.i: system_manager.cpp.i
+
+.PHONY : system_manager.i
+
+# target to preprocess a source file
+system_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/system_manager.cpp.i
+.PHONY : system_manager.cpp.i
+
+system_manager.s: system_manager.cpp.s
+
+.PHONY : system_manager.s
+
+# target to generate assembly for a file
+system_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/system_manager.cpp.s
+.PHONY : system_manager.cpp.s
+
 thread.o: thread.cpp.o
 
 .PHONY : thread.o
@@ -845,6 +1007,60 @@ thread_mgr.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/thread_mgr.cpp.s
 .PHONY : thread_mgr.cpp.s
 
+update_component.o: update_component.cpp.o
+
+.PHONY : update_component.o
+
+# target to build an object file
+update_component.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/update_component.cpp.o
+.PHONY : update_component.cpp.o
+
+update_component.i: update_component.cpp.i
+
+.PHONY : update_component.i
+
+# target to preprocess a source file
+update_component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/update_component.cpp.i
+.PHONY : update_component.cpp.i
+
+update_component.s: update_component.cpp.s
+
+.PHONY : update_component.s
+
+# target to generate assembly for a file
+update_component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/update_component.cpp.s
+.PHONY : update_component.cpp.s
+
+update_system.o: update_system.cpp.o
+
+.PHONY : update_system.o
+
+# target to build an object file
+update_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/update_system.cpp.o
+.PHONY : update_system.cpp.o
+
+update_system.i: update_system.cpp.i
+
+.PHONY : update_system.i
+
+# target to preprocess a source file
+update_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/update_system.cpp.i
+.PHONY : update_system.cpp.i
+
+update_system.s: update_system.cpp.s
+
+.PHONY : update_system.s
+
+# target to generate assembly for a file
+update_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serverd.dir/build.make CMakeFiles/serverd.dir/update_system.cpp.s
+.PHONY : update_system.cpp.s
+
 yaml.o: yaml.cpp.o
 
 .PHONY : yaml.o
@@ -890,6 +1106,9 @@ help:
 	@echo "... component.o"
 	@echo "... component.i"
 	@echo "... component.s"
+	@echo "... component_collections.o"
+	@echo "... component_collections.i"
+	@echo "... component_collections.s"
 	@echo "... connect_obj.o"
 	@echo "... connect_obj.i"
 	@echo "... connect_obj.s"
@@ -899,6 +1118,12 @@ help:
 	@echo "... console_cmd_pool.o"
 	@echo "... console_cmd_pool.i"
 	@echo "... console_cmd_pool.s"
+	@echo "... console_cmd_thread.o"
+	@echo "... console_cmd_thread.i"
+	@echo "... console_cmd_thread.s"
+	@echo "... console_thread_component.o"
+	@echo "... console_thread_component.i"
+	@echo "... console_thread_component.s"
 	@echo "... create_component.o"
 	@echo "... create_component.i"
 	@echo "... create_component.s"
@@ -917,12 +1142,18 @@ help:
 	@echo "... log4_help.o"
 	@echo "... log4_help.i"
 	@echo "... log4_help.s"
-	@echo "... message_list.o"
-	@echo "... message_list.i"
-	@echo "... message_list.s"
+	@echo "... message_callback.o"
+	@echo "... message_callback.i"
+	@echo "... message_callback.s"
+	@echo "... message_component.o"
+	@echo "... message_component.i"
+	@echo "... message_component.s"
 	@echo "... message_system.o"
 	@echo "... message_system.i"
 	@echo "... message_system.s"
+	@echo "... message_system_help.o"
+	@echo "... message_system_help.i"
+	@echo "... message_system_help.s"
 	@echo "... network.o"
 	@echo "... network.i"
 	@echo "... network.s"
@@ -953,12 +1184,21 @@ help:
 	@echo "... server_app.o"
 	@echo "... server_app.i"
 	@echo "... server_app.s"
+	@echo "... system_manager.o"
+	@echo "... system_manager.i"
+	@echo "... system_manager.s"
 	@echo "... thread.o"
 	@echo "... thread.i"
 	@echo "... thread.s"
 	@echo "... thread_mgr.o"
 	@echo "... thread_mgr.i"
 	@echo "... thread_mgr.s"
+	@echo "... update_component.o"
+	@echo "... update_component.i"
+	@echo "... update_component.s"
+	@echo "... update_system.o"
+	@echo "... update_system.i"
+	@echo "... update_system.s"
 	@echo "... yaml.o"
 	@echo "... yaml.i"
 	@echo "... yaml.s"

@@ -251,6 +251,33 @@ home/qhx/reactor/src/libs/libserver/component.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/component.cpp.s
 .PHONY : home/qhx/reactor/src/libs/libserver/component.cpp.s
 
+home/qhx/reactor/src/libs/libserver/component_collections.o: home/qhx/reactor/src/libs/libserver/component_collections.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/component_collections.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/component_collections.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/component_collections.cpp.o
+
+home/qhx/reactor/src/libs/libserver/component_collections.i: home/qhx/reactor/src/libs/libserver/component_collections.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/component_collections.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/component_collections.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/component_collections.cpp.i
+
+home/qhx/reactor/src/libs/libserver/component_collections.s: home/qhx/reactor/src/libs/libserver/component_collections.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/component_collections.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/component_collections.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/component_collections.cpp.s
+
 home/qhx/reactor/src/libs/libserver/connect_obj.o: home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o
 
 .PHONY : home/qhx/reactor/src/libs/libserver/connect_obj.o
@@ -331,6 +358,60 @@ home/qhx/reactor/src/libs/libserver/console_cmd_pool.s: home/qhx/reactor/src/lib
 home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.s
 .PHONY : home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.s
+
+home/qhx/reactor/src/libs/libserver/console_cmd_thread.o: home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console_cmd_thread.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o
+
+home/qhx/reactor/src/libs/libserver/console_cmd_thread.i: home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console_cmd_thread.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.i
+
+home/qhx/reactor/src/libs/libserver/console_cmd_thread.s: home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console_cmd_thread.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.s
+
+home/qhx/reactor/src/libs/libserver/console_thread_component.o: home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console_thread_component.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o
+
+home/qhx/reactor/src/libs/libserver/console_thread_component.i: home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console_thread_component.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.i
+
+home/qhx/reactor/src/libs/libserver/console_thread_component.s: home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/console_thread_component.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.s
 
 home/qhx/reactor/src/libs/libserver/create_component.o: home/qhx/reactor/src/libs/libserver/create_component.cpp.o
 
@@ -494,32 +575,59 @@ home/qhx/reactor/src/libs/libserver/log4_help.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.s
 .PHONY : home/qhx/reactor/src/libs/libserver/log4_help.cpp.s
 
-home/qhx/reactor/src/libs/libserver/message_list.o: home/qhx/reactor/src/libs/libserver/message_list.cpp.o
+home/qhx/reactor/src/libs/libserver/message_callback.o: home/qhx/reactor/src/libs/libserver/message_callback.cpp.o
 
-.PHONY : home/qhx/reactor/src/libs/libserver/message_list.o
+.PHONY : home/qhx/reactor/src/libs/libserver/message_callback.o
 
 # target to build an object file
-home/qhx/reactor/src/libs/libserver/message_list.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o
-.PHONY : home/qhx/reactor/src/libs/libserver/message_list.cpp.o
+home/qhx/reactor/src/libs/libserver/message_callback.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/message_callback.cpp.o
 
-home/qhx/reactor/src/libs/libserver/message_list.i: home/qhx/reactor/src/libs/libserver/message_list.cpp.i
+home/qhx/reactor/src/libs/libserver/message_callback.i: home/qhx/reactor/src/libs/libserver/message_callback.cpp.i
 
-.PHONY : home/qhx/reactor/src/libs/libserver/message_list.i
+.PHONY : home/qhx/reactor/src/libs/libserver/message_callback.i
 
 # target to preprocess a source file
-home/qhx/reactor/src/libs/libserver/message_list.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.i
-.PHONY : home/qhx/reactor/src/libs/libserver/message_list.cpp.i
+home/qhx/reactor/src/libs/libserver/message_callback.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/message_callback.cpp.i
 
-home/qhx/reactor/src/libs/libserver/message_list.s: home/qhx/reactor/src/libs/libserver/message_list.cpp.s
+home/qhx/reactor/src/libs/libserver/message_callback.s: home/qhx/reactor/src/libs/libserver/message_callback.cpp.s
 
-.PHONY : home/qhx/reactor/src/libs/libserver/message_list.s
+.PHONY : home/qhx/reactor/src/libs/libserver/message_callback.s
 
 # target to generate assembly for a file
-home/qhx/reactor/src/libs/libserver/message_list.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.s
-.PHONY : home/qhx/reactor/src/libs/libserver/message_list.cpp.s
+home/qhx/reactor/src/libs/libserver/message_callback.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/message_callback.cpp.s
+
+home/qhx/reactor/src/libs/libserver/message_component.o: home/qhx/reactor/src/libs/libserver/message_component.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/message_component.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/message_component.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/message_component.cpp.o
+
+home/qhx/reactor/src/libs/libserver/message_component.i: home/qhx/reactor/src/libs/libserver/message_component.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/message_component.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/message_component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/message_component.cpp.i
+
+home/qhx/reactor/src/libs/libserver/message_component.s: home/qhx/reactor/src/libs/libserver/message_component.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/message_component.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/message_component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/message_component.cpp.s
 
 home/qhx/reactor/src/libs/libserver/message_system.o: home/qhx/reactor/src/libs/libserver/message_system.cpp.o
 
@@ -547,6 +655,33 @@ home/qhx/reactor/src/libs/libserver/message_system.s: home/qhx/reactor/src/libs/
 home/qhx/reactor/src/libs/libserver/message_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.s
 .PHONY : home/qhx/reactor/src/libs/libserver/message_system.cpp.s
+
+home/qhx/reactor/src/libs/libserver/message_system_help.o: home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/message_system_help.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o
+
+home/qhx/reactor/src/libs/libserver/message_system_help.i: home/qhx/reactor/src/libs/libserver/message_system_help.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/message_system_help.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/message_system_help.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/message_system_help.cpp.i
+
+home/qhx/reactor/src/libs/libserver/message_system_help.s: home/qhx/reactor/src/libs/libserver/message_system_help.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/message_system_help.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/message_system_help.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/message_system_help.cpp.s
 
 home/qhx/reactor/src/libs/libserver/network.o: home/qhx/reactor/src/libs/libserver/network.cpp.o
 
@@ -899,6 +1034,33 @@ home/qhx/reactor/src/libs/libserver/server_app.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.s
 .PHONY : home/qhx/reactor/src/libs/libserver/server_app.cpp.s
 
+home/qhx/reactor/src/libs/libserver/system_manager.o: home/qhx/reactor/src/libs/libserver/system_manager.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/system_manager.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/system_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/system_manager.cpp.o
+
+home/qhx/reactor/src/libs/libserver/system_manager.i: home/qhx/reactor/src/libs/libserver/system_manager.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/system_manager.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/system_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/system_manager.cpp.i
+
+home/qhx/reactor/src/libs/libserver/system_manager.s: home/qhx/reactor/src/libs/libserver/system_manager.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/system_manager.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/system_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/system_manager.cpp.s
+
 home/qhx/reactor/src/libs/libserver/thread.o: home/qhx/reactor/src/libs/libserver/thread.cpp.o
 
 .PHONY : home/qhx/reactor/src/libs/libserver/thread.o
@@ -952,6 +1114,60 @@ home/qhx/reactor/src/libs/libserver/thread_mgr.s: home/qhx/reactor/src/libs/libs
 home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.s
 .PHONY : home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.s
+
+home/qhx/reactor/src/libs/libserver/update_component.o: home/qhx/reactor/src/libs/libserver/update_component.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/update_component.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/update_component.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/update_component.cpp.o
+
+home/qhx/reactor/src/libs/libserver/update_component.i: home/qhx/reactor/src/libs/libserver/update_component.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/update_component.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/update_component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/update_component.cpp.i
+
+home/qhx/reactor/src/libs/libserver/update_component.s: home/qhx/reactor/src/libs/libserver/update_component.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/update_component.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/update_component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/update_component.cpp.s
+
+home/qhx/reactor/src/libs/libserver/update_system.o: home/qhx/reactor/src/libs/libserver/update_system.cpp.o
+
+.PHONY : home/qhx/reactor/src/libs/libserver/update_system.o
+
+# target to build an object file
+home/qhx/reactor/src/libs/libserver/update_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.o
+.PHONY : home/qhx/reactor/src/libs/libserver/update_system.cpp.o
+
+home/qhx/reactor/src/libs/libserver/update_system.i: home/qhx/reactor/src/libs/libserver/update_system.cpp.i
+
+.PHONY : home/qhx/reactor/src/libs/libserver/update_system.i
+
+# target to preprocess a source file
+home/qhx/reactor/src/libs/libserver/update_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.i
+.PHONY : home/qhx/reactor/src/libs/libserver/update_system.cpp.i
+
+home/qhx/reactor/src/libs/libserver/update_system.s: home/qhx/reactor/src/libs/libserver/update_system.cpp.s
+
+.PHONY : home/qhx/reactor/src/libs/libserver/update_system.s
+
+# target to generate assembly for a file
+home/qhx/reactor/src/libs/libserver/update_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/logind.dir/build.make CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.s
+.PHONY : home/qhx/reactor/src/libs/libserver/update_system.cpp.s
 
 home/qhx/reactor/src/libs/libserver/yaml.o: home/qhx/reactor/src/libs/libserver/yaml.cpp.o
 
@@ -1136,6 +1352,9 @@ help:
 	@echo "... home/qhx/reactor/src/libs/libserver/component.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/component.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/component.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/component_collections.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/component_collections.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/component_collections.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/connect_obj.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/connect_obj.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/connect_obj.s"
@@ -1145,6 +1364,12 @@ help:
 	@echo "... home/qhx/reactor/src/libs/libserver/console_cmd_pool.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/console_cmd_pool.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/console_cmd_pool.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/console_cmd_thread.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/console_cmd_thread.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/console_cmd_thread.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/console_thread_component.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/console_thread_component.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/console_thread_component.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/create_component.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/create_component.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/create_component.s"
@@ -1163,12 +1388,18 @@ help:
 	@echo "... home/qhx/reactor/src/libs/libserver/log4_help.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/log4_help.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/log4_help.s"
-	@echo "... home/qhx/reactor/src/libs/libserver/message_list.o"
-	@echo "... home/qhx/reactor/src/libs/libserver/message_list.i"
-	@echo "... home/qhx/reactor/src/libs/libserver/message_list.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/message_callback.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/message_callback.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/message_callback.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/message_component.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/message_component.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/message_component.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/message_system.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/message_system.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/message_system.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/message_system_help.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/message_system_help.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/message_system_help.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/network.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/network.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/network.s"
@@ -1208,12 +1439,21 @@ help:
 	@echo "... home/qhx/reactor/src/libs/libserver/server_app.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/server_app.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/server_app.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/system_manager.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/system_manager.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/system_manager.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/thread.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/thread.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/thread.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/thread_mgr.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/thread_mgr.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/thread_mgr.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/update_component.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/update_component.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/update_component.s"
+	@echo "... home/qhx/reactor/src/libs/libserver/update_system.o"
+	@echo "... home/qhx/reactor/src/libs/libserver/update_system.i"
+	@echo "... home/qhx/reactor/src/libs/libserver/update_system.s"
 	@echo "... home/qhx/reactor/src/libs/libserver/yaml.o"
 	@echo "... home/qhx/reactor/src/libs/libserver/yaml.i"
 	@echo "... home/qhx/reactor/src/libs/libserver/yaml.s"

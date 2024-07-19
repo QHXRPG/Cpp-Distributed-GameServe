@@ -1,6 +1,7 @@
 #include "packet.h"
 #include "network_buffer.h"
 #include "connect_obj.h"
+#include "message_system_help.h"
 
 #include <cstdlib>
 #include <cstring>
@@ -154,7 +155,7 @@ Packet* RecvNetworkBuffer::GetPacket()
     }
 
     const auto socket = _pConnectObj->GetSocket();
-    Packet* pPacket = IMessageSystem::CreatePacket((Proto::MsgId)head.MsgId, socket);
+    Packet* pPacket = MessageSystemHelp::CreatePacket((Proto::MsgId)head.MsgId, socket);
     const unsigned int dataLength = totalSize - sizeof(PacketHead) - sizeof(TotalSizeType);
     while (pPacket->GetTotalSize() < dataLength)
     {

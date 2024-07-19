@@ -1,5 +1,7 @@
 #include "thread.h"
 #include "global.h"
+#include "entity_system.h"
+#include "log4.h"
 
 #include <iterator>
 
@@ -21,7 +23,10 @@ void Thread::Start()
             }
 
             const auto theadId = _thread.get_id();
-            std::cout << "close thread [1/2]. thread sn:" << this->GetSN() << " thread id:" << theadId << std::endl;
+            std::cout << "close thread [1/2]. thread id:" << theadId << std::endl;
+
+            Dispose();
+            log4cplus::threadCleanup();
             _state = ThreadState_Stoped;
         });
 }
@@ -42,7 +47,7 @@ bool Thread::IsDispose()
     {
         const auto theadId = _thread.get_id();
         _thread.join();
-        std::cout << "close thread [2/2]. thread sn:" << this->GetSN() << " thread id:" << theadId << std::endl;
+        std::cout << "close thread [2/2]. thread id:" << theadId << std::endl;
         return true;
     }
 

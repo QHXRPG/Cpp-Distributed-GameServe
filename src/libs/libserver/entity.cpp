@@ -1,23 +1,33 @@
 #include "entity.h"
 #include "entity_system.h"
 
-IEntity::~IEntity()
-{
-    BackToPool();
-}
-
 void IEntity::BackToPool() {
-    for (const auto& one : _components) {
-        one.second->ComponentBackToPool();
+    for (auto pair : _components)
+    {
+        // 由 EntitySystem 去销毁
+        const auto pEntitySystem = GetSystemManager()->GetEntitySystem();
+        if (pEntitySystem != nullptr)
+            pEntitySystem->RemoveComponent(pair.second);
+        else
+            pair.second->ComponentBackToPool();
     }
 
     _components.clear();
 }
 
-void IEntity::AddToSystem(IComponent* pComponent)
+void IEntity::RemoveComponent(IComponent* pComponent)
 {
-    pComponent->SetParent(this);
+    const auto typeHashCode = pComponent->GetTypeHashCode();
+    _components.erase(typeHashCode);
 
-    _components.insert(std::make_pair(pComponent->GetSN(), pComponent));
-    GetEntitySystem()->AddToSystem(pComponent);
+    const auto pEntitySystem = GetSystemManager()->GetEntitySystem();
+    if (pEntitySystem == nullptr)
+    {
+        pComponent->ComponentBackToPool();
+    }
+    else
+    {
+        // 由 EntitySystem 去销毁
+        pEntitySystem->RemoveComponent(pComponent);
+    }
 }

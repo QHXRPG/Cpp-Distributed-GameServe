@@ -4,23 +4,28 @@
 #include "libserver/global.h"
 #include "libserver/yaml.h"
 #include "libserver/entity_system.h"
+#include "libserver/message_component.h"
+#include "libserver/message_system_help.h"
+#include "libserver/update_component.h"
 
 #include "global_robots.h"
 #include <sstream>
 
 void RobotMgr::AwakeFromPool()
 {
+    // update
+    auto pUpdateComponent = AddComponent<UpdateComponent>();
+    pUpdateComponent->UpdataFunction = BindFunP0(this, &RobotMgr::Update);
+
+    // message
+    auto pMsgCallBack = new MessageCallBackFunction();
+    AddComponent<MessageComponent>(pMsgCallBack);
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
+
+    // yaml
     auto pYaml = Yaml::GetInstance();
 	const auto pLoginConfig = dynamic_cast<LoginConfig*>(pYaml->GetConfig(APP_LOGIN));
 	this->Connect(pLoginConfig->Ip, pLoginConfig->Port);
-}
-
-void RobotMgr::RegisterMsgFunction()
-{
-    auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHandler(pMsgCallBack);
-
-    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
 }
 
 void RobotMgr::Update()
@@ -42,7 +47,7 @@ void RobotMgr::HandleRobotState(Packet* pPacket)
     {
         std::cout << "test begin" << std::endl;
         _nextShowInfoTime = 0;
-        Packet* pPacketBegin = IMessageSystem::CreatePacket(Proto::MsgId::MI_RobotTestBegin, GetSocket());
+        Packet* pPacketBegin = MessageSystemHelp::CreatePacket(Proto::MsgId::MI_RobotTestBegin, GetSocket());
         SendPacket(pPacketBegin);
     }
 
@@ -78,7 +83,7 @@ void RobotMgr::NofityServer(RobotStateType iType)
     if (iter == _robots.end())
     {
         std::cout << "test over " << GetRobotStateTypeShortName(iType) << std::endl;;
-        Packet* pPacketEnd = IMessageSystem::CreatePacket(Proto::MsgId::MI_RobotTestEnd, GetSocket());
+        Packet* pPacketEnd = MessageSystemHelp::CreatePacket(Proto::MsgId::MI_RobotTestEnd, GetSocket());
         Proto::RobotTestEnd protoEnd;
         protoEnd.set_state(iType);
         pPacketEnd->SerializeToBuffer(protoEnd);

@@ -10,8 +10,7 @@ class Robot : public NetworkConnector, public StateTemplateMgr<RobotStateType, R
 {
 public:
 	void AwakeFromPool(std::string account) override;
-	void RegisterMsgFunction( ) override;
-	void Update( ) override;
+	void Update() override;
 
 	std::string GetAccount() const;
 	void SendMsgAccountCheck();

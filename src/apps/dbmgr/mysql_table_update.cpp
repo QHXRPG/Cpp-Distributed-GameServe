@@ -3,14 +3,19 @@
 #include "libserver/log4_help.h"
 #include "libserver/util_string.h"
 
-#include "/usr/include/windows/mysql/mysql.h"
-#include "/usr/include/windows/mysql/mysqld_error.h"
+#include <mysql/mysql.h>
+#include <mysql/mysqld_error.h>
 #include <thread>
 
 MysqlTableUpdate::MysqlTableUpdate()
 {
     // 注册更新函数，按下标执行，注意顺序
     _update_func.push_back(BindFunP0(this, &MysqlTableUpdate::Update00)); 
+}
+
+MysqlTableUpdate::~MysqlTableUpdate()
+{
+    Disconnect();
 }
 
 void MysqlTableUpdate::Check()

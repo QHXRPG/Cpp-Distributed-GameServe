@@ -3,13 +3,15 @@
 #include "libserver/packet.h"
 #include "libserver/thread_mgr.h"
 #include "libserver/log4_help.h"
+#include "libserver/message_component.h"
+#include "libserver/message_system_help.h"
 
 #include "http_request_account.h"
 
-void Account::RegisterMsgFunction()
+void Account::AwakeFromPool() 
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHandler(pMsgCallBack);
+    AddComponent<MessageComponent>(pMsgCallBack);
 
     pMsgCallBack->RegisterFunction(Proto::MsgId::C2L_AccountCheck, BindFunP1(this, &Account::HandleAccountCheck));
     pMsgCallBack->RegisterFunction(Proto::MsgId::MI_AccountCheckToHttpRs, BindFunP1(this, &Account::HandleAccountCheckToHttpRs));
@@ -47,12 +49,12 @@ void Account::HandleAccountCheck(Packet* pPacket)
     {
         Proto::AccountCheckRs protoResult;
         protoResult.set_return_code(Proto::AccountCheckReturnCode::ARC_LOGGING);
-        SendPacket(Proto::MsgId::C2L_AccountCheckRs, socket, protoResult);
+        MessageSystemHelp::SendPacket(Proto::MsgId::C2L_AccountCheckRs, socket, protoResult);
 
         std::cout << "account check failed. same account:" << protoCheck.account() << " socket:" << socket << std::endl;
 
         // 关闭网络
-        IMessageSystem::DispatchPacket(Proto::MsgId::MI_NetworkRequestDisconnect, socket);
+        MessageSystemHelp::DispatchPacket(Proto::MsgId::MI_NetworkRequestDisconnect, socket);
         return;
     }
 
@@ -74,18 +76,18 @@ void Account::HandleAccountCheckToHttpRs(Packet* pPacket)
         return;
     }
 
-    std::cout << "account check result account:" << proto.account() << " rs:" << proto.return_code() << " socket:" << pPlayer->GetSocket() << std::endl;
+    //std::cout << "account check result account:" << proto.account() << " rs:" << proto.return_code() << " socket:" << pPlayer->GetSocket() << std::endl;
 
     Proto::AccountCheckRs protoResult;
     protoResult.set_return_code(proto.return_code());
-    SendPacket(Proto::MsgId::C2L_AccountCheckRs, pPlayer->GetSocket(), protoResult);
+    MessageSystemHelp::SendPacket(Proto::MsgId::C2L_AccountCheckRs, pPlayer->GetSocket(), protoResult);
 
     // 验证成功，向DB发起查询
     if (proto.return_code() == Proto::AccountCheckReturnCode::ARC_OK)
     {
         Proto::QueryPlayerList protoQuery;
         protoQuery.set_account(pPlayer->GetAccount().c_str());
-        SendPacket(Proto::MsgId::L2DB_QueryPlayerList, protoQuery, APP_DB_MGR);
+        MessageSystemHelp::SendPacket(Proto::MsgId::L2DB_QueryPlayerList, protoQuery, APP_DB_MGR);
     }
 }
 
@@ -101,10 +103,10 @@ void Account::HandleQueryPlayerListRs(Packet* pPacket)
         return;
     }
 
-    LOG_DEBUG("HandlePlayerListToDBRs account:" << account.c_str() << ", player size:" << protoRs.player_size());
+    //LOG_DEBUG("HandlePlayerListToDBRs account:" << account.c_str() << ", player size:" << protoRs.player_size());
 
     // 将结果转送给客户端
-    SendPacket(Proto::MsgId::L2C_PlayerList, pPlayer->GetSocket(), protoRs);
+    MessageSystemHelp::SendPacket(Proto::MsgId::L2C_PlayerList, pPlayer->GetSocket(), protoRs);
 }
 
 void Account::HandleCreatePlayer(Packet* pPacket)
@@ -128,7 +130,7 @@ void Account::HandleCreatePlayer(Packet* pPacket)
     pProtoPlayer->set_name(protoCreate.name());
     pProtoPlayer->mutable_base()->set_gender(protoCreate.gender());
 
-    SendPacket(Proto::MsgId::L2DB_CreatePlayer, proto2Db, APP_DB_MGR);
+    MessageSystemHelp::SendPacket(Proto::MsgId::L2DB_CreatePlayer, proto2Db, APP_DB_MGR);
 }
 
 void Account::HandleCreatePlayerRs(Packet* pPacket)
@@ -145,5 +147,5 @@ void Account::HandleCreatePlayerRs(Packet* pPacket)
 
     Proto::CreatePlayerRs createProto;
     createProto.set_return_code(protoRs.return_code());
-    SendPacket(Proto::MsgId::C2L_CreatePlayerRs, pPlayer->GetSocket(), createProto);
+    MessageSystemHelp::SendPacket(Proto::MsgId::C2L_CreatePlayerRs, pPlayer->GetSocket(), createProto);
 }

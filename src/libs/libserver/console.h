@@ -32,13 +32,13 @@ private:
 
 };
 
-class Console : public Entity<Console>, public IAwakeFromPoolSystem<>, public IUpdateSystem
+class Console : public Entity<Console>, public IAwakeFromPoolSystem<>
 {
 public:
 	void AwakeFromPool() override;
 	void BackToPool() override;
 
-	void Update() override;
+	void Update();
 
 	template<class T>
 	void Register(std::string cmd);

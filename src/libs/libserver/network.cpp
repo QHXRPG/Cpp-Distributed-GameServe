@@ -29,14 +29,6 @@ void Network::Clean()
     _masterSocket = INVALID_SOCKET;
 }
 
-
-void Network::RegisterMsgFunction()
-{
-    auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHandler(pMsgCallBack);
-    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkRequestDisconnect, BindFunP1(this, &Network::HandleDisconnect));
-}
-
 #ifndef WIN32
 #define SetsockOptType void *
 #else
@@ -100,9 +92,9 @@ SOCKET Network::CreateSocket()
 
 void Network::CreateConnectObj(SOCKET socket)
 {
-    ConnectObj* pConnectObj = DynamicObjectPool<ConnectObj>::GetInstance()->MallocObject(socket);
+    ConnectObj* pConnectObj = DynamicObjectPool<ConnectObj>::GetInstance()->MallocObject(GetSystemManager(), socket);
     pConnectObj->SetParent(this);
-    pConnectObj->SetEntitySystem(GetEntitySystem());
+    pConnectObj->SetSystemManager(GetSystemManager());
     if (_connects.find(socket) != _connects.end())
     {
         std::cout << "Network::CreateConnectObj. socket is exist. socket:" << socket << std::endl;
@@ -116,11 +108,6 @@ void Network::CreateConnectObj(SOCKET socket)
 }
 
 #ifdef EPOLL
-
-#define RemoveConnectObj(iter) \
-    iter->second->ComponentBackToPool( ); \
-    DeleteEvent(_epfd, iter->first); \
-    iter = _connects.erase( iter ); 
 
 void Network::AddEvent(int epollfd, int fd, int flag)
 {
@@ -199,10 +186,6 @@ void Network::Epoll()
 
 }
 #else
-
-#define RemoveConnectObj(iter) \
-    iter->second->ComponentBackToPool( ); \
-    iter = _connects.erase( iter ); 
 
 void Network::Select()
 {
@@ -298,20 +281,6 @@ void Network::OnNetworkUpdate()
 #endif
     }
     pList->clear();
-}
-
-void Network::HandleDisconnect(Packet* pPacket)
-{
-    auto socket = pPacket->GetSocket();
-    auto iter = _connects.find(socket);
-    if (iter == _connects.end())
-    {
-        std::cout << "dis connect failed. socket not find. socket:" << socket << std::endl;
-        return;
-    }
-
-    RemoveConnectObj(iter);
-    std::cout << "logical layer requires shutdown. socket:" << socket << std::endl;
 }
 
 void Network::SendPacket(Packet*& pPacket)

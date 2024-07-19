@@ -3,7 +3,7 @@
 #include "libserver/common.h"
 #include "libserver/yaml.h"
 
-#include "/usr/include/windows/mysql/mysql.h"
+#include <mysql/mysql.h>
 
 class MysqlBase
 {

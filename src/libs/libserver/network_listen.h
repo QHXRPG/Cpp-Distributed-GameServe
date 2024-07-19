@@ -2,12 +2,15 @@
 
 #include "network.h"
 
-class NetworkListen :public Network, public IUpdateSystem, public IAwakeFromPoolSystem<std::string, int>
+class NetworkListen :public Network, public IAwakeFromPoolSystem<std::string, int>
 {
 public:
     void AwakeFromPool(std::string ip, int port);
-    void Update() override;
+    void Update();
     const char* GetTypeName() override;
+
+private:
+    void HandleDisconnect(Packet* pPacket);
 
 protected:
     virtual int Accept();

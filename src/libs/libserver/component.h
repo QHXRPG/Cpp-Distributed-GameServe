@@ -3,8 +3,8 @@
 #include "common.h"
 
 class IEntity;
-class EntitySystem;
 class IDynamicObjectPool;
+class SystemManager;
 
 class IComponent : virtual public SnObject
 {
@@ -15,24 +15,28 @@ public:
 
     void SetPool(IDynamicObjectPool* pPool);
     void SetParent(IEntity* pObj);
-    void SetEntitySystem(EntitySystem* pSys);
+    void SetSystemManager(SystemManager* pObj);
 
     bool IsActive() const { return _active; }
 
     template<class T>
     T* GetParent();
 
-    static EntitySystem* GetGlobalEntitySystem();
-    EntitySystem* GetEntitySystem() const;
+    IEntity* GetParent() const;
+
+    SystemManager* GetSystemManager() const;
     virtual void BackToPool() = 0;
     virtual void ComponentBackToPool();
+
+    virtual const char* GetTypeName() = 0;
+    virtual uint64 GetTypeHashCode() = 0;
 
 protected:
     bool _active{ true };
 
 private:
     IEntity* _parent{ nullptr };
-    EntitySystem* _pEntitySystem{ nullptr };
+    SystemManager* _pSystemManager{ nullptr };
     IDynamicObjectPool* _pPool{ nullptr };
 };
 
@@ -46,8 +50,8 @@ template<class T>
 class Component :public IComponent
 {
 public:
-	virtual const char* GetTypeName();
-    uint64 GetTypeHashCode();
+	const char* GetTypeName() override;
+    uint64 GetTypeHashCode() override;
 };
 
 template <class T>

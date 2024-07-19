@@ -1,14 +1,13 @@
 #pragma once
-#include "libserver/component.h"
-#include "libserver/message_system.h"
+#include "libserver/entity.h"
+#include "libserver/system.h"
 
 #include "login_obj_mgr.h"
 
-class Account :public Component<Account>, public IMessageSystem, public IAwakeFromPoolSystem<>
+class Account :public Entity<Account>, public IAwakeFromPoolSystem<>
 {
 public:
-    void AwakeFromPool() override {}
-    void RegisterMsgFunction() override;
+    void AwakeFromPool() override;
     virtual void BackToPool() override;
 
 private:

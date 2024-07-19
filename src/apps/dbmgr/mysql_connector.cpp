@@ -6,6 +6,8 @@
 
 void MysqlConnector::AwakeFromPool()
 {
+    mysql_thread_init();
+
     LOG_DEBUG("MysqlConnector::Awake. id:" << std::this_thread::get_id());
 
     auto pYaml = Yaml::GetInstance();
@@ -19,6 +21,7 @@ void MysqlConnector::AwakeFromPool()
         return;
     }
 
+    InitMessageComponent();
     Connect();
 
     // check ping     
@@ -47,6 +50,7 @@ void MysqlConnector::CheckPing()
 void MysqlConnector::BackToPool()
 {
     Disconnect();
+    mysql_thread_end();
 }
 
 bool MysqlConnector::Connect()
@@ -151,7 +155,7 @@ DatabaseStmt* MysqlConnector::GetStmt(DatabaseStmtKey stmtKey)
 
 DatabaseStmt* MysqlConnector::CreateStmt(const char* sql) const
 {
-    int str_len = strlen(sql);
+    int str_len = (int)strlen(sql);
     DatabaseStmt* stmt = new DatabaseStmt();
     int param_count = 0;
     stmt->stmt = mysql_stmt_init(_pMysql);
@@ -161,7 +165,7 @@ DatabaseStmt* MysqlConnector::CreateStmt(const char* sql) const
         return nullptr;
     }
 
-    for (int i = 0; i < str_len; i++)
+    for (auto i = 0; i < str_len; i++)
     {
         if ((sql[i] == '?') || (sql[i] == '@'))
             param_count++;

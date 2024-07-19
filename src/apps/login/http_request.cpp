@@ -104,7 +104,7 @@ void HttpRequest::ProcessTimeout() const
     checkProto.set_account(_account);
     checkProto.set_return_code(Proto::AccountCheckReturnCode::ARC_TIMEOUT);
 
-    IMessageSystem::DispatchPacket(Proto::MsgId::MI_AccountCheckToHttpRs, 0, checkProto);
+    MessageSystemHelp::DispatchPacket(Proto::MsgId::MI_AccountCheckToHttpRs, 0, checkProto);
 }
 
 bool HttpRequest::ProcessOver()

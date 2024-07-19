@@ -1,5 +1,7 @@
 #include "thread_mgr.h"
 #include "common.h"
+#include "message_system.h"
+
 #include <iostream>
 
 ThreadMgr::ThreadMgr()
@@ -31,18 +33,18 @@ void ThreadMgr::Update()
             if (_threadIndex >= _threads.size())
                 _threadIndex = 0;
 
-            _threads[_threadIndex]->AddPacketToList(packet);
+            _threads[_threadIndex]->GetMessageSystem()->AddPacketToList(packet);
             _threadIndex++;
         }
         else
         {
             // 单线程
-            AddPacketToList(packet);
+            GetMessageSystem()->AddPacketToList(packet);
         }
     }
     pList->clear();
 
-    EntitySystem::Update();
+    SystemManager::Update();
 }
 
 void ThreadMgr::CreateThread()
@@ -76,13 +78,12 @@ bool ThreadMgr::IsDisposeAll()
 
 void ThreadMgr::Dispose()
 {
-    EntitySystem::Dispose();
+    SystemManager::Dispose();
 
     auto iter = _threads.begin();
     while (iter != _threads.end())
     {
         Thread* pThread = *iter;
-        pThread->Dispose();
         delete pThread;
         ++iter;
     }
@@ -92,12 +93,12 @@ void ThreadMgr::Dispose()
 void ThreadMgr::DispatchPacket(Packet* pPacket)
 {
     // 主线程
-    AddPacketToList(pPacket);
+    GetMessageSystem()->AddPacketToList(pPacket);
 
     // 子线程
     for (auto iter = _threads.begin(); iter != _threads.end(); ++iter)
     {
-        (*iter)->AddPacketToList(pPacket);
+        (*iter)->GetMessageSystem()->AddPacketToList(pPacket);
     }
 }
 

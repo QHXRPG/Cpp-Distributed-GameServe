@@ -1,11 +1,11 @@
 #include "robot_state_login.h"
 #include "robot.h"
 
-void RobotStateLoginConnecting::OnEnterState()
+void RobotStateLoginConnectting::OnEnterState()
 {
 }
 
-RobotStateType RobotStateLoginConnecting::OnUpdate()
+RobotStateType RobotStateLoginConnectting::OnUpdate()
 {
     if (_pParentObj->IsConnected())
     {
@@ -15,7 +15,7 @@ RobotStateType RobotStateLoginConnecting::OnUpdate()
     return GetState();
 }
 
-void RobotStateLoginConnected::OnEnterState() {
+void RobotStateLoginConnectted::OnEnterState() {
     _pParentObj->SendMsgAccountCheck();
 }
 

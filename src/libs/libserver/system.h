@@ -1,43 +1,36 @@
 #pragma once
+#include "disposable.h"
 
-class ISystem
+class EntitySystem;
+class ISystem :public IDisposable
 {
 protected:
-	ISystem() = default;
+    ISystem() = default;
 
 public:
-	virtual ~ISystem() = default;
+    virtual ~ISystem() = default;
+    void Dispose() override {}
+    virtual void Update(EntitySystem* pEntities) {}
 };
 
 template <typename... TArgs>
 class IAwakeSystem : virtual public ISystem
 {
 protected:
-	IAwakeSystem() = default;
+    IAwakeSystem() = default;
 
 public:
-	virtual ~IAwakeSystem() = default;
-	virtual void Awake(TArgs... args) = 0;
+    virtual ~IAwakeSystem() = default;
+    virtual void Awake(TArgs... args) = 0;
 };
 
 template <typename... TArgs>
 class IAwakeFromPoolSystem : virtual public ISystem
 {
 protected:
-	IAwakeFromPoolSystem() = default;
+    IAwakeFromPoolSystem() = default;
 
 public:
-	virtual ~IAwakeFromPoolSystem() = default;
-	virtual void AwakeFromPool(TArgs... args) = 0;
+    virtual ~IAwakeFromPoolSystem() = default;
+    virtual void AwakeFromPool(TArgs... args) = 0;
 };
-
-class IUpdateSystem : virtual public ISystem
-{
-protected:
-	IUpdateSystem() = default;
-
-public:
-	virtual ~IUpdateSystem() = default;
-	virtual void Update() = 0;
-};
-

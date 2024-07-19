@@ -1,33 +1,32 @@
 #pragma once
-#include "message_list.h"
-#include "system.h"
-#include "app_type_mgr.h"
 
-class IMessageSystem :virtual public ISystem
+#include <map>
+
+#include "common.h"
+#include "system.h"
+#include "cache_swap.h"
+
+class IComponent;
+class SystemManager;
+class Packet;
+class EntitySystem;
+
+class MessageSystem :virtual public ISystem
 {
 public:
-	~IMessageSystem();
-	virtual void RegisterMsgFunction() = 0;
+    MessageSystem(SystemManager* pMgr);
+    void Dispose() override;
 
-	void AttachCallBackHandler(MessageCallBackFunctionInfo* pCallback);
-	bool IsFollowMsgId(Packet* packet) const;
-	void ProcessPacket(Packet* packet) const;
+    void Update(EntitySystem* pEntities) override;
+    void AddPacketToList(Packet* pPacket);
 
-    static Packet* CreatePacket(Proto::MsgId msgId, SOCKET socket);
+private:
+    static void Process(Packet* pPacket, std::map<uint64, IComponent*>& lists);
 
-    static void DispatchPacket(const Proto::MsgId msgId, const SOCKET socket);
-    static void DispatchPacket(const Proto::MsgId msgId, const SOCKET socket, google::protobuf::Message& proto);
-    
-    static void SendPacket(const Proto::MsgId msgId, const SOCKET socket, google::protobuf::Message& proto);
-    static void SendPacket(const Proto::MsgId msgId, google::protobuf::Message& proto, APP_TYPE appType, int appId = 0);
+private:
+    // 本线程中的所有待处理包
+    std::mutex _packet_lock;
+    CacheSwap<Packet> _cachePackets;
 
-protected:
-    static void DispatchPacket(Packet* packet);
-
-    static void SendPacket(Packet* packet, APP_TYPE appType, int appId = 0);
-    static void SendPacket(Packet* pPacket);
-
-protected:
-	MessageCallBackFunctionInfo* _pCallBackFuns{ nullptr };
+    SystemManager* _systemMgr{ nullptr };
 };
-

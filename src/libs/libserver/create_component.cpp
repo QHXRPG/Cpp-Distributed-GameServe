@@ -3,7 +3,8 @@
 #include "component_factory.h"
 #include "packet.h"
 #include "entity.h"
-#include "entity_system.h"
+#include "message_component.h"
+#include "system_manager.h"
 
 template <typename... TArgs, size_t... Index>
 IComponent* ComponentFactoryEx(EntitySystem* pEntitySystem, std::string className, const std::tuple<TArgs...>& args, std::index_sequence<Index...>)
@@ -53,12 +54,13 @@ struct DynamicCall<0>
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void CreateComponentC::RegisterMsgFunction()
+void CreateComponentC::AwakeFromPool()
 {
-    auto pMsg = new MessageCallBackFunction();
-    this->AttachCallBackHandler(pMsg);
-    pMsg->RegisterFunction(Proto::MsgId::MI_CreateComponent, BindFunP1(this, &CreateComponentC::HandleCreateComponent));
-    pMsg->RegisterFunction(Proto::MsgId::MI_RemoveComponent, BindFunP1(this, &CreateComponentC::HandleRemoveComponent));
+    auto pMsgCallBack = new MessageCallBackFunction();
+    AddComponent<MessageComponent>(pMsgCallBack);
+
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_CreateComponent, BindFunP1(this, &CreateComponentC::HandleCreateComponent));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RemoveComponent, BindFunP1(this, &CreateComponentC::HandleRemoveComponent));
 }
 
 void CreateComponentC::BackToPool()
@@ -78,7 +80,7 @@ void CreateComponentC::HandleCreateComponent(Packet* pPacket) const
     }
 
     auto params = proto.params();
-    const auto pObj = DynamicCall<5>::Invoke(GetEntitySystem(), className, std::make_tuple(), params);
+    const auto pObj = DynamicCall<5>::Invoke(GetSystemManager()->GetEntitySystem(), className, std::make_tuple(), params);
     if (pObj == nullptr)
     {
         std::cout << " !!!! CreateComponent failed. className:" << className.c_str() << std::endl;

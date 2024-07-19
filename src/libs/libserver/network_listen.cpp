@@ -6,12 +6,25 @@
 #include "thread_mgr.h"
 #include "network_locator.h"
 #include "log4_help.h"
+#include "message_component.h"
+#include "update_component.h"
 
 void NetworkListen::AwakeFromPool(std::string ip, int port)
 {
-    auto pNetworkLocator = ThreadMgr::GetInstance()->GetComponent<NetworkLocator>();
+    // 
+    auto pNetworkLocator = ThreadMgr::GetInstance()->GetEntitySystem()->GetComponent<NetworkLocator>();
     pNetworkLocator->AddListenLocator(this, NetworkTcpListen);
 
+    // message
+    auto pMsgCallBack = new MessageCallBackFunction();
+    AddComponent<MessageComponent>(pMsgCallBack);    
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkRequestDisconnect, BindFunP1(this, &NetworkListen::HandleDisconnect));
+
+    // update
+    auto pUpdateComponent = AddComponent<UpdateComponent>();
+    pUpdateComponent->UpdataFunction = BindFunP0(this, &NetworkListen::Update);
+
+    // 
     _masterSocket = CreateSocket();
     if (_masterSocket == INVALID_SOCKET)
         return;
@@ -99,3 +112,16 @@ void NetworkListen::Update()
 
 #endif
 
+void NetworkListen::HandleDisconnect(Packet* pPacket)
+{
+    auto socket = pPacket->GetSocket();
+    auto iter = _connects.find(socket);
+    if (iter == _connects.end())
+    {
+        std::cout << "dis connect failed. socket not find. socket:" << socket << std::endl;
+        return;
+    }
+
+    RemoveConnectObj(iter);
+    std::cout << "logical layer requires shutdown. socket:" << socket << std::endl;
+}

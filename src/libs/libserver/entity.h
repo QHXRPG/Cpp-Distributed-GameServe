@@ -8,31 +8,36 @@
 
 #include "component.h"
 #include "object_pool.h"
+#include "entity_system.h"
 
 class IEntity :public IComponent
 {
 public:
-    virtual ~IEntity();
+    virtual ~IEntity() = default;
     void BackToPool() override;
 
     template <class T, typename... TArgs>
-    void AddComponent(TArgs... args);
+    T* AddComponent(TArgs... args);
 
     template<class T>
     T* GetComponent();
 
-private:
-    void AddToSystem(IComponent* pObj);
+    template<class T>
+    void RemoveComponent();
+
+    void RemoveComponent(IComponent* pObj);
 
 protected:
     std::map<uint64, IComponent*> _components;
 };
 
 template <class T, typename... TArgs>
-inline void IEntity::AddComponent(TArgs... args)
+inline T* IEntity::AddComponent(TArgs... args)
 {
-    auto pComponent = DynamicObjectPool<T>::GetInstance()->MallocObject(std::forward<TArgs>(args)...);
-    AddToSystem(pComponent);
+    auto pComponent = GetSystemManager()->GetEntitySystem()->AddComponent<T>(std::forward<TArgs>(args)...);
+    pComponent->SetParent(this);
+    _components.insert(std::make_pair(pComponent->GetSN(), pComponent));
+    return pComponent;
 }
 
 template<class T>
@@ -53,11 +58,27 @@ T* IEntity::GetComponent()
 }
 
 template<class T>
+void IEntity::RemoveComponent()
+{
+    // 先删除本地组件数据
+    const auto typeHashCode = typeid(T).hash_code();
+    const auto iter = _components.find(typeHashCode);
+    if (iter == _components.end())
+    {
+        LOG_ERROR("Entity RemoveComponent error. not find. className:" << typeid(T).name());
+        return;
+    }
+
+    auto pComponent = iter->second;
+    RemoveComponent(pComponent);
+}
+
+template<class T>
 class Entity :public IEntity
 {
 public:
-    virtual const char* GetTypeName();
-    uint64 GetTypeHashCode();
+    const char* GetTypeName() override;
+    uint64 GetTypeHashCode() override;
 };
 
 template <class T>

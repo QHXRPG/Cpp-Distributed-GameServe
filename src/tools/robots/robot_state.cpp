@@ -28,9 +28,9 @@ void RobotState::EnterState()
     pState->set_state(GetState());
 
     // 只发送给主线程
-    auto pPacket = IMessageSystem::CreatePacket(Proto::MsgId::MI_RobotSyncState, 0);
+    auto pPacket = MessageSystemHelp::CreatePacket(Proto::MsgId::MI_RobotSyncState, 0);
     pPacket->SerializeToBuffer(protoState);
-    ThreadMgr::GetInstance()->AddPacketToList(pPacket);
+    ThreadMgr::GetInstance()->GetMessageSystem()->AddPacketToList(pPacket);
 
     OnEnterState();
 }

@@ -1,10 +1,9 @@
 #pragma once
 #include "libserver/common.h"
-#include "libserver/component.h"
+#include "libserver/entity.h"
 #include "libserver/system.h"
 #include <curl/curl.h>
 #include "/usr/include/common/json/json.h"
-
 
 enum HttpResquestState 
 {
@@ -32,10 +31,10 @@ enum CURLMRS
     CRS_SelectError,
 };
 
-class HttpRequest :public Component<HttpRequest>, public IUpdateSystem
+class HttpRequest :public Entity<HttpRequest>
 {
 public:
-    void Update() override;
+    void Update();
     void BackToPool() override;
 
 protected:

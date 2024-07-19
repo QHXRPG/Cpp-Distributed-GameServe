@@ -1,87 +1,111 @@
 #pragma once
 #include "component.h"
-#include "system.h"
-#include "message_system.h"
-
 #include "global.h"
 #include "cache_swap.h"
 #include "disposable.h"
 #include "component_factory.h"
 #include "object_pool.h"
+#include "component_collections.h"
+#include "system_manager.h"
+#include "log4_help.h"
 
 class Packet;
-class IEntity;
-
-class EntitySystem : virtual public SnObject, public IDisposable
+class EntitySystem : public IDisposable
 {
 public:
-	virtual ~EntitySystem();
-    friend class IEntity;
-    void InitComponent();
+    friend class ConsoleThreadComponent;
 
-	template <class T, typename... TArgs>
-	T* AddComponent(TArgs... args);
+    EntitySystem(SystemManager* pMgr);
+    virtual ~EntitySystem();
 
-	template <typename... TArgs>
-	IComponent* AddComponentByName(std::string className, TArgs... args);
+    template <class T, typename... TArgs>
+    T* AddComponent(TArgs... args);
 
-	template <class T>
-	T* GetComponent();
+    template <typename... TArgs>
+    IComponent* AddComponentByName(std::string className, TArgs... args);
 
-	virtual void Update();
-    void UpdateMessage();
+    template <class T>
+    T* GetComponent();
 
-	void Dispose() override;
+    void RemoveComponent(IComponent* pObj);
 
-	void AddPacketToList(Packet* pPacket);
+    template<class T>
+    ComponentCollections* GetComponentCollections();
 
-protected:
-    void AddToSystem(IComponent* pObj);
+    void Update();
+    void Dispose() override;
 
-protected:
-	std::list<IUpdateSystem*> _updateSystems;
-    std::list<IMessageSystem*> _messageSystems;
+private:
+    template <class T>
+    void AddComponent(T* pComponent);
 
-	// 所有对象
-	std::map<uint64, IComponent*> _objSystems;
+    // 所有对象
+    // <class mask sn, std::map<Component>*>
+    std::map<uint64, ComponentCollections*> _objSystems;
 
-	// 本线程中的所有待处理包
-	std::mutex _packet_lock;
-	CacheSwap<Packet> _cachePackets;
+private:
+    SystemManager* _systemManager;
 };
+
+template<class T>
+inline void EntitySystem::AddComponent(T* pComponent)
+{
+    const auto typeHashCode = pComponent->GetTypeHashCode();
+
+#if LOG_SYSOBJ_OPEN
+    LOG_SYSOBJ("*[sys] add obj. obj sn:" << pComponent->GetSN() << " type:" << pComponent->GetTypeName() << " thead id:" << std::this_thread::get_id());
+#endif
+
+    auto iter = _objSystems.find(typeHashCode);
+    if (iter == _objSystems.end())
+    {
+        _objSystems[typeHashCode] = new ComponentCollections(pComponent->GetTypeName());
+    }
+
+    auto pEntities = _objSystems[typeHashCode];
+    pEntities->Add(dynamic_cast<IComponent*>(pComponent));
+}
 
 template <class T, typename ... TArgs>
 T* EntitySystem::AddComponent(TArgs... args)
 {
-	auto pComponent = DynamicObjectPool<T>::GetInstance()->MallocObject(std::forward<TArgs>(args)...);
-    AddToSystem(pComponent);
-	return pComponent;
-} 
+    auto pComponent = DynamicObjectPool<T>::GetInstance()->MallocObject(_systemManager, std::forward<TArgs>(args)...);
+    AddComponent(pComponent);
+    return pComponent;
+}
 
 template<typename ...TArgs>
 inline IComponent* EntitySystem::AddComponentByName(std::string className, TArgs ...args)
 {
-	auto pComponent = ComponentFactory<TArgs...>::GetInstance()->Create(className, std::forward<TArgs>(args)...);
-	if (pComponent == nullptr)
-		return nullptr;
+    auto pComponent = ComponentFactory<TArgs...>::GetInstance()->Create(_systemManager, className, std::forward<TArgs>(args)...);
+    if (pComponent == nullptr)
+        return nullptr;
 
-    AddToSystem(pComponent);
-	return pComponent;
+    AddComponent(pComponent);
+    return pComponent;
 }
 
 template <class T>
 T* EntitySystem::GetComponent()
 {
-	auto iter = std::find_if(_objSystems.begin(), _objSystems.end(), [](auto pair)
-		{
-			if (dynamic_cast<T*>(pair.second) != nullptr)
-				return true;
+    const auto typeHashCode = typeid(T).hash_code();
+    auto iter = _objSystems.find(typeHashCode);
+    if (iter == _objSystems.end())
+        return nullptr;
 
-			return false;
-		});
+    return dynamic_cast<T*>(iter->second->Get());
+}
 
-	if (iter == _objSystems.end())
-		return nullptr;
+template<class T>
+inline ComponentCollections* EntitySystem::GetComponentCollections()
+{
+    const auto typeHashCode = typeid(T).hash_code();
+    auto iter = _objSystems.find(typeHashCode);
+    if (iter == _objSystems.end())
+    {
+        //LOG_WARN("GetComponentCollections failed. class name:" << className);
+        return nullptr;
+    }
 
-	return dynamic_cast<T*>(iter->second);
+    return iter->second;
 }

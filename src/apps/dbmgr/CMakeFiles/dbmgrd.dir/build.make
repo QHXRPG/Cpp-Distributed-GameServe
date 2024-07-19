@@ -181,9 +181,22 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/component.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component.cpp.s
 
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.o: /home/qhx/reactor/src/libs/libserver/component_collections.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.o -c /home/qhx/reactor/src/libs/libserver/component_collections.cpp
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/component_collections.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.i
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/component_collections.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.s
+
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o: /home/qhx/reactor/src/libs/libserver/connect_obj.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o -c /home/qhx/reactor/src/libs/libserver/connect_obj.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.i: cmake_force
@@ -196,7 +209,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.s: cma
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o: /home/qhx/reactor/src/libs/libserver/console.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o -c /home/qhx/reactor/src/libs/libserver/console.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.i: cmake_force
@@ -209,7 +222,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.s: cmake_f
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o: /home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o -c /home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.i: cmake_force
@@ -220,9 +233,35 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.s
 
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o: /home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o -c /home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.i
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.s
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o: /home/qhx/reactor/src/libs/libserver/console_thread_component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o -c /home/qhx/reactor/src/libs/libserver/console_thread_component.cpp
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/console_thread_component.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.i
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/console_thread_component.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.s
+
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o: /home/qhx/reactor/src/libs/libserver/create_component.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o -c /home/qhx/reactor/src/libs/libserver/create_component.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.i: cmake_force
@@ -235,7 +274,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.s
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o: /home/qhx/reactor/src/libs/libserver/entity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o -c /home/qhx/reactor/src/libs/libserver/entity.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.i: cmake_force
@@ -248,7 +287,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.s: cmake_fo
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o: /home/qhx/reactor/src/libs/libserver/entity_system.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o -c /home/qhx/reactor/src/libs/libserver/entity_system.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.i: cmake_force
@@ -261,7 +300,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.s: c
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o: /home/qhx/reactor/src/libs/libserver/global.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o -c /home/qhx/reactor/src/libs/libserver/global.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.i: cmake_force
@@ -274,7 +313,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.s: cmake_fo
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o: /home/qhx/reactor/src/libs/libserver/log4.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o -c /home/qhx/reactor/src/libs/libserver/log4.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.i: cmake_force
@@ -287,7 +326,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.s: cmake_forc
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.o: /home/qhx/reactor/src/libs/libserver/log4_help.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.o -c /home/qhx/reactor/src/libs/libserver/log4_help.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.i: cmake_force
@@ -298,22 +337,35 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/log4_help.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.s
 
-CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
-CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o: /home/qhx/reactor/src/libs/libserver/message_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o"
-	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o -c /home/qhx/reactor/src/libs/libserver/message_list.cpp
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.o: /home/qhx/reactor/src/libs/libserver/message_callback.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.o -c /home/qhx/reactor/src/libs/libserver/message_callback.cpp
 
-CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.i"
-	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/message_list.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.i
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/message_callback.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.i
 
-CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.s"
-	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/message_list.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.s
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/message_callback.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.s
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.o: /home/qhx/reactor/src/libs/libserver/message_component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.o -c /home/qhx/reactor/src/libs/libserver/message_component.cpp
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/message_component.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.i
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/message_component.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.s
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o: /home/qhx/reactor/src/libs/libserver/message_system.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o -c /home/qhx/reactor/src/libs/libserver/message_system.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.i: cmake_force
@@ -324,9 +376,22 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.s: 
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/message_system.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.s
 
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o: /home/qhx/reactor/src/libs/libserver/message_system_help.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o -c /home/qhx/reactor/src/libs/libserver/message_system_help.cpp
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/message_system_help.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.i
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/message_system_help.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.s
+
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o: /home/qhx/reactor/src/libs/libserver/network.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o -c /home/qhx/reactor/src/libs/libserver/network.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.i: cmake_force
@@ -339,7 +404,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.s: cmake_f
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o: /home/qhx/reactor/src/libs/libserver/network_buffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_buffer.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.i: cmake_force
@@ -352,7 +417,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.s: 
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o: /home/qhx/reactor/src/libs/libserver/network_connector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_connector.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.i: cmake_force
@@ -365,7 +430,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o: /home/qhx/reactor/src/libs/libserver/network_listen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_listen.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.i: cmake_force
@@ -378,7 +443,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.s: 
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.o: /home/qhx/reactor/src/libs/libserver/network_locator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.o -c /home/qhx/reactor/src/libs/libserver/network_locator.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.i: cmake_force
@@ -391,7 +456,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.s:
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp.o -c /home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp.i: cmake_force
@@ -404,7 +469,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp.s:
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o: /home/qhx/reactor/src/libs/libserver/packet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o -c /home/qhx/reactor/src/libs/libserver/packet.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.i: cmake_force
@@ -417,7 +482,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.s: cmake_fo
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.o: /home/qhx/reactor/src/libs/libserver/res_path.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.o -c /home/qhx/reactor/src/libs/libserver/res_path.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.i: cmake_force
@@ -430,7 +495,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.s: cmake_
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o: /home/qhx/reactor/src/libs/libserver/robot_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o -c /home/qhx/reactor/src/libs/libserver/robot_test.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.i: cmake_force
@@ -443,7 +508,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.s: cmak
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o: /home/qhx/reactor/src/libs/libserver/server_app.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o -c /home/qhx/reactor/src/libs/libserver/server_app.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.i: cmake_force
@@ -454,9 +519,22 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.s: cmak
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/server_app.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.s
 
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.o: /home/qhx/reactor/src/libs/libserver/system_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.o -c /home/qhx/reactor/src/libs/libserver/system_manager.cpp
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/system_manager.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.i
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/system_manager.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.s
+
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o: /home/qhx/reactor/src/libs/libserver/thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.i: cmake_force
@@ -469,7 +547,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.s: cmake_fo
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o: /home/qhx/reactor/src/libs/libserver/thread_mgr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o -c /home/qhx/reactor/src/libs/libserver/thread_mgr.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.i: cmake_force
@@ -480,9 +558,35 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.s: cmak
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/thread_mgr.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.s
 
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.o: /home/qhx/reactor/src/libs/libserver/update_component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.o -c /home/qhx/reactor/src/libs/libserver/update_component.cpp
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/update_component.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.i
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/update_component.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.s
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.o: /home/qhx/reactor/src/libs/libserver/update_system.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.o"
+	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.o -c /home/qhx/reactor/src/libs/libserver/update_system.cpp
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/qhx/reactor/src/libs/libserver/update_system.cpp > CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.i
+
+CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/qhx/reactor/src/libs/libserver/update_system.cpp -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.s
+
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o: /home/qhx/reactor/src/libs/libserver/yaml.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o -c /home/qhx/reactor/src/libs/libserver/yaml.cpp
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.i: cmake_force
@@ -495,7 +599,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.s: cmake_forc
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc.o: /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc.o -c /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc.i: cmake_force
@@ -508,7 +612,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc.s: c
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o: /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o -c /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.i: cmake_force
@@ -521,7 +625,7 @@ CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.s: 
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o: CMakeFiles/dbmgrd.dir/flags.make
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o: /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o"
 	/usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o -c /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc
 
 CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.i: cmake_force
@@ -542,17 +646,22 @@ dbmgrd_OBJECTS = \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/app_type_mgr.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component.cpp.o" \
+"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o" \
+"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o" \
+"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.o" \
-"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o" \
+"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.o" \
+"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o" \
+"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o" \
@@ -563,8 +672,11 @@ dbmgrd_OBJECTS = \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o" \
+"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o" \
+"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.o" \
+"CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc.o" \
 "CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o" \
@@ -581,17 +693,22 @@ dbmgrd_EXTERNAL_OBJECTS =
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/app_type_mgr.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/base_buffer.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component.cpp.o
+/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o
+/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o
+/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.o
-/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o
+/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.o
+/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o
+/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o
@@ -602,15 +719,19 @@ dbmgrd_EXTERNAL_OBJECTS =
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o
+/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o
+/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.o
+/home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/db.pb.cc.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.cc.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.cc.o
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/build.make
+/home/qhx/reactor/bin/dbmgrd: /usr/local/lib/libyaml-cpp.so.0.6.2
 /home/qhx/reactor/bin/dbmgrd: CMakeFiles/dbmgrd.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable /home/qhx/reactor/bin/dbmgrd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/qhx/reactor/src/apps/dbmgr/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking CXX executable /home/qhx/reactor/bin/dbmgrd"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dbmgrd.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

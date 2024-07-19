@@ -8,13 +8,16 @@ CMakeFiles/logind.dir/account.cpp.o
  ../../libs/libserver/cache_swap.h
  ../../libs/libserver/common.h
  ../../libs/libserver/component.h
+ ../../libs/libserver/component_collections.h
  ../../libs/libserver/component_factory.h
  ../../libs/libserver/disposable.h
+ ../../libs/libserver/entity.h
  ../../libs/libserver/entity_system.h
  ../../libs/libserver/global.h
  ../../libs/libserver/log4_help.h
- ../../libs/libserver/message_list.h
- ../../libs/libserver/message_system.h
+ ../../libs/libserver/message_callback.h
+ ../../libs/libserver/message_component.h
+ ../../libs/libserver/message_system_help.h
  ../../libs/libserver/object_pool.h
  ../../libs/libserver/object_pool_interface.h
  ../../libs/libserver/object_pool_mgr.h
@@ -27,6 +30,7 @@ CMakeFiles/logind.dir/account.cpp.o
  ../../libs/libserver/sn_object.h
  ../../libs/libserver/socket_object.h
  ../../libs/libserver/system.h
+ ../../libs/libserver/system_manager.h
  ../../libs/libserver/thread.h
  ../../libs/libserver/thread_mgr.h
  ../../libs/libserver/util_string.h
@@ -62,13 +66,14 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/component.cpp.o
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.cpp
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
- /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
  /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
  /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
@@ -80,8 +85,41 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/component.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/thread_mgr.h
+ /home/qhx/reactor/src/libs/libserver/util_string.h
+ /home/qhx/reactor/src/libs/libserver/util_time.h
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/component_collections.cpp.o
+ /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
+ /home/qhx/reactor/src/libs/libserver/base_buffer.h
+ /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+ /home/qhx/reactor/src/libs/libserver/cache_swap.h
+ /home/qhx/reactor/src/libs/libserver/common.h
+ /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.cpp
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
+ /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
+ /home/qhx/reactor/src/libs/libserver/global.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/network.h
+ /home/qhx/reactor/src/libs/libserver/network_interface.h
+ /home/qhx/reactor/src/libs/libserver/object_pool.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
+ /home/qhx/reactor/src/libs/libserver/packet.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+ /home/qhx/reactor/src/libs/libserver/singleton.h
+ /home/qhx/reactor/src/libs/libserver/sn_object.h
+ /home/qhx/reactor/src/libs/libserver/socket_object.h
+ /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o
@@ -91,6 +129,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/connect_obj.cpp
  /home/qhx/reactor/src/libs/libserver/connect_obj.h
@@ -98,8 +137,9 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o
  /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/network.h
  /home/qhx/reactor/src/libs/libserver/network_buffer.h
  /home/qhx/reactor/src/libs/libserver/network_interface.h
@@ -115,6 +155,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/connect_obj.cpp.o
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/socket_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/thread_mgr.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
@@ -123,12 +164,16 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o
  /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
  /home/qhx/reactor/src/libs/libserver/base_buffer.h
  /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+ /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/console.cpp
  /home/qhx/reactor/src/libs/libserver/console.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
  /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
@@ -141,6 +186,8 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
+ /home/qhx/reactor/src/libs/libserver/update_component.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o
@@ -150,14 +197,17 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/connect_obj.h
  /home/qhx/reactor/src/libs/libserver/console.h
  /home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp
  /home/qhx/reactor/src/libs/libserver/console_cmd_pool.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
  /home/qhx/reactor/src/libs/libserver/network.h
  /home/qhx/reactor/src/libs/libserver/network_interface.h
@@ -172,6 +222,72 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_cmd_pool.cpp.o
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/socket_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
+ /home/qhx/reactor/src/libs/libserver/util_string.h
+ /home/qhx/reactor/src/libs/libserver/util_time.h
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp.o
+ /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
+ /home/qhx/reactor/src/libs/libserver/base_buffer.h
+ /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+ /home/qhx/reactor/src/libs/libserver/cache_swap.h
+ /home/qhx/reactor/src/libs/libserver/common.h
+ /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
+ /home/qhx/reactor/src/libs/libserver/console.h
+ /home/qhx/reactor/src/libs/libserver/console_cmd_thread.cpp
+ /home/qhx/reactor/src/libs/libserver/console_cmd_thread.h
+ /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
+ /home/qhx/reactor/src/libs/libserver/global.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
+ /home/qhx/reactor/src/libs/libserver/object_pool.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
+ /home/qhx/reactor/src/libs/libserver/packet.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+ /home/qhx/reactor/src/libs/libserver/singleton.h
+ /home/qhx/reactor/src/libs/libserver/sn_object.h
+ /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
+ /home/qhx/reactor/src/libs/libserver/util_string.h
+ /home/qhx/reactor/src/libs/libserver/util_time.h
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/console_thread_component.cpp.o
+ /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
+ /home/qhx/reactor/src/libs/libserver/base_buffer.h
+ /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+ /home/qhx/reactor/src/libs/libserver/cache_swap.h
+ /home/qhx/reactor/src/libs/libserver/common.h
+ /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
+ /home/qhx/reactor/src/libs/libserver/console_thread_component.cpp
+ /home/qhx/reactor/src/libs/libserver/console_thread_component.h
+ /home/qhx/reactor/src/libs/libserver/create_component.h
+ /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
+ /home/qhx/reactor/src/libs/libserver/global.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/message_callback.h
+ /home/qhx/reactor/src/libs/libserver/message_component.h
+ /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/object_pool.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
+ /home/qhx/reactor/src/libs/libserver/packet.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+ /home/qhx/reactor/src/libs/libserver/singleton.h
+ /home/qhx/reactor/src/libs/libserver/sn_object.h
+ /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
+ /home/qhx/reactor/src/libs/libserver/update_component.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o
@@ -181,6 +297,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/create_component.cpp
  /home/qhx/reactor/src/libs/libserver/create_component.h
@@ -188,7 +305,9 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o
  /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/message_callback.h
+ /home/qhx/reactor/src/libs/libserver/message_component.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
  /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
@@ -200,6 +319,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/create_component.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o
@@ -209,14 +329,14 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.cpp
  /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
- /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
  /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
  /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
@@ -227,6 +347,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/entity.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o
@@ -236,15 +357,16 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
- /home/qhx/reactor/src/libs/libserver/create_component.h
+ /home/qhx/reactor/src/libs/libserver/console.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.cpp
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
- /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/log4.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
  /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
  /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
@@ -255,6 +377,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/entity_system.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/global.cpp.o
@@ -275,6 +398,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
@@ -283,8 +407,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o
  /home/qhx/reactor/src/libs/libserver/log4.cpp
  /home/qhx/reactor/src/libs/libserver/log4.h
  /home/qhx/reactor/src/libs/libserver/log4_help.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
- /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
  /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
  /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
@@ -297,6 +420,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/log4.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/thread_mgr.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
@@ -308,20 +432,22 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/log4_help.cpp.o
  /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
  /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
  /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
-CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_callback.cpp.o
  /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
  /home/qhx/reactor/src/libs/libserver/base_buffer.h
  /home/qhx/reactor/src/libs/libserver/cache_refresh.h
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.cpp
- /home/qhx/reactor/src/libs/libserver/message_list.h
- /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/message_callback.cpp
+ /home/qhx/reactor/src/libs/libserver/message_callback.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
  /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
  /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
@@ -333,8 +459,28 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_list.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/thread_mgr.h
+ /home/qhx/reactor/src/libs/libserver/util_string.h
+ /home/qhx/reactor/src/libs/libserver/util_time.h
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_component.cpp.o
+ /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
+ /home/qhx/reactor/src/libs/libserver/base_buffer.h
+ /home/qhx/reactor/src/libs/libserver/common.h
+ /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/global.h
+ /home/qhx/reactor/src/libs/libserver/message_callback.h
+ /home/qhx/reactor/src/libs/libserver/message_component.cpp
+ /home/qhx/reactor/src/libs/libserver/message_component.h
+ /home/qhx/reactor/src/libs/libserver/packet.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+ /home/qhx/reactor/src/libs/libserver/singleton.h
+ /home/qhx/reactor/src/libs/libserver/sn_object.h
+ /home/qhx/reactor/src/libs/libserver/system.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o
@@ -344,15 +490,46 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
+ /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
+ /home/qhx/reactor/src/libs/libserver/global.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/message_callback.h
+ /home/qhx/reactor/src/libs/libserver/message_component.h
+ /home/qhx/reactor/src/libs/libserver/message_system.cpp
+ /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/object_pool.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
+ /home/qhx/reactor/src/libs/libserver/packet.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+ /home/qhx/reactor/src/libs/libserver/singleton.h
+ /home/qhx/reactor/src/libs/libserver/sn_object.h
+ /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
+ /home/qhx/reactor/src/libs/libserver/util_string.h
+ /home/qhx/reactor/src/libs/libserver/util_time.h
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_system_help.cpp.o
+ /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
+ /home/qhx/reactor/src/libs/libserver/base_buffer.h
+ /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+ /home/qhx/reactor/src/libs/libserver/cache_swap.h
+ /home/qhx/reactor/src/libs/libserver/common.h
+ /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
  /home/qhx/reactor/src/libs/libserver/log4_help.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
- /home/qhx/reactor/src/libs/libserver/message_system.cpp
  /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.cpp
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/network.h
  /home/qhx/reactor/src/libs/libserver/network_interface.h
  /home/qhx/reactor/src/libs/libserver/network_locator.h
@@ -368,6 +545,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/message_system.cpp.o
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/socket_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/thread_mgr.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
@@ -379,11 +557,14 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/connect_obj.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
  /home/qhx/reactor/src/libs/libserver/network.cpp
  /home/qhx/reactor/src/libs/libserver/network.h
@@ -399,6 +580,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network.cpp.o
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/socket_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o
@@ -408,12 +590,16 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/connect_obj.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/network.h
  /home/qhx/reactor/src/libs/libserver/network_buffer.cpp
  /home/qhx/reactor/src/libs/libserver/network_buffer.h
@@ -429,6 +615,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_buffer.cpp.o
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/socket_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.o
@@ -438,14 +625,15 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
  /home/qhx/reactor/src/libs/libserver/log4_help.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/network.h
  /home/qhx/reactor/src/libs/libserver/network_connector.cpp
  /home/qhx/reactor/src/libs/libserver/network_connector.h
@@ -463,8 +651,10 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_connector.cpp.
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/socket_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/thread_mgr.h
+ /home/qhx/reactor/src/libs/libserver/update_component.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
  /home/qhx/reactor/src/libs/libserver/yaml.h
@@ -475,6 +665,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/connect_obj.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
@@ -482,8 +673,10 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
  /home/qhx/reactor/src/libs/libserver/log4_help.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/message_callback.h
+ /home/qhx/reactor/src/libs/libserver/message_component.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/network.h
  /home/qhx/reactor/src/libs/libserver/network_interface.h
  /home/qhx/reactor/src/libs/libserver/network_listen.cpp
@@ -501,8 +694,10 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_listen.cpp.o
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/socket_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/thread_mgr.h
+ /home/qhx/reactor/src/libs/libserver/update_component.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.o
@@ -512,10 +707,13 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
  /home/qhx/reactor/src/libs/libserver/network.h
  /home/qhx/reactor/src/libs/libserver/network_interface.h
@@ -533,6 +731,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/network_locator.cpp.o
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/socket_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp.o
@@ -552,6 +751,8 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/object_pool_mgr.cpp.o
  /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
+ /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/packet.cpp.o
@@ -584,11 +785,22 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/res_path.cpp.o
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
  /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
  /home/qhx/reactor/src/libs/libserver/base_buffer.h
+ /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+ /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
+ /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
- /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/message_callback.h
+ /home/qhx/reactor/src/libs/libserver/message_component.h
+ /home/qhx/reactor/src/libs/libserver/object_pool.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
  /home/qhx/reactor/src/libs/libserver/packet.h
  /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
  /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
@@ -599,6 +811,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/robot_test.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o
@@ -608,16 +821,19 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/console.h
  /home/qhx/reactor/src/libs/libserver/console_cmd_pool.h
+ /home/qhx/reactor/src/libs/libserver/console_cmd_thread.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
  /home/qhx/reactor/src/libs/libserver/log4.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/network.h
  /home/qhx/reactor/src/libs/libserver/network_interface.h
  /home/qhx/reactor/src/libs/libserver/network_locator.h
@@ -636,23 +852,28 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/server_app.cpp.o
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/socket_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/thread_mgr.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
  /home/qhx/reactor/src/libs/libserver/yaml.h
-CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/system_manager.cpp.o
  /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
  /home/qhx/reactor/src/libs/libserver/base_buffer.h
  /home/qhx/reactor/src/libs/libserver/cache_refresh.h
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
+ /home/qhx/reactor/src/libs/libserver/console_thread_component.h
+ /home/qhx/reactor/src/libs/libserver/create_component.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
  /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
@@ -664,6 +885,37 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.cpp
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
+ /home/qhx/reactor/src/libs/libserver/update_system.h
+ /home/qhx/reactor/src/libs/libserver/util_string.h
+ /home/qhx/reactor/src/libs/libserver/util_time.h
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread.cpp.o
+ /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
+ /home/qhx/reactor/src/libs/libserver/base_buffer.h
+ /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+ /home/qhx/reactor/src/libs/libserver/cache_swap.h
+ /home/qhx/reactor/src/libs/libserver/common.h
+ /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
+ /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
+ /home/qhx/reactor/src/libs/libserver/global.h
+ /home/qhx/reactor/src/libs/libserver/log4.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/object_pool.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
+ /home/qhx/reactor/src/libs/libserver/packet.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+ /home/qhx/reactor/src/libs/libserver/singleton.h
+ /home/qhx/reactor/src/libs/libserver/sn_object.h
+ /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.cpp
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
@@ -675,12 +927,14 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
  /home/qhx/reactor/src/libs/libserver/message_system.h
+ /home/qhx/reactor/src/libs/libserver/message_system_help.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
  /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
  /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
@@ -692,9 +946,56 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/thread_mgr.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/thread.h
  /home/qhx/reactor/src/libs/libserver/thread_mgr.cpp
  /home/qhx/reactor/src/libs/libserver/thread_mgr.h
+ /home/qhx/reactor/src/libs/libserver/util_string.h
+ /home/qhx/reactor/src/libs/libserver/util_time.h
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/update_component.cpp.o
+ /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
+ /home/qhx/reactor/src/libs/libserver/common.h
+ /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/global.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+ /home/qhx/reactor/src/libs/libserver/singleton.h
+ /home/qhx/reactor/src/libs/libserver/sn_object.h
+ /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/update_component.cpp
+ /home/qhx/reactor/src/libs/libserver/update_component.h
+ /home/qhx/reactor/src/libs/libserver/util_string.h
+ /home/qhx/reactor/src/libs/libserver/util_time.h
+CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/update_system.cpp.o
+ /home/qhx/reactor/src/libs/libserver/app_type_mgr.h
+ /home/qhx/reactor/src/libs/libserver/base_buffer.h
+ /home/qhx/reactor/src/libs/libserver/cache_refresh.h
+ /home/qhx/reactor/src/libs/libserver/cache_swap.h
+ /home/qhx/reactor/src/libs/libserver/common.h
+ /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
+ /home/qhx/reactor/src/libs/libserver/component_factory.h
+ /home/qhx/reactor/src/libs/libserver/disposable.h
+ /home/qhx/reactor/src/libs/libserver/entity.h
+ /home/qhx/reactor/src/libs/libserver/entity_system.h
+ /home/qhx/reactor/src/libs/libserver/global.h
+ /home/qhx/reactor/src/libs/libserver/log4_help.h
+ /home/qhx/reactor/src/libs/libserver/object_pool.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
+ /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
+ /home/qhx/reactor/src/libs/libserver/packet.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/db.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/msg.pb.h
+ /home/qhx/reactor/src/libs/libserver/protobuf/proto_id.pb.h
+ /home/qhx/reactor/src/libs/libserver/singleton.h
+ /home/qhx/reactor/src/libs/libserver/sn_object.h
+ /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
+ /home/qhx/reactor/src/libs/libserver/update_component.h
+ /home/qhx/reactor/src/libs/libserver/update_system.cpp
+ /home/qhx/reactor/src/libs/libserver/update_system.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
 CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o
@@ -704,14 +1005,13 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o
  /home/qhx/reactor/src/libs/libserver/cache_swap.h
  /home/qhx/reactor/src/libs/libserver/common.h
  /home/qhx/reactor/src/libs/libserver/component.h
+ /home/qhx/reactor/src/libs/libserver/component_collections.h
  /home/qhx/reactor/src/libs/libserver/component_factory.h
  /home/qhx/reactor/src/libs/libserver/disposable.h
  /home/qhx/reactor/src/libs/libserver/entity.h
  /home/qhx/reactor/src/libs/libserver/entity_system.h
  /home/qhx/reactor/src/libs/libserver/global.h
  /home/qhx/reactor/src/libs/libserver/log4_help.h
- /home/qhx/reactor/src/libs/libserver/message_list.h
- /home/qhx/reactor/src/libs/libserver/message_system.h
  /home/qhx/reactor/src/libs/libserver/object_pool.h
  /home/qhx/reactor/src/libs/libserver/object_pool_interface.h
  /home/qhx/reactor/src/libs/libserver/object_pool_mgr.h
@@ -723,6 +1023,7 @@ CMakeFiles/logind.dir/home/qhx/reactor/src/libs/libserver/yaml.cpp.o
  /home/qhx/reactor/src/libs/libserver/singleton.h
  /home/qhx/reactor/src/libs/libserver/sn_object.h
  /home/qhx/reactor/src/libs/libserver/system.h
+ /home/qhx/reactor/src/libs/libserver/system_manager.h
  /home/qhx/reactor/src/libs/libserver/util_string.h
  /home/qhx/reactor/src/libs/libserver/util_time.h
  /home/qhx/reactor/src/libs/libserver/yaml.cpp
@@ -734,12 +1035,15 @@ CMakeFiles/logind.dir/http_request.cpp.o
  ../../libs/libserver/cache_swap.h
  ../../libs/libserver/common.h
  ../../libs/libserver/component.h
+ ../../libs/libserver/component_collections.h
  ../../libs/libserver/component_factory.h
  ../../libs/libserver/disposable.h
+ ../../libs/libserver/entity.h
  ../../libs/libserver/entity_system.h
  ../../libs/libserver/global.h
- ../../libs/libserver/message_list.h
+ ../../libs/libserver/log4_help.h
  ../../libs/libserver/message_system.h
+ ../../libs/libserver/message_system_help.h
  ../../libs/libserver/object_pool.h
  ../../libs/libserver/object_pool_interface.h
  ../../libs/libserver/object_pool_mgr.h
@@ -751,6 +1055,7 @@ CMakeFiles/logind.dir/http_request.cpp.o
  ../../libs/libserver/singleton.h
  ../../libs/libserver/sn_object.h
  ../../libs/libserver/system.h
+ ../../libs/libserver/system_manager.h
  ../../libs/libserver/thread.h
  ../../libs/libserver/thread_mgr.h
  ../../libs/libserver/util_string.h
@@ -774,12 +1079,14 @@ CMakeFiles/logind.dir/http_request_account.cpp.o
  ../../libs/libserver/cache_swap.h
  ../../libs/libserver/common.h
  ../../libs/libserver/component.h
+ ../../libs/libserver/component_collections.h
  ../../libs/libserver/component_factory.h
  ../../libs/libserver/disposable.h
+ ../../libs/libserver/entity.h
  ../../libs/libserver/entity_system.h
  ../../libs/libserver/global.h
- ../../libs/libserver/message_list.h
- ../../libs/libserver/message_system.h
+ ../../libs/libserver/log4_help.h
+ ../../libs/libserver/message_system_help.h
  ../../libs/libserver/object_pool.h
  ../../libs/libserver/object_pool_interface.h
  ../../libs/libserver/object_pool_mgr.h
@@ -791,8 +1098,10 @@ CMakeFiles/logind.dir/http_request_account.cpp.o
  ../../libs/libserver/singleton.h
  ../../libs/libserver/sn_object.h
  ../../libs/libserver/system.h
+ ../../libs/libserver/system_manager.h
  ../../libs/libserver/thread.h
  ../../libs/libserver/thread_mgr.h
+ ../../libs/libserver/update_component.h
  ../../libs/libserver/util_string.h
  ../../libs/libserver/util_time.h
  ../../libs/libserver/yaml.h
@@ -840,14 +1149,16 @@ CMakeFiles/logind.dir/main.cpp.o
  ../../libs/libserver/cache_swap.h
  ../../libs/libserver/common.h
  ../../libs/libserver/component.h
+ ../../libs/libserver/component_collections.h
  ../../libs/libserver/component_factory.h
  ../../libs/libserver/console.h
  ../../libs/libserver/disposable.h
  ../../libs/libserver/entity.h
  ../../libs/libserver/entity_system.h
  ../../libs/libserver/global.h
- ../../libs/libserver/message_list.h
+ ../../libs/libserver/log4_help.h
  ../../libs/libserver/message_system.h
+ ../../libs/libserver/message_system_help.h
  ../../libs/libserver/network.h
  ../../libs/libserver/network_connector.h
  ../../libs/libserver/network_interface.h
@@ -866,6 +1177,7 @@ CMakeFiles/logind.dir/main.cpp.o
  ../../libs/libserver/sn_object.h
  ../../libs/libserver/socket_object.h
  ../../libs/libserver/system.h
+ ../../libs/libserver/system_manager.h
  ../../libs/libserver/thread.h
  ../../libs/libserver/thread_mgr.h
  ../../libs/libserver/util_string.h

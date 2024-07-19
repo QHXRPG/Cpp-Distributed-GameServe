@@ -3,7 +3,7 @@
 #include <thread>
 #include <list>
 
-#include "entity_system.h"
+#include "system_manager.h"
 
 enum ThreadState
 {
@@ -12,7 +12,7 @@ enum ThreadState
     ThreadState_Stoped,
 };
 
-class Thread : public EntitySystem
+class Thread : public SystemManager
 {
 public:
     Thread();

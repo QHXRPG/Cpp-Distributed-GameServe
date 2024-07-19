@@ -8,7 +8,7 @@ class MysqlTableUpdate :public MysqlBase, public Singleton<MysqlTableUpdate>
 {
 public:
     MysqlTableUpdate();
-    virtual ~MysqlTableUpdate() = default;
+    virtual ~MysqlTableUpdate();
 
     void Check();
 

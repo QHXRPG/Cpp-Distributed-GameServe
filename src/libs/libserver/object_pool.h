@@ -9,6 +9,7 @@
 #include "object_pool_interface.h"
 #include "cache_refresh.h"
 #include "object_pool_mgr.h"
+#include "system_manager.h"
 
 template <typename T>
 class DynamicObjectPool :public IDynamicObjectPool
@@ -41,7 +42,7 @@ public:
     ~DynamicObjectPool();
 
     template<typename ...Targs>
-    T* MallocObject(Targs... args);
+    T* MallocObject(SystemManager* pSysMgr, Targs... args);
 
     void Update() override;
     void FreeObject(IComponent* pObj) override;
@@ -112,7 +113,7 @@ DynamicObjectPool<T>::~DynamicObjectPool()
 
 template <typename T>
 template <typename ... Targs>
-T* DynamicObjectPool<T>::MallocObject(Targs... args)
+T* DynamicObjectPool<T>::MallocObject(SystemManager* pSysMgr, Targs... args)
 {
     _freeLock.lock();
     if (_free.size() == 0)
@@ -129,7 +130,9 @@ T* DynamicObjectPool<T>::MallocObject(Targs... args)
     _free.pop();
     _freeLock.unlock();
 
-    pObj->ResetSN();
+    pObj->ResetSN();    
+    pObj->SetSystemManager(pSysMgr);
+
     pObj->AwakeFromPool(std::forward<Targs>(args)...);
 
     _inUseLock.lock();

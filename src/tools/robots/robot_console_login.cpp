@@ -27,7 +27,7 @@ void RobotConsoleLogin::HandleLogin(std::vector<std::string>& params)
 		return;
 
 	// 单独登录时，登录到主线程，方便输入cmd
-	ThreadMgr::GetInstance()->AddComponent<Robot>(params[0]);
+	ThreadMgr::GetInstance()->GetEntitySystem()->AddComponent<Robot>(params[0]);
 	GlobalRobots::GetInstance()->SetRobotsCount(1);
 }
 

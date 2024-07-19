@@ -5,14 +5,16 @@
 
 #include "common.h"
 #include "thread.h"
+#include "cache_swap.h"
 #include "singleton.h"
 #include "entity_system.h"
 #include "component_factory.h"
 #include "regist_to_factory.h"
+#include "message_system_help.h"
 
 class Packet;
 
-class ThreadMgr :public Singleton<ThreadMgr>, public EntitySystem
+class ThreadMgr :public Singleton<ThreadMgr>, public SystemManager
 {
 public:
     ThreadMgr();
@@ -66,7 +68,7 @@ inline void ThreadMgr::CreateComponent(TArgs ...args)
 	proto.set_class_name(className.c_str());
 	AnalyseParam(proto, std::forward<TArgs>(args)...);
 
-	auto pCreatePacket = IMessageSystem::CreatePacket(Proto::MsgId::MI_CreateComponent, 0);
+	auto pCreatePacket = MessageSystemHelp::CreatePacket(Proto::MsgId::MI_CreateComponent, 0);
 	pCreatePacket->SerializeToBuffer(proto);
 	_createPackets.GetWriterCache()->emplace_back(pCreatePacket);
 }
