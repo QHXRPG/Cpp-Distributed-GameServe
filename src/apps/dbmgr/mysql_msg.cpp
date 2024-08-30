@@ -4,6 +4,13 @@
 #include "libserver/message_component.h"
 #include "libserver/message_system_help.h"
 
+/* 
+该实现文件定义了 MysqlConnector 类的方法，
+负责初始化消息组件、处理不同协议消息以及执行相关的数据库操作。
+主要实现了对玩家数据的查询、创建和保存功能。
+*/
+
+// 初始化消息回调函数并注册处理函数。
 void MysqlConnector::InitMessageComponent()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
@@ -22,42 +29,53 @@ void MysqlConnector::HandleQueryPlayerList(Packet* pPacket)
     QueryPlayerList(protoQuery.account(), pPacket->GetSocket());
 }
 
+// 处理查询玩家列表的请求。
 void MysqlConnector::QueryPlayerList(std::string account, SOCKET socket)
 {
-    my_ulonglong affected_rows;
+    my_ulonglong affected_rows;  // 存储 MySQL 查询操作影响的行数
+    // 构建查询语句，查询指定账号的玩家列表
     std::string sql = strutil::format("select sn, name, base, item, misc from player where account = '%s'", account.c_str());
+    std::cout << "query:" << sql << std::endl;
+    // 执行查询
     if (!Query(sql.c_str(), affected_rows))
     {
         LOG_ERROR("!!! Failed. MysqlConnector::HandleQueryPlayerList. sql:" << sql.c_str());
         return;
     }
 
+    // 构建Proto消息，用于存储查询结果
     Proto::PlayerList protoRs;
     protoRs.set_account(account.c_str());
 
     Proto::PlayerBase protoBase;
+    // 如果查询结果中有数据
     if (affected_rows > 0)
     {
         std::string tempStr;
-        MYSQL_ROW row;
+        MYSQL_ROW row;   // 用于存储从 MySQL 查询结果中获取的一行数据
+        
+        // 遍历查询结果
         while ((row = Fetch()))
         {
+            // 添加玩家信息到Proto消息中
             auto pProtoPlayer = protoRs.add_player();
-            pProtoPlayer->set_sn(GetUint64(row, 0));
-            pProtoPlayer->set_name(GetString(row, 1));
+            pProtoPlayer->set_sn(GetUint64(row, 0)); // 设置玩家唯一标识
+            pProtoPlayer->set_name(GetString(row, 1)); // 设置玩家名字
 
+            // 获取玩家基础信息Blob字段并解析
             GetBlob(row, 2, tempStr);
             protoBase.ParseFromString(tempStr);
-            pProtoPlayer->set_level(protoBase.level());
-            pProtoPlayer->set_gender(protoBase.gender());
+            pProtoPlayer->set_level(protoBase.level()); // 设置玩家等级
+            pProtoPlayer->set_gender(protoBase.gender()); // 设置玩家性别
         }
     }
 
     //LOG_DEBUG("player list. account:" << account.c_str() << " player list size:" << protoRs.player_size() << " socket:" << socket);
 
-    // 没有找到也需要返回pResultPacket
+    // 无论是否找到玩家，都需要返回查询结果
     MessageSystemHelp::SendPacket(Proto::MsgId::L2DB_QueryPlayerListRs, socket, protoRs);
 }
+
 
 void MysqlConnector::HandleQueryPlayer(Packet* pPacket)
 {

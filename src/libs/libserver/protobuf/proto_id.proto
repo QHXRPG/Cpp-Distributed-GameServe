@@ -10,55 +10,48 @@ enum MsgId {
 	MI_NetworkConnect			= 1;	// 网络主动连接成功
 	MI_NetworkListen			= 2;	// 网络监听到一个连接
 
-	/*
-	* 物理网络的断开，network通知上层网络关闭事件
-	* 关闭可能是监听，可能是连接，根据协议体数据而定
-	*/
-	MI_NetworkDisconnect		= 3;
-	MI_NetworkDisconnectEx		= 4;
 
-	/*
-	* 逻辑层的断开，上层逻辑发起的主动断开网络的协议 to network
-	* 该协议没有协议体
-	*/
-	MI_NetworkRequestDisconnect	= 5;	
+	MI_NetworkDisconnect		= 3;	// 网络断开连接
+	MI_NetworkDisconnectEx		= 4;	// 扩展的网络断开连接
 
-	MI_RemoveComponent			= 50;	// remove Component
-	MI_CreateComponent			= 51;	// 创建Component
-	MI_Ping						= 101;
+
+	MI_NetworkRequestDisconnect	= 5;	// 逻辑层请求断开网络连接
+
+	MI_RemoveComponent			= 50;	// 移除组件
+	MI_CreateComponent			= 51;	// 创建组件
+	MI_Ping						= 101;	// 网络心跳检测
 
 	// 登录
-	C2L_AccountCheck					= 1001;  // 1.验证账号：client to login
-	C2L_AccountCheckRs					= 1002;  //   AccountCheckRs to client
+	C2L_AccountCheck					= 1001;  // 1.验证账号：client 到 login 进行账号验证
+	C2L_AccountCheckRs					= 1002;  // 账号验证结果返回给客户端
 
-	MI_AccountQueryOnlineToRedis		= 1003;  // 2.验证账号：验证账号之前，向Redis询问是已在其他的Login登录验证账号
-	MI_AccountQueryOnlineToRedisRs		= 1004;
+	MI_AccountQueryOnlineToRedis		= 1003;  // 2.验证账号：验证账号之前，向Redis询问是否已在其他的Login登录验证账号
+	MI_AccountQueryOnlineToRedisRs		= 1004;  // Redis 查询结果返回
 
-	MI_AccountCheckToHttpRs				= 1005;  //   http to account
+	MI_AccountCheckToHttpRs				= 1005;  // 通过 HTTP 验证账号的结果
 
+	L2DB_QueryPlayerList				= 1010;  // 查询玩家列表
+	L2DB_QueryPlayerListRs				= 1011;  // 返回玩家列表查询结果
 
-	L2DB_QueryPlayerList				= 1010;  // 
-	L2DB_QueryPlayerListRs				= 1011;  //   
+	G2DB_QueryPlayer				= 1101;  // 1.选择角色：向数据库查询玩家信息
+	G2DB_QueryPlayerRs				= 1102;  // 返回玩家信息查询结果
 
-	G2DB_QueryPlayer				= 1101;  // 1.选择角色 
-	G2DB_QueryPlayerRs				= 1102;  //   PlayerListToDBRs
+	L2C_PlayerList                  = 1103;  // 2.选择角色：将玩家列表发送给客户端
 
-	L2C_PlayerList                  = 1103;  // 2.选择角色：PlayerListToClient
+	C2L_CreatePlayer				= 1105;  // 3.选择角色：客户端请求创建新角色
+	C2L_CreatePlayerRs				= 1106;  // 返回角色创建结果给客户端
 
-	C2L_CreatePlayer				= 1105;  // 3.选择角色：没有角色，请求创建角色
-	C2L_CreatePlayerRs				= 1106;  //   CreatePlayerRs to client
+	L2DB_CreatePlayer			    = 1107;  // 4.选择角色：向数据库创建新角色
+	L2DB_CreatePlayerRs             = 1108;  // 返回角色创建结果给登录服务器
 
-	L2DB_CreatePlayer			    = 1107;  // 4.选择角色：创建角色ToDB
-	L2DB_CreatePlayerRs             = 1108;  //   CreatePlayerToDB
-
-	G2DB_SavePlayer					= 1800;
+	G2DB_SavePlayer					= 1800;  // 保存玩家信息到数据库
 
 	// robot
-	MI_RobotSyncState	= 5001;	// Robot 状态同步到RobotMgr
+	MI_RobotSyncState	= 5001;	// 机器人状态同步到机器人管理器
 
 	// robot test
-	MI_RobotTestBegin	= 5100;	
-	MI_RobotTestEnd		= 5101;	
+	MI_RobotTestBegin	= 5100;	// 机器人测试开始
+	MI_RobotTestEnd		= 5101;	// 机器人测试结束
 
-	MI_CmdShowThreadEntites		= 20003;
+	MI_CmdShowThreadEntites		= 20003;	// 显示线程实体命令
 }

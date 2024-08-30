@@ -34,20 +34,20 @@ void ServerApp::Initialize()
     signal(SIGINT, Signalhandler);
     Global::Instance(_appType, 1);
 
-    // 全局数据
-    AppTypeMgr::Instance();
-    DynamicObjectPoolMgr::Instance();
+    // 全局数据 
+    AppTypeMgr::Instance();                    // 应用程序管理器
+    DynamicObjectPoolMgr::Instance();          // 动态对象池管理器
     ResPath::Instance();
-    Log4::Instance(_appType);
-    Yaml::Instance();
+    Log4::Instance(_appType);                  // 日志工具
+    Yaml::Instance();                          // 配置工具
 
-    ThreadMgr::Instance();
+    ThreadMgr::Instance();                     // 线程管理器
     _pThreadMgr = ThreadMgr::GetInstance();
     UpdateTime();
 
     // 全局 Component
-    _pThreadMgr->GetEntitySystem()->AddComponent<NetworkLocator>();
-    auto pConsole = _pThreadMgr->GetEntitySystem()->AddComponent<Console>();
+    _pThreadMgr->GetEntitySystem()->AddComponent<NetworkLocator>();                // 在对象池中增加网络定位组件
+    auto pConsole = _pThreadMgr->GetEntitySystem()->AddComponent<Console>();       // 处理控制台命令的组件
     pConsole->Register<ConsoleCmdPool>("pool");
     pConsole->Register<ConsoleCmdThread>("thread");
 

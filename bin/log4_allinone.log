@@ -1,0 +1,453 @@
+2024-08-29 16:11:26 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:12:15 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:12:23 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:13:06 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:20:16 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:21:05 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:21:22 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:23:48 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:24:51 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:26:25 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:26:56 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:27:12 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:32:24 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:33:12 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:34:15 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:34:49 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:36:17 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:37:41 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:38:16 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:39:45 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:40:09 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:41:38 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:42:09 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:45:48 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:45:48 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 16:45:48 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 16:45:48 -> [DEBUG] -  MysqlConnector::Awake. id:139659721783040
+2024-08-29 16:45:48 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139659721783040
+2024-08-29 16:45:48 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 16:45:48 -> [ERROR] -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-29 16:45:48 -> [ERROR] -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-29 16:45:48 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 16:48:15 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:48:15 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 16:48:15 -> [DEBUG] -  MysqlConnector::Awake. id:139674440296192
+2024-08-29 16:48:15 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 16:48:15 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139674440296192
+2024-08-29 16:48:16 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 16:48:16 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'sn' in 'field list'[0m
+2024-08-29 16:48:16 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'sn' in 'where clause'[0m
+2024-08-29 16:48:16 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 16:52:06 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:52:06 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 16:52:06 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 16:52:06 -> [DEBUG] -  MysqlConnector::Awake. id:140349211010816
+2024-08-29 16:52:06 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140349211010816
+2024-08-29 16:52:06 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 16:52:06 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'sn' in 'field list'[0m
+2024-08-29 16:52:06 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'sn' in 'where clause'[0m
+2024-08-29 16:52:06 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 16:56:31 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:56:31 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 16:56:31 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 16:56:31 -> [DEBUG] -  MysqlConnector::Awake. id:140631099606784
+2024-08-29 16:56:31 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140631099606784
+2024-08-29 16:56:31 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 16:56:31 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'name' in 'field list'[0m
+2024-08-29 16:56:31 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'base' in 'field list'[0m
+2024-08-29 16:56:31 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 16:58:42 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:58:42 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 16:58:42 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 16:58:42 -> [DEBUG] -  MysqlConnector::Awake. id:140508683179776
+2024-08-29 16:58:42 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140508683179776
+2024-08-29 16:58:42 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 16:58:42 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'account' in 'field list'[0m
+2024-08-29 16:58:42 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'misc' in 'field list'[0m
+2024-08-29 16:58:42 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 16:59:13 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:59:13 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 16:59:13 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 16:59:13 -> [DEBUG] -  MysqlConnector::Awake. id:139900537022208
+2024-08-29 16:59:13 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139900537022208
+2024-08-29 16:59:13 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 16:59:13 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'savetime' in 'field list'[0m
+2024-08-29 16:59:13 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'misc' in 'field list'[0m
+2024-08-29 16:59:13 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 16:59:58 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 16:59:58 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 16:59:58 -> [DEBUG] -  MysqlConnector::Awake. id:139803868100352
+2024-08-29 16:59:58 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 16:59:58 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139803868100352
+2024-08-29 16:59:58 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 16:59:58 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'createtime' in 'field list'[0m
+2024-08-29 16:59:58 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'misc' in 'field list'[0m
+2024-08-29 16:59:58 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 17:00:53 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:00:53 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:00:53 -> [DEBUG] -  MysqlConnector::Awake. id:139730184283904
+2024-08-29 17:00:53 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 17:00:53 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139730184283904
+2024-08-29 17:00:53 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 17:00:53 -> [ERROR] -  [0;31mcreate_stmt error, Unknown column 'createtime' in 'field list'[0m
+2024-08-29 17:00:53 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 17:01:35 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:01:35 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:01:35 -> [DEBUG] -  MysqlConnector::Awake. id:140374908479232
+2024-08-29 17:01:35 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 17:01:35 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140374908479232
+2024-08-29 17:01:35 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 17:01:35 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 17:02:14 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:02:14 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:02:14 -> [DEBUG] -  MysqlConnector::Awake. id:140357134165760
+2024-08-29 17:02:14 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 17:02:14 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140357134165760
+2024-08-29 17:02:14 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 17:02:14 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 17:05:57 -> [ERROR] -  [0;31mQuery error:Unknown column 'item' in 'field list' sql:select sn, name, base, item, misc from player where account = '1000'[0m
+2024-08-29 17:05:57 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::HandleQueryPlayerList. sql:select sn, name, base, item, misc from player where account = '1000'[0m
+2024-08-29 17:07:36 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:07:36 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:07:36 -> [DEBUG] -  MysqlConnector::Awake. id:140664210876160
+2024-08-29 17:07:36 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140664210876160
+2024-08-29 17:07:36 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 17:07:36 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 17:08:22 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:08:22 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:08:22 -> [DEBUG] -  MysqlConnector::Awake. id:139780804753152
+2024-08-29 17:08:22 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139780804753152
+2024-08-29 17:08:22 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 17:08:22 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 17:09:00 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:09:00 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:09:00 -> [DEBUG] -  MysqlConnector::Awake. id:140039103211264
+2024-08-29 17:09:00 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 17:09:00 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140039103211264
+2024-08-29 17:09:00 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 17:09:00 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 17:10:27 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:10:27 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:10:27 -> [DEBUG] -  MysqlConnector::Awake. id:140211736340224
+2024-08-29 17:10:27 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-29 17:10:27 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140211736340224
+2024-08-29 17:10:27 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-29 17:10:27 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-29 17:10:46 -> [DEBUG] -  create. account:1000 name:1000-4600 gender:2
+2024-08-29 17:10:46 -> [INFO] -  HandlePlayerCreate sn:11465675759452946514 account:1000 name:1000-4600
+2024-08-29 17:10:46 -> [ERROR] -  [0;31mexecute_stmt error, Field 'password' doesn't have a default value[0m
+2024-08-29 17:10:46 -> [ERROR] -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:1000[0m
+2024-08-29 17:12:57 -> [DEBUG] -  create. account:1 name:1-4600 gender:2
+2024-08-29 17:12:57 -> [INFO] -  HandlePlayerCreate sn:11466240685091323994 account:1 name:1-4600
+2024-08-30 14:07:00 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 14:07:00 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 14:07:00 -> [DEBUG] -  MysqlConnector::Awake. id:139812873615104
+2024-08-30 14:07:00 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 14:07:00 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139812873615104
+2024-08-30 14:07:00 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 14:07:00 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 14:07:29 -> [DEBUG] -  create. account:100 name:100-7622 gender:1
+2024-08-30 14:07:29 -> [INFO] -  HandlePlayerCreate sn:11789530011696889938 account:100 name:100-7622
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:44 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 14:13:44 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 14:13:44 -> [DEBUG] -  MysqlConnector::Awake. id:140055486281472
+2024-08-30 14:13:44 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 14:13:44 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140055486281472
+2024-08-30 14:13:44 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 14:13:44 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:19:55 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 14:19:55 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 14:19:55 -> [DEBUG] -  MysqlConnector::Awake. id:140131356477184
+2024-08-30 14:19:55 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140131356477184
+2024-08-30 14:19:55 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 14:19:55 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 14:32:38 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 14:32:38 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 14:32:38 -> [DEBUG] -  MysqlConnector::Awake. id:140054134310656
+2024-08-30 14:32:38 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 14:32:38 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140054134310656
+2024-08-30 14:32:38 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 14:32:38 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:06 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:16:06 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:16:06 -> [DEBUG] -  MysqlConnector::Awake. id:140417399617280
+2024-08-30 15:16:06 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 15:16:06 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140417399617280
+2024-08-30 15:16:06 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:16:06 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:49 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:19:49 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:19:49 -> [DEBUG] -  MysqlConnector::Awake. id:140649626572544
+2024-08-30 15:19:49 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 15:19:49 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140649626572544
+2024-08-30 15:19:49 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:19:49 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:19:58 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:58 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:58 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:58 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:58 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:20:28 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:20:28 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:20:28 -> [DEBUG] -  MysqlConnector::Awake. id:140514688444160
+2024-08-30 15:20:28 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 15:20:28 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140514688444160
+2024-08-30 15:20:28 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:20:28 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:22:13 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:22:13 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:22:13 -> [DEBUG] -  MysqlConnector::Awake. id:140386008880896
+2024-08-30 15:22:13 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 15:22:13 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140386008880896
+2024-08-30 15:22:14 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:22:14 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:22:28 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:22:28 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:22:28 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:22:28 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:22:28 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:31 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:23:31 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:23:31 -> [DEBUG] -  MysqlConnector::Awake. id:140191241746176
+2024-08-30 15:23:31 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 15:23:31 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140191241746176
+2024-08-30 15:23:31 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:23:31 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:23:39 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:39 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:39 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:39 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:39 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:26:20 -> [ERROR] -  [0;31minput error. cmd:asd[0m
+2024-08-30 15:27:02 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:27:02 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:27:02 -> [DEBUG] -  MysqlConnector::Awake. id:139878848902912
+2024-08-30 15:27:02 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139878848902912
+2024-08-30 15:27:02 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:27:02 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:28:05 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:28:05 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:28:05 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 15:28:05 -> [DEBUG] -  MysqlConnector::Awake. id:139669046863616
+2024-08-30 15:28:05 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139669046863616
+2024-08-30 15:28:05 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:28:05 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:28:23 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:28:23 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:28:23 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:28:23 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:28:23 -> [ERROR] -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:50:13 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:50:13 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:50:13 -> [DEBUG] -  MysqlConnector::Awake. id:139888552032000
+2024-08-30 15:50:13 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 15:50:13 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139888552032000
+2024-08-30 15:50:13 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:50:13 -> [ERROR] -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-30 15:50:13 -> [ERROR] -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-30 15:50:13 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:52:44 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:52:44 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:52:44 -> [DEBUG] -  MysqlConnector::Awake. id:140295223654144
+2024-08-30 15:52:44 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 15:52:44 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140295223654144
+2024-08-30 15:52:44 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:52:44 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:52:56 -> [DEBUG] -  create. account:test5 name:test5-1475 gender:1
+2024-08-30 15:52:56 -> [INFO] -  HandlePlayerCreate sn:11816705695707824234 account:test5 name:test5-1475
+2024-08-30 15:52:56 -> [DEBUG] -  create. account:test2 name:test2-6501 gender:2
+2024-08-30 15:52:56 -> [DEBUG] -  create. account:test4 name:test4-2369 gender:1
+2024-08-30 15:52:56 -> [DEBUG] -  create. account:test1 name:test1-5158 gender:1
+2024-08-30 15:52:56 -> [DEBUG] -  create. account:test3 name:test3-3318 gender:2
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test5[0m
+2024-08-30 15:52:56 -> [INFO] -  HandlePlayerCreate sn:11816705700002791531 account:test2 name:test2-6501
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [INFO] -  HandlePlayerCreate sn:11816705708592726124 account:test4 name:test4-2369
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [INFO] -  HandlePlayerCreate sn:11816705708592726125 account:test1 name:test1-5158
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [INFO] -  HandlePlayerCreate sn:11816705708592726126 account:test3 name:test3-3318
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test2[0m
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test4[0m
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test1[0m
+2024-08-30 15:52:56 -> [ERROR] -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test3[0m
+2024-08-30 15:55:12 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:55:12 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:55:12 -> [DEBUG] -  MysqlConnector::Awake. id:140630973101824
+2024-08-30 15:55:12 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140630973101824
+2024-08-30 15:55:12 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:55:12 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:56:50 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:56:50 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:56:50 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 15:56:50 -> [DEBUG] -  MysqlConnector::Awake. id:139655696488192
+2024-08-30 15:56:50 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139655696488192
+2024-08-30 15:56:50 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:56:50 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:56:59 -> [DEBUG] -  create. account:test3 name:test3-9206 gender:1
+2024-08-30 15:56:59 -> [DEBUG] -  create. account:test5 name:test5-9939 gender:1
+2024-08-30 15:56:59 -> [DEBUG] -  create. account:test1 name:test1-4714 gender:1
+2024-08-30 15:56:59 -> [DEBUG] -  create. account:test2 name:test2-4767 gender:1
+2024-08-30 15:56:59 -> [DEBUG] -  create. account:test4 name:test4-1126 gender:1
+2024-08-30 15:56:59 -> [INFO] -  HandlePlayerCreate sn:11817749737832972394 account:test3 name:test3-9206
+2024-08-30 15:56:59 -> [INFO] -  HandlePlayerCreate sn:11817749737832972395 account:test5 name:test5-9939
+2024-08-30 15:56:59 -> [INFO] -  HandlePlayerCreate sn:11817749737832972396 account:test1 name:test1-4714
+2024-08-30 15:56:59 -> [INFO] -  HandlePlayerCreate sn:11817749737832972397 account:test2 name:test2-4767
+2024-08-30 15:56:59 -> [INFO] -  HandlePlayerCreate sn:11817749737832972398 account:test4 name:test4-1126
+2024-08-30 15:57:48 -> [DEBUG] -  create. account:test6 name:test6-4714 gender:1
+2024-08-30 15:57:48 -> [INFO] -  HandlePlayerCreate sn:11817960062381457559 account:test6 name:test6-4714
+2024-08-30 15:57:48 -> [DEBUG] -  create. account:test10 name:test10-9939 gender:1
+2024-08-30 15:57:48 -> [DEBUG] -  create. account:test9 name:test9-1126 gender:1
+2024-08-30 15:57:48 -> [DEBUG] -  create. account:test8 name:test8-9206 gender:1
+2024-08-30 15:57:48 -> [DEBUG] -  create. account:test7 name:test7-4767 gender:1
+2024-08-30 15:57:48 -> [INFO] -  HandlePlayerCreate sn:11817960066676424856 account:test10 name:test10-9939
+2024-08-30 15:57:48 -> [INFO] -  HandlePlayerCreate sn:11817960070971392153 account:test9 name:test9-1126
+2024-08-30 15:57:48 -> [INFO] -  HandlePlayerCreate sn:11817960075266359450 account:test8 name:test8-9206
+2024-08-30 15:57:48 -> [INFO] -  HandlePlayerCreate sn:11817960075266359451 account:test7 name:test7-4767
+2024-08-30 16:01:02 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 16:01:02 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 16:01:02 -> [DEBUG] -  MysqlConnector::Awake. id:139829612726016
+2024-08-30 16:01:02 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 16:01:02 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:139829612726016
+2024-08-30 16:01:02 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 16:01:02 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 16:01:51 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 16:01:51 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 16:01:51 -> [DEBUG] -  MysqlConnector::Awake. id:140231668098816
+2024-08-30 16:01:51 -> [INFO] -  epoll model. listen 127.0.0.1:5401
+2024-08-30 16:01:51 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140231668098816
+2024-08-30 16:01:51 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 16:01:51 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!

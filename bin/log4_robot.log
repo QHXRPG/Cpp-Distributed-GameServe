@@ -1,0 +1,75 @@
+2024-08-29 17:04:13 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:04:13 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:04:48 -> [ERROR] -  [0;31minput error. cmd:1000[0m
+2024-08-29 17:05:11 -> [ERROR] -  [0;31minput error. cmd:-a 1000[0m
+2024-08-29 17:05:29 -> [ERROR] -  [0;31minput error. cmd:account[0m
+2024-08-29 17:07:38 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:07:38 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:07:52 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:07:52 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:08:19 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:08:19 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-29 17:10:38 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-29 17:10:38 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 14:07:22 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 14:07:22 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 14:08:16 -> [ERROR] -  [0;31minput error. cmd:-entity[0m
+2024-08-30 14:08:24 -> [DEBUG] -  *************************** 
+ thread id:140509667309312
+ total count:0
+
+2024-08-30 14:08:24 -> [DEBUG] -  *************************** 
+ thread id:140509642131200
+ total count:0
+
+2024-08-30 14:08:24 -> [DEBUG] -  *************************** 
+ thread id:140509650523904
+ total count:0
+
+2024-08-30 14:08:24 -> [DEBUG] -  *************************** 
+ thread id:140509675702016
+ total count:0
+
+2024-08-30 14:08:24 -> [DEBUG] -  *************************** 
+ thread id:140509658916608
+ total count:0
+
+2024-08-30 14:08:24 -> [DEBUG] -  *************************** 
+ thread id:140509755910016
+	7Console count:1
+	16NetworkConnector count:2
+	14NetworkLocator count:1
+ total count:4
+
+2024-08-30 14:12:45 -> [ERROR] -  [0;31minput error. cmd:exit[0m
+2024-08-30 14:12:48 -> [ERROR] -  [0;31minput error. cmd:quit[0m
+2024-08-30 14:13:45 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 14:13:45 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 14:19:56 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 14:19:56 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 14:32:42 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 14:32:42 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:16:08 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:16:08 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:19:51 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:19:51 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:20:29 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:20:29 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:22:15 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:22:15 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:23:32 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:23:32 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:27:04 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:27:04 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:28:06 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:28:06 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:52:49 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:52:49 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:55:14 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:55:14 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:56:51 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:56:51 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 16:01:04 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 16:01:04 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 16:01:55 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 16:01:55 -> [DEBUG] -  Yaml awake is Ok.

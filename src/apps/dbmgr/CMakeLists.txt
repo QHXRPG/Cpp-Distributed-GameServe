@@ -29,15 +29,15 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 
 link_directories(${CMAKE_BINARY_DIR}/../../../../libs/linux)
 
-# Ìí¼Ó /usr/lib64 µ½Á´½ÓÄ¿Â¼
+# æ·»åŠ  /usr/lib64 åˆ°é“¾æŽ¥ç›®å½•
 link_directories(${CMAKE_BINARY_DIR}/../../../../libs/linux /usr/lib64)
 
-# ²éÕÒ yaml-cpp ¿â
+# æŸ¥æ‰¾ yaml-cpp åº“
 find_package(yaml-cpp REQUIRED)
 
 add_executable(${MyProjectName} ${SRCS})
 
-# Á´½Ó¿â
+# é“¾æŽ¥åº“
 target_link_libraries(${MyProjectName} yaml-cpp)
 
 target_link_libraries(${MyProjectName} -L/usr/lib64/mysql -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl) # mysql

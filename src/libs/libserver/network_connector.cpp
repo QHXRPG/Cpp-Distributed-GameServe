@@ -75,6 +75,8 @@ bool NetworkConnector::Connect(std::string ip, int port)
     addr.sin_port = htons(_port);
     ::inet_pton(AF_INET, _ip.c_str(), &addr.sin_addr.s_addr);
 
+    std::cout << "masterSocker:"<< _masterSocket<< "    Ip-Port: "<<ip << ":"<< port<< std::endl;
+
     int rs = ::connect(_masterSocket, (struct sockaddr*) & addr, sizeof(sockaddr));
     if (rs == 0)
     {

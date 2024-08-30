@@ -7,6 +7,9 @@
 #include <list>
 #include <random>
 
+// SystemManager管理着 MessageSystem 和 EntitySystem
+// 协调和管理各个系统组件的生命周期和操作
+
 class EntitySystem;
 class MessageSystem;
 

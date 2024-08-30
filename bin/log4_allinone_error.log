@@ -1,0 +1,182 @@
+2024-08-29 16:45:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:164 -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-29 16:45:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:164 -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-29 16:48:16 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:164 -  [0;31mcreate_stmt error, Unknown column 'sn' in 'field list'[0m
+2024-08-29 16:48:16 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:164 -  [0;31mcreate_stmt error, Unknown column 'sn' in 'where clause'[0m
+2024-08-29 16:52:06 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'sn' in 'field list'[0m
+2024-08-29 16:52:06 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'sn' in 'where clause'[0m
+2024-08-29 16:56:31 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'name' in 'field list'[0m
+2024-08-29 16:56:31 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'base' in 'field list'[0m
+2024-08-29 16:58:42 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'account' in 'field list'[0m
+2024-08-29 16:58:42 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'misc' in 'field list'[0m
+2024-08-29 16:59:13 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'savetime' in 'field list'[0m
+2024-08-29 16:59:13 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'misc' in 'field list'[0m
+2024-08-29 16:59:58 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'createtime' in 'field list'[0m
+2024-08-29 16:59:58 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'misc' in 'field list'[0m
+2024-08-29 17:00:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:165 -  [0;31mcreate_stmt error, Unknown column 'createtime' in 'field list'[0m
+2024-08-29 17:05:57 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:72 -  [0;31mQuery error:Unknown column 'item' in 'field list' sql:select sn, name, base, item, misc from player where account = '1000'[0m
+2024-08-29 17:05:57 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_msg.cpp:31 -  [0;31m!!! Failed. MysqlConnector::HandleQueryPlayerList. sql:select sn, name, base, item, misc from player where account = '1000'[0m
+2024-08-29 17:10:46 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:217 -  [0;31mexecute_stmt error, Field 'password' doesn't have a default value[0m
+2024-08-29 17:10:46 -> [ERROR] /home/qhx/reactor/src/apps/login/account.cpp:144 -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:1000[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:11:53 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:13:51 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 14:32:48 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:16:20 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:58 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:58 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:58 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:58 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:19:58 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:22:28 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:22:28 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:22:28 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:22:28 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:22:28 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:39 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:39 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:39 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:39 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:23:39 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:112 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:26:20 -> [ERROR] /home/qhx/reactor/src/libs/libserver/console.cpp:131 -  [0;31minput error. cmd:asd[0m
+2024-08-30 15:28:23 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:113 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:28:23 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:113 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:28:23 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:113 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:28:23 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:113 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:28:23 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_base.cpp:113 -  [0;31m!!! Failed. MysqlConnector::GetUint64[0m
+2024-08-30 15:50:13 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:164 -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-30 15:50:13 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:164 -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:217 -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/login/account.cpp:144 -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test5[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:217 -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:217 -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:217 -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/dbmgr/mysql_connector.cpp:217 -  [0;31mexecute_stmt error, Out of range value for column 'sn' at row 1[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/login/account.cpp:144 -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test2[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/login/account.cpp:144 -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test4[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/login/account.cpp:144 -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test1[0m
+2024-08-30 15:52:56 -> [ERROR] /home/qhx/reactor/src/apps/login/account.cpp:144 -  [0;31mHandleCreatePlayerToDBRs. pPlayer == nullptr. account:test3[0m

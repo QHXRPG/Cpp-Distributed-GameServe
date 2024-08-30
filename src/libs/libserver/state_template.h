@@ -2,10 +2,12 @@
 
 #include <map>
 
+// 定义创建动态状态的宏
 #define DynamicStateCreate(classname, enumType) \
     static void* CreateState() { return new classname; } \
-    RobotStateType GetState( ) override { return enumType; }
+    RobotStateType GetState() override { return enumType; }
 
+// 定义绑定动态状态的宏
 #define DynamicStateBind(classname) \
     reinterpret_cast<CreateIstancePt>( &( classname::CreateState ) )
 
@@ -17,19 +19,27 @@ public:
 
     }
 
+    // 设置父对象
     void SetParentObj(T* pObj) {
         _pParentObj = pObj;
     }
 
     virtual ~StateTemplate() { }
+
+    // 获取当前状态类型
     virtual enumType GetState() = 0;
+    
+    // 更新状态，并返回新的状态类型
     virtual enumType Update() = 0;
 
+    // 进入状态时的操作
     virtual void EnterState() = 0;
+    
+    // 离开状态时的操作
     virtual void LeaveState() = 0;
 
 protected:
-    T* _pParentObj;
+    T* _pParentObj; // 父对象指针
 };
 
 template<typename enumType, class StateClass, class T>
@@ -41,11 +51,13 @@ public:
         }
     }
 
+    // 初始化状态管理器，并设置默认状态
     void InitStateTemplateMgr(enumType defaultState) {
         _defaultState = defaultState;
         RegisterState();
     }
 
+    // 切换状态
     void ChangeState(enumType stateType) {
         StateClass* pNewState = CreateStateObj(stateType);
         if (pNewState == nullptr) {
@@ -64,6 +76,7 @@ public:
         }
     }
 
+    // 更新当前状态
     void UpdateState() {
         if (_pState == nullptr) {
             ChangeState(_defaultState);
@@ -75,6 +88,7 @@ public:
     }
 
 protected:
+    // 注册状态，纯虚函数，需要子类实现
     virtual void RegisterState() = 0;
 
     ///////////////////////////////////////////////////////////////////////////////////
@@ -82,11 +96,11 @@ protected:
 public:
     typedef StateClass* (*CreateIstancePt)();
 
+    // 创建状态对象
     StateClass* CreateStateObj(enumType enumValue) {
         auto iter = _dynCreateMap.find(enumValue);
         if (iter == _dynCreateMap.end())
             return nullptr;
-
 
         CreateIstancePt np = iter->second;
         StateClass* pState = np();
@@ -94,6 +108,7 @@ public:
         return pState;
     }
 
+    // 注册状态类
     void RegisterStateClass(enumType enumValue, CreateIstancePt np) {
         _dynCreateMap[enumValue] = np;
     }
@@ -101,7 +116,7 @@ public:
     ///////////////////////////////////////////////////////////////////////////////////
 
 protected:
-    std::map<enumType, CreateIstancePt> _dynCreateMap;
-    StateClass* _pState{ nullptr };
-    enumType _defaultState;
+    std::map<enumType, CreateIstancePt> _dynCreateMap; // 动态创建映射表
+    StateClass* _pState{ nullptr }; // 当前状态指针
+    enumType _defaultState; // 默认状态
 };

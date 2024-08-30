@@ -107,20 +107,21 @@ int MysqlBase::GetInt(MYSQL_ROW row, int index)
 
 uint64 MysqlBase::GetUint64(MYSQL_ROW row, int index)
 {
+    std::cout << "row:"<<row << "index:"<<index << "row[index]:"<< row[index] <<std::endl;
     if (row[index] == nullptr)
     {
         LOG_ERROR("!!! Failed. MysqlConnector::GetUint64");
         return 0;
     }
 
-    return  atoll(row[index]);
+    return  atoll(row[index]); // ½«<string> row[index] ×ª»»Îª long long
 }
 
 unsigned int MysqlBase::GetUint(MYSQL_ROW row, int index)
 {
     if (row[index] == nullptr)
     {
-        LOG_ERROR("!!! Failed. MysqlConnector::GetUInt64");
+        LOG_ERROR("!!! Failed. MysqlConnector::GetUInt");
         return 0;
     }
 

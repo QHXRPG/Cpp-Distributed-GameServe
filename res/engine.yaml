@@ -1,26 +1,31 @@
+allinone:
+  thread_num: 5
+  ip: 127.0.0.1
+  port: 5401
+
 login:
   thread_num: 3
-  url_login: http://192.168.71.135/member_login_t.php
+  url_login: http://192.168.137.68/member_login_t.php
   ip: 127.0.0.1
-  port: 5550
+  port: 5401
 
 dbmgr:
-  thread_num: 3
+  thread_num: 1
   ip: 127.0.0.1
   port: 5800 
   dbs:
     - type: redis
-      ip: 192.168.71.135
+      ip: 192.168.137.68
       port: 6379
 
     - type: mysql
-      ip: 192.168.71.135
+      ip: 192.168.137.68
       port: 3306
       user: root
-      password: 123456
-      database_name: e_gamedata
+      password: qhxrpg
+      database_name: account
       character_set: utf8
       collation: utf8_general_ci
 
 robot:
-  thread_num: 3
+  thread_num: 5

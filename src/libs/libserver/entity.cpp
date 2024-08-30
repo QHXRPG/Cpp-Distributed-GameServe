@@ -20,7 +20,7 @@ void IEntity::RemoveComponent(IComponent* pComponent)
     const auto typeHashCode = pComponent->GetTypeHashCode();
     _components.erase(typeHashCode);
 
-    const auto pEntitySystem = GetSystemManager()->GetEntitySystem();
+    const auto pEntitySystem = GetSystemManager()->GetEntitySystem();  // ÄÃµ½ EntitySystem
     if (pEntitySystem == nullptr)
     {
         pComponent->ComponentBackToPool();

@@ -93,17 +93,16 @@ T* EntitySystem::GetComponent()
     if (iter == _objSystems.end())
         return nullptr;
 
-    return dynamic_cast<T*>(iter->second->Get());
+    return dynamic_cast<T*>(iter->second->Get());    // 将类型转为所需的类型
 }
 
 template<class T>
 inline ComponentCollections* EntitySystem::GetComponentCollections()
 {
-    const auto typeHashCode = typeid(T).hash_code();
-    auto iter = _objSystems.find(typeHashCode);
+    const auto typeHashCode = typeid(T).hash_code();  // 获取类型名
+    auto iter = _objSystems.find(typeHashCode);       // 根据类型名在组件池找对应的组件集合
     if (iter == _objSystems.end())
     {
-        //LOG_WARN("GetComponentCollections failed. class name:" << className);
         return nullptr;
     }
 

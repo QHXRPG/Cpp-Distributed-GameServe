@@ -8,9 +8,11 @@ void UpdateSystem::Update(EntitySystem* pEntities)
 	if (pCollections == nullptr)
 		return;
 
-	pCollections->Swap();
+	pCollections->Swap();                   // 更新组件集合的状态
 
-	auto lists = pCollections->GetAll();
+	auto lists = pCollections->GetAll();    // 在这个组件集合中拿到取出所有组件
+
+	// 遍历每个组件做相应的更新动作
 	for (const auto one : lists)
 	{
 		const auto pComponent = one.second;

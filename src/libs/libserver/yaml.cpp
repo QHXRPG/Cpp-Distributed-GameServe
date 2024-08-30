@@ -46,60 +46,79 @@ YamlConfig* Yaml::GetConfig(const APP_TYPE appType)
 void Yaml::LoadConfig(const APP_TYPE appType, YAML::Node& config)
 {
     std::string appTypeName = AppTypeMgr::GetInstance()->GetAppName(appType);
-    YAML::Node node = config[appTypeName];
-    if (node == nullptr)
-    {
-        std::cout << "load config failed." << appTypeName.c_str() << std::endl;
-        return;
-    }
+    std::cout << "Loading config for app type: " << appTypeName << std::endl;
 
-    AppConfig* pAppConfig;
+    AppConfig* pAppConfig = nullptr;
 
-    switch (appType)
-    {
-    case APP_LOGIN:
-    {
-        auto pConfig = new LoginConfig();
-        pConfig->UrlLogin = node["url_login"].as<std::string>();
-        pAppConfig = pConfig;
-        break;
-    }
-	case APP_DB_MGR:
-	{
-        auto pConfig = new DBMgrConfig();
-		YAML::Node node_dbs = node["dbs"];
-		const size_t size = node_dbs.size();
-		for (size_t i = 0; i < size; i++)
-		{
-			DBConfig one = LoadDbConfig(node_dbs[i]);
-			pConfig->DBs.push_back(one);
-		}
-        pAppConfig = pConfig;
-		break;
-	}
-    case APP_ROBOT:
-    {
-        auto pConfig = new RobotConfig();
-        pAppConfig = pConfig;
-        break;
-    }
-    default:
-    {
-        pAppConfig = new CommonConfig();
-        break;
-    }
-    }
+    try {
+        switch (appType)
+        {
+        case APP_LOGIN:
+        {
+            auto pConfig = new LoginConfig();
+            pConfig->UrlLogin = "http://192.168.137.68/member_login_t.php";
+            pConfig->Ip = "127.0.0.1";
+            pConfig->Port = 5401;
+            pConfig->ThreadNum = 3;
+            pAppConfig = pConfig;
+            break;
+        }
+        case APP_DB_MGR:
+        {
+            auto pConfig = new DBMgrConfig();
+            pConfig->Ip = "127.0.0.1";
+            pConfig->Port = 5800;
+            pConfig->ThreadNum = 1;
 
-    auto pCommon = dynamic_cast<CommonConfig*>(pAppConfig);
-    if (pCommon != nullptr)
-    {
-        pCommon->Ip = node["ip"].as<std::string>();
-        pCommon->Port = node["port"].as<int>();
-    }
+            // 创建DB配置
+            DBConfig db1;
+            db1.DBType = "redis";
+            db1.Ip = "192.168.137.68";
+            db1.Port = 6379;
+            pConfig->DBs.push_back(db1);
 
-    pAppConfig->ThreadNum = node["thread_num"].as<int>();
-    _configs.insert(std::make_pair(appType, pAppConfig));
+            DBConfig db2;
+            db2.DBType = "mysql";
+            db2.Ip = "192.168.137.68";
+            db2.Port = 3306;
+            db2.User = "root";
+            db2.Password = "qhxrpg";
+            db2.DatabaseName = "account";
+            db2.CharacterSet = "utf8";
+            db2.Collation = "utf8_general_ci";
+            pConfig->DBs.push_back(db2);
+
+            pAppConfig = pConfig;
+            break;
+        }
+        case APP_ROBOT:
+        {
+            auto pConfig = new RobotConfig();
+            pConfig->ThreadNum = 5;
+            pAppConfig = pConfig;
+            break;
+        }
+        default:
+        {
+            auto pConfig = new CommonConfig();
+            pConfig->Ip = "127.0.0.1";
+            pConfig->Port = 5401;
+            pConfig->ThreadNum = 5;
+            pAppConfig = pConfig;
+            break;
+        }
+        }
+
+        _configs.insert(std::make_pair(appType, pAppConfig));
+        std::cout << "Config loaded successfully for app type: " << appTypeName << std::endl;
+
+    } catch (const std::exception &e) {
+        std::cerr << "Error setting config for app type " << appTypeName << ": " << e.what() << std::endl;
+        delete pAppConfig;
+    }
 }
+
+
 
 DBConfig Yaml::LoadDbConfig(YAML::Node node) const
 {

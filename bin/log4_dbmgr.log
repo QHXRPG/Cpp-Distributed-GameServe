@@ -1,0 +1,12 @@
+2024-08-30 15:51:13 -> [DEBUG] -  Log4::Initialize is Ok.
+2024-08-30 15:51:13 -> [DEBUG] -  Yaml awake is Ok.
+2024-08-30 15:51:13 -> [DEBUG] -  Mysql update connect. 192.168.137.68:3306 starting... id:140392214005888
+2024-08-30 15:51:13 -> [ERROR] -  [0;31mQuery error:Table 'account.version' doesn't exist sql:select version from `version`[0m
+2024-08-30 15:51:13 -> [ERROR] -  [0;31m!!!Failed. Mysql update. UpdateToVersion[0m
+2024-08-30 15:51:13 -> [DEBUG] -  MysqlConnector::Awake. id:140392090666752
+2024-08-30 15:51:13 -> [DEBUG] -  MysqlConnector::Connect. 192.168.137.68:3306 starting... id:140392090666752
+2024-08-30 15:51:14 -> [DEBUG] -  MysqlConnector::Connect: successfully! addr:192.168.137.68:3306
+2024-08-30 15:51:14 -> [ERROR] -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-30 15:51:14 -> [ERROR] -  [0;31mcreate_stmt error, Table 'account.player' doesn't exist[0m
+2024-08-30 15:51:14 -> [DEBUG] -  	MysqlConnector::InitStmts successfully!
+2024-08-30 15:51:14 -> [INFO] -  epoll model. listen 127.0.0.1:5800

@@ -19,7 +19,7 @@ void Thread::Start()
             while (!Global::GetInstance()->IsStop)
             {
                 Update();
-                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));  // 避免占用过多的CPU资源
             }
 
             const auto theadId = _thread.get_id();

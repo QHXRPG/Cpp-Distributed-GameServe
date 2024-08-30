@@ -22,9 +22,9 @@ public:
     std::string GetClassType() const;
 
 private:    
-    std::map<uint64, IComponent*> _objs;
-    std::map<uint64, IComponent*> _addObjs;
-    std::list<uint64> _removeObjs;
+    std::map<uint64, IComponent*> _objs;        // 组件池
+    std::map<uint64, IComponent*> _addObjs;     // 待增加的组件池
+    std::list<uint64> _removeObjs;              // 待移除的组件池
 
     std::string _componentName;
 };
