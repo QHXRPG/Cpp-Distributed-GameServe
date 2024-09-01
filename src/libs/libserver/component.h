@@ -18,14 +18,11 @@ IComponent提供了设置对象池、父对象和系统管理器的函数，以及获取父对象和系统管理器
 class IComponent : virtual public SnObject
 {
 public:
-    friend class EntitySystem;
-
+    friend class EntitySystem;                  // 使得 EntitySystem 类的成员函数可以访问当前类的所有私有和保护成员
     virtual ~IComponent() = default;            // 析构函数
-
     void SetPool(IDynamicObjectPool* pPool);    // 设置对象池
     void SetParent(IEntity* pObj);              // 设置父对象
     void SetSystemManager(SystemManager* pObj); // 设置系统管理器
-
     bool IsActive() const { return _active; }   // 判断组件是否激活
 
     // 获取父对象模板函数
@@ -33,11 +30,11 @@ public:
     T* GetParent();
 
     IEntity* GetParent() const;                 // 获取父对象
-
     SystemManager* GetSystemManager() const;    // 获取系统管理器
+
+    // 组件应实现的接口
     virtual void BackToPool() = 0;              // 将对象返回到对象池
     virtual void ComponentBackToPool();         // 将组件返回到对象池
-
     virtual const char* GetTypeName() = 0;      // 获取类型名称
     virtual uint64 GetTypeHashCode() = 0;       // 获取类型哈希码
 

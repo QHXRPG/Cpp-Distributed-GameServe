@@ -2,15 +2,18 @@
 #include "log4.h"
 #include "console.h"
 
+// 构造函数，初始化系统管理器
 EntitySystem::EntitySystem(SystemManager* pMgr)
 {
     _systemManager = pMgr;
 }
 
+// 析构函数
 EntitySystem::~EntitySystem()
 {
 }
 
+// 移除组件
 void EntitySystem::RemoveComponent(IComponent* pObj)
 {
     const auto entitySn = pObj->GetSN();
@@ -28,9 +31,9 @@ void EntitySystem::RemoveComponent(IComponent* pObj)
 #if LOG_SYSOBJ_OPEN
     LOG_SYSOBJ("*[sys] remove obj. obj sn:" << pObj->GetSN() << " type:" << pObj->GetTypeName() << " thead id:" << std::this_thread::get_id());
 #endif
-
 }
 
+// 更新组件集合
 void EntitySystem::Update()
 {
     for (auto iter : _objSystems)
@@ -39,6 +42,7 @@ void EntitySystem::Update()
     }
 }
 
+// 实现IDisposable接口，释放资源
 void EntitySystem::Dispose()
 {
     std::set<uint64> baseClass;

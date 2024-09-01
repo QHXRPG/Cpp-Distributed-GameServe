@@ -13,6 +13,8 @@ public:
     virtual void Update(EntitySystem* pEntities) {}
 };
 
+
+//
 template <typename... TArgs>
 class IAwakeSystem : virtual public ISystem
 {
@@ -24,6 +26,8 @@ public:
     virtual void Awake(TArgs... args) = 0;
 };
 
+
+//
 template <typename... TArgs>
 class IAwakeFromPoolSystem : virtual public ISystem
 {

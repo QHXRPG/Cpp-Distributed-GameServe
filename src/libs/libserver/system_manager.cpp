@@ -1,7 +1,6 @@
 #include "system_manager.h"
 
 #include "create_component.h"
-
 #include "message_system.h"
 #include "entity_system.h"
 #include "update_system.h"
@@ -11,14 +10,11 @@
 
 SystemManager::SystemManager()
 {
-    _pEntitySystem = new EntitySystem(this);
-    _pMessageSystem = new MessageSystem(this);
+    _pEntitySystem = new EntitySystem(this);    // 初始化实体系统
+    _pMessageSystem = new MessageSystem(this);  // 初始化消息系统
+    _systems.emplace_back(new UpdateSystem());  // 添加更新系统
 
-    //_systems.emplace_back(new DependenceSystem());
-    //_systems.emplace_back(new StartSystem());
-    _systems.emplace_back(new UpdateSystem());
-
-    // gen random seed 根据线程ID生成随机种子
+    // 根据线程ID生成随机种子
     std::stringstream strStream;
     strStream << std::this_thread::get_id();
     std::string idstr = strStream.str();
@@ -29,15 +25,16 @@ SystemManager::SystemManager()
 
 void SystemManager::InitComponent()
 {
-    _pEntitySystem->AddComponent<CreateComponentC>();
-    _pEntitySystem->AddComponent<ConsoleThreadComponent>();
+    _pEntitySystem->AddComponent<CreateComponentC>();       // 添加创建组件
+    _pEntitySystem->AddComponent<ConsoleThreadComponent>(); // 添加控制台线程组件
 }
 
 void SystemManager::Update()
 {
-    _pEntitySystem->Update();
-    _pMessageSystem->Update(_pEntitySystem);
+    _pEntitySystem->Update();                   // 更新实体系统
+    _pMessageSystem->Update(_pEntitySystem);    // 更新消息系统
 
+    // 更新所有系统
     for (auto iter = _systems.begin(); iter != _systems.end(); ++iter)
     {
         (*iter)->Update(_pEntitySystem);
@@ -46,6 +43,7 @@ void SystemManager::Update()
 
 void SystemManager::Dispose()
 {
+    // 释放所有系统
     for (auto one : _systems)
     {
         one->Dispose();
@@ -53,13 +51,16 @@ void SystemManager::Dispose()
     }
     _systems.clear();
 
+    // 释放随机数引擎
     delete _pRandomEngine;
     _pRandomEngine = nullptr;
 
+    // 释放消息系统
     _pMessageSystem->Dispose();
     delete _pMessageSystem;
     _pMessageSystem = nullptr;
 
+    // 释放实体系统
     _pEntitySystem->Dispose();
     delete _pEntitySystem;
     _pEntitySystem = nullptr;
@@ -67,15 +68,15 @@ void SystemManager::Dispose()
 
 std::default_random_engine* SystemManager::GetRandomEngine() const
 {
-    return _pRandomEngine;
+    return _pRandomEngine; // 返回随机数引擎
 }
 
 MessageSystem* SystemManager::GetMessageSystem() const
 {
-    return _pMessageSystem;
+    return _pMessageSystem; // 返回消息系统
 }
 
 EntitySystem* SystemManager::GetEntitySystem() const
 {
-    return _pEntitySystem;
+    return _pEntitySystem; // 返回实体系统
 }
