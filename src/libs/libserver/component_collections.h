@@ -15,7 +15,7 @@ public:
     void Remove(uint64 sn);                           // 将组件对象标记为待移除
     IComponent* Get(uint64 sn = 0);                   // 根据序列号获取组件对象
     std::map<uint64, IComponent*>& GetAll();          // 获取所有组件对象的映射
-    void Swap();                                      // 交换待增加和待移除的组件对象
+    void Swap();                                      // 交换待增加和待移除的组件对象，添加删除操作在这里集中处理
     void Dispose() override;                          // 实现IDisposable接口，释放资源
     std::string GetClassType() const;                 // 获取组件集合的类型名称
 
