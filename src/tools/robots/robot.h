@@ -14,25 +14,17 @@
 // Robot 类继承自 NetworkConnector 和 StateTemplateMgr，用于管理机器人的状态和网络连接
 class Robot : public NetworkConnector, public StateTemplateMgr<RobotStateType, RobotState, Robot>, public IAwakeFromPoolSystem<std::string> {
 public:
-    // 从对象池中唤醒机器人
-    void AwakeFromPool(std::string account) override;
-    // 更新机器人状态
-    void Update() override;
-
-    // 获取机器人账户
-    std::string GetAccount() const;
-    // 发送账户检查消息
-    void SendMsgAccountCheck();
+    void AwakeFromPool(std::string account) override;               // 从对象池中唤醒机器人
+    void Update() override;                                         // 更新机器人状态
+    std::string GetAccount() const;                                 // 获取机器人账户
+    void SendMsgAccountCheck();                                     // 发送账户检查消息
 
 protected:
-    // 注册机器人状态
-    void RegisterState() override;
-
+    void RegisterState() override;                              // 注册机器人状态
+    
 private:
-    // 处理账户检查响应
-    void HandleAccountCheckRs(Robot* pRobot, Packet* pPacket);
-    // 处理玩家列表
-    void HandlePlayerList(Robot* pRobot, Packet* pPacket);
+    void HandleAccountCheckRs(Robot* pRobot, Packet* pPacket);  // 处理账户检查响应
+    void HandlePlayerList(Robot* pRobot, Packet* pPacket);      // 处理玩家列表
 
 private:
     std::string _account; // 机器人账户

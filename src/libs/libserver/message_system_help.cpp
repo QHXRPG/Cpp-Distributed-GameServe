@@ -5,17 +5,20 @@
 #include "entity_system.h"
 #include "log4_help.h"
 
+// 分发包的实现
 void MessageSystemHelp::DispatchPacket(Packet* pPacket)
 {
     ThreadMgr::GetInstance()->DispatchPacket(pPacket);
 }
 
+// 创建并分发包
 void MessageSystemHelp::DispatchPacket(const Proto::MsgId msgId, const SOCKET socket)
 {
     const auto pPacket = CreatePacket(msgId, socket);
     DispatchPacket(pPacket);
 }
 
+// 创建并分发带有序列化数据的包
 void MessageSystemHelp::DispatchPacket(const Proto::MsgId msgId, const SOCKET socket, google::protobuf::Message& proto)
 {
     const auto pPacket = CreatePacket(msgId, socket);
@@ -23,6 +26,7 @@ void MessageSystemHelp::DispatchPacket(const Proto::MsgId msgId, const SOCKET so
     DispatchPacket(pPacket);
 }
 
+// 创建并发送包
 void MessageSystemHelp::SendPacket(const Proto::MsgId msgId, const SOCKET socket, google::protobuf::Message& proto)
 {
     const auto pPacket = CreatePacket(msgId, socket);
@@ -30,6 +34,7 @@ void MessageSystemHelp::SendPacket(const Proto::MsgId msgId, const SOCKET socket
     SendPacket(pPacket);
 }
 
+// 创建并发送带有序列化数据的包到指定应用类型和应用ID
 void MessageSystemHelp::SendPacket(const Proto::MsgId msgId, google::protobuf::Message& proto, APP_TYPE appType, int appId)
 {
     auto packet = CreatePacket(msgId, 0);
@@ -37,12 +42,12 @@ void MessageSystemHelp::SendPacket(const Proto::MsgId msgId, google::protobuf::M
     SendPacket(packet, appType, appId);
 }
 
+// 发送包到指定应用类型和应用ID
 void MessageSystemHelp::SendPacket(Packet* packet, APP_TYPE appType, int appId)
 {
     if ((Global::GetInstance()->GetCurAppType() & appType) != 0)
     {
-        // 正好在当前进程中，直接转发
-        // 例如 curapptype == all 的时候
+        // 如果当前进程类型匹配，直接分发
         DispatchPacket(packet);
     }
     else
@@ -61,6 +66,7 @@ void MessageSystemHelp::SendPacket(Packet* packet, APP_TYPE appType, int appId)
     }
 }
 
+// 发送包
 void MessageSystemHelp::SendPacket(Packet* pPacket)
 {
     // 找不到Network，就向所有线程发送协议
@@ -83,6 +89,9 @@ void MessageSystemHelp::SendPacket(Packet* pPacket)
     pNetwork->SendPacket(pPacket);
 }
 
+
+
+// 创建一个新的包
 Packet* MessageSystemHelp::CreatePacket(Proto::MsgId msgId, SOCKET socket)
 {
     auto pPacket = new Packet(msgId, socket);
